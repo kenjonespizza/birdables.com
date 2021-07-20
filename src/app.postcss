@@ -1,0 +1,32 @@
+@tailwind base;
+/* Write your global styles here, in PostCSS syntax */
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 500;
+    src: url("/fonts/GreycliffCF-Medium.woff2") format("woff2"), url("/fonts/GreycliffCF-Medium.woff") format("woff");
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 600;
+    src: url("/fonts/GreycliffCF-DemiBold.woff2") format("woff2"), url("/fonts/GreycliffCF-DemiBold.woff") format("woff");
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 600;
+    font-style: italic;
+    src: url("/fonts/GreycliffCF-DemiBoldOblique.woff2") format("woff2"), url("/fonts/GreycliffCF-DemiBoldOblique.woff") format("woff");
+  }
+   @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 900;
+    src: url("/fonts/GreycliffCF-Heavy.woff2") format("woff2"), url("/fonts/GreycliffCF-Heavy.woff") format("woff");
+  }
+}

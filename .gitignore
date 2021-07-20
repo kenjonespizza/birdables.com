@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+/.svelte-kit
+/package
+build
+functions
+
+# dotenv environment variable files
+.env*
+
+etsy_shop_json.txt
