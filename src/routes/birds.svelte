@@ -28,21 +28,21 @@
   console.log('birds:', birds)
 
   function SetCardHeight() {
-    const cardImg = window.document.querySelector(".card-img");
-    const cards = window.document.querySelectorAll(".card");
+    // const cardImg = window.document.querySelector(".card-img");
+    // const cards = window.document.querySelectorAll(".card");
     
-    cards.forEach(card => {
-      card.style.height = `auto`;
-      card.style.width = `auto`;
-    })
+    // cards.forEach(card => {
+    //   card.style.height = `auto`;
+    //   card.style.width = `auto`;
+    // })
 
-    const cardImgWidth = cardImg.offsetWidth;
-    const cardImgHeight = cardImg.offsetHeight;
+    // const cardImgWidth = cardImg.offsetWidth;
+    // const cardImgHeight = cardImg.offsetHeight;
 
-    cards.forEach(card => {
-      card.style.height = `${cardImgHeight}px`;
-      card.style.width = `${cardImgWidth}px`;
-    })
+    // cards.forEach(card => {
+    //   card.style.height = `${cardImgHeight}px`;
+    //   card.style.width = `${cardImgWidth}px`;
+    // })
   }
 
   // function mouseOverCard(node) {
@@ -55,7 +55,6 @@
   // }
 </script>
 
-<svelte:window on:resize={SetCardHeight} />
 
 <div class="bg-white" use:SetCardHeight>
   <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
@@ -68,17 +67,19 @@
         {#each birds as bird}
           <li class="space-y-4">
 
+            <div class="relative">
+            <img class="object-cover filter drop-shadow-card card-img opacity-0 pointer-events-none" src={`images/cards/${bird.friendlyId}.png`} alt="">
             <!-- Card -->
-            <div class="card">
+            <div class="card absolute inset-0">
               <div class="card-inner">
                 <div class="card-front">
-                  <a sveltekit:prefetch href={`/bird/${bird.slug}`} class="block">
+                  <a href={`/bird/${bird.slug}`} class="block">
                     <img class="object-cover filter drop-shadow-card card-img" src={`images/cards/${bird.friendlyId}.png`} alt="">
                   </a>
                 </div>
 
                 <div class="card-back" style={`--bird-color: #${bird.accentColor}; --text-color: ${invertColor(bird.accentColor, 'bw')}`}>
-                  <a sveltekit:prefetch href={`/bird/${bird.slug}`} class="w-full h-full filter drop-shadow-card flex items-center justify-center">
+                  <a href={`/bird/${bird.slug}`} class="w-full h-full filter drop-shadow-card flex items-center justify-center">
                     <h3 class="flex flex-col space-y-0">
                       <span class="text-2xl">{bird.smallName || ''}</span>
                       <span class="font-black text-4xl">{bird.bigName}</span>
@@ -87,6 +88,8 @@
                 </div>
               </div>
             </div>
+
+          </div>
 
             <!-- Under Card -->
             <!-- <div class="space-y-2">
