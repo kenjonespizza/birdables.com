@@ -19,6 +19,7 @@
 </script>
 
 <script>
+  import { assets } from '$app/paths';
   export let bird;
   // console.log('bird:', bird)
 </script>
@@ -79,7 +80,7 @@
           <li class="sm:py-8">
             <div class="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
               <div class="aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4">
-                <img class="object-cover drop-shadow-card" src={`/images/cards/${bird.friendlyId}.png`} alt="">
+                <img class="object-cover drop-shadow-card" src={`${assets}/images/cards/${bird.friendlyId}.png`} alt="">
               </div>
               <div class="sm:col-span-2">
                 <div class="space-y-4">

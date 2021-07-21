@@ -3,29 +3,26 @@
   export async function load({page, fetch}) {
     const url = `${base}/api/birds`;
     const res = await fetch(url)
-
     if (res) {
-    // console.log('res:', res)
 			return {
 				props: {
 					birds: await res.json()
-					// birds: {test: 'yes'}
 				}
 			};
 		}
-
     return {
 			status: res.status,
 			error: new Error().message,
 		};
   }
-
 </script>
 
 <script>
+  import { assets } from '$app/paths';
   import {invertColor} from "$lib/utils"
   export let birds;
-  console.log('birds:', birds)
+  
+  // console.log('birds:', birds)
 
   function SetCardHeight() {
     // const cardImg = window.document.querySelector(".card-img");
@@ -55,8 +52,11 @@
   // }
 </script>
 
+<svelte:head>
+  <title>Bird Cards | Birdables</title>
+</svelte:head>
 
-<div class="bg-white" use:SetCardHeight>
+<div class="bg-white">
   <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
     <div class="space-y-12">
       <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
@@ -67,37 +67,29 @@
         {#each birds as bird}
           <li class="space-y-4">
 
-            <div class="relative">
-            <img class="object-cover filter drop-shadow-card card-img opacity-0 pointer-events-none" src={`images/cards/${bird.friendlyId}.png`} alt="">
-            <!-- Card -->
-            <div class="card absolute inset-0">
-              <div class="card-inner">
-                <div class="card-front">
-                  <a href={`/bird/${bird.slug}`} class="block">
-                    <img class="object-cover filter drop-shadow-card card-img" src={`images/cards/${bird.friendlyId}.png`} alt="">
-                  </a>
-                </div>
-
-                <div class="card-back" style={`--bird-color: #${bird.accentColor}; --text-color: ${invertColor(bird.accentColor, 'bw')}`}>
-                  <a href={`/bird/${bird.slug}`} class="w-full h-full filter drop-shadow-card flex items-center justify-center">
-                    <h3 class="flex flex-col space-y-0">
-                      <span class="text-2xl">{bird.smallName || ''}</span>
-                      <span class="font-black text-4xl">{bird.bigName}</span>
-                    </h3>
-                  </a>
+            <a href={`/bird/${bird.slug}`} class="relative block">
+              <img class="object-cover filter drop-shadow-card card-img opacity-0 pointer-events-none" src={`${assets}/images/cards/${bird.friendlyId}.png`} alt="">
+              <!-- Card -->
+              <div class="card absolute inset-0">
+                <div class="card-inner">
+                  <!-- Front -->
+                  <div class="card-front">
+                    <div class="block">
+                      <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/${bird.friendlyId}.png`} alt="">
+                    </div>
+                  </div>
+                  <!-- Back -->
+                  <div class="card-back" style={`--bird-color: #${bird.accentColor}; --text-color: ${invertColor(bird.accentColor, 'bw')}`}>
+                    <div class="w-full h-full filter drop-shadow-card flex items-center justify-center">
+                      <h3 class="flex flex-col space-y-0">
+                        <span class="text-2xl">{bird.smallName || ''}</span>
+                        <span class="font-black text-4xl">{bird.bigName}</span>
+                      </h3>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-          </div>
-
-            <!-- Under Card -->
-            <!-- <div class="space-y-2">
-                <h3 class="flex flex-col space-y-0">
-                  <span class="text-2xl">{bird.smallName || ''}<br /></span>
-                  <span class="font-black text-4xl">{bird.bigName}</span>
-                </h3>
-            </div> -->
+            </a>
             
           </li>
         {/each}
@@ -111,6 +103,7 @@
     width: 100%;
     height: 100%;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    will-change: transform;
   }
 
   .card-inner {
@@ -136,11 +129,12 @@
 
   .card-back {
     transform: rotateY(180deg);
+    will-change: transform;
   }
 
-  .card-back > a {
+  .card-back > div {
     background-color: var(--bird-color);
-    border-radius: 10px;
+    border-radius: 13px;
     color: var(--text-color);
   }
 </style>

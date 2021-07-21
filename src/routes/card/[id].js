@@ -1,14 +1,15 @@
 import Airtable from 'airtable';
 
+import { variables } from '$lib/variables'
+
 import {returnBirdFromId, returnFormattedBirds} from "$lib/utils"
 
 export async function get({ params }) {
   const { id } = params;
-  console.log('params:', params)
-  const base = new Airtable({apiKey: 'keyA5UymJvBOli0cg'}).base('appOhoNbZ8tYXeb6B');
+  const base = new Airtable({apiKey: variables.AIRTABLE_API_KEY}).base(variables.AIRTABLE_BASE);
   const records = await base('Birds').select().firstPage();
   const data = returnBirdFromId(id, returnFormattedBirds(records));
-  console.log('data:', data)
+  console.log(`Redirecting to: /bird/${data.slug}`);
 
   if (records) {
     return {

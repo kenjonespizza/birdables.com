@@ -1,10 +1,8 @@
 <script>
   let isOpen = false;
-  console.log('isOpen:', isOpen)
 
   function toggle() {
     isOpen = !isOpen
-    console.log('isOpen:', isOpen)
   }
 
 

@@ -29,6 +29,9 @@
   };
 </script>
 
+<svelte:head>
+  <title>Birdables | Physical & NFT Bird Trading Cards</title>
+</svelte:head>
 <!-- <div class="bg-white">
   <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
     <div class="space-y-12">
