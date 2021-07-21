@@ -40,6 +40,18 @@ export const returnBirdFromSlug = (slug, formattedBirds) => {
   return birdToReturn
 }
 
+export const returnBirdFromId = (id, formattedBirds) => {
+  let birdToReturn;
+
+  for (var i = 0; i < formattedBirds.length; i++) {
+    if (formattedBirds[i].id === id) {
+      birdToReturn = formattedBirds[i];
+      break
+    }
+  };
+  return birdToReturn
+}
+
 export const returnEtsyImagesFromEtsyListingId = async (etsyListingId) => {
   if (etsyListingId) {
     const urlImage = `https://openapi.etsy.com/v2/listings/${etsyListingId}/images?api_key=${variables.ETSY_API_KEY}`;

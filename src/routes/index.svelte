@@ -20,16 +20,14 @@
 
 <script>
   function setHeights() {
-    const bigImg = window.document.querySelector(".card-lg").offsetHeight
-    const divToSet = window.document.querySelector(".set-me-dynamically")
-    const divToSetFull = window.document.querySelector(".set-me-dynamically-full")
+    // const bigImg = window.document.querySelector(".card-lg").offsetHeight
+    // const divToSet = window.document.querySelector(".set-me-dynamically")
+    // const divToSetFull = window.document.querySelector(".set-me-dynamically-full")
 
-    divToSet.style.height = `${(bigImg/2) + 60}px`;
-    divToSetFull.style.height = `${(bigImg/2) + 60}px`;
+    // divToSet.style.height = `${(bigImg/2) + 60}px`;
+    // divToSetFull.style.height = `${(bigImg/2) + 60}px`;
   };
 </script>
-
-<svelte:window on:resize={setHeights} />
 
 <!-- <div class="bg-white">
   <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
@@ -56,7 +54,7 @@
   </div>
 </div> -->
 
-<main use:setHeights class="">
+<main class="">
   <!-- Hero card -->
   <div class="relative">
     <div class="mx-auto sm:px-6 lg:px-8">
@@ -73,7 +71,8 @@
                 Browse Cards
               </a>
           </div>
-          <div class="set-me-dynamically"></div>
+          
+          <img src="/images/cards/brown-pelican_01.png" class="halfImageFiller opacity-0 pointer-events-none" />
 
         </div>
       </div>
@@ -113,7 +112,7 @@
     </div>
   </div>
 
-  <div class="set-me-dynamically-full"></div>
+  <img src="/images/cards/brown-pelican_01.png" class="halfImageFiller opacity-0 pointer-events-none" />
 
   <!-- more -->
   <div class="pb-16 xl:pb-36 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
@@ -184,6 +183,9 @@
    .card-sm {width: calc(20% + var(--cardAdder)); z-index:1;}
    .card-md {width: calc(21.5% + var(--cardAdder)); z-index:2;}
    .card-lg {width: calc(22.5% + var(--cardAdder)); z-index:3;}
+   
+   .halfImageFiller {width: calc(11.25% + 40px);}
+   .fullImageFiller {width: calc(22.5% + 40px);}
 
    .card-1 {left: 0}
    .card-2 {left: 18.5%}
