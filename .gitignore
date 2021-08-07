@@ -9,3 +9,5 @@ functions
 .env*
 
 etsy_shop_json.txt
+# Local Netlify folder
+.netlify

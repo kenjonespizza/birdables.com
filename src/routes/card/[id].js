@@ -9,7 +9,7 @@ export async function get({ params }) {
   const base = new Airtable({apiKey: variables.AIRTABLE_API_KEY}).base(variables.AIRTABLE_BASE);
   const records = await base('Birds').select().firstPage();
   const data = returnBirdFromId(id, returnFormattedBirds(records));
-  console.log(`Redirecting to: /bird/${data.slug}`);
+  console.log(`Congrats on scanning the QR code! Redirecting to: /bird/${data.slug}`);
 
   if (records) {
     return {

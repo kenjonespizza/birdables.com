@@ -1,9 +1,8 @@
 import Airtable from 'airtable';
 
 import { variables } from '$lib/variables';
-console.log('variables:', variables)
 
-import {returnFormattedBirds} from "$lib/utils"
+import {returnFormattedBirds, returnEtsyListingFromEtsyListingId} from "$lib/utils"
 
 export async function get() {
 
@@ -17,6 +16,17 @@ export async function get() {
 
     const data = returnFormattedBirds(records);
 
+    data.forEach(async (element, i)  => {
+      if (element && element.etsyId) {
+        const listing = await returnEtsyListingFromEtsyListingId(element.etsyId);
+        // console.log('listing:', listing)
+        // Object.assign(element, {listing});
+        // console.log('element:', element)
+        data[i] = {listing};
+        // console.log('dataHERE:', data)
+      }
+    });
+
     data.sort((a,b) => {
       const sortBy = 'rarity';
       if (a[sortBy] > b[sortBy]) {return 1}
@@ -24,10 +34,10 @@ export async function get() {
       return 0;
     });
 
-    if (records) {
+
       return {
         status: 200,
         body: data
       }
-    }
+
 }

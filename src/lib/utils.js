@@ -54,7 +54,9 @@ export const returnBirdFromId = (id, formattedBirds) => {
 
 export const returnEtsyImagesFromEtsyListingId = async (etsyListingId) => {
   if (etsyListingId) {
-    const urlImage = `https://openapi.etsy.com/v2/listings/${etsyListingId}/images?api_key=${variables.ETSY_API_KEY}`;
+    const urlImage = `https://openapi.etsy.com/v3/application/shops/${variables.ETSY_SHOP_ID}/listings/${etsyListingId}/images?client_id=${variables.ETSY_API_KEY}`;
+    // const urlImage = `https://openapi.etsy.com/v2/listings/${etsyListingId}/images?api_key=${variables.ETSY_API_KEY}`;
+    // https://openapi.etsy.com/v3/listings/1051222323/images?api_key=keyzp6KbCpkAcF0N0
     const reqImage = await fetch(urlImage);
     const resImage = await reqImage
     const dataImage = await resImage.json();
@@ -66,9 +68,18 @@ export const returnEtsyImagesFromEtsyListingId = async (etsyListingId) => {
   };
 }
 
-export const addDataToBirdArr =(nameOfNewProperty, newPropertyValue, existingObject) => {
-  existingObject[nameOfNewProperty] = newPropertyValue;
-  return existingObject;
+export const returnEtsyListingFromEtsyListingId = async (etsyListingId) => {
+  if (etsyListingId) {
+    const url = `https://openapi.etsy.com/v3/application/listings/${etsyListingId}?client_id=${variables.ETSY_API_KEY}`;
+    const req = await fetch(url);
+    const res = await req
+    const listing = await res.json();
+    return listing;
+  }
+  return {
+    count: 0,
+    results: []
+  };
 }
 
 export const invertColor = (hex, bw) => {
@@ -103,4 +114,19 @@ function padZero(str, len) {
   len = len || 2;
   var zeros = new Array(len).join('0');
   return (zeros + str).slice(-len);
+}
+
+export function formatPhoneNumber(phoneNumberString) {
+  console.log('phoneNumberString:', phoneNumberString)
+  var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+  var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    var intlCode = (match[1] ? '+1 ' : '');
+    return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('');
+  }
+  return false;
+}
+
+export function emailIsValid (email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }

@@ -19,37 +19,11 @@
 
 <script>
   import { assets } from '$app/paths';
-  import {invertColor} from "$lib/utils"
+  // import {invertColor} from "$lib/utils"
+  import invert from 'invert-color';
+  import GetNotified from '$lib/components/GetNotified.svelte';
+
   export let birds;
-  
-  // console.log('birds:', birds)
-
-  function SetCardHeight() {
-    // const cardImg = window.document.querySelector(".card-img");
-    // const cards = window.document.querySelectorAll(".card");
-    
-    // cards.forEach(card => {
-    //   card.style.height = `auto`;
-    //   card.style.width = `auto`;
-    // })
-
-    // const cardImgWidth = cardImg.offsetWidth;
-    // const cardImgHeight = cardImg.offsetHeight;
-
-    // cards.forEach(card => {
-    //   card.style.height = `${cardImgHeight}px`;
-    //   card.style.width = `${cardImgWidth}px`;
-    // })
-  }
-
-  // function mouseOverCard(node) {
-  //   node.ontouchstart = () => {
-  //     node.querySelector('.card-inner').style.cssText = "transform: rotateY(180deg);";
-  //   };
-  //   node.ontouchend = () => {
-  //     node.querySelector('.card-inner').style.cssText = "transform: rotateY(0deg);";
-  //   };
-  // }
 </script>
 
 <svelte:head>
@@ -57,34 +31,66 @@
 </svelte:head>
 
 <div class="bg-white">
+ 
+  <!--
+    This example requires Tailwind CSS v2.0+ 
+    
+    This example requires some changes to your config:
+    
+    ```
+    // tailwind.config.js
+    module.exports = {
+      // ...
+      plugins: [
+        // ...
+        require('@tailwindcss/forms'),
+      ]
+    }
+    ```
+  -->
+  <div class="bg-gray-800">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between">
+      <div class="max-w-xl">
+        <h2 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Browse Cards</h2>
+        <p class="mt-5 text-xl text-gray-400">Start or continue building you Birdables collection!</p>
+      </div>
+    </div>
+  </div>
+
   <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
     <div class="space-y-12">
-      <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-        <h2 class="text-2xl font-extrabold tracking-tight sm:text-6xl">Bird Cards</h2>
-        <p class="text-base text-text">Odio nisi, lectus dis nulla. Ultrices maecenas vitae rutrum dolor ultricies donec risus sodales. Tempus quis et.</p>
-      </div>
       <ul class="gap-4 grid grid-cols-2 sm:grid sm:grid-cols-3 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8">
         {#each birds as bird}
           <li class="space-y-4">
 
             <a href={`/bird/${bird.slug}`} class="relative block">
               <img class="object-cover filter drop-shadow-card card-img opacity-0 pointer-events-none" src={`${assets}/images/cards/${bird.friendlyId}.png`} alt="">
-              <!-- Card -->
               <div class="card absolute inset-0">
                 <div class="card-inner">
-                  <!-- Front -->
                   <div class="card-front">
                     <div class="block">
                       <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/${bird.friendlyId}.png`} alt="">
                     </div>
                   </div>
-                  <!-- Back -->
-                  <div class="card-back" style={`--bird-color: #${bird.accentColor}; --text-color: ${invertColor(bird.accentColor, 'bw')}`}>
-                    <div class="w-full h-full filter drop-shadow-card flex items-center justify-center">
-                      <h3 class="flex flex-col space-y-0">
-                        <span class="text-2xl">{bird.smallName || ''}</span>
-                        <span class="font-black text-4xl">{bird.bigName}</span>
-                      </h3>
+                    <div class="card-back" style={`--bird-color: #${bird.accentColor}; --text-color: 
+                    ${invert(bird.accentColor, {
+                      black: '#11191E', 
+                      white: '#ffffff', 
+                      threshold: .42
+                    })}
+                  `}>
+                    <div class="block relative">
+                      <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/card-back-${bird.rarity === 5 ? 'dark' : 'light'}.png`} alt="">
+                      <div class="absolute top-0 left-0 py-2 px-4 transfrom rounded-tl-lg rounded-br-lg filter drop-shadow flex items-center justify-center" style={`background-color: #${bird.accentColor};`}>
+                        <div class="text-lg" style={`color: #${invert(bird.accentColor, {
+                          black: '#11191E', 
+                          white: '#ffffff', 
+                          threshold: .42
+                        })}`}>
+                          <span class="">{bird.smallName ? bird.smallName+' ' : ''}</span>
+                          <span class="font-black">{bird.bigName}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -97,6 +103,8 @@
     </div>
   </div>
 </div>
+
+<GetNotified />
 
 <style>
   .card {
