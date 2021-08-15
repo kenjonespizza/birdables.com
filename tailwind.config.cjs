@@ -36,7 +36,7 @@ const config = {
 				text: "rgba(17, 25, 20, 0.7)"
 			},
 			dropShadow: {
-				'card': ['0 1px 2px rgba(0, 0, 0, 0.1)', '0 1px 1px rgba(0, 0, 0, 0.06)', '0 8px 5px rgba(0, 0, 0, 0.08)', '0 5px 25px rgba(0, 0, 0, 0.15)']
+				'card': ['0 0 1px rgba(0, 0, 0, 0.1)', '0 1px 1px rgba(0, 0, 0, 0.06)', '0 8px 5px rgba(0, 0, 0, 0.05)', '0 5px 25px rgba(0, 0, 0, 0.10)']
 			},
 			fontFamily: {
 				sans: ["'GreycliffCF'", ...defaultTheme.fontFamily.sans],

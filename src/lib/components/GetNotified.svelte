@@ -61,7 +61,7 @@
           <span class="mr-3" id="email-or-phone-notifications">
             <button on:click={() => {useEmailAddress = true}} class={`${useEmailAddress ? "text-white" : "text-gray-400"} text-base font-medium`}>Get Email Notifications</button>
           </span>
-          <!-- Enabled: "bg-indigo-600", Not Enabled: "bg-gray-200" -->
+          <!-- Enabled: "bg-gray-600", Not Enabled: "bg-gray-200" -->
           <button on:click={toggle} type="button" class={`bg-gray-900 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-gray-400 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900`} role="switch" aria-checked="false" aria-labelledby="email-or-phone-notifications">
             <!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
             <span aria-hidden="true" class={`${useEmailAddress ? "translate-x-0" : "translate-x-5"} pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}>

@@ -57,43 +57,26 @@
     </div>
   </div>
 
-  <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+  <div class="mx-auto py-12 px-4 max-w-7xl lg:transform lg:-translate-y-12 sm:px-6 lg:px-8 lg:pb-24 lg:pt-0">
     <div class="space-y-12">
-      <ul class="gap-4 grid grid-cols-2 sm:grid sm:grid-cols-3 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8">
+      <ul class="gap-4 grid grid-cols-2 sm:grid sm:grid-cols-3 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
         {#each birds as bird}
           <li class="space-y-4">
 
-            <a href={`/bird/${bird.slug}`} class="relative block">
-              <img class="object-cover filter drop-shadow-card card-img opacity-0 pointer-events-none" src={`${assets}/images/cards/${bird.friendlyId}.png`} alt="">
-              <div class="card absolute inset-0">
-                <div class="card-inner">
-                  <div class="card-front">
-                    <div class="block">
-                      <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/${bird.friendlyId}.png`} alt="">
-                    </div>
-                  </div>
-                    <div class="card-back" style={`--bird-color: #${bird.accentColor}; --text-color: 
-                    ${invert(bird.accentColor, {
-                      black: '#11191E', 
-                      white: '#ffffff', 
-                      threshold: .42
-                    })}
-                  `}>
-                    <div class="block relative">
-                      <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/card-back-${bird.rarity === 5 ? 'dark' : 'light'}.png`} alt="">
-                      <div class="absolute top-0 left-0 py-2 px-4 transfrom rounded-tl-lg rounded-br-lg filter drop-shadow flex items-center justify-center" style={`background-color: #${bird.accentColor};`}>
-                        <div class="text-lg" style={`color: #${invert(bird.accentColor, {
-                          black: '#11191E', 
-                          white: '#ffffff', 
-                          threshold: .42
-                        })}`}>
-                          <span class="">{bird.smallName ? bird.smallName+' ' : ''}</span>
-                          <span class="font-black">{bird.bigName}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <a href={`/bird/${bird.slug}`} sveltekit:prefetch class="flex flex-col space-y-4 tranform transition duration-200 ease-in hover:-translate-y-2 hover:underline">
+              <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/${bird.friendlyId}.png`} alt={bird.birdName}>
+              <div class="text-lg leading-6 font-medium space-y-2">
+                <h1 class="flex flex-col">
+                  <span class="text-xl tracking-tight leading-none">
+                    {#if bird.smallName}
+                      {bird.smallName}
+                    {:else}
+                      <br />
+                    {/if}
+                  </span>
+                  <span class="font-black tracking-tight leading-none text-4xl">{bird.bigName}</span>
+                </h1>
+                <p class="text-gray-400 italic text-lg tracking-tight leading-none">{bird.scientificName}</p>
               </div>
             </a>
             

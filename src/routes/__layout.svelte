@@ -8,6 +8,8 @@
   <link rel="icon" href="/favicon.svg" />
 </svelte:head>
 
-<Nav />
-<slot></slot>
-<Footer />
+<div class="text-gray-900 absolute w-screen">
+  <Nav />
+  <slot></slot>
+  <Footer />
+</div>

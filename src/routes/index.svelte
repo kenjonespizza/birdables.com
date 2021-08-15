@@ -118,7 +118,7 @@ import { amp, browser, dev, mode, prerendering } from '$app/env';
         </h1>
         <p class="mt-8 text-xl text-gray-500 leading-8">Birdables are collectable & tradable bird cards sold in physical and digital form.</p>
       </div>
-      <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
+      <div class="mt-6 prose prose-gray prose-lg text-gray-500 mx-auto">
         <h2>How do these cards help birds?</h2>
         <p>Great question!  We will donate a portion of profits to a bird conservation organization like the Cornell Lab of Ornithology, eBird, etc.  More details on this are still to come, as it is still unclear the cost of running this operation.  All donation amounts & recipients will be available on this website in the future.</p>
         <p>To not be a contributor to the destruction of bird habitats, every physical card is printed on 100% recycled paper, so that no trees are cut down for the creation of the cards.  The digital cards (NFT’s) are minted and distributed on the Polygon blockchain, which validates transactions using the Proof-of-Stake consensus model, which consumes far less energy use than the Proof-of Work model.  Considerations were also made when creating this website.  Each page of the site is generated statically and built once before uploading the files to the server.  This allows for database & external API calls to be made once every few days instead of every time a user lands on the site and loads a new page.</p>
@@ -159,7 +159,7 @@ import { amp, browser, dev, mode, prerendering } from '$app/env';
         <div class="relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 lg:col-start-4 lg:col-span-6">
           <h2 class="text-3xl font-extrabold text-white" id="join-heading">Want a certain bird card made?</h2>
           <p class="text-lg text-white">Very cool, and we want to make that card for you.  Producing each card is time consuming, so creating cards that spark joy is a priority.  Visit our Voting page to vote for a bird youd like to see made into a Birdables card.  Or, for a better chance of your card getting made, submit a hight resolution personal photo to assist us in bring your favorite bird or new lifer to Birdables.</p>
-          <a class="block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-indigo-700 hover:bg-gray-50 sm:inline-block sm:w-auto" href="/">Explore open positions</a>
+          <a class="block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-gray-700 hover:bg-gray-50 sm:inline-block sm:w-auto" href="/">Explore open positions</a>
         </div>
       </div>
     </div>
