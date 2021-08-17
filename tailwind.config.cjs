@@ -7,6 +7,9 @@ const config = {
 	],
 	theme: {
 		extend: {
+			borderWidth: {
+				'3': '3px;'
+			},
 			colors: {
 				beak: {
 					50: "#FFF4E3",
@@ -44,6 +47,12 @@ const config = {
 			fontWeight: {
 				normal: 500,
 			},
+			ringWidth: {
+        '3': '3px',
+      },
+			ringOffsetWidth: {
+        '3': '3px',
+      },
 			minWidth: {
 				'0': '0',
 				'1/4': '25%',
@@ -58,6 +67,7 @@ const config = {
 	plugins: [
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/typography'),
+		require('@tailwindcss/aspect-ratio'),
 	]
 };
 

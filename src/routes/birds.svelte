@@ -48,10 +48,10 @@
     }
     ```
   -->
-  <div class="bg-gray-800">
+  <div class="bg-gray-blue">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between">
       <div class="max-w-xl">
-        <h2 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Browse Cards</h2>
+        <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">Browse Cards</h2>
         <p class="mt-5 text-xl text-gray-400">Start or continue building you Birdables collection!</p>
       </div>
     </div>
@@ -63,7 +63,7 @@
         {#each birds as bird}
           <li class="space-y-4">
 
-            <a href={`/bird/${bird.slug}`} sveltekit:prefetch class="flex flex-col space-y-4 tranform transition duration-200 ease-in hover:-translate-y-2 hover:underline">
+            <a href={`/bird/${bird.slug}`} sveltekit:prefetch class="flex flex-col space-y-4 tranform transition duration-200 ease-in hover:-translate-y-2">
               <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/${bird.friendlyId}.png`} alt={bird.birdName}>
               <div class="text-lg leading-6 font-medium space-y-2">
                 <h1 class="flex flex-col">

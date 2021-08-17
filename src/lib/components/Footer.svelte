@@ -21,7 +21,7 @@
       </div>
 
       <div class="px-5 py-2">
-        <a sveltekit:prefetch href="/vote-submit" class="text-base text-gray-500 hover:text-gray-900">
+        <a sveltekit:prefetch href="/submit-a-bird" class="text-base text-gray-500 hover:text-gray-900">
           Vote / Submit a Bird
         </a>
       </div>

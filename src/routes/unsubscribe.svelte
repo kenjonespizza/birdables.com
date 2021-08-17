@@ -1,13 +1,11 @@
 <script>
   import { getStores, navigating, page, session } from '$app/stores';
-  console.log('page:', $page.query.get('id'));
   import { onMount } from 'svelte';
 
   let id
   let successful = null;
 
   onMount(async () => {
-    console.log("Mounted");
 
     if ($page.query.get('id')) {
       id = $page.query.get('id')

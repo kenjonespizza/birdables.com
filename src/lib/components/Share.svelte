@@ -6,30 +6,20 @@
 	export let via;
 	export let related;
 	
-	// `https://twitter.com/intent/tweet?${query}`;
   let query;
   let href;
 	
 	function open(e, site) {
-    console.log('site:', site)
-    console.log('e:', e)
-    
 		e.preventDefault();
-
-    // let site = e?.target?.dataset?.share;
-    // console.log('site:', site)
-
+    
     if (site) {
-      console.log('site:', site)
       const w = 600;
       const h = 400;
       const x = (screen.width - w) / 2;
       const y = (screen.height - h) / 2;
       const features = `width=${w},height=${h},left=${x},top=${y}`;
 
-      console.log('e.target.dataset.share:', e?.target?.dataset?.share)
       if (site === 'twitter') {
-        console.log('hashtags:', hashtags)
         query = [
           text     && `text=${encodeURIComponent(text)}`,
           url      && `url=${encodeURIComponent(url)}`,
@@ -53,8 +43,7 @@
       } else if (site = 'email') {
         href = `mailto:?subject=${text}&body=${url}`;
       }
-      console.log('href:', href)
-    window.open(href, '_blank', features);
+      window.open(href, '_blank', features);
     }
 	}
 </script>
