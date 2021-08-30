@@ -64,7 +64,7 @@
         </h1>
         <div class="mt-6 text-gray-500 space-y-6">
           <p class="prose prose-xl text-gray-500">
-            The Birdables mission is to increase bird awareness, donate to bird saving organizations, and make some pretty cool bird cards while we're at it!
+            Birdables' mission is to increase bird awareness, donate to bird conservation organizations, and make some pretty cool bird cards while we're at it!
           </p>
         </div>
       </div>
