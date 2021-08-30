@@ -102,8 +102,8 @@
     <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
       {sections[1].title}
     </h2>
-    <div class="mt-8 lg:grid lg:grid-cols-5 lg:gap-12">
-      <div class="col-span-3">
+    <div class="mt-8 grid grid-col-1 gap-12 lg:grid-cols-5 lg:gap-12">
+      <div class="lg:col-span-3">
         <div class="prose text-gray-500 lg:max-w-none">
           <p>Each Birdables card has a rarity rating ranging from 
             <span class="inline-flex px-1 space-x-2 items-baseline">
@@ -124,70 +124,70 @@
           <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
               <tr>
-                <th scope="col" class="px-6 py-3 text-center text-base font-extrabold tracking-tight text-gray-500">
+                <th scope="col" class="px-3 py-3 text-center text-base font-extrabold tracking-tight text-gray-500">
                   Rarity
                 </th>
-                <th scope="col" class="px-6 py-3 text-center text-base font-extrabold tracking-tight text-gray-500">
+                <th scope="col" class="px-3 py-3 text-center text-base font-extrabold tracking-tight text-gray-500">
                   Digital copies
                 </th>
-                <th scope="col" class="px-6 py-3 text-center text-base font-extrabold tracking-tight text-gray-500">
+                <th scope="col" class="px-3 py-3 text-center text-base font-extrabold tracking-tight text-gray-500">
                   Physical copies
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr class="bg-white">
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   <div class="flex justify-center"><Rarity stars=1 hideExplainer={true} /></div>
                 </td>
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   50
                 </td>
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   2000
                 </td>
               </tr>
               <tr class="bg-gray-50">
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   <div class="flex justify-center"><Rarity stars=2 hideExplainer={true} /></div>
                 </td>
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   25
                 </td>
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   1500
                 </td>
               </tr>
               <tr class="bg-white">
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   <div class="flex justify-center"><Rarity stars=3 hideExplainer={true} /></div>
                 </td>
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   10
                 </td>
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   800
                 </td>
               </tr>
               <tr class="bg-gray-50">
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   <div class="flex justify-center"><Rarity stars=4 hideExplainer={true} /></div>
                 </td>
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   5
                 </td>
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   200
                 </td>
               </tr>
               <tr class="bg-white">
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   <div class="flex justify-center"><Rarity stars=5 hideExplainer={true} /></div>
                 </td>
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   1
                 </td>
-                <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   50
                 </td>
               </tr>
@@ -195,7 +195,7 @@
           </table>
         </div>
       </div>
-      <div class="col-span-2">
+      <div class="lg:col-span-2">
         <img src={`${assets}/images/rarity.png`} alt="Roseate Spoonbill" class="w-full h-full object-center object-contain group-hover:opacity-75">
       </div>
     </div>

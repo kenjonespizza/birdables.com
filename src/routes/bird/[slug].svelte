@@ -25,6 +25,8 @@
   import Rarity from '$lib/components/Rarity.svelte';
   import Share from '$lib/components/Share.svelte'
   import ExternalLink from "$lib/components/ExternalLink.svelte"
+  
+  let physicalCardsForSale = false;
 
   export let bird;
   // console.log('bird:', bird)
@@ -50,22 +52,22 @@
 <div class="bg-gray-blue">
 
   
-  <div class="mx-auto pt-8 pb-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+  <div class="mx-auto pt-8 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <Breadcrumb steps={[{title:"All Birds", link:"/birds"}]} current={bird.birdName} />
-    <div class=" pt-8 md:grid md:grid-rows-1 md:grid-cols-8 md:gap-x-8 md:gap-y-10 xl:gap-x-16">
+    <div class="  md:grid md:grid-rows-1 md:grid-cols-8 md:gap-x-8 md:gap-y-10 xl:gap-x-16">
       <button on:click={toggleModal} class="md:row-end-1 md:col-span-4 rounded-3xl transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-900">
         <img src={`${assets}/images/cards/${bird.friendlyId}.webp`} alt={`${bird.birdName} card`} class="object-center object-cover drop-shadow-card hidden md:block">
       </button>
 
-      <div class="max-w-2xl mx-auto mt-14 sm:mt-16 md:max-w-none md:mt-0 md:row-end-2 md:row-span-2 md:col-span-4">
+      <div class="max-w-2xl mx-auto md:max-w-none md:mt-0 md:row-end-2 md:row-span-2 md:col-span-4">
         <div class="flex flex-col">
           <div class="mt-4">
             <div class="text-lg leading-6 font-medium space-y-2">
               <h1 class="flex flex-col">
-                {#if bird.smallName}<span class="text-2xl md:text-3xl lg:text-5xl tracking-tight leading-none">{bird.smallName}</span>{/if}
-                <span class="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-none ">{bird.bigName}</span>
+                {#if bird.smallName}<span class="text-5xl md:text-3xl lg:text-5xl tracking-tight leading-none">{bird.smallName}</span>{/if}
+                <span class="text-5xl md:text-5xl lg:text-7xl font-black tracking-tight leading-none ">{bird.bigName}</span>
               </h1>
-              <p class="text-gray-600 italic text-lg md:text-xl tracking-tight leading-none">{bird.scientificName}</p>
+              <p class="text-xl text-gray-600 italic md:text-xl tracking-tight leading-none">{bird.scientificName}</p>
             </div>
 
           </div>
@@ -79,7 +81,7 @@
         </button>
 
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4">
-          {#if bird?.listing?.url}
+          {#if bird?.listing?.url && physicalCardsForSale}
             <a href={bird.listing.url} target="_blank" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
             <span>Buy <span class="font-black">Physical Card</span> on</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 transform translate-y-0.5 ml-1 text-white" viewBox="0 0 48 24">
@@ -132,7 +134,7 @@
         </div>
 
         <div class="border-t border-gray-300 mt-10 pt-10 text-sm text-gray-500">
-          <h3 class="text-xl font-semibold text-gray-900">Learn More about the <strong class="font-black">{bird.birdName}</strong> from:</h3>
+          <h3 class="text-xl text-center font-semibold text-gray-900 md:text-left">Learn More about the <strong class="font-black">{bird.birdName}</strong> from:</h3>
 
           <!-- LINK! -->
 

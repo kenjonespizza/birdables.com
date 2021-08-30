@@ -53,7 +53,7 @@
           Get notified when new Birdables cards hatch.
         </h2>
         <p class="mt-4 max-w-3xl text-lg text-gray-100">
-          New cards will be released on a whim!  Sign up to recieve an <button on:click={() => {useEmailAddress = true}} class={`${!useEmailAddress && "underline"}`}>email</button> or a <button on:click={() => {useEmailAddress = false}} class={`${useEmailAddress && "underline"}`}>text</button> when new cards are availble.
+          New cards will be released on a whim!  Sign up to recieve an <button on:click={() => {useEmailAddress = true}} class={`${!useEmailAddress && "underline"}`}>email</button> or a <button on:click={() => {useEmailAddress = false}} class={`${useEmailAddress && "underline"}`}>text</button> when new cards hatch.
         </p>
       </div>
       <div class="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">

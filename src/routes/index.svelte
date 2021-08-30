@@ -110,7 +110,7 @@
           <div class="grid gap-10 md:grid-cols-2 items-center">    
             <div>
               <div class="prose prose-gray prose-lg text-gray-500 md:max-w-none">
-                <h2>What even is Birdables?</h2>
+                <h2 class="text-center md:text-left">What even is Birdables?</h2>
                 <p>It's a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital and physical mediums, so that owners can enjoy Birdables cards any way they like.</p>
               </div>
               <div class="flex space-x-4 mt-8">
@@ -128,7 +128,7 @@
           <div class="grid gap-10 md:grid-cols-2 md:items-center md:grid-flow-row-dense">
             <div class="md:col-span-1 md:col-start-2">
               <div class="prose prose-gray prose-lg text-gray-500 md:max-w-none">
-                <h2>How do these cards help birds?</h2>
+                <h2 class="text-center md:text-left">How do these cards help birds?</h2>
                 <p>Great question! <span class="font-black">We donate a portion of profits</span> to a bird conservation organization like the <a href="https://www.birds.cornell.edu/" target="_blank" noreferrer>Cornell Lab of Ornithology</a>, <a href="https://ebird.org/" target="_blank" noreferrer>eBird</a>, <a href="https://www.audubon.org/" target="_blank" noreferrer>Audubon</a>, etc. More details on this are still to come, as it is still unclear the cost of running this operation. All donation amounts & recipients will be available on this website, here, in the future.</p>
                 
                 <p><span class="font-black text-xl text-gray-900">But paper comes from trees...</span><br />To make sure Birdables is not contributing to the destruction of bird habitats, <span class="font-black">100% recycled paper</span> is used for all physical cards. No trees are cut down for the creation of the cards.</p>
@@ -139,7 +139,7 @@
                   </a>
               </div>
             </div>
-            <div class="md:col-span-1 md:col-start-1 transform lg:-translate-y-20">
+            <div class="md:col-span-1 md:col-start-1 transform xl:-translate-y-20">
               <IntersectionObserver element={element2} bind:intersecting={intersecting2} threshold={0.5} once />
               <img bind:this={element2} src={`${assets}/images/osprey-cutout.png`} alt="Osprey" class={`${intersecting2 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-1/3"} transform transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75`}>
             </div>
@@ -185,7 +185,7 @@
 
         <div class="relative row-start-1 bg-gray-blue md:col-start-3 bg-cover md:row-start-1 md:col-span-10 md:rounded-3xl md:grid md:grid-cols-10 md:items-center" style={`background-image: url(${assets}/images/pool-flamingo-bg.jpg);`}>
           <div class="relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 md:max-w-none md:p-0 md:col-start-4 md:col-span-6">
-            <h2 class="text-3xl font-extrabold">Suggest a bird!</h2>
+            <h2 class="text-3xl font-extrabold text-center md:text-left">Suggest a bird!</h2>
             <p class="text-lg text-gray-500">Producing each card is time-consuming, so creating cards that spark joy is a priority.  Suggest birds you would like to see made into a Birdables card.</p>
             <a class="opacity-70 cursor-not-allowed block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto" href="/">Coming Soon: Suggest a Bird</a>
           </div>
