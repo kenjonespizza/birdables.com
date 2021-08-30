@@ -28,7 +28,7 @@ export async function get() {
     });
 
     data.sort((a,b) => {
-      const sortBy = 'rarity';
+      const sortBy = 'birdName';
       if (a[sortBy] > b[sortBy]) {return 1}
       if (a[sortBy] < b[sortBy]) {return -1}
       return 0;

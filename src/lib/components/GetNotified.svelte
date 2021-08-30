@@ -24,7 +24,7 @@
     const data = useEmailAddress ? emailTyped : formatPhoneNumber(phoneTyped);
 
     if (!validation) {
-      const res = await fetch("/.netlify/functions/airtable", {
+      const res = await fetch("/.netlify/functions/addNotifyee", {
         method: "post",
         body: JSON.stringify({
           type: useEmailAddress ? 'email' : 'phone',
@@ -32,12 +32,13 @@
         }),
       });
       if (res.status === 200) {
-        // console.log(res);
+        console.log(res);
         successful = true;
         emailTyped = "";
         phoneTyped = "";
         validation = null;
       } else {
+        console.log(res);
         validation = "Something weird happened 🧐. Please refresh and try again, or contact chirp@birdables.com";
       }
     }
@@ -82,7 +83,7 @@
 
         
         <div class="relative">
-        <form class="grid grid-cols-2" on:submit={submitForm}>
+        <form class="grid grid-cols-1 sm:grid-cols-2 gap-4" on:submit={submitForm}>
           {#if useEmailAddress}
             <div class="relative">
               <input 
@@ -94,20 +95,27 @@
               class="peer w-full bg-gray-900 text-white border-gray-400 border-2 px-5 py-3 placeholder-gray-500 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900 rounded-md placeholder-transparent" 
               placeholder="Email Address">
               <label for="email" class="
-              absolute 
-              left-0 
+              absolute
+              left-1/2
+              md:left-0
+              transform
+              -translate-x-1/2
+              md:translate-x-0
               text-sm 
               text-gray-300 
               -top-3
               rounded-full 
               bg-gray-900 
-              px-4
+              px-
+              transition-all
               peer-placeholder-shown:text-white 
               peer-placeholder-shown:top-3.5 
               peer-placeholder-shown:text-base 
               peer-placeholder-shown:px-0 
-              peer-placeholder-shown:left-5 transition-all
-              peer-focus:left-0
+              peer-placeholder-shown:left-1/2
+              md:peer-placeholder-shown:left-5
+              peer-focus:left-1/2
+              md:peer-focus:left-0
               peer-focus:text-sm
               peer-focus:text-gray-300
               peer-focus:-top-3
@@ -116,7 +124,7 @@
               peer-focus:px-4
               ">Email address</label>
             </div>
-            <button type="submit" class="mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-500 hover:bg-gray-400 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0">
+            <button type="submit" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-500 hover:bg-gray-400 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900 ">
               Notify me via email
             </button>
           {:else}
@@ -132,20 +140,27 @@
               placeholder="Phone Number"
               >
               <label for="phone" class="
-              absolute 
-              left-0 
+              absolute
+              left-1/2
+              md:left-0
+              transform
+              -translate-x-1/2
+              md:translate-x-0
               text-sm 
               text-gray-300 
               -top-3
               rounded-full 
               bg-gray-900 
-              px-4 
+              px-4
+              transition-all
               peer-placeholder-shown:text-white 
               peer-placeholder-shown:top-3.5 
               peer-placeholder-shown:text-base 
               peer-placeholder-shown:px-0 
-              peer-placeholder-shown:left-5 transition-all
-              peer-focus:left-0
+              peer-placeholder-shown:left-1/2
+              md:peer-placeholder-shown:left-5
+              peer-focus:left-1/2
+              md:peer-focus:left-0
               peer-focus:text-sm
               peer-focus:text-gray-300
               peer-focus:-top-3
@@ -155,7 +170,7 @@
               ">Phone Number</label>
               <!-- <span class="absolute left-5 -bottom-7 text-gray-100 text-sm">Format: 123-456-7890</span> -->
             </div>
-            <button type="submit" class="mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-500 hover:bg-gray-400 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0">
+            <button type="submit" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-500 hover:bg-gray-400 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900 ">
               Notify me via text
             </button>
           {/if}

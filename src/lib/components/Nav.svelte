@@ -40,14 +40,14 @@
       <div class="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
         <nav class="flex space-x-8">
           <a sveltekit:prefetch href="/birds" class={`${$page.path === "/birds" ? "border-gray-900" : "border-transparent"} text-base font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900`}>
-            Browse Bird Cards
+            Cards
           </a>
-          <a sveltekit:prefetch href="/all-things-birdables" class={`${$page.path === "/all-things-birdables" ? "border-gray-900" : "border-transparent"} text-base font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900`}>
-            All Things Birdables
+          <a sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-base font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900`}>
+            About Birdables
           </a>
-          <a sveltekit:prefetch href="/submit-a-bird" class={`${$page.path === "/submit-a-bird" ? "border-gray-900" : "border-transparent"} text-base font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900`}>
-            Submit a Bird
-          </a>
+          <span class={`text-base font-medium text-gray-400 transform translate-y-1.5 pb-1 transition cursor-not-allowed`}>
+            Submit a Bird (Coming Soon)
+          </span>
 
         </nav>
         <div class="flex items-center lg:ml-12 space-x-6">
@@ -94,14 +94,14 @@
             <div class="py-6 px-5">
               <div class="grid grid-cols-1 gap-4 text-center">
                 <a on:click={toggle} sveltekit:prefetch href="/birds" class={`${$page.path === "/birds" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900`}>
-                  Browse Bird Cards
+                  Cards
                 </a>
-                <a on:click={toggle} sveltekit:prefetch href="/all-things-birdables" class={`${$page.path === "/all-things-birdables" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900`}>
-                  All Things Birdables
+                <a on:click={toggle} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900`}>
+                  About Birdables
                 </a>
-                <a on:click={toggle} sveltekit:prefetch href="/submit-a-bird" class={`${$page.path === "/submit-a-bird" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900`}>
-                  Vote / Submit a Bird
-                </a>
+                <span class={`text-base font-medium text-gray-400 transform translate-y-1.5 pb-1 transition cursor-not-allowed`}>
+                  Submit a Bird (Coming Soon)
+                </span>
               </div>
               <div class="flex items-center justify-center space-x-6 mt-6 w-full">
                 <a href="https://instagram.com/Birdables_Cards" target="_blank" class="text-base font-medium text-gray-900 border-b-3 border-transparent transform translate-y-1.5 pb-1 transition hover:border-gray-900">

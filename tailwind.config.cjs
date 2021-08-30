@@ -7,6 +7,10 @@ const config = {
 	],
 	theme: {
 		extend: {
+			borderRadius: {
+				'4xl': '2rem',
+				'5xl': '2.5rem',
+			},
 			borderWidth: {
 				'3': '3px;'
 			},
@@ -47,12 +51,6 @@ const config = {
 			fontWeight: {
 				normal: 500,
 			},
-			ringWidth: {
-        '3': '3px',
-      },
-			ringOffsetWidth: {
-        '3': '3px',
-      },
 			minWidth: {
 				'0': '0',
 				'1/4': '25%',
@@ -61,7 +59,16 @@ const config = {
 				'2/3': '66.66%',
 				'3/4': '75%',
 				'full': '100%',
-			 }
+			},
+			ringWidth: {
+        '3': '3px',
+      },
+			ringOffsetWidth: {
+        '3': '3px',
+      },
+			scale: {
+				'flip': '-1',
+			},
 		},
 	},
 	plugins: [

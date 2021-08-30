@@ -10,19 +10,13 @@
 
       <div class="px-5 py-2">
         <a sveltekit:prefetch href="/birds" class="text-base text-gray-500 hover:text-gray-900">
-          Browse Bird Cards
+          Cards
         </a>
       </div>
 
       <div class="px-5 py-2">
-        <a sveltekit:prefetch href="/all-things-birdables" class="text-base text-gray-500 hover:text-gray-900">
-          All Things Birdables
-        </a>
-      </div>
-
-      <div class="px-5 py-2">
-        <a sveltekit:prefetch href="/submit-a-bird" class="text-base text-gray-500 hover:text-gray-900">
-          Vote / Submit a Bird
+        <a sveltekit:prefetch href="/about" class="text-base text-gray-500 hover:text-gray-900">
+          About Birdables
         </a>
       </div>
     </nav>
@@ -39,7 +33,7 @@
       </a>
     </div>
     <p class="mt-8 text-center text-base text-gray-400">
-      &copy; {new Date().getFullYear()} Workflow, Inc. All rights reserved.
+      &copy; {new Date().getFullYear()} Birdables. All rights reserved.
     </p>
   </div>
 </footer>

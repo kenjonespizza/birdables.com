@@ -16,6 +16,7 @@ export const returnFormattedBird =(bird) => {
     friendlyId: bird.fields['Friendly ID'],
     etsyId: bird.fields['Etsy ID'],
     openseaId: bird.fields['Opensea ID'],
+    releaseDate: bird.fields['Release Date'],
   }
   return formattedBird;
 }
@@ -28,11 +29,11 @@ export const returnFormattedBirds = (birds) => {
   return birdsArray;
 }
 
-export const returnBirdFromSlug = (slug, formattedBirds) => {
+export const returnBirdFromParam = (param, paramType, formattedBirds) => {
   let birdToReturn;
 
   for (var i = 0; i < formattedBirds.length; i++) {
-    if (formattedBirds[i].slug === slug) {
+    if (formattedBirds[i][paramType] === param) {
       birdToReturn = formattedBirds[i];
       break
     }
@@ -128,4 +129,8 @@ export function formatPhoneNumber(phoneNumberString) {
 
 export function emailIsValid (email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+export const toggle = (variable) => {
+  return !variable;
 }
