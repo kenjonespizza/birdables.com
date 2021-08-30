@@ -176,7 +176,7 @@
         {#each birds as bird (bird.id)}
           <li in:slide animate:flip="{{duration: 500}}" class="space-y-4">
             <a href={`/bird/${bird.slug}`} sveltekit:prefetch class="flex flex-col space-y-4 tranform transition duration-300 ease hover:scale-105">
-              <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/${bird.friendlyId}.png`} alt={bird.birdName}>
+              <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/${bird.friendlyId}.webp`} alt={bird.birdName}>
               <!-- <div class="aspect-w-3 aspect-h-4" style={`background-color: #${bird.accentColor};`}></div> -->
               <div class="text-lg leading-6 font-medium space-y-2">
                 <h1 class="flex flex-col">

@@ -59,7 +59,7 @@
       <div class="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">
         <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="flex items-center mb-8">
-          <span class="mr-3" id="email-or-phone-notifications">
+          <span class="mr-3" id="email-notifications">
             <button on:click={() => {useEmailAddress = true}} class={`${useEmailAddress ? "text-white" : "text-gray-400"} text-base font-medium`}>Get Email Notifications</button>
           </span>
           <!-- Enabled: "bg-gray-600", Not Enabled: "bg-gray-200" -->
@@ -76,7 +76,7 @@
               </span>
             </span>
           </button>
-          <span class="ml-3" id="email-or-phone-notifications">
+          <span class="ml-3" id="phone-notifications">
             <button on:click={() => {useEmailAddress = false}} class={`${!useEmailAddress ? "text-white" : "text-gray-400"} text-base font-medium`}>Get Text Notifications</button>
           </span>
         </div>
