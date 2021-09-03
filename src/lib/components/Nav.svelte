@@ -1,5 +1,6 @@
 <script>
   import { page } from "$app/stores"
+  console.log('$page.path:', $page.path)
   let isOpen = false;
 
   function toggle() {
@@ -15,7 +16,7 @@
 </script>
 
 <svelte:window on:keydown={handleKeyDown}></svelte:window>
-
+{#if $page.path !== '/'}
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="relative bg-white">
   <div class="absolute inset-0 z-30 pointer-events-none" aria-hidden="true"></div>
@@ -119,3 +120,4 @@
     </div>
   </div>
 </div>
+{/if}
