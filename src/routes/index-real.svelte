@@ -36,7 +36,7 @@
     <div class="mx-auto sm:px-6 lg:px-8">
       <div class="relative sm:rounded-2xl bg-gray-blue">
 
-        <img class="hero-bird bird-1 absolute h-full hidden lg:block" src="images/Sandhill_Crane.png" alt="Sandhill Crane">
+        <img class="hero-bird bird-1 absolute h-full hidden lg:block" src="/images/Sandhill_Crane.png" alt="Sandhill Crane">
 
         <div class="relative z-10 px-4 pt-16 sm:px-12 sm:pt-24 lg:pt-32 lg:px-8">
           <span class="text-center sm:text-left lg:text-center block text-gray-900 text-4xl font-extrabold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Collectable Bird Cards!
@@ -54,7 +54,7 @@
           
         </div>
       </div>
-      <img class="hero-bird bird-2 absolute h-full hidden sm:block" src="images/Loggerhead_Shrike.png" alt="Loggerhead Shrike">
+      <img class="hero-bird bird-2 absolute h-full hidden sm:block" src="/images/Loggerhead_Shrike.png" alt="Loggerhead Shrike">
     </div>
 
     
