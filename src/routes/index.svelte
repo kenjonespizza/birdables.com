@@ -22,6 +22,8 @@
   let intersecting2;
   let element3;
   let intersecting3;
+  let element4;
+  let intersecting4;
 </script>
 
 <svelte:head>
@@ -182,7 +184,8 @@
         <div class="relative z-10 mt-12 md:mt-0 md:col-start-1 md:row-start-1 md:col-span-4 md:py-16 md:bg-transparent">
           <div class="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 md:max-w-none md:p-0">
             <div class="">
-              <img class="object-cover object-center drop-shadow-card" src={`${assets}/images/pool-flamingo_01.png`} alt="">
+              <IntersectionObserver element={element4} bind:intersecting={intersecting4} threshold={0.5} once />
+              <img bind:this={element4} class={`${intersecting4 ? "opacity-100 scale-100" : "opacity-0 scale-90"} transform transition duration-1000 object-cover object-center drop-shadow-card`} src={`${assets}/images/pool-flamingo_01.png`} alt="">
             </div>
           </div>
         </div>

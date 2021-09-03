@@ -46,7 +46,7 @@
 </script>
 
 <div class="bg-white">
-  <div class="max-w-7xl mx-auto px-4 pb-12 sm:px-6 lg:pb-16 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 pb-12 sm:px-6 lg:pb-16 lg:px-8 xl:px-0">
     <div class="py-10 px-6 bg-gray-900 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
       <div class="lg:w-0 lg:flex-1">
         <h2 class="text-4xl font-extrabold tracking-tight text-white">

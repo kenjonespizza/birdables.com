@@ -29,7 +29,7 @@
           <dd class="mt-2 md:mt-0 md:col-span-7 text-gray-500 prose">
             <p>Great question! <strong>We donate a portion of profits</strong> to a bird conservation organization like the <ExternalLink href="https://www.birds.cornell.edu/">Cornell Lab of Ornithology</ExternalLink>, <ExternalLink href="https://ebird.org/">eBird</ExternalLink>, <ExternalLink href="https://www.audubon.org/">Audubon</ExternalLink>, etc. More details on this are still to come, as it is still unclear the cost of running this operation. All donation amounts & recipients will be available on this website, here, in the future.</p>
          
-            <p>To make sure Birdables is not contributing to the destruction of bird habitats, <strong>100% recycled paper</strong> is used for all physical cards. No trees are cut down for the creation of the cards.</p>
+            <p>To make sure Birdables is not contributing to the destruction of bird habitats, <strong>100% recycled paper</strong> is used for all physical cards and envelope mailers. No trees are cut down for the creation of the cards.</p>
 
             <p>The Birdables NFT's (digital cards) are minted and distributed on the Polygon blockchain, which validates transactions using the Proof-of-Stake consensus model.  This model <strong>consumes far less energy</strong> than the Proof-of Work model.</p>
                   
@@ -80,7 +80,7 @@
           </dt>
           <dd class="mt-2 md:mt-0 md:col-span-7 text-gray-500 prose">
             <p>
-              Ken Jones. An amature birder, dog-foster dad, designer, music producer, and co-owner of the web design studio, <ExternalLink href="https://allday.io">AllDay</ExternalLink>.  Birdables is the fortunate result of an unfortunate and now optional, because of vaccines, pandemic.
+              Ken Jones. An amature birder, dog-foster dad, designer, music producer, and co-owner of the web design studio, <ExternalLink href="https://allday.io">AllDay</ExternalLink>.  Birdables is very much a pandemic idea turned to creation.
             </p>
           </dd>
         </div>

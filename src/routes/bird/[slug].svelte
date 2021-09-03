@@ -54,7 +54,7 @@
   
   <div class="mx-auto pt-8 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <Breadcrumb steps={[{title:"All Birds", link:"/birds"}]} current={bird.birdName} />
-    <div class="  md:grid md:grid-rows-1 md:grid-cols-8 md:gap-x-8 md:gap-y-10 xl:gap-x-16">
+    <div class="  md:grid md:grid-rows-1 md:grid-cols-8 md:gap-x-8 md:gap-y-10 md:mt-8 xl:gap-x-16">
       <button on:click={toggleModal} class="md:row-end-1 md:col-span-4 rounded-3xl transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-900">
         <img src={`${assets}/images/cards/${bird.friendlyId}.webp`} alt={`${bird.birdName} card`} class="object-center object-cover drop-shadow-card hidden md:block">
       </button>
