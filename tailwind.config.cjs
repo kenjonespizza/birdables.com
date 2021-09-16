@@ -7,6 +7,7 @@ const config = {
 	],
 	theme: {
 		extend: {
+			animation: ['motion-safe'],
 			borderRadius: {
 				'4xl': '2rem',
 				'5xl': '2.5rem',
@@ -43,7 +44,8 @@ const config = {
 				text: "rgba(17, 25, 20, 0.7)"
 			},
 			dropShadow: {
-				'card': ['0 0 1px rgba(0, 0, 0, 0.1)', '0 1px 1px rgba(0, 0, 0, 0.06)', '0 8px 5px rgba(0, 0, 0, 0.05)', '0 5px 25px rgba(0, 0, 0, 0.10)']
+				'card': ['0 0 1px rgba(17, 25, 30, 0.1)', '0 1px 1px rgba(17, 25, 30, 0.06)', '0 8px 5px rgba(17, 25, 30, 0.05)', '0 5px 25px rgba(17, 25, 30, 0.10)'],
+				'card-hover': ['0 0 1px rgba(17, 25, 30, 0.1)', '0 1px 1px rgba(17, 25, 30, 0.06)', '0 8px 15px rgba(17, 25, 30, 0.05)', '0 5px 35px rgba(17, 25, 30, 0.10)'],
 			},
 			fontFamily: {
 				sans: ["'GreycliffCF'", ...defaultTheme.fontFamily.sans],

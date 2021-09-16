@@ -26,7 +26,8 @@
 	if(browser) {
 		const navigateToBirdPage = async () => {
 			if (bird?.slug) {
-				await goto(`/bird/${bird.slug}`);
+				// await goto(`/bird/${bird.slug}`);
+				await goto(`/`);
 			} else {
 				await goto(`/`);
 			}

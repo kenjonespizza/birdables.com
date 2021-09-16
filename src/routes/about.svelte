@@ -1,19 +1,13 @@
 <script>
   import {assets} from '$app/paths'
+
+  import {scrollToSection} from '$lib/utils'
   import FAQ from '$lib/components/FAQ.svelte'
+  import Breadcrumb from '$lib/components/Breadcrumb.svelte'
   import CardAnatomy from '$lib/components/CardAnatomy.svelte'
-  import { browser } from '$app/env';
   import Rarity from '$lib/components/Rarity.svelte';
   import ExternalLink from '$lib/components/ExternalLink.svelte';
   // import IntersectionObserver from "svelte-intersection-observer";
-
-  function scrollToSection(id, e) {
-    if (browser) {
-      e.preventDefault();
-      document.getElementById(id).scrollIntoView({behavior: 'smooth'});
-      setTimeout(() => {window.location.hash = encodeURIComponent(id)}, 1000)
-    }
-  }
 
   let sections = [
     {
@@ -52,8 +46,10 @@
     {/each}
 </nav>
 
-<div class="pb-16 pt-8 sm:pb-24 sm:pt-12 px-4 sm:px-6 lg:px-16">
-  <div class="grid grid-cols-1 gap-20 lg:mx-auto lg:max-w-7xl lg:grid-cols-2 lg:gap-8 lg:items-start">
+<div class="pb-16 pt-10 sm:pb-24 px-4 sm:px-6 md:px-8 lg:mx-auto lg:max-w-7xl">
+  <Breadcrumb current={"All Cards"} />
+  <div class="grid grid-cols-1 gap-20 pt-8 lg:grid-cols-2 lg:gap-8 lg:items-start">
+    
     
 
     <div class="flex flex-col justify-start">

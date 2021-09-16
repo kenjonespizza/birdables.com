@@ -12,6 +12,7 @@ export async function get() {
     const records = await table.select({
       view: "Grid view",
       filterByFormula: "{Live On Site} = 1"
+      // filterByFormula: "{Bird Name} = 'Brown Pelican'"
     }).firstPage();
 
     const data = returnFormattedBirds(records);
@@ -27,12 +28,12 @@ export async function get() {
       }
     });
 
-    data.sort((a,b) => {
-      const sortBy = 'birdName';
-      if (a[sortBy] > b[sortBy]) {return 1}
-      if (a[sortBy] < b[sortBy]) {return -1}
-      return 0;
-    });
+    // data.sort((a,b) => {
+    //   const sortBy = 'bigName';
+    //   if (a[sortBy] > b[sortBy]) {return 1}
+    //   if (a[sortBy] < b[sortBy]) {return -1}
+    //   return 0;
+    // });
 
 
       return {

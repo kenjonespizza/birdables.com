@@ -1,7 +1,7 @@
 <script context="module">
   import { base } from '$app/paths';
   export async function load({page, fetch}) {
-    const url = `${base}/api/birds`;
+    const url = `${base}/api/cards`;
     const res = await fetch(url)
     if (res) {
 			return {
@@ -18,10 +18,10 @@
 </script>
 
 <script>
-  import { slide } from 'svelte/transition';
-	import { flip } from 'svelte/animate';
- 
-  import { assets } from '$app/paths';
+  import { scrollToSection } from '$lib/utils'
+  import Breadcrumb from '$lib/components/Breadcrumb.svelte'
+  import CardList from '$lib/components/CardList.svelte'
+
   // import invert from 'invert-color';
   import GetNotified from '$lib/components/GetNotified.svelte';
 
@@ -36,6 +36,9 @@
   function toggle() {
     isSorterShowing = !isSorterShowing;
   }
+
+  let standardBirds = birdsProp.filter(bird => !bird.specialty)
+  let specialtyBirds = birdsProp.filter(bird => bird.specialty)
 
   var birds = birdsProp
   const filterBy = (property="slug") => {
@@ -91,15 +94,17 @@
 <div class="bg-white">
  
   <section class="bg-gray-blue">
-    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 md:px-8 md:flex md:justify-between items-end">
-      <div class="max-w-xl">
-        <div>
-          <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">Browse Cards</h2>
-          <p class="mt-5 text-xl text-gray-400">Start or continue building your Birdables collection!</p>
-        </div>
+    
+    <div class="max-w-7xl mx-auto pt-10 pb-12 sm:px-6 md:px-8">
+      <Breadcrumb current={"All Cards"} />
+      <div class="md:flex md:justify-between items-end">
+      <div class="max-w-3xl pt-8">
+          <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tighter lg:text-6xl">Browse Cards</h2>
+          <p class="mt-4 text-xl text-gray-500">Start or continue building your Birdables collection!</p>
       </div>
+      
 
-      <section aria-labelledby="filter-heading" class="border-t border-gray-200">
+      <!-- <section aria-labelledby="filter-heading" class="border-t border-gray-200">
         <h2 id="filter-heading" class="sr-only">Bird sorting options</h2>
   
         <div class="flex items-center justify-between">
@@ -107,7 +112,6 @@
             <div>
               <button on:click={toggle} type="button" class={`${isSorterShowing ? "text-gray-900 border-b-gray-blue" : "text-gray-400 border-b-gray-300 hover:border-b-gray-900"} group inline-flex justify-between items-center w-80 text-lg transform translate-y-3 transition-all border-b-3 pb-2 hover:text-gray-900 `} id="mobile-menu-button" aria-expanded="false" aria-haspopup="true">
                 Sort By: {sortStatus}
-                <!-- Heroicon name: solid/chevron-down -->
                 <svg class={`${isSorterShowing ? "scale-y-flip" : ""} scale-y-1 flex-shrink-0 -mr-1 ml-1 h-5 w-5 text-gray-400 transform transition group-hover:text-gray-500`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
@@ -116,7 +120,6 @@
 
             <div class={`${isSorterShowing ? "ease-out duration-100 transform opacity-100 scale-100 block" : " hidden ease-in duration-75 transform opacity-0 scale-95"} transition origin-top-left absolute left-0 z-10 mt-2 w-full rounded-md shadow-2xl bg-white ring-1 ring-black ring-opacity-5 focus:outline-none`} role="menu" aria-orientation="vertical" aria-labelledby="mobile-menu-button" tabindex="-1">
               <div class="py-1" role="none">
-                <!-- Active: "bg-gray-100", Not Active: "" -->
                 <button on:click={
                     () => {
                       filterBy("birdName");
@@ -166,39 +169,68 @@
           </div>
   
         </div>
-      </section>
+      </section> -->
+    </div>
     </div>
   </section>
+  <!-- Active filters -->
+  <div class="bg-white border-b border-gray-900 border-opacity-10 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto py-4 px-4 sm:flex sm:space-x-2 sm:items-center sm:px-6 lg:px-8">
+      <h3 class="text-base font-semibold text-gray-500">
+        Jump to
+        <span class="sr-only">, active</span>
+      </h3>
 
-  <div class="mx-auto py-12 px-4 lg:transform lg:-translate-y-12 sm:px-6 lg:px-8 lg:pb-24 lg:pt-0">
-    <div class="space-y-12">
-      <ul class="gap-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-12 sm:space-y-0 md:grid-cols-3 lg:gap-x-8 2xl:grid-cols-4">
-        {#each birds as bird (bird.id)}
-          <li in:slide animate:flip="{{duration: 500}}" class="space-y-4">
-            <a href={`/bird/${bird.slug}`} sveltekit:prefetch class="flex flex-col space-y-4 tranform transition duration-300 ease hover:scale-105">
-              <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/${bird.friendlyId}.webp`} alt={bird.birdName}>
-              <!-- <div class="aspect-w-3 aspect-h-4" style={`background-color: #${bird.accentColor};`}></div> -->
-              <div class="text-lg leading-6 font-medium space-y-2">
-                <h1 class="flex flex-col">
-                  <span class="text-xl tracking-tight leading-none">
-                    {#if bird.smallName}
-                      {bird.smallName}
-                    {:else}
-                      <br />
-                    {/if}
-                  </span>
-                  <span class="font-black tracking-tight leading-none text-4xl">{bird.bigName}</span>
-                </h1>
-                <p class="text-gray-400 italic text-lg tracking-tight leading-none">{bird.scientificName}</p>
-              </div>
+      <!-- <div aria-hidden="true" class="hidden w-px h-5 bg-gray-300 sm:block sm:ml-4 sm:mr-2"></div> -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 text-gray-300"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/></svg>
+
+      <div class="mt-2 sm:mt-0">
+        <div class="flex flex-wrap items-center">
+          <span class="flex items-center space-x-2 font-medium text-gray-900">
+            <a on:click={(e) => {scrollToSection('standard', e)}} href="#standard" class="rounded-full border px-4 py-2 text-base text-gray-600 transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+              Standard Cards ({standardBirds.length})
             </a>
-            <a href={`/card/${bird.id}`} class="hidden">{bird.birdName}`}</a>
-          </li>
-        {/each}
-      </ul>
+          </span>
+        </div>
+      </div>
+
+      <div class="mt-2 sm:mt-0">
+        <div class="flex flex-wrap items-center">
+          <span class="flex items-center space-x-2 font-medium text-gray-900">
+            <a on:click={(e) => {scrollToSection('specialty', e)}} href="#specialty" class="rounded-full border px-4 py-2 text-base text-gray-600 transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+              Specialy Cards ({specialtyBirds.length})
+            </a>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl pt-6 pb-6 px-4 lg:transform sm:px-6 md:px-8 lg:pb-12" id="standard">
+    <div class="space-y-6">
+      <br>
+      <div>
+        <h2 class="font-black tracking-tighter leading-none text-5xl">Standard Cards <span class="tracking-tight italic text-gray-300 text-4xl">({standardBirds.length})</span></h2>
+        <p class="mt-3 text-lg text-gray-500">Standard cards are available to buy separately, but also are included as part of <a class="underline text-gray-900 font-semibold" href="#">Card Packs</a>.</p>
+      </div>
+      <CardList cards={standardBirds} />
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl pt-6 pb-6 px-4 lg:transform sm:px-6 lg:pb-24" id="specialty">
+    <div class="space-y-6">
+      <br>
+      <div>
+        <h2 class="font-black tracking-tighter leading-none text-5xl">Specialty Cards <span class="tracking-tight italic text-gray-300 text-4xl">({specialtyBirds.length})</span></h2>
+        <p class="mt-3 text-lg text-gray-500">The only way to get a specialy card is to buy a <a class="underline text-gray-900 font-semibold" href="#">Card Pack</a> and chance your luck!  However the digital version are available separately.</p>
+      </div>
+      <CardList cards={specialtyBirds} />
     </div>
   </div>
 </div>
+
+
 
 <GetNotified />
 

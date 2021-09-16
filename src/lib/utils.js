@@ -1,4 +1,5 @@
 import { variables } from '$lib/variables';
+import { browser } from '$app/env';
 
 // Consistently format the bird structure
 export const returnFormattedBird =(bird) => {
@@ -17,6 +18,7 @@ export const returnFormattedBird =(bird) => {
     etsyId: bird.fields['Etsy ID'],
     openseaId: bird.fields['Opensea ID'],
     releaseDate: bird.fields['Release Date'],
+    specialty: bird.fields['Specialty'],
   }
   return formattedBird;
 }
@@ -133,4 +135,12 @@ export function emailIsValid (email) {
 
 export const toggle = (variable) => {
   return !variable;
+}
+
+export function scrollToSection(id, e) {
+  if (browser) {
+    e.preventDefault();
+    document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+    setTimeout(() => {window.location.hash = encodeURIComponent(id)}, 1000)
+  }
 }

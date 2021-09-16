@@ -37,7 +37,7 @@ import { loop_guard } from 'svelte/internal';
     <div class="flex-shrink-0 flex justify-center">
       <a href="/" class="inline-flex">
         <span class="sr-only">Birdables</span>
-        <img class="h-16 w-auto" src={`${assets}/images/BirdablesLogoDark.svg`} alt="Birdables logo">
+        <img class="h-12 md:h-16 w-auto" src={`${assets}/images/BirdablesLogoDark.svg`} alt="Birdables logo">
       </a>
     </div>
     <div class="py-16">

@@ -45,7 +45,7 @@
             Because birds are fly.
           </p>
           <div class="mt-10 flex justify-center sm:justify-start lg:justify-center">
-              <a sveltekit:prefetch href="birds" class="flex items-center justify-center px-12 py-4 border border-transparent text-xl font-black rounded-full bg-gray-900 text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:px-8">
+              <a sveltekit:prefetch href="/cards" class="flex items-center justify-center px-12 py-4 border border-transparent text-xl font-black rounded-full bg-gray-900 text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:px-8">
                 Browse All Cards
               </a>
           </div>
@@ -66,27 +66,27 @@
   <div class="px-4 sm:px-6 lg:px-16 2xl:px-32 relative z-20">
     <div class={`transform -translate-y-1/2`}>
       <div class="cards relative h-full">
-        <a href="/bird/northern-cardinal" class="home-card card card-1 card-sm hidden sm:block transition transform hover:-translate-y-6">
+        <a href="/bird/northern-cardinal" class="home-card card card-1 card-sm hidden sm:block transition transform">
           <div class="front w-full flex justify-center">
             <img src="/images/cards/northern-cardinal_01.png" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
-        <a href="/bird/osprey" class="home-card card card-2 card-md block transition transform hover:-translate-y-6">
+        <a href="/bird/osprey" class="home-card card card-2 card-md block transition transform">
           <div class="front w-full flex justify-center">
             <img src="/images/cards/osprey_01.png" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
-        <a href="/bird/brown-pelican" class="home-card card card-3 card-lg block transition transform hover:-translate-y-6">
+        <a href="/bird/brown-pelican" class="home-card card card-3 card-lg block transition transform">
           <div class="front w-full flex justify-center">
             <img src="/images/cards/brown-pelican_01.png" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
-        <a href="/bird/yellow-warbler" class="home-card card card-4 card-md block transition transform hover:-translate-y-6">
+        <a href="/bird/yellow-warbler" class="home-card card card-4 card-md block transition transform">
           <div class="front w-full flex justify-center">
             <img src="/images/cards/yellow-warbler_01.png" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
-        <a href="/bird/roseate-spoonbill" class="home-card card card-5 card-sm hidden sm:block transition transform hover:-translate-y-6">
+        <a href="/bird/roseate-spoonbill" class="home-card card card-5 card-sm hidden sm:block transition transform">
           <div class="front w-full flex justify-center">
             <img src="/images/cards/roseate-spoonbill_01.png" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
@@ -117,14 +117,14 @@
                 <p>It's a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital and physical mediums, so that owners can enjoy Birdables cards any way they like.</p>
               </div>
               <div class="flex space-x-4 mt-8">
-                <a href="/birds" sveltekit:prefetch class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition sm:inline-block sm:w-auto hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
+                <a href="/cards" sveltekit:prefetch class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition sm:inline-block sm:w-auto hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
                   See the cards
                 </a>
               </div>
             </div>
             <div>
               <IntersectionObserver {element} bind:intersecting threshold={0.5} once />
-              <img bind:this={element} src={`${assets}/images/roseate-spoonbill-cutout.png`} alt="Roseate Spoonbill" class={`${intersecting ? "opacity-100 translate-x-0" : "opacity-0 translate-x-1/3"} transform transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75`}>
+              <img bind:this={element} src={`${assets}/images/roseate-spoonbill-cutout.png`} alt="Roseate Spoonbill" class={`${intersecting ? "motion-safe:opacity-100 motion-safe:translate-x-0" : "motion-safe:opacity-0 motion-safe:translate-x-1/3"} transform transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75`}>
             </div>
           </div>
 
@@ -148,7 +148,7 @@
             </div>
             <div class="md:col-span-1 md:col-start-1 transform xl:-translate-y-20">
               <IntersectionObserver element={element2} bind:intersecting={intersecting2} threshold={0.5} once />
-              <img bind:this={element2} src={`${assets}/images/osprey-cutout.png`} alt="Osprey" class={`${intersecting2 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-1/3"} transform transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75`}>
+              <img bind:this={element2} src={`${assets}/images/osprey-cutout.png`} alt="Osprey" class={`${intersecting2 ? "motion-safe:opacity-100 motion-safe:translate-x-0" : "motion-safe:opacity-0 motion-safe:-translate-x-1/3"} transform transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75`}>
             </div>
           </div>
           
@@ -169,7 +169,7 @@
             
             <div>
               <IntersectionObserver element={element3} bind:intersecting={intersecting3} threshold={0.5} once />
-              <img bind:this={element3} src={`${assets}/images/brown-pelican-cutout.png`} alt="Brown Pelican" class={`${intersecting3 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-1/3"} transform transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75 lg:max-h-[calc(100vh-200px)]`}>
+              <img bind:this={element3} src={`${assets}/images/brown-pelican-cutout.png`} alt="Brown Pelican" class={`${intersecting3 ? "motion-safe:opacity-100 motion-safe:translate-x-0" : "opacity-0 translate-x-1/3"} transform transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75 lg:max-h-[calc(100vh-200px)]`}>
             </div>
           </div> -->
         </div>
@@ -185,7 +185,7 @@
           <div class="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 md:max-w-none md:p-0">
             <div class="">
               <IntersectionObserver element={element4} bind:intersecting={intersecting4} threshold={0.5} once />
-              <img bind:this={element4} class={`${intersecting4 ? "opacity-100 scale-100" : "opacity-0 scale-90"} transform transition duration-1000 object-cover object-center drop-shadow-card`} src={`${assets}/images/pool-flamingo_01.png`} alt="">
+              <img bind:this={element4} class={`${intersecting4 ? "motion-safe:opacity-100 motion-safe:cale-100" : "motion-safe:opacity-0 motion-safe:scale-90"} transform transition duration-1000 object-cover object-center drop-shadow-card`} src={`${assets}/images/pool-flamingo_01.png`} alt="">
             </div>
           </div>
         </div>
@@ -213,6 +213,12 @@
     transform: rotateX(45deg);
   }
 
+  @media (prefers-reduced-motion) {
+    :global(.show-animation .home-card) {
+      animation: birdFadeIn 0s ease forwards 0;
+    }
+  }
+
   .card {
     --cardAdder:0%;
     will-change: transform;
@@ -225,6 +231,13 @@
   .card:hover {
     transform: translateY(-50%) scale(1.05);
     z-index: 4;
+  }
+
+  @media (prefers-reduced-motion) {
+    .card:hover {
+      transform: translateY(-50%) scale(1);
+      z-index: 4;
+    }
   }
   
 
@@ -292,6 +305,11 @@
     transform: translateX(-100%);
     animation: bird1InFlight 1s ease-in-out forwards 1s;
   }
+  @media (prefers-reduced-motion) {
+    :global(.show-animation .bird-1) {
+      animation: bird1InFlight 0s ease-in-out forwards 0s;
+    } 
+  }
   .bird-1 {
     left: 0;
     height: calc(100% + 15px);
@@ -300,6 +318,11 @@
   :global(.show-animation .bird-2) {
     transform: translateX(100%);
     animation: bird2InFlight 1s ease-in-out forwards .5s;
+  }
+  @media (prefers-reduced-motion) {
+    :global(.show-animation .bird-2) {
+      animation: bird2InFlight 0s ease-in-out forwards 0s;
+    } 
   }
   .bird-2 {
     right: 0;

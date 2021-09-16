@@ -71,7 +71,7 @@ import Stars from "./Stars.svelte";
             <p class="text-sm text-gray-500 prose">
               Each Birdables card has a rarity rating ranging from 
             <span class="inline-flex px-1 space-x-2 items-baseline transform translate-y-0.5">
-            <Stars stars=1 space=1 size="2" /><span class="leading-none transform -translate-y-0.5"> to </span><Stars stars=5 space=1 size="2" /></span> to depict the scarcity of the card.  <a href="/about#rarity">Learn more about the rarity</a>.
+            <Stars stars=1 space=1 size="small" /><span class="leading-none transform -translate-y-0.5"> to </span><Stars stars=5 space=1 size="small" /></span> to depict the scarcity of the card.  <a href="/about#rarity">Learn more about the rarity</a>.
             </p>
           </div>
         </div>
@@ -82,5 +82,8 @@ import Stars from "./Stars.svelte";
         </button>
       </div>
     </div>
+    <button on:click={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" class=""><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+    </button>
   </div>
-</div>
+</div>	

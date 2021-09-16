@@ -25,8 +25,6 @@
   import Rarity from '$lib/components/Rarity.svelte';
   import Share from '$lib/components/Share.svelte'
   import ExternalLink from "$lib/components/ExternalLink.svelte"
-  
-  let physicalCardsForSale = false;
 
   export let bird;
   // console.log('bird:', bird)
@@ -52,9 +50,9 @@
 <div class="bg-gray-blue">
 
   
-  <div class="mx-auto pt-8 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <Breadcrumb steps={[{title:"All Birds", link:"/birds"}]} current={bird.birdName} />
-    <div class="  md:grid md:grid-rows-1 md:grid-cols-8 md:gap-x-8 md:gap-y-10 md:mt-8 xl:gap-x-16">
+  <div class="mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <Breadcrumb steps={[{title:"All Cards", link:"/cards"}]} current={bird.birdName} />
+    <div class="  md:grid md:grid-rows-1 md:grid-cols-8 md:gap-x-8 md:gap-y-10 md:mt-10 xl:gap-x-16">
       <button on:click={toggleModal} class="md:row-end-1 md:col-span-4 rounded-3xl transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-900">
         <img src={`${assets}/images/cards/${bird.friendlyId}.webp`} alt={`${bird.birdName} card`} class="object-center object-cover drop-shadow-card hidden md:block">
       </button>
@@ -64,15 +62,17 @@
           <div class="mt-4">
             <div class="text-lg leading-6 font-medium space-y-2">
               <h1 class="flex flex-col">
-                {#if bird.smallName}<span class="text-5xl md:text-3xl lg:text-5xl tracking-tight leading-none">{bird.smallName}</span>{/if}
-                <span class="text-5xl md:text-5xl lg:text-7xl font-black tracking-tight leading-none ">{bird.bigName}</span>
+                {#if bird.smallName}<span class="text-5xl md:text-3xl lg:text-5xl tracking-tighter leading-none">{bird.smallName}</span>{/if}
+                <span class="text-5xl md:text-5xl lg:text-7xl font-black tracking-tighter leading-none ">{bird.bigName}</span>
               </h1>
               <p class="text-xl text-gray-600 italic md:text-xl tracking-tight leading-none">{bird.scientificName}</p>
             </div>
 
           </div>
-          <div class="mt-4">
-            <Rarity stars={bird.rarity} />
+          <div class="mt-4 flex">
+            <div class="bg-white rounded-full px-6 py-4">
+              <Rarity stars={bird.rarity} />
+            </div>
           </div>
         </div>
 
@@ -81,7 +81,7 @@
         </button>
 
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4">
-          {#if bird?.listing?.url && physicalCardsForSale}
+          {#if bird?.listing?.url && !bird.specialty}
             <a href={bird.listing.url} target="_blank" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
             <span>Buy <span class="font-black">Physical Card</span> on</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 transform translate-y-0.5 ml-1 text-white" viewBox="0 0 48 24">
@@ -89,13 +89,13 @@
             </svg>
           </a>
           {:else}
-            <button disable class="cursor-not-allowed w-full bg-gray-900 opacity-70 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
+          <a href={bird.listing.url} target="_blank" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
 
-              <span><span class="font-black">Physical Card</span> Coming Soon to</span>
+              <span><span class="font-black">Physical Card</span> available in a Card Pack</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 transform translate-y-0.5 ml-1 text-white" viewBox="0 0 48 24">
                 <path d="M6.547,3.125v6.008c0,0,2.117,0,3.25-0.086c0.891-0.156,1.055-0.242,1.219-1.133l0.328-1.305h0.969l-0.164,2.852 l0.086,2.922h-0.977l-0.242-1.141c-0.242-0.812-0.57-0.977-1.219-1.055c-0.812-0.086-3.25-0.086-3.25-0.086v5.039 c0,0.969,0.492,1.383,1.625,1.383h3.414c1.055,0,2.109-0.086,2.766-1.625l0.883-1.953h0.82c-0.086,0.406-0.492,3.984-0.57,4.789 c0,0-3.086-0.078-4.383-0.078H5.25l-3.492,0.078v-0.883l1.133-0.25c0.82-0.164,1.062-0.406,1.062-1.055 c0,0,0.086-2.195,0.086-5.852c0-3.648-0.086-5.844-0.086-5.844c0-0.727-0.242-0.891-1.062-1.055L1.758,2.555V1.664l3.414,0.07h6.5 c1.297,0,3.484-0.234,3.484-0.234s-0.078,1.375-0.164,4.625h-0.891l-0.328-1.141c-0.32-1.461-0.805-2.188-1.703-2.188H6.961 C6.547,2.797,6.547,2.875,6.547,3.125z M19.703,3.766h0.977V7.18l3.336-0.164l-0.164,1.547l-3.25-0.25v6.016 c0,1.703,0.57,2.359,1.547,2.359c0.883,0,1.539-0.492,1.781-0.898l0.484,0.57c-0.484,1.133-1.859,1.703-3.164,1.703 c-1.617,0-2.93-0.969-2.93-2.836V8.398h-1.938V7.586C18.008,7.422,19.219,6.445,19.703,3.766z M26.695,14.242l0.648,1.547 c0.242,0.648,0.812,1.305,2.109,1.305c1.383,0,1.953-0.734,1.953-1.625c0-2.766-5.445-1.953-5.445-5.688c0-2.109,1.703-3.094,3.898-3.094c0.977,0,2.438,0.164,3.172,0.492c-0.164,0.812-0.25,1.867-0.25,2.68l-0.805,0.078l-0.57-1.625 c-0.164-0.398-0.82-0.727-1.625-0.727c-0.977,0-1.953,0.406-1.953,1.461c0,2.516,5.609,1.953,5.609,5.688c0,2.117-1.867,3.25-4.148,3.25c-1.703,0-3.414-0.656-3.414-0.656c0.164-0.969,0.086-2.023,0-3.086H26.695z M33.031,22.039 c0.242-0.891,0.406-2.023,0.57-3.086l0.891-0.078l0.328,1.703c0.078,0.406,0.32,0.734,0.969,0.734c1.055,0,2.438-0.648,3.742-2.922 c-0.578-1.383-2.281-5.844-3.828-9.258c-0.406-0.898-0.484-0.977-1.047-1.141l-0.414-0.156v-0.82l2.445,0.086l3-0.164V7.75 l-0.734,0.164c-0.57,0.078-0.805,0.398-0.805,0.727c0,0.086,0,0.164,0.078,0.328c0.156,0.492,1.461,4.141,2.438,6.578c0.805-1.703,2.352-5.523,2.594-6.172c0.086-0.328,0.164-0.406,0.164-0.648c0-0.414-0.242-0.656-0.805-0.812L42.039,7.75V6.938 l2.281,0.078l2.109-0.078V7.75l-0.406,0.32c-0.812,0.328-0.898,0.406-1.219,1.062l-3.57,8.359 c-2.117,4.797-4.312,5.203-5.852,5.203C34.406,22.695,33.672,22.445,33.031,22.039z" fill="currentColor"/>
               </svg>
-            </button>
+            </a>
           {/if}
           
           {#if bird.openseaId}
@@ -139,7 +139,7 @@
           <!-- LINK! -->
 
           <div class="grid grid-cols-2 gap-4 mt-8">
-            <a class="flex justify-center items-center bg-gray-blue py-2 rounded-full transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-white" href="https://ebird.org/species/sancra" target="_blank" noreferrer >
+            <a class="flex justify-center items-center bg-gray-blue py-2 rounded-full transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-900" href="https://ebird.org/species/sancra" target="_blank" noreferrer >
               <svg class="h-6" height="30" viewBox="0 0 157 57" preserveAspectRatio aria-labelledby="logo-ebird-title"><g fill="none"><path class="LogoEbird-e" fill="#4ca800" d="M33.15 46.93l-3.3-2-.25.44a14.22 14.22 0 01-4.25 5.15 9.37 9.37 0 01-5.17 1.4 10.71 10.71 0 01-5.08-1.13 9.41 9.41 0 01-3.44-3.09 14.56 14.56 0 01-2-4.78A26.59 26.59 0 019 37.25h23.14v-2.82a21 21 0 00-.82-6 13.68 13.68 0 00-2.51-4.84 12.19 12.19 0 00-4.61-3.43 16.71 16.71 0 00-6.75-1.25 15 15 0 00-6.93 1.59 15.88 15.88 0 00-5.16 4.2 19.35 19.35 0 00-3.25 6A21.77 21.77 0 001 37.58a25.7 25.7 0 001 7.33A17.71 17.71 0 005.18 51a15.06 15.06 0 005.4 4.17 17.79 17.79 0 007.59 1.53 15.35 15.35 0 008.74-2.56 18.43 18.43 0 006-6.84l.24-.37zM17.39 22.58a5.63 5.63 0 013.36.93A6.7 6.7 0 0122.83 26a12.54 12.54 0 011 3.64 29.64 29.64 0 01.33 3.68H9a13.63 13.63 0 012.54-7.81 7.08 7.08 0 015.85-2.93z"/><path class="LogoEbird-bird" fill="#212121" d="M155.93 51.87l.5.01v3.23l-12.88.82-.84-.78v-2.63a15.28 15.28 0 01-4.13 2.89 13.18 13.18 0 01-5.78 1.36 13.72 13.72 0 01-6-1.38 15.06 15.06 0 01-5-3.86 19 19 0 01-3.4-6 23.1 23.1 0 01-1.25-7.74 20.45 20.45 0 011.34-7.36 19.57 19.57 0 013.7-6.1 16.45 16.45 0 015.45-3.91 17.06 17.06 0 0111.5-.82 18.89 18.89 0 013.44 1.24V9.43a6.71 6.71 0 00-.46-2.53 3.68 3.68 0 00-1.21-1.65 6.5 6.5 0 00-2.48-.89 34 34 0 00-3.58-.44h-.45V.82l15-.82.84.82v47.29a3.86 3.86 0 00.42 1.87c.3.53.725.976 1.24 1.3a3.92 3.92 0 001.72.45c.84.093 1.61.14 2.31.14zm-38.1-23.51A3.47 3.47 0 01114.7 30a4.61 4.61 0 01-3.37-1.22 3.6 3.6 0 01-1.19-2.61 7.88 7.88 0 01.13-1.51l.12-.66a8.52 8.52 0 00-3.1 1.28 11 11 0 00-3.56 3.55v20.19a3.36 3.36 0 00.41 1.77 2.39 2.39 0 001.26 1 9 9 0 002.17.5c.91.12 1.72.25 2.4.25h.45v3.26H73.48v-3.26l2.13-.18A6 6 0 0077 52.1a2.07 2.07 0 001.26-.9 3.53 3.53 0 00.41-1.82V27.84a3.79 3.79 0 00-.46-1.84 4.12 4.12 0 00-1.29-1.45 6.26 6.26 0 00-1.78-.65 14.09 14.09 0 00-2.26-.36h-.45V20.3l13-.82.79.79V49a3.57 3.57 0 00.42 1.78c.285.47.728.825 1.25 1a11.7 11.7 0 001.46.5 8.9 8.9 0 001.57.25h.33l2-.17a5.94 5.94 0 001.39-.26 2.06 2.06 0 001.21-.9 3.54 3.54 0 00.41-1.82v-21.6a4.46 4.46 0 00-.46-1.95 3.81 3.81 0 00-1.28-1.51 4.36 4.36 0 00-1.42-.54 13.84 13.84 0 00-1.92-.26h-.45v-3.24l12.29-.82.79.79v4a15.86 15.86 0 014.35-3.63c3.78-2.09 7.14-2.04 9.14.05a5.87 5.87 0 011.53 4.23 6.38 6.38 0 01-1 3.46zM82 11.54A4.62 4.62 0 0178.51 10a5.18 5.18 0 01-1.46-3.65 5.37 5.37 0 011.45-3.73A4.61 4.61 0 0182 1a4.85 4.85 0 013.66 1.5A5 5 0 0187.09 6a5.65 5.65 0 01-1.45 3.87A4.68 4.68 0 0182 11.54zM67.94 31.52a12.81 12.81 0 013.79 4.05 11.64 11.64 0 011.52 6.09A12.3 12.3 0 0171.66 48a13.65 13.65 0 01-4.16 4.39 18.74 18.74 0 01-5.5 2.55 23.12 23.12 0 01-6.27.83H31.46v-3.44h.44c.56-.05 1.38-.15 2.45-.3a9.13 9.13 0 002.21-.51 2.76 2.76 0 001.33-1.12 4 4 0 00.4-1.91V12.3a4.76 4.76 0 00-.37-1.93 2.64 2.64 0 00-1.38-1.25 9.69 9.69 0 00-2.27-.78A17.1 17.1 0 0032.14 8h-.45V4.58h23.64a25 25 0 015.26.54 15.85 15.85 0 014.84 1.94 10.71 10.71 0 013.59 3.52 10 10 0 011.42 5.43 11.69 11.69 0 01-1 4.93 10.91 10.91 0 01-2.82 3.73 16.22 16.22 0 01-3.85 2.46 21.58 21.58 0 01-3.11 1.15 30.88 30.88 0 013.34.85 17.29 17.29 0 014.94 2.39zm74.67-3.32a8.9 8.9 0 00-.83-1.73 8.4 8.4 0 00-1.5-1.84 8.62 8.62 0 00-2.27-1.38 7.76 7.76 0 00-3-.55 6.88 6.88 0 00-3.65 1 10 10 0 00-3 3 15.84 15.84 0 00-2 4.89 27.74 27.74 0 00-.75 6.67 23.39 23.39 0 00.55 5.29 13.84 13.84 0 001.84 4.36 9.39 9.39 0 003 3 8 8 0 004.28 1.09 7.83 7.83 0 004.42-1.12 14.83 14.83 0 002.91-2.5V28.2zm-82.16-7.34a15.44 15.44 0 00.5-4.15 8.59 8.59 0 00-2.13-6.18c-1.41-1.47-3.69-2.21-6.79-2.21-.747 0-1.69.017-2.83.05l-2.41.07v18.37h4a14.25 14.25 0 004.8-.72A7.31 7.31 0 0058.73 24a8.34 8.34 0 001.72-3.14zm-13.66 9.92V48a3.24 3.24 0 001.58 3 9 9 0 004.77 1c3.36 0 5.95-.92 7.72-2.87 1.77-1.95 2.67-4.89 2.67-8.74a9.29 9.29 0 00-2.84-7c-1.89-1.81-4.66-2.73-8.22-2.73-1.507 0-2.777.017-3.81.05l-1.87.07z"/></g></svg>  
             </a>
             <a class="flex justify-center items-center bg-gray-blue py-4 rounded-full transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-black" href="https://ebird.org/species/sancra" target="_blank" noreferrer >

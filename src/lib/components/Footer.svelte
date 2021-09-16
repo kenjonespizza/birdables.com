@@ -14,7 +14,7 @@
       </div>
 
       <div class="px-5 py-2">
-        <a sveltekit:prefetch href="/birds" class="text-base text-gray-500 hover:text-gray-900">
+        <a sveltekit:prefetch href="/cards" class="text-base text-gray-500 hover:text-gray-900">
           Cards
         </a>
       </div>
