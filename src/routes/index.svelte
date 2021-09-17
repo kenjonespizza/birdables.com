@@ -3,7 +3,7 @@
   import IntersectionObserver from "svelte-intersection-observer";
   import {assets} from '$app/paths'
   import GetNotified from '$lib/components/GetNotified.svelte';
-import { loop_guard } from 'svelte/internal';
+  import {ShowHeaderFooter} from "../stores/store"
 
   const checkIfShownAnimationsCookieIsTrue = () => {
     if (document.cookie.split(';').some((item) => item.includes('shown_animations=true'))) {
@@ -25,6 +25,8 @@ import { loop_guard } from 'svelte/internal';
   let intersecting3;
   let element4;
   let intersecting4;
+
+  ShowHeaderFooter.set(false);
 </script>
 
 <svelte:head>

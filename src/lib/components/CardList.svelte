@@ -24,6 +24,14 @@
             <span class="font-black tracking-tighter leading-none text-4xl group-hover:underline">{card.bigName}</span>
           </p>
           <p class="text-gray-400 italic text-base tracking-tight leading-none">{card.scientificName}</p>
+          <div class="flex space-x-2">
+            <!-- {#if card.rarity === 5}
+              <span class="px-3 py-1.5 bg-gray-100 text-gray-400 rounded-full text-xs font-semibold">Legendary</span>
+            {/if} -->
+            {#if card.specialty}
+              <span class="px-3 py-1.5 bg-gray-100 text-gray-400 rounded-full text-xs font-semibold">Only available in pack</span>
+            {/if}
+          </div>
         </div>
       </a>
       <a href={`/card/${card.id}`} class="hidden">{card.cardName}`}</a>

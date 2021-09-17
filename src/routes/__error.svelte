@@ -1,4 +1,7 @@
 <script context="module">
+  
+  
+
 	export function load({ error, status }) {
 		return {
 			props: {
@@ -11,12 +14,14 @@
 </script>
 
 <script>
+  import {ShowHeaderFooter} from "../stores/store"
 	export let status;
 	export let error;
+  ShowHeaderFooter.set(false);
 </script>
 
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="bg-white h-[calc(100vh-328px)] px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+<div class="bg-white h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
   <div class="max-w-max mx-auto">
     <main class="sm:flex">
       <p class="text-4xl font-extrabold text-beak-600 sm:text-7xl">{status}</p>

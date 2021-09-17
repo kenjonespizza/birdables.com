@@ -2,6 +2,9 @@
   import { page } from "$app/stores"
   let isOpen = false;
   let shopNavOpen = false;
+  let HideOnPages = ["/"];
+
+  console.log('$page.path:', $page.path)
 
   function toggle() {
     isOpen = !isOpen
@@ -27,7 +30,7 @@
 </script>
 
 <svelte:window on:keydown={handleKeyDown}></svelte:window>
-{#if $page.path !== '/'}
+
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="relative bg-white">
   <div class="absolute inset-0 z-30 pointer-events-none" aria-hidden="true"></div>
@@ -160,10 +163,10 @@
                 <a on:click={toggle} sveltekit:prefetch href="/cards" class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Cards
                 </a>
-                <a on:click={toggle} sveltekit:prefetch href="/cards" class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+                <a on:click={toggle} sveltekit:prefetch href="/cards" class={`border-transparent text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Shop: Digital Cards
                 </a>
-                <a on:click={toggle} sveltekit:prefetch href="/cards" class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+                <a on:click={toggle} sveltekit:prefetch href="/cards" class={`border-transparent text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Shop: Physical Cards
                 </a>
                 <a on:click={toggle} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
@@ -189,4 +192,3 @@
     </div>
   </div>
 </div>
-{/if}
