@@ -6,7 +6,7 @@
   export let cards
 </script>
 
-<ul class="gap-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-12 sm:space-y-0 md:grid-cols-3 lg:gap-x-8 2xl:grid-cols-3">
+<ul class="gap-4 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-12 sm:space-y-0 md:grid-cols-3 lg:gap-x-8 2xl:grid-cols-3">
   {#each cards as card (card.id)}
     <li in:slide animate:flip="{{duration: 500}}" class="space-y-4">
       <a href={`/bird/${card.slug}`} sveltekit:prefetch class="group flex flex-col space-y-4 tranform transition duration-300">

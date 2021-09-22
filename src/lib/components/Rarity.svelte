@@ -71,7 +71,7 @@ import Stars from "./Stars.svelte";
             <p class="text-sm text-gray-500 prose">
               Each Birdables card has a rarity rating ranging from 
             <span class="inline-flex px-1 space-x-2 items-baseline transform translate-y-0.5">
-            <Stars stars=1 space=1 size="small" /><span class="leading-none transform -translate-y-0.5"> to </span><Stars stars=5 space=1 size="small" /></span> to depict the scarcity of the card.  <a href="/about#rarity">Learn more about the rarity</a>.
+            <Stars stars=1 space=1 size="sm" /><span class="leading-none transform -translate-y-0.5"> to </span><Stars stars=5 space=1 size="small" /></span> to depict the scarcity of the card.  <a href="/about#rarity">Learn more about the rarity</a>.
             </p>
           </div>
         </div>

@@ -5,7 +5,6 @@
 
   import {ShowHeaderFooter} from "../stores/store"
   ShowHeaderFooter.set(true);
-  console.log('ShowHeaderFooter:', $ShowHeaderFooter)
 </script>
 
 <svelte:head>

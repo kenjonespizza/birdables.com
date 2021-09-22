@@ -2,9 +2,6 @@
   import { page } from "$app/stores"
   let isOpen = false;
   let shopNavOpen = false;
-  let HideOnPages = ["/"];
-
-  console.log('$page.path:', $page.path)
 
   function toggle() {
     isOpen = !isOpen

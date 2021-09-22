@@ -32,13 +32,11 @@
         }),
       });
       if (res.status === 200) {
-        console.log(res);
         successful = true;
         emailTyped = "";
         phoneTyped = "";
         validation = null;
       } else {
-        console.log(res);
         validation = "Something weird happened 🧐. Please refresh and try again, or contact chirp@birdables.com";
       }
     }
