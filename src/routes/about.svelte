@@ -23,6 +23,10 @@
       title: 'Physical -vs- Digital cards',
     },
     {
+      link: 'card-packs',
+      title: 'Card Packs',
+    },
+    {
       link: 'faq',
       title: 'Frequently Asked Questions',
     },
@@ -46,35 +50,38 @@
     {/each}
 </nav>
 
-<div class="pb-16 pt-10 sm:pb-24 px-4 sm:px-6 md:px-8 lg:mx-auto lg:max-w-7xl">
-  <Breadcrumb current={"All Cards"} />
-  <div class="grid grid-cols-1 gap-20 pt-8 lg:grid-cols-2 lg:gap-8 lg:items-start">
-    
-    
 
-    <div class="flex flex-col justify-start">
-      <!-- Content area -->
-      <div class="">
-        <h1 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-6xl">
-          All About Birdables
-        </h1>
-        <div class="mt-6 text-gray-500 space-y-6">
-          <p class="prose prose-xl text-gray-500">
-            Birdables' mission is to increase bird awareness, donate to bird conservation organizations, and make some pretty cool bird cards while we're at it!
-          </p>
+<div class="bg-white pb-16 pt-10 sm:pb-24 px-4 sm:px-6 lg:px-16 border-t border-t-gray-100 sm:py-24" id={sections[0].link}>
+  <div class="lg:mx-auto lg:max-w-7xl">
+    <Breadcrumb current={"About Birdables"} />
+    <div class="grid grid-cols-1 gap-20 pt-8 lg:grid-cols-2 lg:gap-8 lg:items-start">
+      
+      
+
+      <div class="flex flex-col justify-start">
+        <!-- Content area -->
+        <div class="">
+          <h1 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-6xl">
+            All About Birdables
+          </h1>
+          <div class="mt-6 text-gray-500 space-y-6">
+            <p class="prose prose-xl text-gray-500">
+              Birdables' mission is to increase bird awareness, donate to bird conservation organizations, and make some pretty cool bird cards while we're at it!
+            </p>
+          </div>
+        </div>
+        <div>
+          {#each sections as section}
+            <div class="mt-6">
+              <a on:click={(e) => {scrollToSection(section.link, e)}} href={`#${section.link}`} class="text-xl font-semibold text-gray-600 border-b-2 pb-2 transition hover:border-gray-900">{section["title"]} <span aria-hidden="true">&rarr;</span> </a>
+            </div>
+          {/each}
         </div>
       </div>
-      <div>
-        {#each sections as section}
-          <div class="mt-6">
-            <a on:click={(e) => {scrollToSection(section.link, e)}} href={`#${section.link}`} class="text-xl font-semibold text-gray-600 border-b-2 pb-2 transition hover:border-gray-900">{section["title"]} <span aria-hidden="true">&rarr;</span> </a>
-          </div>
-        {/each}
-      </div>
+
+      <img class="h-full w-full object-contain" src={`${assets}/images/Featured-Image.png`} alt="">
+
     </div>
-
-    <img class="h-full w-full object-contain" src={`${assets}/images/Featured-Image.png`} alt="">
-
   </div>
 </div>
 
@@ -103,7 +110,7 @@
         <div class="prose text-gray-500 lg:max-w-none">
           <p>Each Birdables card has a rarity rating ranging from 
             <span class="inline-flex px-1 space-x-2 items-baseline">
-            <Rarity stars=1 hideExplainer={true} /><span> to </span><Rarity stars=5 hideExplainer={true} /></span>.  The rarity of cards will dictate how many physical cards are ever printed and how many digital cards are minted.  For example, no more than 50 1st edition California Condor cards will ever be printed.  Determining the rarity is based on a secret blend of three properties:
+            <Rarity stars=1 hideExplainer={true} size="sm" /><span> to </span><Rarity stars=5 hideExplainer={true} size="sm" /></span>.  The rarity of cards will dictate how many physical cards are ever printed and how many digital cards are minted.  For example, no more than 50 1st edition California Condor cards will ever be printed.  Determining the rarity is based on a secret blend of three properties:
           </p>
           <ol>
             <li>
@@ -198,6 +205,23 @@
   </div>
 </div>
 
+<div class="bg-gray-blue py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24" id={sections[3].link}>
+  <div class="lg:mx-auto lg:max-w-7xl lg:px-8">
+    <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
+      {sections[3].title}
+    </h2>
+    <div class="mt-6 text-gray-500 space-y-6">
+      <p class="prose prose-xl text-gray-500">
+        The only way to get your talos on "Specialty" cards is to chace your luck with a <strong>Card Pack</strong>.
+      </p>
+    </div>
+    <div class="mt-2 prose text-gray-500 lg:max-w-none">
+      <p>Card packs exist to help replicate the birding experience.  Sure, you might want to see a Yellow-bellied Sapsucker everytime you step out of the house with your binoculars in hand, but it's really up to chance!  While not always true, most rare cards won't be sold separately and will only come as part of a random pack
+      </p>
+    </div>
+  </div>
+</div>
+
 <div class="bg-white py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24" id={sections[2].link}>
   <div class="lg:mx-auto lg:max-w-7xl lg:px-8">
     <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
@@ -235,4 +259,4 @@
   </div>
 </div>
 
-<FAQ title={sections[3].title} id={sections[3].link} />
+<FAQ title={sections[4].title} id={sections[4].link} />
