@@ -90,7 +90,7 @@
           </dt>
           <dd class="mt-2 md:mt-0 md:col-span-7 text-gray-500 prose">
             <p>
-              Totes!  Ken would love to upgrade his birding gear & travel to provide a better end product.  You can <a target="_blank" noreferrer href="https://ko-fi.com/ken_jones">donate to Birdables (Ken) here</a>.
+              Totes!  Ken would love to upgrade his birding gear & travel to provide a better end product.  You can <a target="_blank" rel="noopener" noreferrer href="https://ko-fi.com/ken_jones">donate to Birdables (Ken) here</a>.
             </p>
           </dd>
         </div>

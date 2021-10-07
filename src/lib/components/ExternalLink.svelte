@@ -9,7 +9,7 @@
 	export { className as class };
 </script>
 
-<a {href} target="_blank" noreferrer class={className}>
+<a {href} target="_blank" rel="noopener" noreferrer class={className}>
   {#if icon}
     <span>
       <slot></slot>

@@ -1,0 +1,5 @@
+sitemap: https://www.birdables.com/sitemap.xml
+
+User-agent: *
+Disallow: /secret/
+Disallow: /card/

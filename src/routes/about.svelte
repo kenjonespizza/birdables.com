@@ -1,6 +1,9 @@
 <script>
+  import SEO from 'svelte-seo'
+
   import {assets} from '$app/paths'
 
+  import site from '$lib/info'
   import {scrollToSection} from '$lib/utils'
   import FAQ from '$lib/components/FAQ.svelte'
   import Breadcrumb from '$lib/components/Breadcrumb.svelte'
@@ -42,6 +45,40 @@
   // let element4;
   // let intersecting4;
 </script>
+
+<SEO
+  title="About Birdables | Physical & NFT Bird Collectable Cards"
+  description="Birdables is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy Birdables cards any way they like."
+  keywords="Bird Collectable Cards, Bird Trading Cards, Birdables, Bird NFT's"
+  openGraph={{
+    title: `About ${site.name} | Physical & Digital Bird Collectable Cards`,
+    description: `${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
+    url: `${site.address}/`,
+    type: `website`,
+    images: [
+      {
+        url: `${site.address}/images/opengraph/index.webp`,
+        width: 1200,
+        height: 627, 
+        alt: `${site.name} Collectable Cards and NFT's`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `${site.name} | Physical & NFT Bird Collectable Cards`,
+    description: `${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
+    image: `${site.address}/images/opengraph/index.webp`,
+    imageAlt: `Alt text for the card!`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.png`,
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": `${site.name}`,
+    "url": `${site.address}`,
+  }}
+/>
 
 <nav class="hidden sm:block z-10 fixed right-0 bottom-4 rounded-tl-2xl rounded-bl-2xl bg-white drop-shadow-card overflow-hidden">
   <span class="text-base font-black text-gray-600 flex items-center space-x-2 border-b py-3 px-6">Navigate to:</span>

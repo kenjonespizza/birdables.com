@@ -33,7 +33,7 @@ import Stars from "./Stars.svelte";
 
 <!-- Modal -->
 <div class={`${isModalOpen ? "opacity-100 pointer-events-auto" : "opacity-0 delay-300 pointer-events-none"} fixed z-20 inset-0 overflow-y-auto transition`} aria-labelledby="modal-rarity-description" role="dialog" aria-modal="true">
-  <div class={`flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0`}>
+  <div class={`flex items-end justify-center items-center min-h-screen pt-4 px-4 text-center sm:block sm:p-0`}>
     <!--
       Background overlay, show/hide based on modal state.
 
@@ -65,9 +65,9 @@ import Stars from "./Stars.svelte";
           <svg class="h-6 w-6 text-gray-400"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M12 15.968l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275v10.693zm0 2.292l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26z"/></svg>
         </div>
         <div class="mt-3 text-center sm:mt-5">
-          <h3 class="text-lg leading-6 font-semibold text-gray-900" id="modal-title">
+          <span class="text-lg leading-6 font-semibold text-gray-900" id="modal-title">
             Rarity Scale
-          </h3>
+          </span>
           <div class="mt-2">
             <p class="text-sm text-gray-500 prose">
               Each Birdables card has a rarity rating ranging from 
@@ -85,6 +85,7 @@ import Stars from "./Stars.svelte";
     </div>
     <button on:click={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" class=""><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      <span class="sr-only">Close Modal</span>
     </button>
   </div>
 </div>	
