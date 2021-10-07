@@ -8672,17 +8672,17 @@ svelte-preprocess@^4.7.3:
     detect-indent "^6.0.0"
     strip-indent "^3.0.0"
 
-svelte-seo@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/svelte-seo/-/svelte-seo-1.2.1.tgz#c971428049f06180ba095366321e6e06a892c09c"
-  integrity sha512-e1N1MSgct4y0XYUzWEgBy5zdlmfGAC8qn4RuL6n7tjSrl3qr7w0bY8Nv40Vbnv+UaejL7VlX9QQGjzFnSPZ2DQ==
+svelte-seo@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/svelte-seo/-/svelte-seo-1.3.1.tgz#09ce838a27506ebda06807e682a6fce446913c82"
+  integrity sha512-lLmTrRRxcoRUtwU/d2lACCGf/mpMTxuDIItCshUBaWxW1gCFcE8SA09kOsKX+8vbZryqWNtf9Lvw+HACTHQk/g==
   dependencies:
     schema-dts "^0.8.2"
 
-svelte@^3.42.1:
-  version "3.42.1"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.42.1.tgz#d4b4d9068cce911835f7c6b8ff1d290e1a0b5657"
-  integrity sha512-XtExLd2JAU3T7M2g/DkO3UNj/3n1WdTXrfL63OZ5nZq7nAqd9wQw+lR4Pv/wkVbrWbAIPfLDX47UjFdmnY+YtQ==
+svelte@^3.42.6:
+  version "3.43.1"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.43.1.tgz#8370c08a970bcc1c118baaa86a38fae82e0a8396"
+  integrity sha512-nvPIaKx4HLzYlSdquISZpgG1Kqr2VAWQjZOt3Iwm3UhbqmA0LnSx4k1YpRMEhjQYW3ZCqQoK8Egto9tv4YewMA==
 
 svgo@^2.3.0:
   version "2.4.0"

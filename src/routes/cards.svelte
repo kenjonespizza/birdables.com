@@ -18,13 +18,16 @@
 </script>
 
 <script>
-  import {browser} from '$app/env' 
-  import Breadcrumb from '$lib/components/Breadcrumb.svelte'
-  import CardList from '$lib/components/CardList.svelte'
+  import SEO from 'svelte-seo';
+
+  import {browser} from '$app/env';
+  import site from '$lib/info';
+  import Breadcrumb from '$lib/components/Breadcrumb.svelte';
+  import CardList from '$lib/components/CardList.svelte';
 
   // import invert from 'invert-color';
   import GetNotified from '$lib/components/GetNotified.svelte';
-import Stars from '$lib/components/Stars.svelte';
+  import Stars from '$lib/components/Stars.svelte';
 
   export let cardsOrig;
   
@@ -90,9 +93,39 @@ import Stars from '$lib/components/Stars.svelte';
   }
 </script>
 
-<svelte:head>
-  <title>Bird Cards | Birdables</title>
-</svelte:head>
+<SEO
+  title={`About ${site.name} | Physical & NFT Bird Collectable Cards`}
+  description={`${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`}
+  keywords={`Bird Collectable Cards, Bird Trading Cards, ${site.name}, Bird NFT's`}
+  openGraph={{
+    title: 'About ${site.name} | Physical & Digital Bird Collectable Cards',
+    description: '${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.',
+    url: '${site.address}/',
+    type: 'website',
+    images: [
+      {
+        url: `${site.address}/images/opengraph/index.webp`,
+        width: 1200,
+        height: 627, 
+        alt: `${site.name} Collectable Cards and NFT's`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `${site.name} | Physical & NFT Bird Collectable Cards`,
+    description: `${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
+    image: `${site.address}/images/opengraph/index.webp`,
+    imageAlt: `Alt text for the card!`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.png`,
+    "@context": `http://schema.org`,
+    "@type": `WebSite`,
+    "name": `${site.name}`,
+    "url": `${site.address}`,
+  }}
+/>
 
 <div class="bg-white">
  

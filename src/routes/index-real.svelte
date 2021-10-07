@@ -1,7 +1,10 @@
 <script>
-  import { browser } from '$app/env';
+  import SEO from 'svelte-seo';
   import IntersectionObserver from "svelte-intersection-observer";
-  import {assets} from '$app/paths'
+  
+  import { browser } from '$app/env';
+  import {assets} from '$app/paths';
+  import site from '$lib/info';
   import GetNotified from '$lib/components/GetNotified.svelte';
 
   const checkIfShownAnimationsCookieIsTrue = () => {
@@ -20,15 +23,44 @@
   let intersecting;
   let element2;
   let intersecting2;
-  let element3;
-  let intersecting3;
+  // let element3;
+  // let intersecting3;
   let element4;
   let intersecting4;
 </script>
 
-<svelte:head>
-  <title>Birdables | Physical & NFT Bird Trading Cards</title>
-</svelte:head>
+<SEO
+  title={`${site.name} | Physical & NFT Bird Collectable Cards`}
+  description={`${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`}
+  keywords={`Bird Collectable Cards, Bird Trading Cards, ${site.name}, Bird NFT's`}
+  openGraph={{
+    title: `${site.name} | Physical & Digital Bird Collectable Cards`,
+    description: `${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
+    url: `${site.address}/`,
+    type: `website`,
+    images: [
+      {
+        url: `${site.address}/images/opengraph/index.webp`,
+        width: 1200,
+        height: 627, 
+        alt: `${site.name} Collectable Cards and NFT's`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `${site.name} | Physical & NFT Bird Collectable Cards`,
+    description: `${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
+    image: `${site.address}/images/opengraph/index.webp`,
+    imageAlt: `Alt text for the card!`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.png`,
+    "@type": `WebSite`,
+    "name": `${site.name}`,
+    "url": `${site.address}`,
+  }}
+/>
 
 <main class="">
   <!-- Hero card -->
@@ -136,7 +168,7 @@
             <div class="md:col-span-1 md:col-start-2">
               <div class="prose prose-gray prose-lg text-gray-500 md:max-w-none">
                 <h2 class="text-center sm:text-left">How do these cards help birds?</h2>
-                <p>Great question! <span class="font-black">We donate a portion of profits</span> to a bird conservation organization like the <a href="https://www.birds.cornell.edu/" target="_blank" noreferrer>Cornell Lab of Ornithology</a>, <a href="https://ebird.org/" target="_blank" noreferrer>eBird</a>, <a href="https://www.audubon.org/" target="_blank" noreferrer>Audubon</a>, etc. More details on this are still to come, as it is still unclear the cost of running this operation. All donation amounts & recipients will be available on this website, here, in the future.</p>
+                <p>Great question! <span class="font-black">We donate a portion of profits</span> to a bird conservation organization like the <a href="https://www.birds.cornell.edu/" target="_blank" rel="noopener" noreferrer>Cornell Lab of Ornithology</a>, <a href="https://ebird.org/" target="_blank" rel="noopener" noreferrer>eBird</a>, <a href="https://www.audubon.org/" target="_blank" rel="noopener" noreferrer>Audubon</a>, etc. More details on this are still to come, as it is still unclear the cost of running this operation. All donation amounts & recipients will be available on this website, here, in the future.</p>
                 
                 <p><span class="font-black text-xl text-gray-900">But paper comes from trees...</span><br />To make sure Birdables is not contributing to the destruction of bird habitats, <span class="font-black">100% recycled paper</span> is used for all physical cards. No trees are cut down for the creation of the cards.</p>
               </div>

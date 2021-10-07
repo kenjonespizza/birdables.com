@@ -1,7 +1,10 @@
 <script>
-  import { browser } from '$app/env';
+  import SEO from "svelte-seo";
+
   import IntersectionObserver from "svelte-intersection-observer";
+  import { browser } from '$app/env';
   import {assets} from '$app/paths'
+  import site from '$lib/info'
   import GetNotified from '$lib/components/GetNotified.svelte';
   import {ShowHeaderFooter} from "../stores/store"
 
@@ -29,23 +32,51 @@
   ShowHeaderFooter.set(false);
 </script>
 
-<svelte:head>
-  <title>Birdables | Physical & NFT Bird Trading Cards</title>
-</svelte:head>
+<SEO
+  title={`${site.name} | Physical & NFT Bird Collectable Cards`}
+  description={`${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`}
+  keywords={`Bird Collectable Cards, Bird Trading Cards, ${site.name}, Bird NFT's`}
+  openGraph={{
+    title: `${site.name} | Physical & Digital Bird Collectable Cards`,
+    description: `${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
+    url: `${site.address}/`,
+    type: `website`,
+    images: [
+      {
+        url: `${site.address}/images/opengraph/index.webp`,
+        width: 1200,
+        height: 627, 
+        alt: `${site.name} Collectable Cards and NFT's`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `${site.name} | Physical & NFT Bird Collectable Cards`,
+    description: `${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
+    image: `${site.address}/images/opengraph/index.webp`,
+    imageAlt: `Alt text for the card!`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.png`,
+    "@type": `WebSite`,
+    "name": `${site.name}`,
+    "url": `${site.address}`,
+  }}
+/>
 
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="min-h-screen pt-16 pb-12 flex flex-col bg-white">
   <main class="flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex-shrink-0 flex justify-center">
       <a href="/" class="inline-flex">
-        <span class="sr-only">Birdables</span>
-        <img class="h-12 md:h-16 w-auto" src={`${assets}/images/BirdablesLogoDark.svg`} alt="Birdables logo">
+        <span class="sr-only">{site.name}</span>
+        <img class="h-12 md:h-16 w-auto" src={`${assets}/images/logo.svg`} alt="{site.name} logo">
       </a>
     </div>
     <div class="py-16">
       <div class="text-center">
         <h1 class="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Coming Soon!</h1>
-        <p class="mt-2 text-base text-gray-500">Go grab your binoculars and see if you can spot us.</p>
       </div>
     </div>
   </main>

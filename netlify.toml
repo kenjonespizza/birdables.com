@@ -5,3 +5,8 @@
 
 # [[plugins]]
 #   package = "@netlify/plugin-functions-install-core"
+
+[[redirects]]
+  from = "/birds"
+  to = "/cards"
+  status = 301
