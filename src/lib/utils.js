@@ -19,6 +19,8 @@ export const returnFormattedBird =(bird) => {
     openseaId: bird.fields['Opensea ID'],
     releaseDate: bird.fields['Release Date'],
     specialty: bird.fields['Specialty'],
+    eBird: bird.fields['eBird'],
+    audubon: bird.fields['Audubon'],
   }
   return formattedBird;
 }

@@ -80,7 +80,7 @@
   }}
 />
 
-<nav class="hidden sm:block z-10 fixed right-0 bottom-4 rounded-tl-2xl rounded-bl-2xl bg-white drop-shadow-card overflow-hidden">
+<nav class="hidden md:block z-10 fixed right-0 bottom-4 rounded-tl-2xl rounded-bl-2xl bg-white drop-shadow-card overflow-hidden">
   <span class="text-base font-black text-gray-600 flex items-center space-x-2 border-b py-3 px-6">Navigate to:</span>
   {#each sections as section}
       <a on:click={(e) => {scrollToSection(section.link, e)}} href={`#${section.link}`} class="text-xs font-semibold text-gray-600 flex items-center space-x-2 border-b py-3 px-6 transition hover:bg-gray-100"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 24 24" width="20" height="20"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z"/></svg><span>{section["title"]}</span></a>

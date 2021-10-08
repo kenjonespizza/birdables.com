@@ -21,7 +21,7 @@
                 <br />
               {/if}
             </span>
-            <span class="font-black tracking-tighter leading-none text-4xl group-hover:underline">{card.bigName}</span>
+            <span class="font-black tracking-tighter leading-none text-2xl md:text-4xl group-hover:underline">{card.bigName}</span>
           </p>
           <p class="text-gray-400 italic text-base tracking-tight leading-none">{card.scientificName}</p>
           <div class="flex space-x-2">

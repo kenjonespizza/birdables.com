@@ -44,24 +44,25 @@
 </script>
 
 <div class="bg-white">
-  <div class="max-w-7xl mx-auto px-4 pb-12 sm:px-6 lg:pb-16 lg:px-8 xl:px-0">
+  <div class="max-w-7xl mx-auto pb-12 sm:px-6 lg:pb-16 lg:px-8 xl:px-0">
     <div class="py-10 px-6 bg-gray-900 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
       <div class="lg:w-0 lg:flex-1">
-        <h2 class="text-4xl font-extrabold tracking-tight text-white">
+        <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight text-white">
           Get notified when new Birdables cards hatch.
         </h2>
-        <p class="mt-4 max-w-3xl text-lg text-gray-100">
+        <p class="mt-4 max-w-3xl md:text-lg text-gray-100">
           New cards will be released on a whim!  Sign up to recieve an <button on:click={() => {useEmailAddress = true}} class={`${!useEmailAddress && "underline"}`}>email</button> or a <button on:click={() => {useEmailAddress = false}} class={`${useEmailAddress && "underline"}`}>text</button> when new cards hatch.
         </p>
       </div>
-      <div class="mt-12 sm:w-full lg:mt-0 lg:ml-8 lg:flex-1">
+      <div class="mt-4 md:mt-12 sm:w-full lg:mt-0 lg:ml-8 lg:flex-1">
         <!-- This example requires Tailwind CSS v2.0+ -->
-        <div class="flex items-center mb-8">
+        <div class="flex items-center mb-4">
           <span class="mr-3" id="email-notifications">
             <button on:click={() => {useEmailAddress = true}} class={`${useEmailAddress ? "text-white" : "text-gray-400"} text-base font-medium`}>Get Email Notifications</button>
           </span>
           <!-- Enabled: "bg-gray-600", Not Enabled: "bg-gray-200" -->
           <button on:click={toggle} type="button" class={`bg-gray-900 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-gray-400 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900`} role="switch" aria-checked="false" aria-labelledby="email-or-phone-notifications">
+            <span class="sr-only">Change notification type</span>
             <!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
             <span aria-hidden="true" class={`${useEmailAddress ? "translate-x-0" : "translate-x-5"} pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}>
               <!-- Enabled: "opacity-0 ease-out duration-100", Not Enabled: "opacity-100 ease-in duration-200" -->
@@ -122,7 +123,7 @@
               peer-focus:px-4
               ">Email address</label>
             </div>
-            <button type="submit" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-500 hover:bg-gray-400 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900 ">
+            <button type="submit" class="block w-full py-3 px-5 text-center bg-gray-500 border border-transparent rounded-full shadow-lg font-semibold text-white transition sm:inline-block sm:w-auto hover:ring-2 hover:ring-offset-4 hover:ring-offset-gray-900 hover:ring-white focus:ring-2 focus:ring-offset-4 focus:ring-offset-gray-900 focus:ring-white">
               Notify me via email
             </button>
           {:else}

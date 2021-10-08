@@ -34,7 +34,7 @@
   <div class="relative z-20">
     <div class="flex justify-between items-center px-6 py-6 lg:px-16 lg:justify-start lg:space-x-10">
       <div class="flex space-x-12 items-center">
-        <a sveltekit:prefetch href="/index-real" class="flex">
+        <a sveltekit:prefetch href="/" class="flex">
           <span class="sr-only">Birdables</span>
           <img class="h-6 w-auto sm:h-8" src="/images/logo.svg" alt="Birdables Logo">
         </a>
@@ -142,7 +142,7 @@
     <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
       <div class="pt-5 pb-6 px-5">
         <div class="flex items-center justify-between">
-          <a on:click={toggle} sveltekit:prefetch href="/index-real">
+          <a on:click={toggle} sveltekit:prefetch href="/">
             <img class="h-6 w-auto" src="/images/logo.svg" alt="Birdables Logo">
           </a>
           <div class="-mr-2">
