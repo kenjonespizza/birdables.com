@@ -54,7 +54,7 @@
           <a sveltekit:prefetch href="/cards" on:focus={() => toggleShopNav(false)} class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-base font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
             Cards
           </a>
-          <div
+          <!-- <div
             class="relative">
             <button on:click={() => toggleShopNav()} class={`${shopNavOpen ? 'border-gray-900' : ''} inline-flex items-center text-base font-medium text-gray-900 border-b-3 border-transparent transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
               <span>Shop</span>
@@ -104,7 +104,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           
           <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-base font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
             About Birdables
@@ -162,12 +162,12 @@
                 <a on:click={toggle} sveltekit:prefetch href="/cards" class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Cards
                 </a>
-                <a on:click={toggle} sveltekit:prefetch href="/cards" class={`border-transparent text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+                <!-- <a on:click={toggle} sveltekit:prefetch href="/cards" class={`border-transparent text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Shop: Digital Cards
                 </a>
                 <a on:click={toggle} sveltekit:prefetch href="/cards" class={`border-transparent text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Shop: Physical Cards
-                </a>
+                </a> -->
                 <a on:click={toggle} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   About Birdables
                 </a>

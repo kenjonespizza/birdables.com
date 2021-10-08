@@ -34,7 +34,7 @@
       title: 'Frequently Asked Questions',
     },
   ];
-
+  
   // ToDo: Setup intersection observers
   // let element1;
   // let intersecting1;
@@ -80,10 +80,10 @@
   }}
 />
 
-<nav class="hidden md:block z-10 fixed right-0 bottom-4 rounded-tl-2xl rounded-bl-2xl bg-white drop-shadow-card overflow-hidden">
+<nav class="hidden lg:block z-10 fixed right-0 bottom-4 rounded-tl-2xl rounded-bl-2xl bg-white drop-shadow-card overflow-hidden">
   <span class="text-base font-black text-gray-600 flex items-center space-x-2 border-b py-3 px-6">Navigate to:</span>
   {#each sections as section}
-      <a on:click={(e) => {scrollToSection(section.link, e)}} href={`#${section.link}`} class="text-xs font-semibold text-gray-600 flex items-center space-x-2 border-b py-3 px-6 transition hover:bg-gray-100"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 24 24" width="20" height="20"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z"/></svg><span>{section["title"]}</span></a>
+      <a on:click={(e) => {scrollToSection(section.link, e)}} href={`#${section.link}`} class="text-xs font-semibold text-gray-600 flex items-center space-x-2 border-b py-3 px-6 transition hover:bg-gray-blue"><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 24 24" width="20" height="20"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z"/></svg><span>{section["title"]}</span></a>
     {/each}
 </nav>
 
@@ -123,7 +123,7 @@
 </div>
 
 
-<div class="bg-white py-16 px-4 sm:px-6 lg:px-16 pt-8 border-t border-t-gray-100 sm:py-24" id={sections[0].link}>
+<div class="bg-gray-blue py-16 px-4 sm:px-6 lg:px-16 pt-8 border-t border-t-gray-100 sm:py-24" id={sections[0].link}>
   <div class="lg:mx-auto lg:max-w-7xl">
     <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
       {sections[0].title}
@@ -162,7 +162,7 @@
         </div>
         <div class="overflow-hidden mt-8 border border-gray-blue rounded-lg sm:rounded-2xl">
           <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-gray-50">
+            <thead class="bg-gray-blue">
               <tr>
                 <th scope="col" class="px-3 py-3 text-center text-base font-extrabold tracking-tight text-gray-500">
                   Rarity
@@ -187,7 +187,7 @@
                   2000
                 </td>
               </tr>
-              <tr class="bg-gray-50">
+              <tr class="bg-gray-blue">
                 <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   <div class="flex justify-center"><Rarity stars=2 hideExplainer={true} /></div>
                 </td>
@@ -209,7 +209,7 @@
                   800
                 </td>
               </tr>
-              <tr class="bg-gray-50">
+              <tr class="bg-gray-blue">
                 <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   <div class="flex justify-center"><Rarity stars=4 hideExplainer={true} /></div>
                 </td>
@@ -242,24 +242,9 @@
   </div>
 </div>
 
-<div class="bg-gray-blue py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24" id={sections[3].link}>
-  <div class="lg:mx-auto lg:max-w-7xl lg:px-8">
-    <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
-      {sections[3].title}
-    </h2>
-    <div class="mt-6 text-gray-500 space-y-6">
-      <p class="prose prose-xl text-gray-500">
-        The only way to get your talos on "Specialty" cards is to chace your luck with a <strong>Card Pack</strong>.
-      </p>
-    </div>
-    <div class="mt-2 prose text-gray-500 lg:max-w-none">
-      <p>Card packs exist to help replicate the birding experience.  Sure, you might want to see a Yellow-bellied Sapsucker everytime you step out of the house with your binoculars in hand, but it's really up to chance!  While not always true, most rare cards won't be sold separately and will only come as part of a random pack
-      </p>
-    </div>
-  </div>
-</div>
 
-<div class="bg-white py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24" id={sections[2].link}>
+
+<div class="bg-gray-blue py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24" id={sections[2].link}>
   <div class="lg:mx-auto lg:max-w-7xl lg:px-8">
     <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
       {sections[2].title}
@@ -274,7 +259,7 @@
         <div class="prose text-gray-500 lg:max-w-none">
           <h3>Physical Cards</h3>
           <p>So they will fit in your existing card sleeves or covers, each card is the standard trading/collectable card size of 6.4cm (2.5 in) x 8.9cm (3.5 in).</p>
-          <p>The cards are printed on 100% recycled paper right down the road from where they are designed and shipped from, in Charleston SC, USA. We keep everything as local as possible to reduce the emissions emitted.</p>
+          <p>The cards are printed on 100% recycled paper right down the road from where they are designed and shipped from, in shipped from, in Charleston, SC.  We keep everything as local as possible to reduce the emissions emitted.</p>
           <p>Physical cards can be purchased securely from <ExternalLink href="https://www.etsy.com/shop/Birdables">Birdables' Etsy Storefront</ExternalLink></p>
           <!-- <ol role="list">
             <li>Integer varius imperdiet sed interdum felis cras in nec nunc.</li>
@@ -292,6 +277,23 @@
           <p>Physical cards can be purchased securely from <ExternalLink href="https://opensea.io/collection/birdables">Birdables' OpenSea Storefront</ExternalLink></p>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24" id={sections[3].link}>
+  <div class="lg:mx-auto lg:max-w-7xl lg:px-8">
+    <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
+      {sections[3].title}
+    </h2>
+    <div class="mt-6 text-gray-500 space-y-6">
+      <p class="prose prose-xl text-gray-500">
+        The only way to get your talons on "Specialty" cards is to chance your luck with a Card Pack.
+      </p>
+    </div>
+    <div class="mt-2 prose text-gray-500 lg:max-w-none">
+      <p>Card packs exist to help replicate the birding experience.  Sure, you might want to see a Yellow-bellied Sapsucker every time you step out of the house with your binoculars in hand, but it's really up to chance!  While not always true, most rare cards won't be sold separately and will only come as part of a random pack.
+      </p>
     </div>
   </div>
 </div>

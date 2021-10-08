@@ -27,7 +27,8 @@
             How do Birdables help birds?
           </dt>
           <dd class="mt-2 md:mt-0 md:col-span-7 text-gray-500 prose">
-            <p>Great question! <strong>We donate a portion of profits</strong> to a bird conservation organization like the <ExternalLink href="https://www.birds.cornell.edu/">Cornell Lab of Ornithology</ExternalLink>, <ExternalLink href="https://ebird.org/">eBird</ExternalLink>, <ExternalLink href="https://www.audubon.org/">Audubon</ExternalLink>, etc. More details on this are still to come, as it is still unclear the cost of running this operation. All donation amounts & recipients will be available on this website, here, in the future.</p>
+            <p>Great question! <strong>We donate a portion of profits</strong> to a bird conservation organization like the <ExternalLink href="https://www.birds.cornell.edu/">Cornell Lab of Ornithology</ExternalLink>, <ExternalLink href="https://ebird.org/">eBird</ExternalLink>, <ExternalLink href="https://www.audubon.org/">Audubon</ExternalLink>, etc. More details on this are still to come, as it is still unclear the cost of running this operation. All donation amounts & recipients will be available on this website in the future.</p>
+            <!-- ToDo: link page -->
          
             <p>To make sure Birdables is not contributing to the destruction of bird habitats, <strong>100% recycled paper</strong> is used for all physical cards and envelope mailers. No trees are cut down for the creation of the cards.</p>
 
@@ -61,16 +62,6 @@
           <dd class="mt-2 md:mt-0 md:col-span-7 text-gray-500 prose">
             <p>
               Nope. The earth is already cluttered with single use plastics, and Birdables will not be a part of the problem. If you'd like to purchase your own, the cards are 6.4cm x 8.9 cm (2.5 inches x 3.5 inches).
-            </p>
-          </dd>
-        </div>
-        <div class="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8">
-          <dt class="text-lg font-semibold text-gray-900 md:col-span-5">
-            Do you use sustainable ink?
-          </dt>
-          <dd class="mt-2 md:mt-0 md:col-span-7 text-gray-500 prose">
-            <p>
-              Not yet, unfortunately. We've not been able to find a local printer who can offer all three: The run size need, 100% recycled paper, as well as a sustainable ink.
             </p>
           </dd>
         </div>

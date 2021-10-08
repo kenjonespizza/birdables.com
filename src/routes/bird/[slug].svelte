@@ -92,7 +92,6 @@
 <svelte:window on:keydown={handleKeydown}/>
 
 <div class="bg-gray-blue">
-
   
   <div class="mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <Breadcrumb steps={[{title:"All Cards", link:"/cards"}]} current={bird.birdName} />
