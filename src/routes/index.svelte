@@ -1,5 +1,6 @@
 <script>
   import SEO from 'svelte-seo';
+  import Image from "svelte-image";
   import IntersectionObserver from "svelte-intersection-observer";
   
   import { browser } from '$app/env';
@@ -145,8 +146,8 @@
           <div class="grid gap-10 md:grid-cols-2 items-center">    
             <div>
               <div class="prose prose-gray prose-lg text-gray-500 md:max-w-none">
-                <h2 class="text-center sm:text-left">What even is Birdables?</h2>
-                <p>It's a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital and physical mediums, so that owners can enjoy Birdables cards any way they like.</p>
+                <h2 class="text-center sm:text-left">What are Birdables?</h2>
+                <p>Birdables are collectible trading cards, available as NFTs and as physical prints. With artistic yet realistic designs, a sustainable approach to production, and a distribution model that mirrors real bird populations in the wild - Birdables are a fun, future-friendly way to commemorate the birds you love.</p>
               </div>
               <div class="flex space-x-4 mt-8">
                 <a href="/cards" sveltekit:prefetch class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition sm:inline-block sm:w-auto hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
@@ -167,14 +168,14 @@
           <div class="grid gap-10 md:grid-cols-2 md:items-center md:grid-flow-row-dense">
             <div class="md:col-span-1 md:col-start-2">
               <div class="prose prose-gray prose-lg text-gray-500 md:max-w-none">
-                <h2 class="text-center sm:text-left">How do these cards help birds?</h2>
-                <p>Great question! <span class="font-black">We donate a portion of profits</span> to a bird conservation organization like the <a href="https://www.birds.cornell.edu/" target="_blank" rel="noopener" noreferrer>Cornell Lab of Ornithology</a>, <a href="https://ebird.org/" target="_blank" rel="noopener" noreferrer>eBird</a>, <a href="https://www.audubon.org/" target="_blank" rel="noopener" noreferrer>Audubon</a>, etc. More details on this are still to come, as it is still unclear the cost of running this operation. All donation amounts & recipients will be available on this website, here, in the future.</p>
+                <h2 class="text-center sm:text-left">Can my collection make a difference?</h2>
+                <p>YES! <span class="font-black text-gray-900">Birdables plans to donate a portion of profits</span> to bird conservation organizations like the <a href="https://www.birds.cornell.edu/" target="_blank" rel="noopener" noreferrer>Cornell Lab of Ornithology</a>, <a href="https://ebird.org/" target="_blank" rel="noopener" noreferrer>eBird</a>, <a href="https://www.audubon.org/" target="_blank" rel="noopener" noreferrer>Audubon</a>, and others. As the business gets off the ground (pun intended), we'll share more details on our site, including donation amounts and recipients.</p>
                 
-                <p><span class="font-black text-xl text-gray-900">But paper comes from trees...</span><br />To make sure Birdables is not contributing to the destruction of bird habitats, <span class="font-black">100% recycled paper</span> is used for all physical cards. No trees are cut down for the creation of the cards.</p>
+                <p><span class="font-black text-xl text-gray-900">We care about the fine print</span><br />To ensure Birdables is not contributing to the destruction of bird habitats, we only use <span class="font-black text-gray-900">100% recycled paper</span> for allphysical cards. No trees are cut down for the creation of Birdables.</p>
               </div>
               <div class="flex space-x-4 mt-8">
                   <a href="/about" sveltekit:prefetch class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto">
-                    Learn more about Birdables
+                    Learn more: About Birdables
                   </a>
               </div>
             </div>
@@ -225,8 +226,8 @@
         <div class="relative row-start-1 bg-gray-blue md:col-start-3 bg-cover md:row-start-1 md:col-span-10 md:rounded-3xl md:grid md:grid-cols-10 md:items-center" style={`background-image: url(${assets}/images/pool-flamingo-bg.jpg);`}>
           <div class="relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 md:max-w-none md:p-0 md:col-start-4 md:col-span-6">
             <h2 class="text-3xl font-extrabold text-center sm:text-left">Suggest a bird!</h2>
-            <p class="text-lg text-gray-500">Producing each card is time-consuming, so creating cards that spark joy is a priority.  Suggest birds you would like to see made into a Birdables card.</p>
-            <a class="opacity-70 cursor-not-allowed block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto" href="/">Coming soon: Suggest a bird</a>
+            <p class="text-lg text-gray-500">Which Birdables are you looking for? Our goal is to build collections that spark joy, so let us know what you'd like us to add next! </p>
+            <a class="opacity-70 cursor-not-allowed block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto" href="/">( Coming soon )</a>
           </div>
         </div>
       </div>
@@ -263,6 +264,11 @@
   .card:hover {
     transform: translateY(-50%) scale(1.05);
     z-index: 4;
+    image-rendering: -moz-crisp-edges;
+    image-rendering:   -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
   }
 
   @media (prefers-reduced-motion) {

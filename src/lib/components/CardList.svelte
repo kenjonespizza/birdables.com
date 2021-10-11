@@ -10,7 +10,7 @@
   {#each cards as card (card.id)}
     <li in:slide animate:flip="{{duration: 500}}" class="space-y-4">
       <a href={`/bird/${card.slug}`} sveltekit:prefetch class="group flex flex-col space-y-4 tranform transition duration-300">
-        <img class="object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/${card.friendlyId}.webp`} alt={card.cardName}>
+        <img class="card-img object-cover filter drop-shadow-card card-img" src={`${assets}/images/cards/${card.friendlyId}.webp`} alt={card.cardName}>
         <!-- <div class="aspect-w-3 aspect-h-4" style={`background-color: #${card.accentColor};`}></div> -->
         <div class="text-lg leading-6 font-medium space-y-2">
           <p class="flex flex-col">
@@ -38,3 +38,13 @@
     </li>
   {/each}
 </ul>
+
+<style>
+  .card-img {
+    /* image-rendering: -moz-crisp-edges;         
+    image-rendering:   -o-crisp-edges;         
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;   */
+  }
+</style>

@@ -48,11 +48,9 @@
     <div class="py-10 px-6 bg-gray-900 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
       <div class="lg:w-0 lg:flex-1">
         <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight text-white">
-          Get notified when new Birdables cards hatch.
+          No egrets! Be the first to know when new Birdables hatch.
         </h2>
-        <p class="mt-4 max-w-3xl md:text-lg text-gray-100">
-          New cards will be released on a whim!  Sign up to recieve an <button on:click={() => {useEmailAddress = true}} class={`${!useEmailAddress && "underline"}`}>email</button> or a <button on:click={() => {useEmailAddress = false}} class={`${useEmailAddress && "underline"}`}>text</button> when new cards hatch.
-        </p>
+        <p class="mt-4 max-w-3xl md:text-lg text-gray-100">Sign up to receive an <button on:click={() => {useEmailAddress = true}} class={`${!useEmailAddress && "underline"}`}>email</button> or <button on:click={() => {useEmailAddress = false}} class={`${useEmailAddress && "underline"}`}>text</button> about big releases, rare sightings, and everything in between.</p>
       </div>
       <div class="mt-4 md:mt-12 sm:w-full lg:mt-0 lg:ml-8 lg:flex-1">
         <!-- This example requires Tailwind CSS v2.0+ -->

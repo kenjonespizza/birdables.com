@@ -88,22 +88,17 @@
 </nav>
 
 
-<div class="bg-white pb-16 pt-10 sm:pb-24 px-4 sm:px-6 lg:px-16 border-t border-t-gray-100 sm:py-24" id={sections[0].link}>
+<div class="relative bg-white pb-16 pt-10 sm:pb-24 px-4 sm:px-6 lg:px-16 border-t border-t-gray-100 sm:py-24" id={sections[0].link}>
   <div class="lg:mx-auto lg:max-w-7xl">
     <Breadcrumb current={"About Birdables"} />
-    <div class="grid grid-cols-1 gap-20 pt-8 lg:grid-cols-2 lg:gap-8 lg:items-start">
-      
-      
-
+    <!-- <div class="grid grid-cols-1 gap-20 pt-8 lg:grid-cols-2 lg:gap-8 lg:items-start">
       <div class="flex flex-col justify-start">
-        <!-- Content area -->
         <div class="">
           <h1 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-6xl">
             All About Birdables
           </h1>
           <div class="mt-6 text-gray-500 space-y-6">
-            <p class="prose prose-xl text-gray-500">
-              Birdables' mission is to increase bird awareness, donate to bird conservation organizations, and make some pretty cool bird cards while we're at it!
+            <p class="prose prose-xl text-gray-500">There's more to Birdables than beautiful cards. The reality is that thousands of bird species are currently at risk due to habitat loss, climate change, and other human-related factors. Even birds many people think of as common sightings may be rarer than you think. At Birdables, our mission is to raise awareness and appreciation for birds, and to hopefully make a difference by donating to conservation efforts in the process.
             </p>
           </div>
         </div>
@@ -118,8 +113,18 @@
 
       <img class="h-full w-full object-contain" src={`${assets}/images/Featured-Image.png`} alt="">
 
+    </div> -->
+    <div class="prose-lg text-gray-500 mx-auto pt-8 ">
+      <h1 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-6xl">
+        All About Birdables
+      </h1>
+      <div class="mt-6 text-gray-500 space-y-6">
+        <p class="prose prose-xl text-gray-500">There's more to Birdables than beautiful cards. The reality is that thousands of bird species are currently at risk due to habitat loss, climate change, and other human-related factors. Even birds many people think of as common sightings may be rarer than you think. At Birdables, our mission is to raise awareness and appreciation for birds, and to hopefully make a difference by donating to conservation efforts in the process.
+        </p>
+      </div>
     </div>
   </div>
+
 </div>
 
 
@@ -145,10 +150,8 @@
     <div class="mt-8 grid grid-col-1 gap-12 lg:grid-cols-5 lg:gap-12">
       <div class="lg:col-span-3">
         <div class="prose text-gray-500 lg:max-w-none">
-          <p>Each Birdables card has a rarity rating ranging from 
-            <span class="inline-flex px-1 space-x-2 items-baseline">
-            <Rarity stars=1 hideExplainer={true} size="sm" /><span> to </span><Rarity stars=5 hideExplainer={true} size="sm" /></span>.  The rarity of cards will dictate how many physical cards are ever printed and how many digital cards are minted.  For example, no more than 50 1st edition California Condor cards will ever be printed.  Determining the rarity is based on a secret blend of three properties:
-          </p>
+          <p>Each Birdables card has a rarity rating ranging from <span class="inline-flex px-1 space-x-2 items-baseline">
+              <Rarity stars=1 hideExplainer={true} size="sm" /><span> to </span><Rarity stars=5 hideExplainer={true} size="sm" /></span>. The rarity of cards will dictate how many physical cards are ever printed and how many digital cards are minted. For example,no more than fifty1st-edition California Condor cards will ever be printed. Determining the rarity is based on a secret blend of three properties:</p>
           <ol>
             <li>
               <span>
@@ -259,7 +262,7 @@
         <div class="prose text-gray-500 lg:max-w-none">
           <h3>Physical Cards</h3>
           <p>So they will fit in your existing card sleeves or covers, each card is the standard trading/collectable card size of 6.4cm (2.5 in) x 8.9cm (3.5 in).</p>
-          <p>The cards are printed on 100% recycled paper right down the road from where they are designed and shipped from, in shipped from, in Charleston, SC.  We keep everything as local as possible to reduce the emissions emitted.</p>
+          <p>The cards are printed on 100% recycled paper right down the road from where they are designed and shipped from Charleston, SC.  We keep everything as local as possible to reduce the emissions emitted.</p>
           <p>Physical cards can be purchased securely from <ExternalLink href="https://www.etsy.com/shop/Birdables">Birdables' Etsy Storefront</ExternalLink></p>
           <!-- <ol role="list">
             <li>Integer varius imperdiet sed interdum felis cras in nec nunc.</li>
@@ -288,11 +291,12 @@
     </h2>
     <div class="mt-6 text-gray-500 space-y-6">
       <p class="prose prose-xl text-gray-500">
-        The only way to get your talons on "Specialty" cards is to chance your luck with a Card Pack.
+        Replicate the real birding experience - and get your hands on rare "Specialty" cards!
       </p>
     </div>
     <div class="mt-2 prose text-gray-500 lg:max-w-none">
-      <p>Card packs exist to help replicate the birding experience.  Sure, you might want to see a Yellow-bellied Sapsucker every time you step out of the house with your binoculars in hand, but it's really up to chance!  While not always true, most rare cards won't be sold separately and will only come as part of a random pack.
+      <p>Birders know - even if you want to see a Yellow-Bellied Sapsucker every time you step out of the house with your binoculars in hand,it's really up to chance! The
+        same is (mostly) true for Birdables.Most rare cards won't be sold separately and will only come as part of a random pack.
       </p>
     </div>
   </div>
