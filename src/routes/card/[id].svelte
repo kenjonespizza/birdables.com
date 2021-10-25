@@ -1,7 +1,7 @@
 <script context="module">
   export async function load({page, fetch}) {
     const res = await fetch( `../api/card/${page.params.id}`)
-
+		
     if (res) {
 			return {
 				props: {
@@ -9,6 +9,7 @@
 				}
 			};
 		}
+		console.log('res:', res)
 
     return {
 			status: res.status,
@@ -26,8 +27,7 @@
 	if(browser) {
 		const navigateToBirdPage = async () => {
 			if (bird?.slug) {
-				// await goto(`/bird/${bird.slug}`);
-				await goto(`/`);
+				await goto(`/bird/${bird.slug}`);
 			} else {
 				await goto(`/`);
 			}

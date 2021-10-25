@@ -40,8 +40,8 @@
   export let isModalOpen;
 
   let pageUrl = `${site.address}${$page.path}`;
-  let comingSoonOveride = true;
-  let comingSoonOverideDigital = true;
+  let comingSoonOveride = false;
+  let comingSoonOverideDigital = false;
 
   function toggleModal() {
     isModalOpen = !isModalOpen;
@@ -141,7 +141,7 @@
           </a>
           {/if}
           {#if bird.specialty && !comingSoonOveride}
-          <a href={bird.listing.url} target="_blank" rel="noopener" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
+          <a href="https://www.etsy.com/listing/1107948145/birdables-5-card-pack" target="_blank" rel="noopener" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
 
               <span><span class="font-black">Physical Card</span> possible in a Card Pack</span>
               <Etsy class="h-6 transform translate-y-0.5 ml-1 text-white" />
@@ -154,8 +154,8 @@
             </button>
           {/if}
           
-          {#if bird.openseaId && !comingSoonOverideDigital}
-            <a href="https://opensea.io" target="_blank" rel="noopener" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
+          {#if bird.openseaUrl && !comingSoonOverideDigital}
+            <a href={bird.openseaUrl} target="_blank" rel="noopener" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
               <span>Buy <span class="font-black">Digital Card</span> on</span>
               <OpenSea class="h-6 transform translate-y-0. ml-2 text-white" />
             </a>

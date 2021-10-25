@@ -16,7 +16,7 @@ export const returnFormattedBird =(bird) => {
     conservationStatus: bird.fields['Conservation Status Select'],
     friendlyId: bird.fields['Friendly ID'],
     etsyId: bird.fields['Etsy ID'],
-    openseaId: bird.fields['Opensea ID'],
+    openseaUrl: bird.fields['Opensea URL'],
     releaseDate: bird.fields['Release Date'],
     specialty: bird.fields['Specialty'],
     eBird: bird.fields['eBird'],

@@ -47,12 +47,12 @@
 </script>
 
 <SEO
-  title="About Birdables | Physical & NFT Bird Collectable Cards"
-  description="Birdables is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy Birdables cards any way they like."
-  keywords="Bird Collectable Cards, Bird Trading Cards, Birdables, Bird NFT's"
+  title={`About ${site.name} | Physical & NFT Bird Collectable Cards`}
+  description={`${site.name} are artistic collectible trading cards, available as NFTs and as physical prints. Sustainably produced with a goal of giving back.`}
+  keywords={`Bird Collectable Cards, Bird Trading Cards, ${site.name}, Bird NFT's`}
   openGraph={{
     title: `About ${site.name} | Physical & Digital Bird Collectable Cards`,
-    description: `${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
+    description: `${site.name} are artistic collectible trading cards, available as NFTs and as physical prints. Sustainably produced with a goal of giving back.`,
     url: `${site.address}/`,
     type: `website`,
     images: [
@@ -67,7 +67,7 @@
   twitter={{
     site: `@${site.twitterHandle}`,
     title: `${site.name} | Physical & NFT Bird Collectable Cards`,
-    description: `${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
+    description: `${site.name} are artistic collectible trading cards, available as NFTs and as physical prints. Sustainably produced with a goal of giving back.`,
     image: `${site.address}/images/opengraph/index.webp`,
     imageAlt: `Alt text for the card!`,
   }}
@@ -88,7 +88,7 @@
 </nav>
 
 
-<div class="relative bg-white pb-16 pt-10 sm:pb-24 px-4 sm:px-6 lg:px-16 border-t border-t-gray-100 sm:py-24" id={sections[0].link}>
+<div class="relative bg-white pt-10 px-4 sm:px-6 lg:px-16 border-t border-t-gray-100 md:py-24" id={sections[0].link}>
   <div class="lg:mx-auto lg:max-w-7xl">
     <Breadcrumb current={"About Birdables"} />
     <!-- <div class="grid grid-cols-1 gap-20 pt-8 lg:grid-cols-2 lg:gap-8 lg:items-start">
@@ -102,13 +102,7 @@
             </p>
           </div>
         </div>
-        <div>
-          {#each sections as section}
-            <div class="mt-6">
-              <a on:click={(e) => {scrollToSection(section.link, e)}} href={`#${section.link}`} class="text-xl font-semibold text-gray-600 border-b-2 pb-2 transition hover:border-gray-900">{section["title"]} <span aria-hidden="true">&rarr;</span> </a>
-            </div>
-          {/each}
-        </div>
+        
       </div>
 
       <img class="h-full w-full object-contain" src={`${assets}/images/Featured-Image.png`} alt="">
@@ -121,10 +115,18 @@
       <div class="mt-6 text-gray-500 space-y-6">
         <p class="prose prose-xl text-gray-500">There's more to Birdables than beautiful cards. The reality is that thousands of bird species are currently at risk due to habitat loss, climate change, and other human-related factors. Even birds many people think of as common sightings may be rarer than you think. At Birdables, our mission is to raise awareness and appreciation for birds, and to hopefully make a difference by donating to conservation efforts in the process.
         </p>
+        <div>
+          {#each sections as section}
+            <div class="mt-6">
+              <a on:click={(e) => {scrollToSection(section.link, e)}} href={`#${section.link}`} class="text-xl font-semibold text-gray-600 border-b-2 pb-2 transition hover:border-gray-900">{section["title"]} <span aria-hidden="true">&rarr;</span> </a>
+            </div>
+          {/each}
+        </div>
       </div>
     </div>
+    
   </div>
-
+  <img class="block pt-10 md:pt:0 md:absolute md:bottom-0 md:left-[calc(50vw+100px)] md:max-h-full md:w-[calc(100vw-415px)] md:max-w-[725px] md:object-contain" src={`${assets}/images/Yellow-Warbler-About.webp`} alt="Yellow Warbler Bird Illustration" />
 </div>
 
 
@@ -151,7 +153,7 @@
       <div class="lg:col-span-3">
         <div class="prose text-gray-500 lg:max-w-none">
           <p>Each Birdables card has a rarity rating ranging from <span class="inline-flex px-1 space-x-2 items-baseline">
-              <Rarity stars=1 hideExplainer={true} size="sm" /><span> to </span><Rarity stars=5 hideExplainer={true} size="sm" /></span>. The rarity of cards will dictate how many physical cards are ever printed and how many digital cards are minted. For example,no more than fifty1st-edition California Condor cards will ever be printed. Determining the rarity is based on a secret blend of three properties:</p>
+              <Rarity size="sm" stars=1 hideExplainer={true} /><span> to </span><Rarity size="sm" stars=5 hideExplainer={true} /></span>. The rarity of cards will dictate how many physical cards are ever printed and how many digital cards are minted. For example,no more than fifty1st-edition California Condor cards will ever be printed. Determining the rarity is based on a secret blend of three properties:</p>
           <ol>
             <li>
               <span>
@@ -167,70 +169,70 @@
           <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-blue">
               <tr>
-                <th scope="col" class="px-3 py-3 text-center text-base font-extrabold tracking-tight text-gray-500">
+                <th scope="col" class="px-1 sm:px-3 py-3 text-center text-xs sm:text-base font-extrabold tracking-tight text-gray-500">
                   Rarity
                 </th>
-                <th scope="col" class="px-3 py-3 text-center text-base font-extrabold tracking-tight text-gray-500">
+                <th scope="col" class="px-1 sm:px-3 py-3 text-center text-xs sm:text-base font-extrabold tracking-tight text-gray-500">
                   Digital copies
                 </th>
-                <th scope="col" class="px-3 py-3 text-center text-base font-extrabold tracking-tight text-gray-500">
+                <th scope="col" class="px-1 sm:px-3 py-3 text-center text-xs sm:text-base font-extrabold tracking-tight text-gray-500">
                   Physical copies
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr class="bg-white">
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                  <div class="flex justify-center"><Rarity stars=1 hideExplainer={true} /></div>
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  <div class="flex justify-center"><Rarity size="sm" stars=1 hideExplainer={true} /></div>
                 </td>
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   50
                 </td>
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   2000
                 </td>
               </tr>
               <tr class="bg-gray-blue">
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                  <div class="flex justify-center"><Rarity stars=2 hideExplainer={true} /></div>
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  <div class="flex justify-center"><Rarity size="sm" stars=2 hideExplainer={true} /></div>
                 </td>
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   25
                 </td>
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   1500
                 </td>
               </tr>
               <tr class="bg-white">
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                  <div class="flex justify-center"><Rarity stars=3 hideExplainer={true} /></div>
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  <div class="flex justify-center"><Rarity size="sm" stars=3 hideExplainer={true} /></div>
                 </td>
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   10
                 </td>
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   800
                 </td>
               </tr>
               <tr class="bg-gray-blue">
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                  <div class="flex justify-center"><Rarity stars=4 hideExplainer={true} /></div>
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  <div class="flex justify-center"><Rarity size="sm" stars=4 hideExplainer={true} /></div>
                 </td>
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   5
                 </td>
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   200
                 </td>
               </tr>
               <tr class="bg-white">
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                  <div class="flex justify-center"><Rarity stars=5 hideExplainer={true} /></div>
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  <div class="flex justify-center"><Rarity size="sm" stars=5 hideExplainer={true} /></div>
                 </td>
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   1
                 </td>
-                <td class="text-center px-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-center px-1 sm:px-3 py-4 whitespace-nowrap text-sm text-gray-500">
                   50
                 </td>
               </tr>
@@ -239,7 +241,7 @@
         </div>
       </div>
       <div class="lg:col-span-2">
-        <img src={`${assets}/images/rarity.png`} alt="Roseate Spoonbill" class="w-full h-full object-center object-contain group-hover:opacity-75">
+        <img src={`${assets}/images/rarity.webp`} alt="Roseate Spoonbill" class="w-full h-full object-center object-contain group-hover:opacity-75">
       </div>
     </div>
   </div>
@@ -299,6 +301,9 @@
         same is (mostly) true for Birdables.Most rare cards won't be sold separately and will only come as part of a random pack.
       </p>
     </div>
+    <a href="/pack/5-card-pack" sveltekit:prefetch class="mt-6 block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500 sm:inline-block sm:w-auto">
+      View a card pack
+    </a>
   </div>
 </div>
 

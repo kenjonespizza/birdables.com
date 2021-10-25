@@ -22,7 +22,7 @@
 
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="bg-white h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
-  <div class="max-w-max mx-auto">
+  <div class="mx-auto">
     <main class="sm:flex">
       <p class="text-4xl font-extrabold text-beak-600 sm:text-7xl">{status}</p>
       <div class="sm:ml-6">

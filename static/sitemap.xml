@@ -15,6 +15,11 @@
 <priority>0.7</priority>
 </url>
 <url>
+<loc>https://www.birdables.com/pack/5-card-pack</loc>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
 <loc>https://www.birdables.com/bird/brown-pelican</loc>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>

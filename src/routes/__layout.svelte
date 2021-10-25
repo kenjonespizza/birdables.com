@@ -14,6 +14,7 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
+  <meta content='width=device-width, initial-scale=1, minimum-scale=1' name='viewport'/>
 </svelte:head>
 
 <div class="text-gray-900 absolute w-screen">
