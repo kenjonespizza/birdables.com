@@ -88,7 +88,7 @@
 </nav>
 
 
-<div class="relative bg-white pt-10 px-4 sm:px-6 lg:px-16 border-t border-t-gray-100 md:py-24" id={sections[0].link}>
+<div class="relative bg-white pt-10 px-4 sm:px-6 lg:px-16 border-t border-t-gray-100 md:py-24">
   <div class="lg:mx-auto lg:max-w-7xl">
     <Breadcrumb current={"About Birdables"} />
     <!-- <div class="grid grid-cols-1 gap-20 pt-8 lg:grid-cols-2 lg:gap-8 lg:items-start">
