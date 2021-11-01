@@ -134,8 +134,8 @@
         </div>
 
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4">
-          {#if bird?.listing?.url && !bird.specialty && !comingSoonOveride}
-            <a href={bird.listing.url} target="_blank" rel="noopener" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
+          {#if bird?.etsyUrl && !bird.specialty && !comingSoonOveride}
+            <a href={bird.etsyUrl} target="_blank" rel="noopener" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
             <span>Buy <span class="font-black">Physical Card</span> on</span>
             <Etsy class="h-6 transform translate-y-0.5 ml-1 text-white" />
           </a>
@@ -147,7 +147,7 @@
               <Etsy class="h-6 transform translate-y-0.5 ml-1 text-white" />
             </a>
           {/if}
-          {#if (!bird?.listing?.url && !bird.specialty) || comingSoonOveride}
+          {#if (!bird?.etsyUrl && !bird.specialty) || comingSoonOveride}
             <button type="button" disabled class="w-full bg-gray-900 cursor-not-allowed opacity-70 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
             <span><span class="font-black">Physical Card </span>Coming Soon to</span>
             <Etsy class="h-6 transform translate-y-0.5 ml-1 text-white" />
@@ -173,7 +173,7 @@
 
             <!-- LINK! -->
             
-            <div class="flex space-x-2 justify-around mt-8">
+            <div class="flex space-x-6 justify-around mt-8">
               {#if bird.eBird}
                 <a class="flex justify-center items-center py-2 transition border-b-2 border-transparent hover:border-gray-900 focus:border-gray-900" href={`https://ebird.org/species/${bird.eBird}`} target="_blank" rel="noopener" noreferrer >
                   <EBird class="w-full max-h-6" />

@@ -3,7 +3,7 @@ import Airtable from 'airtable';
 import { variables } from '$lib/variables';
 // console.log('variables:', variables)
 
-import {returnBirdFromParam, returnFormattedBirds, returnEtsyListingFromEtsyListingId, returnEtsyImagesFromEtsyListingId, addDataToBirdArr} from "$lib/utils"
+import {returnBirdFromParam, returnFormattedBirds} from "$lib/utils"
 
 export async function get({ params }) {
   const { slug } = params;
@@ -12,8 +12,8 @@ export async function get({ params }) {
   const data = returnBirdFromParam(slug, 'slug' ,returnFormattedBirds(records));
 
   if (data) {
-    const listing = await returnEtsyListingFromEtsyListingId(data.etsyId);
-    Object.assign(data, {listing});
+    // const listing = await returnEtsyListingFromEtsyListingId(data.etsyId);
+    // Object.assign(data, {listing});
   
     if (records) {
       return {

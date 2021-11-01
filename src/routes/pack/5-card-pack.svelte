@@ -10,13 +10,7 @@
   import ExternalLink from "$lib/components/ExternalLink.svelte"
 
   import Etsy from "$lib/svgs/Etsy.svelte"
-  import OpenSea from "$lib/svgs/OpenSea.svelte"
-  import EBird from "$lib/svgs/EBird.svelte"
-  import Audubon from "$lib/svgs/Audubon.svelte"
-  import BOW from "$lib/svgs/BOW.svelte"
 
-  export let bird;
-  // console.log('bird:', bird)
   export let isModalOpen;
 
   let pageUrl = `${site.address}${$page.path}`;

@@ -7,17 +7,17 @@
   import site from '$lib/info';
   import GetNotified from '$lib/components/GetNotified.svelte';
 
-  const checkIfShownAnimationsCookieIsTrue = () => {
-    if (document.cookie.split(';').some((item) => item.includes('shown_animations=true'))) {
-      return true
-    }
-    return false
-  }
+  // const checkIfShownAnimationsCookieIsTrue = () => {
+  //   if (document.cookie.split(';').some((item) => item.includes('shown_animations=true'))) {
+  //     return true
+  //   }
+  //   return false
+  // }
 
-  if (browser && !checkIfShownAnimationsCookieIsTrue()) {
-      document.body.classList.add("show-animation")
-      document.cookie = `shown_animations=true; SameSite=None; Secure;`;
-  }
+  // if (browser && !checkIfShownAnimationsCookieIsTrue()) {
+  //     document.body.classList.add("show-animation")
+  //     document.cookie = `shown_animations=true; SameSite=None; Secure;`;
+  // }
 
   let element;
   let intersecting;
@@ -209,33 +209,32 @@
     </div>
   </div>
 
-  <div class="bg-gray-blue">
+  <div class="bg-gray-blue mt-10 lg:mt-0" id="BirdablesInTheWild">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
       <div class="px-4 flex items-center justify-between sm:px-6 lg:px-0">
-        <h2 class="text-3xl font-black">Birdables in the field</h2>
-        <a href="/cards" sveltekit:prefetch class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto">
-          See all the cards
+        <div>
+          <h2 class="text-3xl font-black">Birdables in the wild</h2>
+          <p class="prose-xl text-gray-600">Share your Birdables pictures with <strong class="text-gray-900">#BirdablesInTheWild</strong>!</p>
+        </div>
+        <a href="https://www.instagram.com/birdables_cards/" target="_blank" rel="external"class="hidden md:block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto">
+          Instagram
         </a>
       </div>
   
-      <div class="mt-8 grid grid-cols-1 gap4 sm:grid-cols-2 md:gap-8 xl:gap-10">
-          <div class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-            <img src={`${assets}/images/cards-on-grass.webp`} alt="Person using a pen to cross a task off a productivity paper card." class="w-full h-full object-center object-cover group-hover:opacity-75">
+      <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 xl:gap-10">
+            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-on-grass.webp`}><img src={`${assets}/images/cards-on-grass.webp`} alt="Person using a pen to cross a task off a productivity paper card." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-in-bush.webp`}><img src={`${assets}/images/cards-in-bush.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-on-feeder.webp`}><img src={`${assets}/images/cards-on-feeder.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/pileated-woodpecker-on-tree.webp`}><img src={`${assets}/images/pileated-woodpecker-on-tree.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cedar-waxwing-in-bush.webp`}><img src={`${assets}/images/cedar-waxwing-in-bush.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-on-shirt.webp`}><img src={`${assets}/images/cards-on-shirt.webp`} alt="Paper card sitting upright in walnut card holder on desk." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <div class="col-span-2 flex justify-center">
+            <a href="https://www.instagram.com/birdables_cards/" target="_blank" rel="external" class="block mt-6 w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto">
+              Instagram
+            </a>
           </div>
-  
-          <div class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-            <img src={`${assets}/images/cards-on-shirt.webp`} alt="Paper card sitting upright in walnut card holder on desk." class="w-full h-full object-center object-cover group-hover:opacity-75">
-          </div>
-  
-          <div class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-            <img src={`${assets}/images/cards-in-bush.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75">
-          </div>
-          <div class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-            <img src={`${assets}/images/cards-on-feeder.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75">
-          </div>
-  
-        <!-- More products... -->
       </div>
+      
     </div>
   </div>
 
