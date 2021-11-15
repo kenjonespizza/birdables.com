@@ -1,6 +1,7 @@
 <script>
   export let href = "https://birdables.com"
   export let icon = true
+  export let title = ''
 
   let className = "inline-flex space-x-1 items-center";
 
@@ -9,7 +10,7 @@
 	export { className as class };
 </script>
 
-<a {href} target="_blank" rel="noopener" noreferrer class={className}>
+<a {href} target="_blank" rel="noopener" title={title} noreferrer class={className}>
   {#if icon}
     <span>
       <slot></slot>

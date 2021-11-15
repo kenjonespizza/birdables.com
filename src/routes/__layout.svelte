@@ -1,21 +1,11 @@
-<script context="module">
-  export const load = async ({ page }) => ({
-      props: {
-          key: page.path,
-      },
-  });
-</script>
-
 <script>
   import "../app.postcss";
-  import Transition from "../lib/components/Transition.svelte"
   import Nav from "../lib/components/Nav.svelte"
   import Footer from "../lib/components/Footer.svelte"
 
   import {ShowHeaderFooter} from "../stores/store"
   ShowHeaderFooter.set(true);
 
-  export let key;
 </script>
 
 <svelte:head>
@@ -28,8 +18,7 @@
   <meta content='width=device-width, initial-scale=1, minimum-scale=1' name='viewport'/>
 </svelte:head>
 
-<Transition key={key}>
-<div class="text-gray-900 absolute w-screen">
+<div class="text-gray-900 relative w-screen">
   {#if $ShowHeaderFooter}
   <Nav />
   {/if}
@@ -38,4 +27,3 @@
   <Footer />
   {/if}
 </div>
-</Transition>

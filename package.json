@@ -10,6 +10,9 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@portabletext/svelte": "^0.2.0",
+		"@sanity/client": "^2.21.10",
+		"@sanity/image-url": "^1.0.1",
 		"@sveltejs/adapter-netlify": "^1.0.0-next.0",
 		"@sveltejs/adapter-static": "^1.0.0-next.13",
 		"@sveltejs/kit": "next",
