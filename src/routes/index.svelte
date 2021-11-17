@@ -368,6 +368,7 @@
 
   .hero-bird {
     bottom: 0;
+    z-index: 10;
   }
 
   :global(.show-animation .bird-1) {

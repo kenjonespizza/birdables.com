@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
 
   export async function load({page, fetch}) {
-    const url = `${base}/api/author/all`;
+    const url = `${base}/api/blog/author/all`;
     const res = await fetch(url)
     const authors = await res.json()
     if (res) {
@@ -22,21 +22,32 @@
 <script>
   import {assets} from '$app/paths'
   import BlogHero from '$lib/components/Blog/BlogHero.svelte'
+  import Breadcrumb from '$lib/components/Breadcrumb.svelte'
   import Link from '$lib/components/Link.svelte'
   import { urlFor } from '$lib/sanity-image-url'
 
   export let authors
-  console.log('authors:', authors)
-  // export let blogInfo
 </script>
 
 <svelte:head>
   <title>Authors</title>
 </svelte:head>
 
-<BlogHero>
+<section class="bg-gray-blue">
+  <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
+    <Breadcrumb current={"Authors"} steps={[{title:"Blog", link:"/blog"}]} />
+    <div class="md:flex md:justify-between items-end">
+      <div class="max-w-3xl pt-8">
+        <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tighter lg:text-6xl">Authors <span class="tracking-tight italic text-gray-300 text-4xl">({authors.length})</span></h2>
+        <p class="mt-4 text-xl text-gray-500">These are the writers of the Birdables blog.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <BlogHero>
   <h1 slot="heading"><a class="underline" href="blog" rel=prefetch>Blog</a> / Authors</h1>
-</BlogHero>
+</BlogHero> -->
 
 <div class="bg-white">
   <div class="mx-auto py-12 px-4 max-w-screen-xl sm:px-6 lg:px-8 lg:py-24">
@@ -44,8 +55,8 @@
       <ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
         {#each authors as author}
         <li>
-          <Link href={`/author/${author.pageInfo.slug.current}`} class="space-y-4">
-            <div class="aspect-w-1 aspect-h-1">
+          <Link href={`/blog/author/${author.pageInfo.slug.current}`} class="space-y-4">
+            <div class="aspect-w-4 aspect-h-5">
               <img loading=lazy class="object-cover shadow-lg rounded-lg" src={author.image ? urlFor(author.image.asset).width(600).quality(80) : `${assets}/images/userImageNotFound.png`} alt={author.pageInfo.name}>
             </div>
 

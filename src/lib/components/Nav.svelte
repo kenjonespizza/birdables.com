@@ -34,7 +34,7 @@
 <svelte:window on:keydown={handleKeyDown}></svelte:window>
 
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="relative bg-white">
+<div class="relative bg-white z-10">
   <div class="absolute inset-0 z-30 pointer-events-none" aria-hidden="true"></div>
   <div class="relative z-20">
     <div class="flex justify-between items-center px-6 py-6 lg:px-16 lg:justify-start lg:space-x-10">
@@ -114,6 +114,9 @@
           <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-base font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
             About Birdables
           </a>
+          <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/blog" class={`${$page.path === "/blog" ? "border-gray-900" : "border-transparent"} text-base font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+            Blog
+          </a>
           <span class={`text-base font-medium text-gray-600 transform translate-y-1.5 pb-1 transition cursor-not-allowed`}>
             Submit a Bird (Coming Soon)
           </span>
@@ -179,6 +182,9 @@
                 </a> -->
                 <a on:click={toggle} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   About Birdables
+                </a>
+                <a on:click={toggle} sveltekit:prefetch href="/blog" class={`${$page.path === "/blog" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+                  Blog
                 </a>
                 <span class={`text-base font-medium text-gray-600 transform translate-y-1.5 pb-1 transition cursor-not-allowed`}>
                   Submit a Bird (Coming Soon)

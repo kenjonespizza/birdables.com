@@ -1,7 +1,4 @@
 <script context="module">
-  
-  
-
 	export function load({ error, status }) {
 		return {
 			props: {
@@ -17,7 +14,15 @@
   import {ShowHeaderFooter} from "../stores/store"
 	export let status;
 	export let error;
-  ShowHeaderFooter.set(false);
+
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+		ShowHeaderFooter.set(false);
+
+    return () => ShowHeaderFooter.set(true);
+	});
+  
 </script>
 
 <!-- This example requires Tailwind CSS v2.0+ -->

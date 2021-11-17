@@ -25,7 +25,6 @@ export async function get () {
     const query = filter + projection;
     const params = {perPage}
     const results = await client.fetch(query, params)
-    console.log('results:', results)
     const {posts, count, blogInfo, categories, topics: allTopics} = results
     let topics = massageTopics(allTopics)
 

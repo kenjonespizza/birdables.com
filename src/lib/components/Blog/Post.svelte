@@ -1,6 +1,6 @@
 <script>
   import Link from "$lib/components/Link.svelte";
-  // import BlockContent from "$lib/components/BlockContent.svelte";
+  import PortableText from "$lib/components/PortableText.svelte";
   import { truncate, toPlainText } from "$lib/utils";
   import { urlFor } from '$lib/sanity-image-url'
 
@@ -21,7 +21,7 @@
       {post.pageInfo.name}
     </h3> 
       {#if post.excerpt }
-        <!-- <BlockContent content={post.excerpt} classes="mt-3 text-base leading-6 text-gray-500" /> -->
+        <PortableText content={post.excerpt} class="mt-3 text-base leading-6 text-gray-500" />
       {:else}
         <p class="mt-3 text-base leading-6 text-gray-500">
           {truncate(toPlainText(post.body))}
@@ -29,7 +29,7 @@
       {/if}
       </Link>
   <div class="mt-3">
-    <Link href={`/${post.pageInfo.slug.current}`} class="text-base leading-6 underline font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+    <Link href={`/${post.pageInfo.slug.current}`} class="text-base leading-6 underline font-semibold text-beak-600 hover:text-beak-500 transition ease-in-out duration-150">
       Read post
     </Link>
   </div>

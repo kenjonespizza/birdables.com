@@ -2,10 +2,10 @@ import client from '$lib/sanityClient'
 import { postPerPage } from '../utils'
 import { slugify, massageTopics } from '$lib/utils'
 
-export async function get (req, res) {
+export async function get ({params}) {
  
     let allPostsWithTopic = [] // Initiate array of _id's for posts with topic
-    let [topic, currentPage] = req.params.topic.split(',')
+    let [topic, currentPage] = params.topic.split(',')
 
     // Set currentPage to 1 by default if it wasn't set in the URL
     currentPage = currentPage ? Number(currentPage) : 1
@@ -20,11 +20,10 @@ export async function get (req, res) {
       _id
     }`;
     let query = filter + projection;
-    let params = {topic, start, end}
+    let queryParams = {topic, start, end}
     // Query all posts for _id's and topics.  A todo might be to get all the data in one query, and then just return the ones with the correct topic... hmmm
-    client.fetch(query, params)
+    const res = client.fetch(query, queryParams)
     .then(posts => {
-
       // This step makes a list of the post _id's with the expected topic
       posts.forEach(post => {
         post.topics.forEach(eachTopic => {
@@ -33,7 +32,6 @@ export async function get (req, res) {
           }
         })  
       });
-
       return allPostsWithTopic
     })
     // Now we query just for the posts with our targeted _id's
@@ -55,19 +53,16 @@ export async function get (req, res) {
       return results
     })
     .then( results => {
-      const {posts, count, categories, blogInfo, topics: allTopics} = results
+      const {posts, count, blogInfo, topics: allTopics} = results
       let topics = massageTopics(allTopics)
-      res.end(JSON.stringify({ posts, currentPage, perPage, count, blogInfo, categories, topics }));
+      return {
+        status: 200,
+        body: {posts, currentPage, perPage, count, blogInfo, topics }
+      };
     })
-    .catch( error => {
-      console.log('error:', error.message)
-      res.writeHead(500, {
-        'Content-Type': 'application/json'
-      });
 
-      res.end(JSON.stringify({
-        message: error.message
-      }));  
-    })
+    if (res) {
+      return res
+    }
 
 };

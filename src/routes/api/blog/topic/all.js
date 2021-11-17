@@ -1,12 +1,7 @@
 import client from '$lib/sanityClient'
 import { massageTopics } from '$lib/utils'
 
-/**
- * This route is called 'all' instead of index to prevent route conflicts.
- * @see https://sapper.svelte.dev/docs#Route_conflicts
- */
-export async function get (req, res) {
-  try {
+export async function get () {
     const constraints = `*[_type == "post" && defined(topics)]`
     const projections = `{
       topics,
@@ -15,15 +10,8 @@ export async function get (req, res) {
     const query = constraints + projections
     const topicsResults = await client.fetch(query)
     let topics = massageTopics(topicsResults)
-    res.end(JSON.stringify({ topics }));
-  } catch (err) {
-    console.log('err:', err.message)
-    res.writeHead(500, {
-      'Content-Type': 'application/json'
-    });
-
-    res.end(JSON.stringify({
-      message: err.message
-    }));  
-  }
+    return {
+      status: 200,
+      body: topics
+    }
 };

@@ -12,10 +12,7 @@ export async function get({ params }) {
   const data = returnBirdFromParam(slug, 'slug' ,returnFormattedBirds(records));
 
   if (data) {
-    // const listing = await returnEtsyListingFromEtsyListingId(data.etsyId);
-    // Object.assign(data, {listing});
-  
-    if (records) {
+    if (records) {  
       return {
         status: 200,
         body: data,

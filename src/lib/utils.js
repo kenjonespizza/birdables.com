@@ -156,10 +156,10 @@ export const checkIfInternalURL = (url) => {
     address = address.replace('http://', '');
     address = address.replace('www.', '');
 
-    if (url.includes(address) || url.startsWith("/")) {
-    // || (
-    //   !url.include("www.") || !url.include("http://") || !url.include("https://")
-    //   )
+    if (url.includes(address) || url.startsWith("/") || (
+      !url.include("www.") || !url.include("http://") || !url.include("https://")
+      )) {
+
     return true;
     } else {
     return false;
@@ -229,11 +229,22 @@ export function slugify(string) {
 		.replace(/-+$/, ""); // Trim - from end of text
 }
 
-export function unSlugify(string) {
+export function unSlugify(string, uppercase=false) {
 	if (typeof string !== "string") {
 		return "";
 	}
-	return string.replace(/([_-])/g, " ");
+
+  if (uppercase) {
+    
+    const toReturn = string.replace(/([_-])/g, " ")
+    .split(' ')
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(' ');
+    console.log('toReturn:', toReturn)
+    return toReturn;
+  }
+  
+  return string.replace(/([_-])/g, " ");
 }
 
 export function mergeArrays(filterFunction = (x) => { x; }, ...arrays) {
@@ -267,3 +278,8 @@ export function massageTopics(unmassagedTopics) {
 
 	return topics;
 }
+
+export const capitalize = (s) => {
+	if (typeof s !== "string") return "";
+	return s.charAt(0).toUpperCase() + s.slice(1);
+};

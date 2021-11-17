@@ -1,10 +1,9 @@
-import client from "../../../../sanityClient";
+import client from "$lib/sanityClient";
 import { postPerPage } from "../utils";
 
-export async function get(req, res) {
-	try {
+export async function get({ params }) {
 		// Get the page params
-		let [category, currentPage] = req.params.category.split(",");
+		let [category, currentPage] = params.category.split(",");
 
 		// Set currentPage to 1 by default if it wasn't set in the URL
 		currentPage = currentPage ? Number(currentPage) : 1;
@@ -29,22 +28,17 @@ export async function get(req, res) {
     }`;
 
 		const query = filter + projection;
-		const params = { category, start, end };
-		const categoryInfo = await client.fetch(query, params);
+		const queryParams = { category, start, end };
+		const categoryInfo = await client.fetch(query, queryParams);
 		const {
 			posts, count, categories, blogInfo,
 		} = categoryInfo;
-		res.end(JSON.stringify({
-			posts, categoryInfo, currentPage, perPage, count, blogInfo, categories,
-		}));
-	} catch (err) {
-		console.log("err:", err.message);
-		res.writeHead(500, {
-			"Content-Type": "application/json",
-		});
-
-		res.end(JSON.stringify({
-			message: err.message,
-		}));
-	}
+		
+		
+		if (categoryInfo) {
+			return {
+				status: 200,
+				body: {posts, categoryInfo, currentPage, perPage, count, blogInfo, categories},
+			}
+		}
 }
