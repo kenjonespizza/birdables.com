@@ -48,7 +48,7 @@
         <ul tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-item-3" class="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5">
           {#each categories as category}
             <li on:click={toggle} role="option" class="text-gray-900 cursor-default select-none relative hover:bg-gray-100">
-              <a noscroll href={category.pageInfo.slug.current} class=" py-2 px-4 flex items-center space-x-3">
+              <a noscroll href={`/blog/category/${category.pageInfo.slug.current}`} class=" py-2 px-4 flex items-center space-x-3">
                 <span aria-label={"Posts in category: category.pageInfo.name"} class="bg-gray-200 justify-center items-center flex h-5 w-5 rounded-full text-xs">{category.count}</span>
                 <span class={`${category._id === currentCategory ? "font-bold" : "font-normal"} block truncate`}>
                   {category.pageInfo.name}

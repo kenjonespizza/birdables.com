@@ -39,7 +39,6 @@
   export let perPage;
   export let count;
   export let blogInfo;
-  console.log('blogInfo:', blogInfo)
   export let categories;
   export let topics;
 
@@ -57,7 +56,7 @@
     <div class="max-w-3xl pt-8">
         <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tighter lg:text-6xl">Birdables Blog <span class="tracking-tight italic text-gray-300 text-4xl">({count} posts)</span></h2>
         <PortableText content={blogInfo.content} class="mt-4 prose-xl text-gray-500" />
-        <div class="mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
+        <!-- <div class="mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
           <div class="rounded-md shadow">
             <a href="/blog/categories" rel=prefetch class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md bg-gray-900 text-white hover:bg-beak-600 hover:text-white focus:outline-none focus:border-beak-300 focus:shadow-outline-beak transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
               Categories
@@ -73,7 +72,7 @@
               Authors
             </a>
           </div>
-        </div>
+        </div> -->
     </div>
   </div>
   </div>

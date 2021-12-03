@@ -44,7 +44,7 @@
         <ul tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-item-3" class="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5">
           {#each topics as topic}
             <li on:click={toggle} role="option" class="text-gray-900 cursor-default select-none relative hover:bg-gray-100">
-              <a href={`blog/topic/${topic}`} sapper:noscroll class=" py-2 px-4 flex items-center space-x-3">
+              <a href={`/blog/topic/${topic}`} sapper:noscroll class=" py-2 px-4 flex items-center space-x-3">
                 <span class={`${topic === currentTopic ? "font-bold" : "font-normal"} block truncate capitalize`}>
                   {unSlugify(topic)}
                 </span>

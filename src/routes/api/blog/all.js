@@ -9,7 +9,7 @@ export async function get () {
 
     const filter = `*[][0]`;
     const projection = `{
-      "posts": *[_type == "post" && defined(pageInfo.slug.current)] | order(publishedAt desc) [0...$perPage]{...},
+      "posts": *[_type == "post" && defined(pageInfo.slug.current)] | order(publishedAt desc),
       "blogInfo": *[_type == "blog"][0]{...},
       "categories": *[_type == "category"]{
         _id,

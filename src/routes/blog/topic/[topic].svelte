@@ -2,35 +2,30 @@
   import { base } from '$app/paths'
 
   export async function load({ page, fetch }) {
-  console.log('page:', page)
 
     let {topic} = page.params
-    console.log('topic:', topic)
     // if (currentPageParam == 1) {
     //   return this.redirect(302, `blog/topic/${topic}`);
     // }
 
+    // As with the server route, we have acces to params.slug here
+    const res = await fetch(`${base}/api/blog/topic/${page.params.topic}`);
+    const { posts, currentPage, perPage, count, blogInfo, categories, topics } = await res.json();
 
-      
-      // As with the server route, we have acces to params.slug here
-      const res = await fetch(`${base}/api/blog/topic/${page.params.topic}`);
-      const { posts, currentPage, perPage, count, blogInfo, categories, topics } = await res.json();
+    if (!posts || posts.length === 0) {
+      return {status: 404}
+    }
 
-      if (!posts || posts.length === 0) {
-        return {status: 404}
-      }
-
-      if (res) {
-        return {
-          props: {posts, currentPage, perPage, count, blogInfo, categories, topics, topic
-        }};
-      }
-
+    if (res) {
       return {
-        status: res.status,
-        error: new Error().message,
-      };
+        props: {posts, currentPage, perPage, count, blogInfo, categories, topics, topic
+      }};
+    }
 
+    return {
+      status: res.status,
+      error: new Error().message,
+    };
   };
 </script>
 
@@ -71,6 +66,6 @@ export let blogInfo
 
 <div class="bg-white">
   <div class="mx-auto py-12 px-4 max-w-screen-xl sm:px-6 lg:px-8 lg:py-24">
-    <Posts {posts} {topics} {count} {currentPage} {perPage} paginationSlug={`blog/topic/${topic}`} currentTopic={topic} />
+    <Posts {posts} {topics} {count} {currentPage} {perPage} paginationSlug={`/blog/topic/${topic}`} currentTopic={topic} />
   </div>
 </div>

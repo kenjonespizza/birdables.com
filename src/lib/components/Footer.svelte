@@ -26,6 +26,12 @@
           About Birdables
         </a>
       </div>
+      
+      <div class="px-5 py-2">
+        <a sveltekit:prefetch href="/blog" class="text-base text-gray-500 hover:text-gray-900">
+          Blog
+        </a>
+      </div>
     </nav>
     <div class="mt-8 flex justify-center space-x-6">
       <a href="https://instagram.com/Birdables_Cards" target="_blank" rel="noopener" noreferrer class="text-gray-400 hover:text-gray-500">

@@ -5,6 +5,7 @@
   let className
 
   export { className as class };
+  // console.log('className:', className)
 
   export let href = null;
   export let title = '';
@@ -21,7 +22,7 @@
     <slot>{text !== '' ? text : href}</slot>
   </a>
 {:else}
-  <ExternalLink class={className} href={href} title={title}>
+  <ExternalLink class={className ? className : undefined} href={href} title={title}>
     <slot>{text !== '' ? text : href}</slot>
   </ExternalLink>
 {/if}

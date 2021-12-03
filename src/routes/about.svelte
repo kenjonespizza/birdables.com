@@ -88,40 +88,21 @@
 </nav>
 
 
-<div class="relative bg-white pt-10 px-4 sm:px-6 lg:px-16 border-t border-t-gray-100 md:py-24">
-  <div class="lg:mx-auto lg:max-w-7xl">
+<div class="relative bg-white border-t border-t-gray-100 md:pb-24">
+  <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
     <Breadcrumb current={"About Birdables"} />
-    <!-- <div class="grid grid-cols-1 gap-20 pt-8 lg:grid-cols-2 lg:gap-8 lg:items-start">
-      <div class="flex flex-col justify-start">
-        <div class="">
-          <h1 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-6xl">
-            All About Birdables
-          </h1>
-          <div class="mt-6 text-gray-500 space-y-6">
-            <p class="prose prose-xl text-gray-500">There's more to Birdables than beautiful cards. The reality is that thousands of bird species are currently at risk due to habitat loss, climate change, and other human-related factors. Even birds many people think of as common sightings may be rarer than you think. At Birdables, our mission is to raise awareness and appreciation for birds, and to hopefully make a difference by donating to conservation efforts in the process.
-            </p>
+    <h1 class="pt-8 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tighter lg:text-6xl">
+      All About Birdables
+    </h1>
+    <div class="mt-6 text-gray-500 space-y-6">
+      <p class="prose prose-xl text-gray-500">There's more to Birdables than beautiful cards. The reality is that thousands of bird species are currently at risk due to habitat loss, climate change, and other human-related factors. Even birds many people think of as common sightings may be rarer than you think. At Birdables, our mission is to raise awareness and appreciation for birds, and to hopefully make a difference by donating to conservation efforts in the process.
+      </p>
+      <div>
+        {#each sections as section}
+          <div class="mt-6">
+            <a on:click={(e) => {scrollToSection(section.link, e)}} href={`#${section.link}`} class="text-xl font-semibold text-gray-600 border-b-2 pb-2 transition hover:border-gray-900">{section["title"]} <span aria-hidden="true">&rarr;</span> </a>
           </div>
-        </div>
-        
-      </div>
-
-      <img class="h-full w-full object-contain" src={`${assets}/images/Featured-Image.png`} alt="">
-
-    </div> -->
-    <div class="prose-lg text-gray-500 mx-auto pt-8 ">
-      <h1 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-6xl">
-        All About Birdables
-      </h1>
-      <div class="mt-6 text-gray-500 space-y-6">
-        <p class="prose prose-xl text-gray-500">There's more to Birdables than beautiful cards. The reality is that thousands of bird species are currently at risk due to habitat loss, climate change, and other human-related factors. Even birds many people think of as common sightings may be rarer than you think. At Birdables, our mission is to raise awareness and appreciation for birds, and to hopefully make a difference by donating to conservation efforts in the process.
-        </p>
-        <div>
-          {#each sections as section}
-            <div class="mt-6">
-              <a on:click={(e) => {scrollToSection(section.link, e)}} href={`#${section.link}`} class="text-xl font-semibold text-gray-600 border-b-2 pb-2 transition hover:border-gray-900">{section["title"]} <span aria-hidden="true">&rarr;</span> </a>
-            </div>
-          {/each}
-        </div>
+        {/each}
       </div>
     </div>
     
@@ -131,7 +112,7 @@
 
 
 <div class="bg-gray-blue py-16 px-4 sm:px-6 lg:px-16 pt-8 border-t border-t-gray-100 sm:py-24" id={sections[0].link}>
-  <div class="lg:mx-auto lg:max-w-7xl">
+  <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
     <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
       {sections[0].title}
     </h2>
@@ -145,7 +126,7 @@
 </div>
 
 <div class="bg-white py-16 px-4 sm:px-6 lg:px-16 pt-8 border-t border-t-gray-100 sm:py-24" id={sections[1].link}>
-  <div class="lg:mx-auto lg:max-w-7xl lg:px-8">
+  <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
     <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
       {sections[1].title}
     </h2>
@@ -250,7 +231,7 @@
 
 
 <div class="bg-gray-blue py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24" id={sections[2].link}>
-  <div class="lg:mx-auto lg:max-w-7xl lg:px-8">
+  <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
     <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
       {sections[2].title}
     </h2>
@@ -287,7 +268,7 @@
 </div>
 
 <div class="bg-white py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24" id={sections[3].link}>
-  <div class="lg:mx-auto lg:max-w-7xl lg:px-8">
+  <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
     <h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
       {sections[3].title}
     </h2>

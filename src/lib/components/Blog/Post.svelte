@@ -29,7 +29,7 @@
       {/if}
       </Link>
   <div class="mt-3">
-    <Link href={`/${post.pageInfo.slug.current}`} class="text-base leading-6 underline font-semibold text-beak-600 hover:text-beak-500 transition ease-in-out duration-150">
+    <Link href={`/blog/${post.pageInfo.slug.current}`} class="text-base leading-6 underline font-semibold text-gray-900 hover:text-beak-600 transition ease-in-out duration-150">
       Read post
     </Link>
   </div>

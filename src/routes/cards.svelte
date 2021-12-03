@@ -135,7 +135,7 @@
       <Breadcrumb current={"All Cards"} />
       <div class="md:flex md:justify-between items-end">
       <div class="max-w-3xl pt-8">
-          <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tighter lg:text-6xl">Browse Cards <span class="tracking-tight italic text-gray-300 text-4xl">({cardsOrig.length})</span></h2>
+          <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tighter lg:text-6xl">Browse Cards <span class="tracking-tight italic text-gray-300 text-4xl">({cardsOrig.length})</span></h1>
           <p class="mt-4 text-xl text-gray-500">Start or continue building your Birdables collection!</p>
       </div>
     </div>

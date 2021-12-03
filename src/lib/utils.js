@@ -155,13 +155,19 @@ export const checkIfInternalURL = (url) => {
     address = address.replace('https://', '');
     address = address.replace('http://', '');
     address = address.replace('www.', '');
+    
+    if (
+      url.includes(address)
+      || url.startsWith("/")
+      || !(
+        url.includes("www.") || url.includes("http://") || url.includes("https://")
+      )
+    ) {
 
-    if (url.includes(address) || url.startsWith("/") || (
-      !url.include("www.") || !url.include("http://") || !url.include("https://")
-      )) {
-
+    // console.log("true");
     return true;
-    } else {
+  } else {
+      // console.log("false");
     return false;
     }
   }
@@ -235,13 +241,11 @@ export function unSlugify(string, uppercase=false) {
 	}
 
   if (uppercase) {
-    
-    const toReturn = string.replace(/([_-])/g, " ")
+     
+    return string.replace(/([_-])/g, " ")
     .split(' ')
     .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
     .join(' ');
-    console.log('toReturn:', toReturn)
-    return toReturn;
   }
   
   return string.replace(/([_-])/g, " ");

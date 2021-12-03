@@ -9,7 +9,6 @@
 				}
 			};
 		}
-		console.log('res:', res)
 
     return {
 			status: res.status,
