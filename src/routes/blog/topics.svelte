@@ -20,16 +20,47 @@
 </script>
 
 <script>
+  import SEO from 'svelte-seo';
+
+  import site from '$lib/info';
   import Breadcrumb from "$lib/components/Breadcrumb.svelte";
-  import BlogHero from "$lib/components/Blog/BlogHero.svelte";
   import { unSlugify } from "$lib/utils";
 
   export let topics;
 </script>
 
-<svelte:head>
-  <title>Topics</title>
-</svelte:head>
+<SEO
+  title={`${site.name} blog topics`}
+  keywords={`${site.name} blog topics,${topics.join()}`}
+  openGraph={{
+    title: `${site.name} blog topics`,
+    // description: `${categoryNamesToString(true)} ${topics.length > 1 ? "are" : "is"} the ${site.name} blog categor${topics.length > 1 ? "ies" : "y"}`,
+    url: `${site.address}/blog/topics`,
+    type: 'website',
+    images: [
+      {
+        url: `${site.address}/images/opengraph/index.webp`,
+        width: 1200,
+        height: 627, 
+        alt: `${site.name} blog topics`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `${site.name} blog topics`,
+    // description: `${categoryNamesToString(true)} ${topics.length > 1 ? "are" : "is"} the ${site.name} blog author${topics.length > 1 ? "ies" : "y"}`,
+    image: `${site.address}/images/opengraph/index.webp`,
+    imageAlt: `${site.name} blog topics`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.svg`,
+    "@context": `http://schema.org`,
+    "@type": `WebSite`,
+    "name": `${site.name} topics`,
+    "url": `${site.address}/blog/topics`,
+  }}
+/>
 
 <section class="bg-gray-blue">
   <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">

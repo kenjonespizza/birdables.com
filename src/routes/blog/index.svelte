@@ -29,10 +29,14 @@
 </script>
 
 <script>
-  import BlogHero from "$lib/components/Blog/BlogHero.svelte";
+  import SEO from 'svelte-seo';
+
+  import site from '$lib/info';
   import Posts from "$lib/components/Blog/Posts.svelte";
   import PortableText from "$lib/components/PortableText.svelte";
   import Breadcrumb from "$lib/components/Breadcrumb.svelte"
+  import { toPlainText } from "$lib/utils";
+  import { urlFor } from "$lib/sanity-image-url"
 
   export let posts;
   export let currentPage;
@@ -47,6 +51,40 @@
 <svelte:head>
 	<title>{blogInfo.pageInfo.name}</title>
 </svelte:head>
+
+<SEO
+  title={`${blogInfo.pageInfo.name}`}
+  description={`${toPlainText(blogInfo.content)}`}
+  keywords={`Blog, ${site.name}`}
+  openGraph={{
+    title: `${blogInfo.pageInfo.name}`,
+    description: toPlainText(blogInfo.content),
+    url: `${site.address}/blog`,
+    type: 'website',
+    images: [
+      {
+        url: `${site.address}/images/opengraph/index.webp`,
+        width: 1200,
+        height: 627, 
+        alt: `${blogInfo.pageInfo.name}`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `${blogInfo.pageInfo.name}`,
+    description: toPlainText(blogInfo.content),
+    image: `${site.address}/images/opengraph/index.webp`,
+    imageAlt: `${blogInfo.pageInfo.name}!`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.svg`,
+    "@context": `http://schema.org`,
+    "@type": `WebSite`,
+    "name": `${blogInfo.pageInfo.name}`,
+    "url": `${site.address}/blog`,
+  }}
+/>
 
 <section class="bg-gray-blue">
     

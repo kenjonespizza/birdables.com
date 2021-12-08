@@ -85,7 +85,7 @@
     "category": "Cards",
     "image": `${site.address}/images/cards/${bird.friendlyId}.webp`,
     "description": ``,
-    "logo": "http://www.birdables.com/images/logo.png"
+    "logo": "http://www.birdables.com/images/logo.svg"
   }}
 />
 

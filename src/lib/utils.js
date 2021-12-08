@@ -287,3 +287,31 @@ export const capitalize = (s) => {
 	if (typeof s !== "string") return "";
 	return s.charAt(0).toUpperCase() + s.slice(1);
 };
+
+export const categoryNamesToString = (categories, format = false) => {
+  let arr = [];
+  categories.forEach((category) => {
+    arr.push(category.pageInfo.name)
+  })
+
+  if (format) {
+    let returnArr = arr.join(", ")
+    return returnArr.replace(/,(?=[^,]*$)/, ', and')
+  }
+
+  return arr.join()
+}
+
+export const authorNamesToString = (authors, format = false) => {
+  let arr = [];
+  authors.forEach((author) => {
+    arr.push(author.pageInfo.name)
+  })
+
+  if (format) {
+    let returnArr = arr.join(", ")
+    return returnArr.replace(/,(?=[^,]*$)/, ', and')
+  }
+
+  return arr.join()
+}

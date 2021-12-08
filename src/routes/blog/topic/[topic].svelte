@@ -30,8 +30,10 @@
 </script>
 
 <script>
+import SEO from 'svelte-seo';
+
+import site from '$lib/info';
 import Breadcrumb from '$lib/components/Breadcrumb.svelte'
-import BlogHero from '$lib/components/Blog/BlogHero.svelte'
 import Posts from '$lib/components/Blog/Posts.svelte'
 import { unSlugify, capitalize } from '$lib/utils'
 
@@ -41,12 +43,44 @@ export let count
 export let currentPage
 export let perPage
 export let topics
-export let blogInfo
+// export let blogInfo
+
+const formattedTopic = capitalize(unSlugify(topic, true));
 </script>
 
-<svelte:head>
-  <title>{capitalize(unSlugify(topic, true))} | {blogInfo.pageInfo.name}</title>
-</svelte:head>
+<SEO
+  title={`${formattedTopic} | ${site.name} Blog`}
+  description={`"${formattedTopic}" blog posts`}
+  keywords={formattedTopic}
+  openGraph={{
+    title: `${formattedTopic} |  ${site.name} Blog`,
+    // description: toPlainText(post.excerpt),
+    url: `${site.address}/blog/topic${topic}`,
+    type: 'website',
+    images: [
+      {
+        url: `${site.address}/images/opengraph/index.webp`,
+        width: 1200,
+        height: 627, 
+        alt: `${formattedTopic}`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `"${formattedTopic}" blog posts | ${site.name}`,
+    // description: toPlainText(post.excerpt),
+    image: `${site.address}/images/opengraph/index.webp`,
+    imageAlt: `${formattedTopic}`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.svg`,
+    "@context": `http://schema.org`,
+    "@type": `WebSite`,
+    "name": `${formattedTopic} blog posts | ${site.name}`,
+    "url": `${site.address}/blog/topic/${topic}`,
+  }}
+/>
 
 <section class="bg-gray-blue">
   <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">

@@ -26,10 +26,14 @@
 
 
 <script>
-  import BlogHero from '$lib/components/Blog/BlogHero.svelte'
+  import SEO from 'svelte-seo';
+
+  import site from '$lib/info';
+  import { urlFor } from "$lib/sanity-image-url"
   import Posts from '$lib/components/Blog/Posts.svelte'
   import PortableText from '$lib/components/PortableText.svelte'
   import Breadcrumb from '$lib/components/Breadcrumb.svelte'
+  import { toPlainText, truncate } from '$lib/utils'
 
   export let posts;
   export let currentPage;
@@ -46,6 +50,40 @@
 <svelte:head>
 	<title>{categoryInfo.pageInfo.name}</title>
 </svelte:head>
+
+<SEO
+  title={`${categoryInfo.pageInfo.name} | ${site.name} Blog`}
+  description={`${truncate(toPlainText(categoryInfo.description), 160)}`}
+  keywords={categoryInfo.pageInfo.name}
+  openGraph={{
+    title: `${categoryInfo.pageInfo.name} | ${site.name} Blog`,
+    description: truncate(toPlainText(categoryInfo.description), 160),
+    url: `${site.address}/blog/category/${categoryInfo.pageInfo.slug.current}`,
+    type: 'website',
+    images: [
+      {
+        url: `${urlFor(categoryInfo.image.asset).quality(80).size(1200,627)}`,
+        width: 1200,
+        height: 627, 
+        alt: `${categoryInfo.pageInfo.name}`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `"${categoryInfo.pageInfo.name}" blog posts | ${site.name} Blog`,
+    description: truncate(toPlainText(categoryInfo.description), 160),
+    image: `${urlFor(categoryInfo.image.asset).quality(80).size(1200,627)}`,
+    imageAlt: `${categoryInfo.pageInfo.name}!`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.svg`,
+    "@context": `http://schema.org`,
+    "@type": `WebSite`,
+    "name": `${categoryInfo.pageInfo.name} blog posts | ${site.name}`,
+    "url": `${site.address}/blog/category/${categoryInfo.pageInfo.name}`,
+  }}
+/>
 
 <section class="bg-gray-blue">
   <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">

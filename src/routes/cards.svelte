@@ -98,9 +98,9 @@
   description={`${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`}
   keywords={`Bird Collectable Cards, Bird Trading Cards, ${site.name}, Bird NFT's`}
   openGraph={{
-    title: 'About ${site.name} | Physical & Digital Bird Collectable Cards',
-    description: '${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.',
-    url: '${site.address}/',
+    title: `About ${site.name} | Physical & Digital Bird Collectable Cards',
+    description: '${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
+    url: `${site.address}/`,
     type: 'website',
     images: [
       {
@@ -116,10 +116,10 @@
     title: `${site.name} | Physical & NFT Bird Collectable Cards`,
     description: `${site.name} is a collection of artistic yet realistic bird collectable/trading cards. Created for lovers of birds, art, and sustainably thoughtful projects. Distributed in digital (NFT) and physical mediums, so that owners can enjoy ${site.name} cards any way they like.`,
     image: `${site.address}/images/opengraph/index.webp`,
-    imageAlt: `Alt text for the card!`,
+    imageAlt: `${site.name}!`,
   }}
   jsonLd={{
-    "logo": `${site.address}/images/logo.png`,
+    "logo": `${site.address}/images/logo.svg`,
     "@context": `http://schema.org`,
     "@type": `WebSite`,
     "name": `${site.name}`,

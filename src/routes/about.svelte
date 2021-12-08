@@ -69,10 +69,10 @@
     title: `${site.name} | Physical & NFT Bird Collectable Cards`,
     description: `${site.name} are artistic collectible trading cards, available as NFTs and as physical prints. Sustainably produced with a goal of giving back.`,
     image: `${site.address}/images/opengraph/index.webp`,
-    imageAlt: `Alt text for the card!`,
+    imageAlt: `${site.name}`,
   }}
   jsonLd={{
-    "logo": `${site.address}/images/logo.png`,
+    "logo": `${site.address}/images/logo.svg`,
     "@context": "http://schema.org",
     "@type": "WebSite",
     "name": `${site.name}`,

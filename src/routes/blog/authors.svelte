@@ -20,18 +20,51 @@
 </script>
 
 <script>
+  import SEO from 'svelte-seo';
+
+import site from '$lib/info';
   import {assets} from '$app/paths'
-  import BlogHero from '$lib/components/Blog/BlogHero.svelte'
   import Breadcrumb from '$lib/components/Breadcrumb.svelte'
   import Link from '$lib/components/Link.svelte'
   import { urlFor } from '$lib/sanity-image-url'
+  import { authorNamesToString } from "$lib/utils"
 
   export let authors
 </script>
 
-<svelte:head>
-  <title>Authors</title>
-</svelte:head>
+<SEO
+  title={`${site.name} blog authors`}
+  description={`${authorNamesToString(authors, true)} ${authors.length > 1 ? "are" : "is"} the ${site.name} blog author${authors.length > 1 ? "s" : ""}`}
+  keywords={`${site.name} blog authors,${authorNamesToString(authors)}`}
+  openGraph={{
+    title: `${site.name} blog authors`,
+    description: `${authorNamesToString(authors, true)} ${authors.length > 1 ? "are" : "is"} the ${site.name} blog author${authors.length > 1 ? "s" : ""}`,
+    url: `${site.address}/blog/authors`,
+    type: 'website',
+    images: [
+      {
+        url: authors[0]?.image?.asset ? urlFor(authors[0].image.asset).width(1200).quality(80) : `${site.address}/images/opengraph/index.webp}`,
+        width: 1200,
+        height: authors[0]?.image?.asset ? 1200 : 627, 
+        alt: `${site.name} blog authors`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `${site.name} blog authors`,
+    description: `${authorNamesToString(authors, true)} ${authors.length > 1 ? "are" : "is"} the ${site.name} blog author${authors.length > 1 ? "s" : ""}`,
+    image: authors[0]?.image?.asset ? urlFor(authors[0].image.asset).width(1200).quality(80) : `${site.address}/images/opengraph/index.webp}`,
+    imageAlt: `${site.name} blog authors`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.svg`,
+    "@context": `http://schema.org`,
+    "@type": `WebSite`,
+    "name": `${site.name} Authors`,
+    "url": `${site.address}/blog/authors`,
+  }}
+/>
 
 <section class="bg-gray-blue">
   <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
@@ -57,7 +90,7 @@
         <li>
           <Link href={`/blog/author/${author.pageInfo.slug.current}`} class="space-y-4">
             <div class="aspect-w-4 aspect-h-5">
-              <img loading=lazy class="object-cover shadow-lg rounded-lg" src={author.image ? urlFor(author.image.asset).width(600).quality(80) : `${assets}/images/userImageNotFound.png`} alt={author.pageInfo.name}>
+              <img loading=lazy class="object-cover shadow-lg rounded-lg" src={author?.image?.asset ? urlFor(author.image.asset).width(600).quality(80) : `${assets}/images/userImageNotFound.png`} alt={author.pageInfo.name}>
             </div>
 
             <div class="space-y-2">

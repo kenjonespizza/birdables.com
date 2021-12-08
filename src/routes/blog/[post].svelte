@@ -21,11 +21,15 @@
 
 <script>
 // import BlockContent from "../../components/BlockContent.svelte";
+import SEO from 'svelte-seo';
+
+import site from '$lib/info';
 import Link from "$lib/components/Link.svelte";
-import { slugify } from "$lib/utils";
+import { slugify, toPlainText } from "$lib/utils";
 import { urlFor } from "$lib/sanity-image-url"
 import PortableText from '$lib/components/PortableText.svelte';
 import Breadcrumb from '$lib/components/Breadcrumb.svelte';
+import { categoryNamesToString, authorNamesToString } from "$lib/utils"
 
 export let post;
 const { authors } = post;
@@ -46,9 +50,39 @@ function scrolling(e) {
 }
 </script>
 
-<svelte:head>
-  <title>{post.pageInfo.name}</title>
-</svelte:head>
+<SEO
+  title={`${post.pageInfo.name} | ${site.name} Blog`}
+  description={toPlainText(post.excerpt)}
+  keywords={`${post.pageInfo.name},${categoryNamesToString(post.categories)},${authorNamesToString(post.authors)},${post.topics.join()}`}
+  openGraph={{
+    title: post.pageInfo.name,
+    description: toPlainText(post.excerpt),
+    url: `${site.address}/blog/${post.pageInfo.slug.current}`,
+    type: 'website',
+    images: [
+      {
+        url: `${urlFor(post.image.asset).quality(80).size(1200,627)}`,
+        width: 1200,
+        height: 627, 
+        alt: `${post.pageInfo.name}`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `${post.pageInfo.name}`,
+    description: toPlainText(post.excerpt),
+    image: `${urlFor(post.image.asset).quality(80).size(1200,627)}`,
+    imageAlt: `${post.pageInfo.name}!`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.svg`,
+    "@context": `http://schema.org`,
+    "@type": `WebSite`,
+    "name": `${post.pageInfo.name}`,
+    "url": `${site.address}/blog/${post.pageInfo.slug.current}`,
+  }}
+/>
 
 <svelte:window bind:scrollY={y} bind:outerHeight={outerHeight} bind:outerWidth={outerWidth}  on:scroll={scrolling}/>
 

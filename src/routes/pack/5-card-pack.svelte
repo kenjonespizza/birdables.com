@@ -56,7 +56,7 @@
     "category": "Cards",
     "image": `${site.address}/images/cards/5-card-pack.webp`,
     "description": ``,
-    "logo": "http://www.birdables.com/images/logo.png"
+    "logo": "http://www.birdables.com/images/logo.svg"
   }}
 />
 

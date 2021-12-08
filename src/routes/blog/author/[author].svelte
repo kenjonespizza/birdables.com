@@ -31,10 +31,14 @@
 </script>
 
 <script>
+import SEO from 'svelte-seo';
+
+import site from '$lib/info';
 import Posts from "$lib/components/Blog/Posts.svelte";
 import PortableText from "$lib/components/PortableText.svelte";
 import Breadcrumb from "$lib/components/Breadcrumb.svelte";
 // import Pagination from "$lib/components/Pagination.svelte";
+import { toPlainText, truncate } from "$lib/utils";
 import { urlFor } from "$lib/sanity-image-url"
 
 export let author;
@@ -45,9 +49,39 @@ export let count;
 
 </script>
 
-<svelte:head>
-  <title>{author.pageInfo.name}</title>
-</svelte:head>
+<SEO
+  title={`${author.pageInfo.name} | ${author.position}`}
+  description={`${truncate(toPlainText(author.bio, 160))}`}
+  keywords={author.pageInfo.name}
+  openGraph={{
+    title: `${author.pageInfo.name} | ${author.position}`,
+    description: truncate(toPlainText(author.bio, 160)),
+    url: `${site.address}/blog/author/${author.pageInfo.slug.current}`,
+    type: 'website',
+    images: [
+      {
+        url: `${urlFor(author.image.asset).quality(80).width(1200)}`,
+        width: 1200,
+        height: 627, 
+        alt: `${author.pageInfo.name}`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `${author.pageInfo.name} | ${author.position}`,
+    description: truncate(toPlainText(author.bio, 160)),
+    image: `${urlFor(author.image.asset).quality(80).width(1200)}`,
+    imageAlt: `${author.pageInfo.name}!`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.svg`,
+    "@context": `http://schema.org`,
+    "@type": `WebSite`,
+    "name": `${author.pageInfo.name} | ${author.position}`,
+    "url": `${site.address}/blog/author/${author.pageInfo.name}`,
+  }}
+/>
 
 <section class="bg-gray-blue">
   <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">

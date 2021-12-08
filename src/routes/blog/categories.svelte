@@ -12,17 +12,48 @@
 </script>
 
 <script>
-  import BlogHero from "$lib/components/Blog/BlogHero.svelte";
+  import SEO from 'svelte-seo';
+
+  import site from '$lib/info';
   import Breadcrumb from "$lib/components/Breadcrumb.svelte";
-  import PortableText from "$lib/components/PortableText.svelte";
   import { urlFor } from "$lib/sanity-image-url";
+  import { categoryNamesToString } from "$lib/utils"
 
   export let categories;
 </script>
 
-<svelte:head>
-  <title>Categories</title>
-</svelte:head>
+<SEO
+  title={`${site.name} blog categories`}
+  keywords={`${site.name} blog categories,${categoryNamesToString(categories)}`}
+  openGraph={{
+    title: `${site.name} blog categories`,
+    // description: `${categoryNamesToString(true)} ${categories.length > 1 ? "are" : "is"} the ${site.name} blog categor${categories.length > 1 ? "ies" : "y"}`,
+    url: `${site.address}/blog/categories`,
+    type: 'website',
+    images: [
+      {
+        url: categories[0]?.image?.asset ? urlFor(categories[0].image.asset).width(1200).quality(80) : `${site.address}/images/opengraph/index.webp}`,
+        width: 1200,
+        height: categories[0]?.image?.asset ? 1200 : 627, 
+        alt: `${site.name} blog categories`
+      }
+     ]
+  }}
+  twitter={{
+    site: `@${site.twitterHandle}`,
+    title: `${site.name} blog categories`,
+    // description: `${categoryNamesToString(true)} ${categories.length > 1 ? "are" : "is"} the ${site.name} blog author${categories.length > 1 ? "ies" : "y"}`,
+    image: categories[0]?.image?.asset ? urlFor(categories[0].image.asset).width(1200).quality(80) : `${site.address}/images/opengraph/index.webp}`,
+    imageAlt: `${site.name} blog categories`,
+  }}
+  jsonLd={{
+    "logo": `${site.address}/images/logo.svg`,
+    "@context": `http://schema.org`,
+    "@type": `WebSite`,
+    "name": `${site.name} categories`,
+    "url": `${site.address}/blog/categories`,
+  }}
+/>
 
 <section class="bg-gray-blue">
   <div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
