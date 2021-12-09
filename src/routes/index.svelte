@@ -70,7 +70,7 @@
 
         <img class="hero-bird bird-1 absolute h-full hidden lg:block" src="/images/Sandhill_Crane.webp" alt="Sandhill Crane">
 
-        <div class="relative z-10 px-4 pt-16 sm:px-12 sm:pt-24 lg:pt-32 lg:px-8">
+        <div class="z-10 px-4 pt-16 sm:px-12 sm:pt-24 lg:pt-32 lg:px-8">
           <span class="text-center sm:text-left lg:text-center block text-gray-900 text-4xl font-extrabold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Collectable Bird Cards!
           </span>
           <p class="mt-6 lg:mx-auto text-center sm:text-left lg:text-center font-light text-2xl italic text-gray-900 text-opacity-50">
