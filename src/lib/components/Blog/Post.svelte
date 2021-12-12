@@ -10,9 +10,7 @@
 <div>
 <Link href={`/blog/${post.pageInfo.slug.current}`} class="block">
     {#if post.image}
-    <div class="aspect-w-4 aspect-h-3 mb-4 shadow-lg rounded-lg overflow-hidden">
-      <img loading=lazy class="object-cover" src={urlFor(post.image.asset).quality(80).width(822)} alt={post.pageInfo.name}>
-    </div>
+      <img loading=lazy class="aspect-video] w-full object-cover shadow-lg rounded-lg mb-4" src={urlFor(post.image.asset).quality(80).width(822)} alt={post.pageInfo.name}>
     {/if}
     <p class="text-sm leading-5 text-gray-500">
       <time datetime={new Date(post.publishedAt)}>{new Date(post.publishedAt).toDateString()}</time>

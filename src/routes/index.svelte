@@ -96,29 +96,29 @@
 
   <!-- Cards -->
   <div class="px-4 sm:px-6 lg:px-16 2xl:px-32 relative z-20">
-    <div class={`transform -translate-y-1/2`}>
+    <div class={`-translate-y-1/2`}>
       <div class="cards relative h-full">
-        <a href="/bird/northern-cardinal" class="home-card card card-1 card-sm hidden sm:block transition transform">
+        <a href="/bird/northern-cardinal" class="home-card card card-1 card-sm hidden sm:block transition">
           <div class="front w-full flex justify-center">
             <img src="/images/cards/northern-cardinal_01.webp" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
-        <a href="/bird/osprey" class="home-card card card-2 card-md block transition transform">
+        <a href="/bird/osprey" class="home-card card card-2 card-md block transition">
           <div class="front w-full flex justify-center">
             <img src="/images/cards/osprey_01.webp" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
-        <a href="/bird/brown-pelican" class="home-card card card-3 card-lg block transition transform">
+        <a href="/bird/brown-pelican" class="home-card card card-3 card-lg block transition">
           <div class="front w-full flex justify-center">
             <img src="/images/cards/brown-pelican_01.webp" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
-        <a href="/bird/yellow-warbler" class="home-card card card-4 card-md block transition transform">
+        <a href="/bird/yellow-warbler" class="home-card card card-4 card-md block transition">
           <div class="front w-full flex justify-center">
             <img src="/images/cards/yellow-warbler_01.webp" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
-        <a href="/bird/roseate-spoonbill" class="home-card card card-5 card-sm hidden sm:block transition transform">
+        <a href="/bird/roseate-spoonbill" class="home-card card card-5 card-sm hidden sm:block transition">
           <div class="front w-full flex justify-center">
             <img src="/images/cards/roseate-spoonbill_01.webp" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
@@ -145,7 +145,7 @@
           <div class="grid gap-10 md:grid-cols-2 items-center">    
             <div>
               <div class="prose prose-gray prose-lg text-gray-500 md:max-w-none">
-                <h2 class="text-center sm:text-left">What are Birdables?</h2>
+                <h2 class="">What are Birdables?</h2>
                 <p>Birdables are collectible trading cards, available as NFTs and as physical prints. With artistic yet realistic designs, a sustainable approach to production, and a distribution model that mirrors real bird populations in the wild - Birdables are a fun, future-friendly way to commemorate the birds you love.</p>
               </div>
               <div class="flex space-x-4 mt-8">
@@ -156,7 +156,7 @@
             </div>
             <div>
               <IntersectionObserver {element} bind:intersecting threshold={0.5} once />
-              <img bind:this={element} src={`${assets}/images/roseate-spoonbill-cutout.webp`} alt="Roseate Spoonbill" class={`${intersecting ? "motion-safe:opacity-100 motion-safe:translate-x-0" : "motion-safe:opacity-0 motion-safe:translate-x-1/3"} transform transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75`}>
+              <img bind:this={element} src={`${assets}/images/roseate-spoonbill-cutout.webp`} alt="Roseate Spoonbill" class={`${intersecting ? "motion-safe:opacity-100 motion-safe:translate-x-0" : "motion-safe:opacity-0 motion-safe:translate-x-1/3"} transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75`}>
             </div>
           </div>
 
@@ -167,7 +167,7 @@
           <div class="grid gap-10 md:grid-cols-2 md:items-center md:grid-flow-row-dense">
             <div class="md:col-span-1 md:col-start-2">
               <div class="prose prose-gray prose-lg text-gray-500 md:max-w-none">
-                <h2 class="text-center sm:text-left">Can my collection make a difference?</h2>
+                <h2 class="">Can my collection make a difference?</h2>
                 <p>YES! <span class="font-black text-gray-900">Birdables plans to donate a portion of profits</span> to bird conservation organizations like the <a href="https://www.birds.cornell.edu/" target="_blank" rel="noopener" noreferrer>Cornell Lab of Ornithology</a>, <a href="https://ebird.org/" target="_blank" rel="noopener" noreferrer>eBird</a>, <a href="https://www.audubon.org/" target="_blank" rel="noopener" noreferrer>Audubon</a>, and others. As the business gets off the ground (pun intended), we'll share more details on our site, including donation amounts and recipients.</p>
                 
                 <p><span class="font-black text-xl text-gray-900">We care about the fine print</span><br />To ensure Birdables is not contributing to the destruction of bird habitats, we only use <span class="font-black text-gray-900">100% recycled paper</span> for all physical cards. No trees are cut down for the creation of Birdables.</p>
@@ -178,9 +178,9 @@
                   </a>
               </div>
             </div>
-            <div class="md:col-span-1 md:col-start-1 transform xl:-translate-y-20">
+            <div class="md:col-span-1 md:col-start-1 xl:-translate-y-20">
               <IntersectionObserver element={element2} bind:intersecting={intersecting2} threshold={0.5} once />
-              <img bind:this={element2} src={`${assets}/images/osprey-cutout.webp`} alt="Osprey" class={`${intersecting2 ? "motion-safe:opacity-100 motion-safe:translate-x-0" : "motion-safe:opacity-0 motion-safe:-translate-x-1/3"} transform transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75`}>
+              <img bind:this={element2} src={`${assets}/images/osprey-cutout.webp`} alt="Osprey" class={`${intersecting2 ? "motion-safe:opacity-100 motion-safe:translate-x-0" : "motion-safe:opacity-0 motion-safe:-translate-x-1/3"} transition duration-1000 w-full h-full object-center object-contain group-hover:opacity-75`}>
             </div>
           </div>
           
@@ -222,12 +222,12 @@
       </div>
   
       <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8 xl:gap-10">
-            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-on-grass.webp`}><img src={`${assets}/images/cards-on-grass.webp`} alt="Person using a pen to cross a task off a productivity paper card." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
-            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-in-bush.webp`}><img src={`${assets}/images/cards-in-bush.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
-            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-on-feeder.webp`}><img src={`${assets}/images/cards-on-feeder.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
-            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/pileated-woodpecker-on-tree.webp`}><img src={`${assets}/images/pileated-woodpecker-on-tree.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
-            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cedar-waxwing-in-bush.webp`}><img src={`${assets}/images/cedar-waxwing-in-bush.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
-            <a rel="external" class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-on-shirt.webp`}><img src={`${assets}/images/cards-on-shirt.webp`} alt="Paper card sitting upright in walnut card holder on desk." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-on-grass.webp`}><img src={`${assets}/images/cards-on-grass.webp`} alt="Person using a pen to cross a task off a productivity paper card." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-in-bush.webp`}><img src={`${assets}/images/cards-in-bush.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-on-feeder.webp`}><img src={`${assets}/images/cards-on-feeder.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/pileated-woodpecker-on-tree.webp`}><img src={`${assets}/images/pileated-woodpecker-on-tree.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cedar-waxwing-in-bush.webp`}><img src={`${assets}/images/cedar-waxwing-in-bush.webp`} alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
+            <a rel="external" class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500" href={`${assets}/images/cards-on-shirt.webp`}><img src={`${assets}/images/cards-on-shirt.webp`} alt="Paper card sitting upright in walnut card holder on desk." class="w-full h-full object-center object-cover group-hover:opacity-75"></a>
             <div class="col-span-2 flex justify-center">
             <a href="https://www.instagram.com/birdables_cards/" target="_blank" rel="external" class="block mt-6 w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto">
               Instagram
@@ -246,14 +246,14 @@
           <div class="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 md:max-w-none md:p-0">
             <div class="">
               <IntersectionObserver element={element4} bind:intersecting={intersecting4} threshold={0.5} once />
-              <img bind:this={element4} class={`${intersecting4 ? "motion-safe:opacity-100 motion-safe:cale-100" : "motion-safe:opacity-0 motion-safe:scale-90"} transform transition duration-1000 object-cover object-center drop-shadow-card`} src={`${assets}/images/pool-flamingo_01.webp`} alt="">
+              <img bind:this={element4} class={`${intersecting4 ? "motion-safe:opacity-100 motion-safe:cale-100" : "motion-safe:opacity-0 motion-safe:scale-90"} transition duration-1000 object-cover object-center drop-shadow-card`} src={`${assets}/images/pool-flamingo_01.webp`} alt="">
             </div>
           </div>
         </div>
 
         <div class="relative row-start-1 bg-gray-blue md:col-start-3 bg-cover md:row-start-1 md:col-span-10 md:rounded-3xl md:grid md:grid-cols-10 md:items-center" style={`background-image: url(${assets}/images/pool-flamingo-bg.jpg);`}>
           <div class="relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 md:max-w-none md:p-0 md:col-start-4 md:col-span-6">
-            <h2 class="text-3xl font-extrabold text-center sm:text-left">Suggest a bird!</h2>
+            <h2 class="text-3xl font-extrabold ">Suggest a bird!</h2>
             <p class="text-lg text-gray-500">Which Birdables are you looking for? Our goal is to build collections that spark joy, so let us know what you'd like us to add next! </p>
             <button disabled class="opacity-70 cursor-not-allowed block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto" href="/">( Coming soon )</button>
           </div>

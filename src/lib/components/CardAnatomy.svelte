@@ -39,7 +39,7 @@
     <div on:click={toggleModal} class={`${isModalOpen ? "opacity-100" : "opacity-0"} fixed h-screen w-screen inset-0 bg-gray-900 bg-opacity-75 transition-opacity duration-300 ease-in-out`} aria-hidden="true"></div>
     <!-- This element is to trick the browser into centering the modal contents. -->
 
-    <div class={`${isModalOpen ? "opacity-100 translate-y-0 sm:scale-100" : "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"} fixed overflow-auto inset-0 flex items-center justify-center h-screen w-screen  pointer-events-none  transform transition-all duration-300 ease-in-out px-0 py-0 md:px-6 md:py-12`}>
+    <div class={`${isModalOpen ? "opacity-100 translate-y-0 sm:scale-100" : "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"} fixed overflow-auto inset-0 flex items-center justify-center h-screen w-screen  pointer-events-none transition-all duration-300 ease-in-out px-0 py-0 md:px-6 md:py-12`}>
         <img src={`${assets}/images/Birdable-Card-Anatomy.jpg`} alt={`Birdables card anatomy diagram`} class={`${isModalOpen ? "pointer-events-auto" : "pointer-events-none"} rounded-xl object-center object-cover drop-shadow-card`}>
     </div>
     <button on:click={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">

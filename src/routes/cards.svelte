@@ -200,7 +200,7 @@
     </div>
   </div>
 
-  <div class="mx-auto max-w-7xl pt-6 pb-6 px-4 lg:transform sm:px-6 md:px-8 lg:pb-12">
+  <div class="mx-auto max-w-7xl pt-6 pb-6 px-4 sm:px-6 md:px-8 lg:pb-12">
     <div class="space-y-6">
       <CardList cards={cards} />
     </div>

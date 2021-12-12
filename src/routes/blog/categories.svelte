@@ -76,9 +76,7 @@
     <div class="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
       {#each categories as category}
         <a href={`/blog/category/${category.pageInfo.slug.current}`} class="bg-white shadow-lg rounded-lg overflow-hidden">
-          <div class="aspect-w-16 aspect-h-9">
-            <img loading=lazy class="object-cover h-full w-full" src={urlFor(category.image).width(600)} alt={category.pageInfo.name}>
-          </div>
+            <img loading=lazy class="object-cover aspect-video h-full w-full" src={urlFor(category.image).width(600)} alt={category.pageInfo.name}>
           <h4 class="font-bold text-xl p-4 text-center">{category.pageInfo.name} <span class="span text-gray-500 font-light text-base">({category.count})</span></h4>
         </a>
       {/each}

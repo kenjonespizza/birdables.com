@@ -133,11 +133,9 @@ function scrolling(e) {
         </div>
       </div>
       </section>
-      <div class="max-w-7xl mx-auto  pb-12 px-4 sm:px-6 md:px-8 transform mt-[calc(-80rem/(16/9)/2)]">
+      <div class="max-w-7xl mx-auto  pb-12 px-4 sm:px-6 md:px-8 mt-[calc(-80rem/(16/9)/2)]">
         {#if post.image}
-        <div class="aspect-w-16 aspect-h-9 my-10 drop-shadow-card rounded-2xl overflow-hidden">
-          <img loading=lazy class="object-cover h-full w-full" src={urlFor(post.image.asset).quality(80).width(2000)} alt={post.pageInfo.name}>
-        </div>
+          <img loading=lazy class="aspect-video object-cover my-10 drop-shadow-card rounded-2xl w-full" src={urlFor(post.image.asset).quality(80).width(2000)} alt={post.pageInfo.name}>
         {/if}
 
         <PortableText class="prose text-gray-500 mx-auto prose-sm sm:prose md:prose-m sm:text-gray-500 md:text-gray-500 lg:text-gray-500 lg:prose-lg xl:text-gray-500 xl:prose-xl" content={post.body} />

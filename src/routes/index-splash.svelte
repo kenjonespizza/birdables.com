@@ -67,7 +67,7 @@
 
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="min-h-screen pt-16 pb-12 flex flex-col bg-white">
-  <main class="flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+  <main class="grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex-shrink-0 flex justify-center">
       <a href="/" class="inline-flex">
         <span class="sr-only">{site.name}</span>

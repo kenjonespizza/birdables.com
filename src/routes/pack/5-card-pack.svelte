@@ -95,13 +95,13 @@
             <a href="https://www.etsy.com/listing/1107948145/birdables-5-card-pack" target="_blank" rel="noopener" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-gray-500">
   
                 <span>Available on</span>
-                <Etsy class="h-6 transform translate-y-0.5 ml-1 text-white" />
+                <Etsy class="h-6 translate-y-0.5 ml-1 text-white" />
               </a>
             {/if}
             {#if comingSoonOveride}
               <button type="button" disabled class="w-full bg-gray-900 cursor-not-allowed opacity-70 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-gray-500">
               <span>Coming Soon to</span>
-              <Etsy class="h-6 transform translate-y-0.5 ml-1 text-white" />
+              <Etsy class="h-6 translate-y-0.5 ml-1 text-white" />
               </button>
             {/if}
           </div>

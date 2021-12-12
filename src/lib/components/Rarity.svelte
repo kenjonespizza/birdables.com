@@ -39,7 +39,7 @@ import Stars from "./Stars.svelte";
     <!-- This element is to trick the browser into centering the modal contents. -->
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-    <div class={`${isModalOpen ? "opacity-100 translate-y-0 sm:scale-100" : "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"} inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all duration-300 ease-in-out sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6`}>
+    <div class={`${isModalOpen ? "opacity-100 translate-y-0 sm:scale-100" : "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"} inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transition-all duration-300 ease-in-out sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6`}>
       <div>
         <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-gray-200">
           <svg class="h-6 w-6 text-gray-400"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M12 15.968l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275v10.693zm0 2.292l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26z"/></svg>
@@ -51,8 +51,8 @@ import Stars from "./Stars.svelte";
           <div class="mt-2">
             <p class="text-sm text-gray-500 prose">
               Each Birdables card has a rarity rating ranging from 
-            <span class="inline-flex px-1 space-x-2 items-baseline transform translate-y-0.5">
-            <Stars stars=1 space=1 size="sm" /><span class="leading-none transform -translate-y-0.5"> to </span><Stars stars=5 space=1 size="sm" /></span> to depict the scarcity of the card.  <a href="/about#rarity">Learn more about the rarity</a>.
+            <span class="inline-flex px-1 space-x-2 items-baseline translate-y-0.5">
+            <Stars stars=1 space=1 size="sm" /><span class="leading-none -translate-y-0.5"> to </span><Stars stars=5 space=1 size="sm" /></span> to depict the scarcity of the card.  <a href="/about#rarity">Learn more about the rarity</a>.
             </p>
           </div>
         </div>

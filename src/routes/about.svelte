@@ -260,7 +260,7 @@
           <h3>Digital Cards (NFT)</h3>
           <p>If you aren't familiar with digital assets or NFT's (<ExternalLink href="https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq">Non-Fungible Tokens</ExternalLink>), you may not understand the point or purpose of a digital cards, but you're in for a treat.</p>
           <p>Digital cards have an indefinite lifespan in your digital wallet, so you'll never need to worry about losing or getting your digital card dirty. The possibilities of how your digital card could be displayed or used in games/applications now and in the future are endless.</p>
-          <p>Physical cards can be purchased securely from <ExternalLink href="https://opensea.io/collection/birdables">Birdables' OpenSea Storefront</ExternalLink></p>
+          <p>Digiatl cards can be purchased securely from <ExternalLink href="https://opensea.io/collection/birdables">Birdables' OpenSea Storefront</ExternalLink></p>
         </div>
       </div>
     </div>

@@ -56,7 +56,7 @@
       </div>
       <div class="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
         <nav class="flex space-x-8">
-          <a sveltekit:prefetch href="/cards" on:focus={() => toggleShopNav(false)} class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+          <a sveltekit:prefetch href="/cards" on:focus={() => toggleShopNav(false)} class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
             Cards
           </a>
           <!-- <div
@@ -111,10 +111,10 @@
             </div>
           </div> -->
           
-          <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+          <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
             About Birdables
           </a>
-          <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/blog" class={`${$page.path === "/blog" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+          <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/blog" class={`${$page.path === "/blog" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
             Blog
           </a>
           <!-- <span class={`text-base font-medium text-gray-600 transform translate-y-1.5 pb-1 transition cursor-not-allowed`}>
@@ -123,16 +123,16 @@
 
         </nav>
         <div class="flex items-center lg:ml-12 space-x-6">
-          <a href="https://instagram.com/Birdables_Cards" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
+          <a href="https://instagram.com/Birdables_Cards" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
             <Instagram class="h-[21px] text-gray-900" />
           </a>
-          <a href="https://twitter.com/BirdablesCards" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
+          <a href="https://twitter.com/BirdablesCards" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
             <Twtter class="h-[21px] text-gray-900" />
           </a>
-          <a href="https://opensea.io/collection/birdables" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
+          <a href="https://opensea.io/collection/birdables" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
             <OpenSeaIcon class="h-[21px] text-gray-900" />
           </a>
-          <a href="https://www.etsy.com/shop/Birdables" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
+          <a href="https://www.etsy.com/shop/Birdables" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
             <EtsyIcon class="h-[21px] text-gray-900" />
           </a>
         </div>
@@ -150,7 +150,7 @@
       From: "opacity-100 scale-100"
       To: "opacity-0 scale-95"
   -->
-  <div class={`absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden ${isOpen ? "ease-out duration-200 opacity-100 scale-100" : "ease-out duration-150 opacity-0 scale-95 pointer-events-none"}`}>
+  <div class={`absolute z-30 top-0 inset-x-0 p-2 transition origin-top-right lg:hidden ${isOpen ? "ease-out duration-200 opacity-100 scale-100" : "ease-out duration-150 opacity-0 scale-95 pointer-events-none"}`}>
     <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
       <div class="pt-5 pb-6 px-5">
         <div class="flex items-center justify-between">
@@ -171,7 +171,7 @@
           <nav class="grid gap-6">
             <div class="py-6 px-5">
               <div class="grid grid-cols-1 gap-4 text-center">
-                <a on:click={toggle} sveltekit:prefetch href="/cards" class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+                <a on:click={toggle} sveltekit:prefetch href="/cards" class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Cards
                 </a>
                 <!-- <a on:click={toggle} sveltekit:prefetch href="/cards" class={`border-transparent text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
@@ -180,10 +180,10 @@
                 <a on:click={toggle} sveltekit:prefetch href="/cards" class={`border-transparent text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Shop: Physical Cards
                 </a> -->
-                <a on:click={toggle} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+                <a on:click={toggle} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   About Birdables
                 </a>
-                <a on:click={toggle} sveltekit:prefetch href="/blog" class={`${$page.path === "/blog" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+                <a on:click={toggle} sveltekit:prefetch href="/blog" class={`${$page.path === "/blog" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Blog
                 </a>
                 <!-- <span class={`text-base font-medium text-gray-600 transform translate-y-1.5 pb-1 transition cursor-not-allowed`}>
@@ -191,16 +191,16 @@
                 </span> -->
               </div>
               <div class="flex items-center justify-center space-x-6 mt-6 w-full">
-                <a href="https://instagram.com/Birdables_Cards" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
+                <a href="https://instagram.com/Birdables_Cards" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
                   <Instagram class="h-[21px] text-gray-900" />
                 </a>
-                <a href="https://twitter.com/BirdablesCards" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
+                <a href="https://twitter.com/BirdablesCards" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
                   <Twtter class="h-[21px] text-gray-900" />
                 </a>
-                <a href="https://opensea.io/collection/birdables" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
+                <a href="https://opensea.io/collection/birdables" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
                   <OpenSeaIcon class="h-[21px] text-gray-900" />
                 </a>
-                <a href="https://www.etsy.com/shop/Birdables" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
+                <a href="https://www.etsy.com/shop/Birdables" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
                   <EtsyIcon class="h-[21px] text-gray-900" />
                 </a>
               </div>

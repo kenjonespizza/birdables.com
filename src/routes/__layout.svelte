@@ -18,7 +18,7 @@
   <meta content='width=device-width, initial-scale=1, minimum-scale=1' name='viewport'/>
 </svelte:head>
 
-<div class="text-gray-900 relative w-screen">
+<div class="text-gray-900 relative w-screen selection:bg-gray-900 selection:text-white">
   {#if $ShowHeaderFooter}
   <Nav />
   {/if}

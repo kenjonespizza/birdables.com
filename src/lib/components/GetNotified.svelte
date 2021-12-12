@@ -62,7 +62,7 @@
           <button on:click={toggle} type="button" class={`bg-gray-900 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-gray-400 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900`} role="switch" aria-checked="false" aria-labelledby="email-or-phone-notifications">
             <span class="sr-only">Change notification type</span>
             <!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
-            <span aria-hidden="true" class={`${useEmailAddress ? "translate-x-0" : "translate-x-5"} pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}>
+            <span aria-hidden="true" class={`${useEmailAddress ? "translate-x-0" : "translate-x-5"} pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow ring-0 transition ease-in-out duration-200`}>
               <!-- Enabled: "opacity-0 ease-out duration-100", Not Enabled: "opacity-100 ease-in duration-200" -->
               <span class={`${useEmailAddress ? "opacity-100 ease-in duration-200" : "opacity-0 ease-out duration-100" } absolute inset-0 h-full w-full flex items-center justify-center transition-opacity`} aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/></svg>
@@ -95,7 +95,6 @@
               absolute
               left-1/2
               md:left-0
-              transform
               -translate-x-1/2
               md:translate-x-0
               text-sm 
@@ -140,7 +139,7 @@
               absolute
               left-1/2
               md:left-0
-              transform
+            
               -translate-x-1/2
               md:translate-x-0
               text-sm 

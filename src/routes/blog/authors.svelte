@@ -89,9 +89,7 @@ import site from '$lib/info';
         {#each authors as author}
         <li>
           <Link href={`/blog/author/${author.pageInfo.slug.current}`} class="space-y-4">
-            <div class="aspect-w-4 aspect-h-5">
-              <img loading=lazy class="object-cover shadow-lg rounded-lg" src={author?.image?.asset ? urlFor(author.image.asset).width(600).quality(80) : `${assets}/images/userImageNotFound.png`} alt={author.pageInfo.name}>
-            </div>
+              <img loading=lazy class="object-cover aspect-[4/5] shadow-lg rounded-lg" src={author?.image?.asset ? urlFor(author.image.asset).width(600).quality(80) : `${assets}/images/userImageNotFound.png`} alt={author.pageInfo.name}>
 
             <div class="space-y-2">
               <div class="text-lg leading-6 font-medium space-y-1">

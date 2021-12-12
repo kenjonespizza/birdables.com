@@ -137,32 +137,32 @@
           {#if bird?.etsyUrl && !bird.specialty && !comingSoonOveride}
             <a href={bird.etsyUrl} target="_blank" rel="noopener" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
             <span>Buy <span class="font-black">Physical Card</span> on</span>
-            <Etsy class="h-6 transform translate-y-0.5 ml-1 text-white" />
+            <Etsy class="h-6 translate-y-0.5 ml-1 text-white" />
           </a>
           {/if}
           {#if bird.specialty && !comingSoonOveride}
           <a href="https://www.etsy.com/listing/1107948145/birdables-5-card-pack" target="_blank" rel="noopener" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
 
               <span><span class="font-black">Physical Card</span> possible in a Card Pack</span>
-              <Etsy class="h-6 transform translate-y-0.5 ml-1 text-white" />
+              <Etsy class="h-6 translate-y-0.5 ml-1 text-white" />
             </a>
           {/if}
           {#if (!bird?.etsyUrl && !bird.specialty) || comingSoonOveride}
             <button type="button" disabled class="w-full bg-gray-900 cursor-not-allowed opacity-70 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
             <span><span class="font-black">Physical Card </span>Coming Soon to</span>
-            <Etsy class="h-6 transform translate-y-0.5 ml-1 text-white" />
+            <Etsy class="h-6 translate-y-0.5 ml-1 text-white" />
             </button>
           {/if}
           
           {#if bird.openseaUrl && !comingSoonOverideDigital}
             <a href={bird.openseaUrl} target="_blank" rel="noopener" noreferrer class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
               <span>Buy <span class="font-black">Digital Card</span> on</span>
-              <OpenSea class="h-6 transform translate-y-0. ml-2 text-white" />
+              <OpenSea class="h-6 translate-y-0. ml-2 text-white" />
             </a>
           {:else}
             <button type="button" disabled class="w-full bg-gray-900 cursor-not-allowed opacity-70 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500">
               <span><span class="font-black">Digital Card</span> Coming Soon to</span>
-              <OpenSea class="h-6 transform translate-y-0. ml-2 text-white" />
+              <OpenSea class="h-6 translate-y-0. ml-2 text-white" />
             </button>
           {/if}
         </div>
@@ -182,13 +182,13 @@
               {/if}
               {#if bird.audubon}
                 <a class="flex justify-center items-center py-2 transition border-b-2 border-transparent hover:border-gray-900 focus:border-gray-900" href={`https://www.audubon.org/field-guide/bird/${bird.audubon}`} target="_blank" rel="noopener" noreferrer >
-                  <Audubon class="h-10 transform translate-y-[-0.55rem] text-black w-full" />
+                  <Audubon class="h-10 translate-y-[-0.55rem] text-black w-full" />
                   <span class="sr-only">Audubon</span>
                 </a>
               {/if}
               {#if bird.eBird}
                 <a class="flex justify-center items-center py-2 transition border-b-2 border-transparent hover:border-gray-900 focus:border-gray-900" href={`https://birdsoftheworld.org/bow/species/${bird.eBird}`} target="_blank" rel="noopener" noreferrer >
-                  <BOW class="h-10 transform translate-y-[-0.5rem] text-black w-full" />
+                  <BOW class="h-10 translate-y-[-0.5rem] text-black w-full" />
                   <span class="sr-only">Audubon</span>
                 </a>
               {/if}
@@ -244,7 +244,7 @@
     <div on:click={toggleModal} class={`${isModalOpen ? "opacity-100" : "opacity-0"} fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity duration-300 ease-in-out`} aria-hidden="true"></div>
     <!-- This element is to trick the browser into centering the modal contents. -->
 
-    <div class={`${isModalOpen ? "opacity-100 translate-y-0 sm:scale-100" : "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"} h-screen w-screen pointer-events-none flex justify-center items-center transform transition-all duration-300 ease-in-out px-2 py-12`}>
+    <div class={`${isModalOpen ? "opacity-100 translate-y-0 sm:scale-100" : "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"} h-screen w-screen pointer-events-none flex justify-center items-center transition-all duration-300 ease-in-out px-2 py-12`}>
         <img src={`${assets}/images/cards/${bird.friendlyId}.webp`} alt={`${bird.birdName} card`} class={`${isModalOpen ? "pointer-events-auto" : "pointer-events-none"} object-center object-cover drop-shadow-card max-h-[calc(100vh-6rem)]`}>
     </div>
     <button on:click={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">

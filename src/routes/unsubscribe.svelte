@@ -25,7 +25,7 @@
 </script>
 
 <div class="bg-white h-[calc(100vh-328px)] px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
-  <main class="flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+  <main class="grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
     {#if successful === true}
       <div class="bg-green-200 text-green-700 p-4 border-green-700 rounded-lg text-center">
         You successfully unsubscribed
