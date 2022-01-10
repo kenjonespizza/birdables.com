@@ -105,22 +105,22 @@
         </a>
         <a href="/bird/osprey" class="home-card card card-2 card-md block transition">
           <div class="front w-full flex justify-center">
-            <img src="/images/cards/osprey_01.webp" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
+            <img src="/images/cards/osprey_01.webp" alt="Osprey Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
         <a href="/bird/brown-pelican" class="home-card card card-3 card-lg block transition">
           <div class="front w-full flex justify-center">
-            <img src="/images/cards/brown-pelican_01.webp" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
+            <img src="/images/cards/brown-pelican_01.webp" alt="Brown Pelican Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
         <a href="/bird/yellow-warbler" class="home-card card card-4 card-md block transition">
           <div class="front w-full flex justify-center">
-            <img src="/images/cards/yellow-warbler_01.webp" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
+            <img src="/images/cards/yellow-warbler_01.webp" alt="Yellow Warbler Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
         <a href="/bird/roseate-spoonbill" class="home-card card card-5 card-sm hidden sm:block transition">
           <div class="front w-full flex justify-center">
-            <img src="/images/cards/roseate-spoonbill_01.webp" alt="Northern Cardinal Card - Edition 01" class="object-contain drop-shadow-card">
+            <img src="/images/cards/roseate-spoonbill_01.webp" alt="Roseate Spoonbill Card - Edition 01" class="object-contain drop-shadow-card">
           </div>
         </a>
       </div>
