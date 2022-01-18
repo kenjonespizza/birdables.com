@@ -56,7 +56,7 @@
       </div>
       <div class="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
         <nav class="flex space-x-8">
-          <a sveltekit:prefetch href="/cards" on:focus={() => toggleShopNav(false)} class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+          <a sveltekit:prefetch href="/cards" on:focus={() => toggleShopNav(false)} class={`${ $page.url.pathname === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
             Cards
           </a>
           <!-- <div
@@ -111,10 +111,10 @@
             </div>
           </div> -->
           
-          <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+          <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/about" class={`${ $page.url.pathname === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
             About Birdables
           </a>
-          <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/blog" class={`${$page.path === "/blog" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+          <a on:focus={() => toggleShopNav(false)} sveltekit:prefetch href="/blog" class={`${ $page.url.pathname === "/blog" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
             Blog
           </a>
           <!-- <span class={`text-base font-medium text-gray-600 transform translate-y-1.5 pb-1 transition cursor-not-allowed`}>
@@ -171,7 +171,7 @@
           <nav class="grid gap-6">
             <div class="py-6 px-5">
               <div class="grid grid-cols-1 gap-4 text-center">
-                <a on:click={toggle} sveltekit:prefetch href="/cards" class={`${$page.path === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+                <a on:click={toggle} sveltekit:prefetch href="/cards" class={`${ $page.url.pathname === "/cards" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Cards
                 </a>
                 <!-- <a on:click={toggle} sveltekit:prefetch href="/cards" class={`border-transparent text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
@@ -180,10 +180,10 @@
                 <a on:click={toggle} sveltekit:prefetch href="/cards" class={`border-transparent text-lg font-medium text-gray-900 border-b-3 transform translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Shop: Physical Cards
                 </a> -->
-                <a on:click={toggle} sveltekit:prefetch href="/about" class={`${$page.path === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+                <a on:click={toggle} sveltekit:prefetch href="/about" class={`${ $page.url.pathname === "/about" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   About Birdables
                 </a>
-                <a on:click={toggle} sveltekit:prefetch href="/blog" class={`${$page.path === "/blog" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
+                <a on:click={toggle} sveltekit:prefetch href="/blog" class={`${ $page.url.pathname === "/blog" ? "border-gray-900" : "border-transparent"} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}>
                   Blog
                 </a>
                 <!-- <span class={`text-base font-medium text-gray-600 transform translate-y-1.5 pb-1 transition cursor-not-allowed`}>

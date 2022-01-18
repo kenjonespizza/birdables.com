@@ -1,6 +1,6 @@
 <script context="module">
-  export async function load({page, fetch}) {
-    const res = await fetch( `../api/card/${page.params.id}`)
+  export async function load({params, fetch}) {
+    const res = await fetch( `../api/card/${params.id}`)
 		
     if (res) {
 			return {

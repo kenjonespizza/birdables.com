@@ -5,8 +5,6 @@
 
   let className = "inline-flex space-x-1 items-center";
 
-	// creates a `class` property, even
-	// though it is a reserved word
 	export { className as class };
 </script>
 

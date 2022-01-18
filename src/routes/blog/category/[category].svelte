@@ -1,12 +1,8 @@
 <script context="module">
   import  { base } from '$app/paths'
 
-  export async function load({ page, fetch }) {
-    let [category, currentPageParam] = page.params.category
-    // if (currentPageParam == 1) {
-    //   return this.redirect(302, `blog/category/${category}`);
-    // }
-      const res = await fetch(`${base}/api/blog/category/${page.params.category}`);
+  export async function load({ params, fetch }) {
+      const res = await fetch(`${base}/api/blog/category/${params.category}`);
       const { posts, categoryInfo, currentPage, perPage, count, blogInfo, categories } = await res.json();
 
       if (res) {

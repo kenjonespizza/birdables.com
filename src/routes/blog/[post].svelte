@@ -1,7 +1,7 @@
 <script context="module">
   import { base } from '$app/paths';
-  export async function load({page, fetch}) {
-    const url = `${base}/api/blog/${page.params.post}`;
+  export async function load({params, fetch}) {
+    const url = `${base}/api/blog/${params.post}`;
     const res = await fetch(url)
     const post = await res.json();
 
@@ -20,7 +20,6 @@
 </script>
 
 <script>
-// import BlockContent from "../../components/BlockContent.svelte";
 import SEO from 'svelte-seo';
 
 import site from '$lib/info';

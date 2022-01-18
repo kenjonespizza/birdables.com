@@ -1,6 +1,6 @@
 <script context="module">
-  export async function load({page, fetch}) {
-    const res = await fetch( `../api/bird/${page.params.slug}`)
+  export async function load({params, fetch}) {
+    const res = await fetch( `../api/bird/${params.slug}`)
 
     if (res) {
 			return {
@@ -21,7 +21,7 @@
 <script>
   import SEO from "svelte-seo";
 
-  import { getStores, navigating, page, session } from '$app/stores';
+  import { page } from '$app/stores';
   import { assets } from '$app/paths';
   import site from '$lib/info'
   import Breadcrumb from '$lib/components/Breadcrumb.svelte';
@@ -36,10 +36,9 @@
   import BOW from "$lib/svgs/BOW.svelte"
 
   export let bird;
-  // console.log('bird:', bird)
   export let isModalOpen;
 
-  let pageUrl = `${site.address}${$page.path}`;
+  let pageUrl = `${site.address}${ $page.url.pathname}`;
   let comingSoonOveride = false;
   let comingSoonOverideDigital = false;
 
@@ -229,7 +228,7 @@
           <Share
             text={`Check out this ${bird.birdName} Birdables card!`}
             image={`https://birdables.com${assets}/images/cards/${bird.friendlyId}.webp`} alt={`${bird.birdName} card`}
-            url={`https://birdables.com${$page.path}`}
+            url={`https://birdables.com${ $page.url.pathname}`}
             via={site.twitterHandle}
           />
         </div>

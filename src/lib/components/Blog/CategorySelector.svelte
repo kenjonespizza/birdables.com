@@ -1,5 +1,4 @@
 <script>
-  // import { disableScrolling } from '../../stores';
   import Link from "$lib/components/Link.svelte";
 
   export let categories;
@@ -15,7 +14,6 @@
 
   function toggle() {
   	isOpen = !isOpen;
-  	// disableScrolling.set(isOpen)
   }
 </script>
 

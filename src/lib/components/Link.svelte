@@ -5,7 +5,6 @@
   let className
 
   export { className as class };
-  // console.log('className:', className)
 
   export let href = null;
   export let title = '';

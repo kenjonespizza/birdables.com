@@ -1,17 +1,14 @@
 <script>
-  // import { disableScrolling } from '../../stores';
   import { unSlugify } from "$lib/utils";
 
   export let topics;
   export let currentTopic;
 
-  // $: selectedtopic = currentTopic
 
   let isOpen = false;
 
   function toggle() {
   	isOpen = !isOpen;
-  	// disableScrolling.set(isOpen)
   }
 </script>
 

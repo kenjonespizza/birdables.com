@@ -1,8 +1,6 @@
 <script>
   import SEO from 'svelte-seo'
-
   import {assets} from '$app/paths'
-
   import site from '$lib/info'
   import {scrollToSection} from '$lib/utils'
   import FAQ from '$lib/components/FAQ.svelte'
@@ -10,7 +8,6 @@
   import CardAnatomy from '$lib/components/CardAnatomy.svelte'
   import Rarity from '$lib/components/Rarity.svelte';
   import ExternalLink from '$lib/components/ExternalLink.svelte';
-  // import IntersectionObserver from "svelte-intersection-observer";
 
   let sections = [
     {
@@ -34,16 +31,6 @@
       title: 'Frequently Asked Questions',
     },
   ];
-  
-  // ToDo: Setup intersection observers
-  // let element1;
-  // let intersecting1;
-  // let element2;
-  // let intersecting2;
-  // let element3;
-  // let intersecting3;
-  // let element4;
-  // let intersecting4;
 </script>
 
 <SEO

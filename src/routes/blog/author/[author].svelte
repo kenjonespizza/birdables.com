@@ -1,14 +1,8 @@
 <script context="module">
   import { base } from "$app/paths"
 
-  export async function load({ page, fetch }) {
-  	let {authorParam} = page.params.author;
-  	// if (currentPageParam == 1) {
-  	// 	return this.redirect(302, `author/${authorParam}`);
-  	// }
-
-    // As with the server route, we have acces to params.slug here
-    const res = await fetch(`${base}/api/blog/author/${page.params.author}`);
+  export async function load({ params, fetch }) {
+    const res = await fetch(`${base}/api/blog/author/${params.author}`);
     const {
       authorData, posts, count, currentPage, perPage,
     } = await res.json();
@@ -37,7 +31,6 @@ import site from '$lib/info';
 import Posts from "$lib/components/Blog/Posts.svelte";
 import PortableText from "$lib/components/PortableText.svelte";
 import Breadcrumb from "$lib/components/Breadcrumb.svelte";
-// import Pagination from "$lib/components/Pagination.svelte";
 import { toPlainText, truncate } from "$lib/utils";
 import { urlFor } from "$lib/sanity-image-url"
 

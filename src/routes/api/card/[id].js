@@ -1,8 +1,5 @@
 import Airtable from 'airtable';
-
 import { variables } from '$lib/variables';
-// console.log('variables:', variables)
-
 import {returnBirdFromParam, returnFormattedBirds} from "$lib/utils"
 
 export async function get({ params }) {
@@ -12,9 +9,6 @@ export async function get({ params }) {
   const data = returnBirdFromParam(id, 'id', returnFormattedBirds(records));
 
   if (data) {
-    // const listing = await returnEtsyListingFromEtsyListingId(data.etsyId);
-    // Object.assign(data, {listing});
-  
     if (records) {
       return {
         status: 200,

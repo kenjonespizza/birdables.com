@@ -20,7 +20,6 @@
     if (useEmailAddress && !emailIsValid(emailTyped)) {
       validation = "Email not valid."
     }
-    // console.log('e:', e)
     const data = useEmailAddress ? emailTyped : formatPhoneNumber(phoneTyped);
 
     if (!validation) {

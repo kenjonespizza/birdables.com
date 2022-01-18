@@ -1,15 +1,10 @@
 <script context="module">
   import { base } from '$app/paths'
 
-  export async function load({ page, fetch }) {
+  export async function load({ params, fetch }) {
 
-    let {topic} = page.params
-    // if (currentPageParam == 1) {
-    //   return this.redirect(302, `blog/topic/${topic}`);
-    // }
-
-    // As with the server route, we have acces to params.slug here
-    const res = await fetch(`${base}/api/blog/topic/${page.params.topic}`);
+    let {topic} = params
+    const res = await fetch(`${base}/api/blog/topic/${topic}`);
     const { posts, currentPage, perPage, count, blogInfo, categories, topics } = await res.json();
 
     if (!posts || posts.length === 0) {
@@ -43,7 +38,6 @@ export let count
 export let currentPage
 export let perPage
 export let topics
-// export let blogInfo
 
 const formattedTopic = capitalize(unSlugify(topic, true));
 </script>

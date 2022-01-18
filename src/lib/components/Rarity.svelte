@@ -21,7 +21,7 @@ import Stars from "./Stars.svelte";
 <svelte:window on:keydown={handleKeydown}/>
 
 <div class="">
-  <span class="sr-only">Rarity: {stars.toString()} out of 5 stars</span>
+  <span class="sr-only">Rarity: {stars?.toString()} out of 5 stars</span>
   <div class="flex items-center space-x-1">
     <Stars {stars} size={size} />
 

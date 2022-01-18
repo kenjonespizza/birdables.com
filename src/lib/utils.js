@@ -62,8 +62,6 @@ export const returnBirdFromId = (id, formattedBirds) => {
 export const returnEtsyImagesFromEtsyListingId = async (etsyListingId) => {
   if (etsyListingId) {
     const urlImage = `https://openapi.etsy.com/v3/application/shops/${variables.ETSY_SHOP_ID}/listings/${etsyListingId}/images?client_id=${variables.ETSY_API_KEY}`;
-    // const urlImage = `https://openapi.etsy.com/v2/listings/${etsyListingId}/images?api_key=${variables.ETSY_API_KEY}`;
-    // https://openapi.etsy.com/v3/listings/1051222323/images?api_key=keyzp6KbCpkAcF0N0
     const reqImage = await fetch(urlImage);
     const resImage = await reqImage
     const dataImage = await resImage.json();
@@ -163,18 +161,15 @@ export const checkIfInternalURL = (url) => {
         url.includes("www.") || url.includes("http://") || url.includes("https://")
       )
     ) {
-
-    // console.log("true");
-    return true;
-  } else {
-      // console.log("false");
-    return false;
+      return true;
     }
+    return false;
   }
+  return false;
   
 }
 
-// ToDo: ... There is likely a much better way to do this 😅
+// ToDo: ... There is likely a much better way to do this 😅 I'm just in a hurry
 export const returnEntireSlug = (url) => {
   let address = info.address;
   let returnURL = url
@@ -252,7 +247,6 @@ export function unSlugify(string, uppercase=false) {
 }
 
 export function mergeArrays(filterFunction = (x) => { x; }, ...arrays) {
-	// const arrays = arraysParam.shift()
 	let preFilterJointArray = [];
 
 	arrays.forEach((array) => {

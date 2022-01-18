@@ -13,7 +13,7 @@
 
   export let isModalOpen;
 
-  let pageUrl = `${site.address}${$page.path}`;
+  let pageUrl = `${site.address}${ $page.url.pathname}`;
   let comingSoonOveride = false;
 
   function toggleModal() {
@@ -143,7 +143,7 @@
           <Share
             text={`Check out this 5 Card Pack of Birdables cards!`}
             image={`https://birdables.com${assets}/images/packs/5-card-pack.webp`} alt={`5 Card Pack`}
-            url={`https://birdables.com${$page.path}`}
+            url={`https://birdables.com${ $page.url.pathname}`}
             via={site.twitterHandle}
           />
         </div>

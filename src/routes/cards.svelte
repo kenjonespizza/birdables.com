@@ -1,6 +1,6 @@
 <script context="module">
   import { base } from '$app/paths';
-  export async function load({page, fetch}) {
+  export async function load({fetch}) {
     const url = `${base}/api/cards`;
     const res = await fetch(url)
     if (res) {
@@ -24,8 +24,6 @@
   import site from '$lib/info';
   import Breadcrumb from '$lib/components/Breadcrumb.svelte';
   import CardList from '$lib/components/CardList.svelte';
-
-  // import invert from 'invert-color';
   import GetNotified from '$lib/components/GetNotified.svelte';
   import Stars from '$lib/components/Stars.svelte';
 

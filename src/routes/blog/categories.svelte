@@ -4,7 +4,6 @@
   export async function load({ fetch }) {
   		const results = await fetch(`${base}/api/blog/category/all`);
   		const categories = await results.json();
-  		// console.log('categories:', categories)
   		return { props: {
         categories
       }};
@@ -13,7 +12,6 @@
 
 <script>
   import SEO from 'svelte-seo';
-
   import site from '$lib/info';
   import Breadcrumb from "$lib/components/Breadcrumb.svelte";
   import { urlFor } from "$lib/sanity-image-url";
