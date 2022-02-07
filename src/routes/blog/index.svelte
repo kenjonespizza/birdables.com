@@ -1,7 +1,7 @@
 <script context="module">
   import { base } from '$app/paths';
   
-  export async function load({page, fetch}) {
+  export async function load({fetch}) {
     const url = `${base}/api/blog/all`;
     const res = await fetch(url)
     const {

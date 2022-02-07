@@ -48,7 +48,7 @@
 	}
 </script>
 
-<ul role="list" class="flex w-full items-center justify-around md:justify-start space-x-6 mt-4">
+<ul class="flex w-full items-center justify-around md:justify-start space-x-6 mt-4">
   <li>
     <button data-share="twitter" class="flex items-center justify-center w-6 h-6 text-gray-400 hover:text-gray-500" on:click={(e) => {
       open(e, "twitter")

@@ -15,10 +15,10 @@ export async function get() {
   const data = returnFormattedBirds(records);
 
   data.forEach(async (element, i)  => {
-    if (element && element.etsyId) {
-      const listing = await returnEtsyListingFromEtsyListingId(element.etsyId);
-      data[i] = {listing};
-    }
+    // if (element && element.etsyId) {
+    //   const listing = await returnEtsyListingFromEtsyListingId(element.etsyId);
+    //   data[i] = {listing};
+    // }
   });
 
   return {

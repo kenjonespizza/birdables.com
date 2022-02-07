@@ -41,7 +41,7 @@
       <div class="flex space-x-12 items-center">
         <a sveltekit:prefetch href="/" class="flex">
           <span class="sr-only">Birdables</span>
-          <img class="h-6 w-auto sm:h-8" src="/images/logo.svg" alt="Birdables Logo">
+          <img class="h-6 w-auto sm:h-8" src="/images/logo.svg" alt="Birdables Logo"  width="202.86" height="36"/>
         </a>
         <div class="w-[1px] h-12 bg-gray-100 hidden lg:block"></div>
       </div>
@@ -125,15 +125,19 @@
         <div class="flex items-center lg:ml-12 space-x-6">
           <a href="https://instagram.com/Birdables_Cards" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
             <Instagram class="h-[21px] text-gray-900" />
+            <span class="sr-only">Instagram</span>
           </a>
           <a href="https://twitter.com/BirdablesCards" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
             <Twtter class="h-[21px] text-gray-900" />
+            <span class="sr-only">Twitter</span>
           </a>
           <a href="https://opensea.io/collection/birdables" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
             <OpenSeaIcon class="h-[21px] text-gray-900" />
+            <span class="sr-only">OpenSea</span>
           </a>
           <a href="https://www.etsy.com/shop/Birdables" target="_blank" rel="noopener" noreferrer class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900">
             <EtsyIcon class="h-[21px] text-gray-900" />
+            <span class="sr-only">Etsy</span>
           </a>
         </div>
       </div>

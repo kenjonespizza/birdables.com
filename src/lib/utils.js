@@ -59,33 +59,33 @@ export const returnBirdFromId = (id, formattedBirds) => {
   return birdToReturn
 }
 
-export const returnEtsyImagesFromEtsyListingId = async (etsyListingId) => {
-  if (etsyListingId) {
-    const urlImage = `https://openapi.etsy.com/v3/application/shops/${variables.ETSY_SHOP_ID}/listings/${etsyListingId}/images?client_id=${variables.ETSY_API_KEY}`;
-    const reqImage = await fetch(urlImage);
-    const resImage = await reqImage
-    const dataImage = await resImage.json();
-    return dataImage;
-  }
-  return {
-    count: 0,
-    results: []
-  };
-}
+// export const returnEtsyImagesFromEtsyListingId = async (etsyListingId) => {
+//   if (etsyListingId) {
+//     const urlImage = `https://openapi.etsy.com/v3/application/shops/${variables.ETSY_SHOP_ID}/listings/${etsyListingId}/images?client_id=${variables.ETSY_API_KEY}`;
+//     const reqImage = await fetch(urlImage);
+//     const resImage = await reqImage
+//     const dataImage = await resImage.json();
+//     return dataImage;
+//   }
+//   return {
+//     count: 0,
+//     results: []
+//   };
+// }
 
-export const returnEtsyListingFromEtsyListingId = async (etsyListingId) => {
-  if (etsyListingId) {
-    const url = `https://openapi.etsy.com/v3/application/listings/${etsyListingId}?client_id=${variables.ETSY_API_KEY}`;
-    const req = await fetch(url);
-    const res = await req
-    const listing = await res.json();
-    return listing;
-  }
-  return {
-    count: 0,
-    results: []
-  };
-}
+// export const returnEtsyListingFromEtsyListingId = async (etsyListingId) => {
+//   if (etsyListingId) {
+//     const url = `https://openapi.etsy.com/v3/application/listings/${etsyListingId}?client_id=${variables.ETSY_API_KEY}`;
+//     const req = await fetch(url);
+//     const res = await req
+//     const listing = await res.json();
+//     return listing;
+//   }
+//   return {
+//     count: 0,
+//     results: []
+//   };
+// }
 
 export const invertColor = (hex, bw) => {
   if (hex.indexOf('#') === 0) {

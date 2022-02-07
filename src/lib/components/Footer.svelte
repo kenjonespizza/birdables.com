@@ -36,15 +36,19 @@
     <div class="mt-8 flex justify-center space-x-6">
       <a href="https://instagram.com/Birdables_Cards" target="_blank" rel="noopener" noreferrer class="text-gray-400 hover:text-gray-500">
         <Instagram class="h-[21px]" />
+        <span class="sr-only">Instagram</span>
       </a>
       <a href="https://twitter.com/BirdablesCards" target="_blank" rel="noopener" noreferrer class="text-gray-400 hover:text-gray-500">
         <Twtter class="h-[21px]" />
+        <span class="sr-only">Twitter</span>
       </a>
       <a href="https://opensea.io/collection/birdables" target="_blank" rel="noopener" noreferrer class="text-gray-400 hover:text-gray-500">
         <OpenSeaIcon class="h-[21px]" />
+        <span class="sr-only">OpenSea</span>
       </a>
       <a href="https://www.etsy.com/shop/Birdables" target="_blank" rel="noopener" noreferrer class="text-gray-400 hover:text-gray-500">
         <EtsyIcon class="h-[21px]" />
+        <span class="sr-only">Etsy</span>
       </a>
     </div>
     <p class="mt-8 text-center text-base text-gray-600">
