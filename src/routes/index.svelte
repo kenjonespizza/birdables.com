@@ -500,7 +500,7 @@
 	</div>
 </main>
 
-<!-- WORKAROUND FOR POTENTIALL BROKEN ADAPTER STATIC -->
+<!--  -->
 {#each cards as card}
 	<a sveltekit:prefetch class="hidden" href={`/bird/${card.slug}`}>{card.birdName}</a>
 {/each}
