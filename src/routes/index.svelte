@@ -90,7 +90,7 @@
 			<div class="relative sm:rounded-2xl bg-gray-blue">
 				<img
 					class="hero-bird bird-1 absolute h-full w-auto hidden lg:block"
-					src="/images/cards/Sandhill_Crane.webp"
+					src="/images/Sandhill_Crane.webp"
 					alt="Sandhill Crane"
 					width="377"
 					height="602"

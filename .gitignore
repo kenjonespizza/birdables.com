@@ -5,7 +5,6 @@ node_modules
 build
 functions
 /static/secret/
-/static/images/cards/
 
 # dotenv environment variable files
 .env*
