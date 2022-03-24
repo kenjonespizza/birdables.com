@@ -1,0 +1,1 @@
+import{a9 as t,aa as a}from"./vendor-0ab40093.js";const r=t({projectId:"pdzqg4pl",dataset:"production",apiVersion:"2021-10-14",token:"",useCdn:!1}),i=a(r);function o(e){return i.image(e)}export{o as u};
