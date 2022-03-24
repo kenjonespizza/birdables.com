@@ -13,3 +13,5 @@ functions
 etsy_shop_json.txt
 # Local Netlify folder
 .netlify
+
+/.vercel_build_output
