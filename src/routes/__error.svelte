@@ -13,7 +13,9 @@
 <script>
   import {ShowHeaderFooter} from "../stores/store"
 	export let status;
+	console.log('status:', status)
 	export let error;
+	console.log('error:', error)
 
   import { onMount } from 'svelte';
 
