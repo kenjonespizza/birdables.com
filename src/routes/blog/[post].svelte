@@ -1,7 +1,7 @@
 <script context="module">
   import { base } from '$app/paths';
   export async function load({params, fetch}) {
-    const url = `${base}/api/blog/${params.post}`;
+    const url = `${base}/data/blog/${params.post}`;
     const res = await fetch(url)
     const post = await res.json();
 

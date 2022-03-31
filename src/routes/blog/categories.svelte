@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
 
   export async function load({ fetch }) {
-  		const results = await fetch(`${base}/api/blog/category/all`);
+  		const results = await fetch(`${base}/data/blog/category/all`);
   		const categories = await results.json();
   		return { props: {
         categories
@@ -18,6 +18,7 @@
   import { categoryNamesToString } from "$lib/utils"
 
   export let categories;
+  console.log('categories:', categories)
 </script>
 
 <SEO
@@ -73,8 +74,8 @@
   <div class="mx-auto py-6 px-4 max-w-screen-xl sm:px-6 lg:px-8 lg:py-10">
     <div class="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
       {#each categories as category}
-        <a href={`/blog/category/${category.pageInfo.slug.current}`} class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img loading=lazy class="object-cover aspect-video h-full w-full" src={urlFor(category.image).width(600)} alt={category.pageInfo.name}>
+        <a href={`/blog/category/${category.pageInfo.slug.current}`} class="bg-white ">
+            <img loading=lazy class="object-cover aspect-video h-full w-full shadow-lg rounded-lg overflow-hidden" src={urlFor(category.image).width(600)} alt={category.pageInfo.name}>
           <h4 class="font-bold text-xl p-4 text-center">{category.pageInfo.name} <span class="span text-gray-500 font-light text-base">({category.count})</span></h4>
         </a>
       {/each}

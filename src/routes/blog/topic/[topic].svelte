@@ -3,7 +3,7 @@
 
 	export async function load({ params, fetch }) {
 		let { topic } = params;
-		const res = await fetch(`${base}/api/blog/topic/${topic}`);
+		const res = await fetch(`${base}/data/blog/topic/${topic}`);
 		const { posts, currentPage, perPage, count, blogInfo, categories, topics } = await res.json();
 
 		if (!posts || posts.length === 0) {

@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
 
   export async function load({page, fetch}) {
-    const url = `${base}/api/blog/author/all`;
+    const url = `${base}/data/blog/author/all`;
     const res = await fetch(url)
     const authors = await res.json()
     if (res) {

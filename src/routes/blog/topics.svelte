@@ -2,7 +2,7 @@
   import { base } from '$app/paths'
 
   export async function load({ fetch }) {
-  		const results = await fetch(`${base}/api/blog/topic/all`);
+  		const results = await fetch(`${base}/data/blog/topic/all`);
   		const res = await results.json();
   		if (res) {
         return {

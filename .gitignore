@@ -14,3 +14,4 @@ etsy_shop_json.txt
 .netlify
 
 /.vercel_build_output
+.vercel

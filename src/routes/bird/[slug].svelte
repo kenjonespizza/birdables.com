@@ -1,6 +1,6 @@
 <script context="module">
   export async function load({params, fetch}) {
-    const res = await fetch( `../api/bird/${params.slug}`)
+    const res = await fetch( `../data/bird/${params.slug}`)
 
     if (res) {
 			return {

@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 
 	export async function load({ fetch }) {
-		const url = `${base}/api/blog/all`;
+		const url = `${base}/data/blog/all`;
 		const res = await fetch(url);
 		const { posts, currentPage, perPage, count, blogInfo, categories, topics } = await res.json();
 

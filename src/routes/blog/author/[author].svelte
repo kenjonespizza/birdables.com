@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 
 	export async function load({ params, fetch }) {
-		const res = await fetch(`${base}/api/blog/author/${params.author}`);
+		const res = await fetch(`${base}/data/blog/author/${params.author}`);
 		const { authorData, posts, count, currentPage, perPage } = await res.json();
 		const author = authorData;
 

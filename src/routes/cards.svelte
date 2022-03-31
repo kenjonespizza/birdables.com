@@ -1,7 +1,7 @@
 <script context="module">
 	import { base } from '$app/paths';
 	export async function load({ fetch }) {
-		const url = `/api/cards`;
+		const url = `${base}/data/cards`;
 		const res = await fetch(url);
 		if (res) {
 			return {

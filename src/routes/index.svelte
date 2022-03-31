@@ -1,7 +1,7 @@
 <script context="module">
 	import { base } from '$app/paths';
 	export async function load({ fetch }) {
-		const url = `${base}/api/cards`;
+		const url = `${base}/data/cards`;
 		const res = await fetch(url);
 		if (res) {
 			return {
@@ -270,11 +270,17 @@
 							/>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-					<div class="lg:py-10">
-						<GetNotified />
-					</div>
+	<GetNotified />
 
+	<div class="px-4 sm:px-6 lg:px-8 bg-white pt-12">
+		<div class="lg:max-w-7xl mx-auto">
+			<div class="relative">
+				<div class="relative md:bg-white md:p-6 space-y-10 lg:space-y-0">
 					<div class="grid gap-10 md:grid-cols-2 md:items-center md:grid-flow-row-dense">
 						<div class="md:col-span-1 md:col-start-2">
 							<div class="prose prose-gray prose-lg text-gray-500 md:max-w-none">

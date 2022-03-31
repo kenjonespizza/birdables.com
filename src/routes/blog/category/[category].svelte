@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 
 	export async function load({ params, fetch }) {
-		const res = await fetch(`${base}/api/blog/category/${params.category}`);
+		const res = await fetch(`${base}/data/blog/category/${params.category}`);
 		const { posts, categoryInfo, currentPage, perPage, count, blogInfo, categories } =
 			await res.json();
 
