@@ -7,9 +7,9 @@
 
   onMount(async () => {
 
-    if ($page.query.get('id')) {
-      id = $page.query.get('id')
-      const res = await fetch("/.netlify/functions/unNotify", {
+    if ($page.url.searchParams.get('id')) {
+      id = $page.url.searchParams.get('id')
+      const res = await fetch("/api/unNotify", {
         method: "post",
         body: JSON.stringify({
           id,
@@ -32,7 +32,7 @@
       </div>
     {:else if successful === false}
       <div class="bg-red-200 text-red-700 p-4 border-red-700 rounded-lg text-center">
-        You successfully unsubscribed
+        There was an Error.  Please try again or contact <a class="underline" href="mailto:chirp@birdables.com">chirp@birdables.com</a> if the error persists
       </div>
     {:else}
       <div></div>
