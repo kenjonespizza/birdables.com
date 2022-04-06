@@ -18,7 +18,7 @@
 
 </script>
 <script>
-	import { goto, invalidate, prefetch, prefetchRoutes } from '$app/navigation';
+	import { goto } from '$app/navigation';
 	import { browser } from '$app/env'
 	
 	export let bird;

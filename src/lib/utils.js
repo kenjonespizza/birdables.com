@@ -5,25 +5,28 @@ import info from './info';
 // Consistently format the bird structure
 export const returnFormattedBird =(bird) => {
   let formattedBird = {
-    id: bird.fields["ID"],
-    slug: bird.fields["Slug"],
-    bigName: bird.fields['Big Name'],
-    rarity: bird.fields['Rarity'],
-    location: bird.fields['Location'],
-    smallName: bird.fields['Small Name'],
-    accentColor: bird.fields['Accent Color'],
-    scientificName: bird.fields['Scientific Name'],
-    birdName: bird.fields['Bird Name'],
-    conservationStatus: bird.fields['Conservation Status Select'],
-    friendlyId: bird.fields['Friendly ID'],
-    etsyId: bird.fields['Etsy ID'],
-    etsyUrl: bird.fields['Etsy URL'],
-    openseaUrl: bird.fields['Opensea URL'],
-    releaseDate: bird.fields['Release Date'],
-    specialty: bird.fields['Specialty'],
-    eBird: bird.fields['eBird'],
-    audubon: bird.fields['Audubon'],
-  }
+    _id: bird.id,
+		id: bird.fields['ID'],
+		slug: bird.fields['Slug'],
+		bigName: bird.fields['Big Name'],
+		rarity: bird.fields['Rarity'],
+		location: bird.fields['Location'],
+		smallName: bird.fields['Small Name'],
+		accentColor: bird.fields['Accent Color'],
+		scientificName: bird.fields['Scientific Name'],
+		birdName: bird.fields['Bird Name'],
+		conservationStatus: bird.fields['Conservation Status Select'],
+		friendlyId: bird.fields['Friendly ID'],
+		etsyId: bird.fields['Etsy ID'],
+		etsyUrl: bird.fields['Etsy URL'],
+		openseaUrl: bird.fields['Opensea URL'],
+		releaseDate: bird.fields['Release Date'],
+		specialty: bird.fields['Specialty'],
+		eBird: bird.fields['eBird'],
+		audubon: bird.fields['Audubon'],
+		scans: bird.fields['QR Scans'],
+		new: bird.fields['New']
+	};
   return formattedBird;
 }
 
