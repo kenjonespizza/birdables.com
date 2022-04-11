@@ -1,5 +1,16 @@
 <script>
 	import { assets } from '$app/paths';
+	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
+
+	let ready = false;
+	export let i;
+
+	onMount(() => {
+		setTimeout(() => {
+			ready = true;
+		}, i * 100);
+	});
 
 	export let card;
 </script>
@@ -7,14 +18,15 @@
 <a
 	href={`/bird/${card.slug}`}
 	sveltekit:prefetch
-	class="group flex flex-col space-y-4 tranform transition duration-300"
+	class={`${
+		ready ? 'opacity-100' : 'opacity-0'
+	} group flex flex-col space-y-4 tranform transition duration-300`}
 >
 	<img
 		class={`card-img object-cover drop-shadow-card card-img`}
 		src={`${assets}/images/cards/${card.friendlyId}.webp`}
 		alt={card.cardName}
 	/>
-	<!-- <div class="aspect-w-3 aspect-h-4" style={`background-color: #${card.accentColor};`}></div> -->
 	<div class="text-lg leading-6 font-medium space-y-2">
 		<p class="flex flex-col">
 			<span class="text-xl tracking-tighter leading-none group-hover:underline">
@@ -29,7 +41,9 @@
 				>{card.bigName}</span
 			>
 		</p>
-		<p class="text-gray-400 italic text-base tracking-tight leading-none">{card.scientificName}</p>
+		<p class="text-gray-400 italic text-base tracking-tight leading-none">
+			{card.scientificName}
+		</p>
 		<div class="flex space-x-2">
 			<!-- {#if card.rarity === 5}
               <span class="px-3 py-1.5 bg-gray-100 text-gray-400 rounded-full text-xs font-semibold">Legendary</span>
@@ -47,4 +61,4 @@
 		</div>
 	</div>
 </a>
-<a href={`/card/${card.id}`} class="hidden">{card.birdName}</a>
+<!-- <a href={`/card/${card.id}`} class="hidden">{card.birdName}</a> -->
