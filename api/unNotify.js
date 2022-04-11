@@ -27,29 +27,27 @@ export const base = new Airtable({ apiKey: process.env.VITE_AIRTABLE_API_KEY }).
 );
 
 export default async function handler(request, response) {
-  const body = JSON.parse(request.body);
-  console.log('body:', body)
+	const body = JSON.parse(request.body);
 	if (body.id) {
-    base('Notifyees').destroy(body.id, function (err, deletedRecord) {
+		base('Notifyees').destroy(body.id, function (err, deletedRecord) {
 			if (err) {
-        console.log('err.message:', err.message)
-				if (err.message === "Could not find what you are looking for") {
-          response.status(200).json({ message: 'success' });
-          console.log("Record not in DB, so can't be deleted... Success?: ", deletedRecord.id);
-          return
-        } else {
-          response.status(500).json({ message: 'failure' });
-          return
-        }
+				console.log('err.message:', err.message);
+				if (err.message === 'Could not find what you are looking for') {
+					response.status(200).json({ message: 'success' });
+					console.log("Record not in DB, so can't be deleted... Success?: ", deletedRecord.id);
+					return;
+				} else {
+					response.status(500).json({ message: 'failure' });
+					return;
+				}
 			} else {
 				response.status(200).json({ message: 'success' });
 				console.log('Deleted record', deletedRecord.id);
-        return
+				return;
 			}
 		});
-  } else {
-    console.error("ERROR: No ID provided");
+	} else {
+		console.error('ERROR: No ID provided');
 		response.status(500).json({ message: 'failure - No ID Provided' });
-  }
-  
+	}
 }
