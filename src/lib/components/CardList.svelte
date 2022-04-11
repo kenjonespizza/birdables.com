@@ -1,6 +1,6 @@
 <script>
 	import { assets } from '$app/paths';
-	import { slide } from 'svelte/transition';
+	import { slide, fade } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
 	import Card from '$lib/components/Card.svelte';
 
@@ -17,7 +17,6 @@
 				src={`${assets}/images/packs/5-card-pack.webp`}
 				alt="5 Card Pack"
 			/>
-			<!-- <div class="aspect-w-3 aspect-h-4" style={`background-color: #${card.accentColor};`}></div> -->
 			<div class="text-lg leading-6 font-medium space-y-2">
 				<p class="flex flex-col">
 					<span
@@ -29,7 +28,7 @@
 		</a>
 	</li>
 	{#each cards as card (card)}
-		<li in:slide animate:flip={{ duration: (card) => 30 * Math.sqrt(card) }} class="space-y-4">
+		<li in:fade out:fade animate:flip={{ duration: 750 }} class="space-y-4">
 			<Card {card} />
 		</li>
 	{/each}
