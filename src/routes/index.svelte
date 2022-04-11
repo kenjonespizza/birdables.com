@@ -533,7 +533,6 @@
 	</div>
 </main>
 
-<!--  -->
 {#each cards as card}
 	<a sveltekit:prefetch class="hidden" href={`/bird/${card.slug}`}>{card.birdName}</a>
 {/each}
