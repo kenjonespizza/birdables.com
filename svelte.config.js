@@ -11,7 +11,10 @@ const config = {
 		// 	fallback: null,
 		//   precompress: true,
 		// })
-		adapter: vercel()
+		adapter: vercel(),
+		prerender: {
+			default: true
+		}
 	},
 
 	preprocess: [

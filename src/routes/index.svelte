@@ -28,6 +28,12 @@
 
 	export let cards;
 
+	import { onMount } from 'svelte';
+	import { fly, fade } from 'svelte/transition';
+
+	let ready = false;
+	onMount(() => (ready = true));
+
 	// const checkIfShownAnimationsCookieIsTrue = () => {
 	//   if (document.cookie.split(';').some((item) => item.includes('shown_animations=true'))) {
 	//     return true
@@ -88,13 +94,16 @@
 	<div class="relative">
 		<div class="mx-auto sm:px-6 lg:px-8">
 			<div class="relative sm:rounded-2xl bg-gray-blue">
-				<img
-					class="hero-bird bird-1 absolute h-full w-auto hidden lg:block"
-					src="/images/Sandhill_Crane.webp"
-					alt="Sandhill Crane"
-					width="377"
-					height="602"
-				/>
+				{#if ready}
+					<img
+						class="hero-bird bird-1 absolute h-full w-auto hidden lg:block"
+						src="/images/Sandhill_Crane.webp"
+						alt="Sandhill Crane"
+						width="377"
+						height="602"
+						in:fly={{ x: -100, duration: 1000, delay: 250 }}
+					/>
+				{/if}
 
 				<div class="z-10 px-4 pt-16 sm:px-12 sm:pt-24 lg:pt-32 lg:px-8">
 					<span
@@ -126,13 +135,16 @@
 					/>
 				</div>
 			</div>
-			<img
-				class="hero-bird bird-2 absolute w-auto h-full hidden sm:block"
-				src="/images/Loggerhead_Shrike.webp"
-				alt="Loggerhead Shrike"
-				width="837"
-				height="1187"
-			/>
+			{#if ready}
+				<img
+					class="hero-bird bird-2 absolute w-auto h-full hidden sm:block"
+					src="/images/Loggerhead_Shrike.webp"
+					alt="Loggerhead Shrike"
+					width="837"
+					height="1187"
+					in:fly={{ x: 100, duration: 1000, delay: 750 }}
+				/>
+			{/if}
 		</div>
 
 		<div class="absolute top-[-100px] left-0 bg-white h-[calc(100%+100px)] sm:w-6 lg:w-8 " />
@@ -142,80 +154,95 @@
 	<div class="px-4 sm:px-6 lg:px-16 2xl:px-32 relative z-20">
 		<div class={`-translate-y-1/2`}>
 			<div class="cards relative h-full">
-				<a
-					href="/bird/northern-cardinal"
-					class="home-card card card-1 card-sm hidden sm:block transition"
-				>
-					<div class="front w-full flex justify-center">
-						<img
-							src="/images/cards/northern-cardinal_01.webp"
-							alt="Northern Cardinal Card - Edition 01"
-							class="object-contain drop-shadow-card"
-							width="751"
-							height="1051"
-						/>
-					</div>
-				</a>
-				<a
-					href="/bird/osprey"
-					sveltekit:prefetch
-					class="home-card card card-2 card-md block transition"
-				>
-					<div class="front w-full flex justify-center">
-						<img
-							src="/images/cards/osprey_01.webp"
-							alt="Osprey Card - Edition 01"
-							class="object-contain drop-shadow-card"
-							width="751"
-							height="1051"
-						/>
-					</div>
-				</a>
-				<a
-					href="/bird/brown-pelican"
-					sveltekit:prefetch
-					class="home-card card card-3 card-lg block transition"
-				>
-					<div class="front w-full flex justify-center">
-						<img
-							src="/images/cards/brown-pelican_01.webp"
-							alt="Brown Pelican Card - Edition 01"
-							class="object-contain drop-shadow-card"
-							width="751"
-							height="1051"
-						/>
-					</div>
-				</a>
-				<a
-					href="/bird/yellow-warbler"
-					sveltekit:prefetch
-					class="home-card card card-4 card-md block transition"
-				>
-					<div class="front w-full flex justify-center">
-						<img
-							src="/images/cards/yellow-warbler_01.webp"
-							alt="Yellow Warbler Card - Edition 01"
-							class="object-contain drop-shadow-card"
-							width="751"
-							height="1051"
-						/>
-					</div>
-				</a>
-				<a
-					href="/bird/roseate-spoonbill"
-					sveltekit:prefetch
-					class="home-card card card-5 card-sm hidden sm:block transition"
-				>
-					<div class="front w-full flex justify-center">
-						<img
-							src="/images/cards/roseate-spoonbill_01.webp"
-							alt="Roseate Spoonbill Card - Edition 01"
-							class="object-contain drop-shadow-card"
-							width="751"
-							height="1051"
-						/>
-					</div>
-				</a>
+				{#if ready}
+					<a
+						href="/bird/northern-cardinal"
+						class="home-card card card-1 card-sm hidden sm:block transition"
+						in:fly={{ x: 100, duration: 500, delay: 2500 }}
+					>
+						<div class="front w-full flex justify-center">
+							<img
+								src="/images/cards/northern-cardinal_01.webp"
+								alt="Northern Cardinal Card - Edition 01"
+								class="object-contain drop-shadow-card"
+								width="751"
+								height="1051"
+							/>
+						</div>
+					</a>
+				{/if}
+				{#if ready}
+					<a
+						href="/bird/osprey"
+						sveltekit:prefetch
+						class="home-card card card-2 card-md block transition"
+						in:fly={{ x: 100, duration: 500, delay: 2000 }}
+					>
+						<div class="front w-full flex justify-center">
+							<img
+								src="/images/cards/osprey_01.webp"
+								alt="Osprey Card - Edition 01"
+								class="object-contain drop-shadow-card"
+								width="751"
+								height="1051"
+							/>
+						</div>
+					</a>
+				{/if}
+				{#if ready}
+					<a
+						href="/bird/brown-pelican"
+						sveltekit:prefetch
+						class="home-card card card-3 card-lg block transition"
+						in:fade={{ duration: 500, delay: 1500 }}
+					>
+						<div class="front w-full flex justify-center">
+							<img
+								src="/images/cards/brown-pelican_01.webp"
+								alt="Brown Pelican Card - Edition 01"
+								class="object-contain drop-shadow-card"
+								width="751"
+								height="1051"
+							/>
+						</div>
+					</a>
+				{/if}
+				{#if ready}
+					<a
+						href="/bird/yellow-warbler"
+						sveltekit:prefetch
+						class="home-card card card-4 card-md block transition"
+						in:fly={{ x: -100, duration: 500, delay: 2000 }}
+					>
+						<div class="front w-full flex justify-center">
+							<img
+								src="/images/cards/yellow-warbler_01.webp"
+								alt="Yellow Warbler Card - Edition 01"
+								class="object-contain drop-shadow-card"
+								width="751"
+								height="1051"
+							/>
+						</div>
+					</a>
+				{/if}
+				{#if ready}
+					<a
+						href="/bird/roseate-spoonbill"
+						sveltekit:prefetch
+						class="home-card card card-5 card-sm hidden sm:block transition"
+						in:fly={{ x: -100, duration: 500, delay: 2500 }}
+					>
+						<div class="front w-full flex justify-center">
+							<img
+								src="/images/cards/roseate-spoonbill_01.webp"
+								alt="Roseate Spoonbill Card - Edition 01"
+								class="object-contain drop-shadow-card"
+								width="751"
+								height="1051"
+							/>
+						</div>
+					</a>
+				{/if}
 			</div>
 		</div>
 	</div>
