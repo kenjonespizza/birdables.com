@@ -1,19 +1,19 @@
-import client from "$lib/sanityClient";
-import { postPerPage } from "../utils";
+import client from '$lib/sanityClient';
+import { postPerPage } from '../utils';
 
-export async function get({ params }) {
-		// Get the page params
-		let [category, currentPage] = params.category.split(",");
+export async function GET({ params }) {
+	// Get the page params
+	let [category, currentPage] = params.category.split(',');
 
-		// Set currentPage to 1 by default if it wasn't set in the URL
-		currentPage = currentPage ? Number(currentPage) : 1;
+	// Set currentPage to 1 by default if it wasn't set in the URL
+	currentPage = currentPage ? Number(currentPage) : 1;
 
-		const perPage = postPerPage; // ToDo, consider setting this in sanity, but then we'll need to do an additional API call first to get that value
-		const start = perPage * currentPage - perPage;
-		const end = perPage * currentPage;
+	const perPage = postPerPage; // ToDo, consider setting this in sanity, but then we'll need to do an additional API call first to get that value
+	const start = perPage * currentPage - perPage;
+	const end = perPage * currentPage;
 
-		const filter = "*[_type == \"category\" && pageInfo.slug.current == $category][0]";
-		const projection = `{
+	const filter = '*[_type == "category" && pageInfo.slug.current == $category][0]';
+	const projection = `{
       ...,
       "posts": *[_type == 'post' && references(^._id)] | order(publishedAt desc) [$start...$end] {
         ...
@@ -27,18 +27,15 @@ export async function get({ params }) {
       "count": count(*[_type == 'post' && references(^._id)])
     }`;
 
-		const query = filter + projection;
-		const queryParams = { category, start, end };
-		const categoryInfo = await client.fetch(query, queryParams);
-		const {
-			posts, count, categories, blogInfo,
-		} = categoryInfo;
-		
-		
-		if (categoryInfo) {
-			return {
-				status: 200,
-				body: {posts, categoryInfo, currentPage, perPage, count, blogInfo, categories},
-			}
-		}
+	const query = filter + projection;
+	const queryParams = { category, start, end };
+	const categoryInfo = await client.fetch(query, queryParams);
+	const { posts, count, categories, blogInfo } = categoryInfo;
+
+	if (categoryInfo) {
+		return {
+			status: 200,
+			body: { posts, categoryInfo, currentPage, perPage, count, blogInfo, categories }
+		};
+	}
 }

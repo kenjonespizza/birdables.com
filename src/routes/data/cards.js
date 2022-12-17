@@ -4,7 +4,7 @@ import { variables } from '$lib/variables';
 
 import { returnFormattedBirds } from '$lib/utils';
 
-export async function get() {
+export async function GET() {
 	const base = new Airtable({ apiKey: variables.AIRTABLE_API_KEY }).base(variables.AIRTABLE_BASE);
 	const table = base('Birds');
 	const records = await table

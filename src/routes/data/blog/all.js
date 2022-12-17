@@ -2,7 +2,7 @@ import client from '$lib/sanityClient';
 import { postPerPage } from './utils';
 import { massageTopics } from '$lib/utils';
 
-export async function get() {
+export async function GET() {
 	let perPage = postPerPage; // ToDo, consider setting this in sanity, but then we'll need to do an additional API call first to get that value
 	let currentPage = 1;
 
