@@ -71,7 +71,10 @@
 			</a>
 		</div>
 		<p class="mt-8 text-center text-base text-gray-600">
-			&copy; {new Date().getFullYear()} Birdables. All rights reserved.
+			&copy; {new Date().getFullYear()} Birdables. All rights reserved. |
+			<a class="underline" href="https://github.com/kenjonespizza/birdables.com"
+				>View open sourced code</a
+			>
 		</p>
 	</div>
 </footer>
