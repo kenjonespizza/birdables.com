@@ -1,5 +1,4 @@
 <script>
-	console.log('HERERERE');
 	import SEO from 'svelte-seo';
 	import IntersectionObserver from 'svelte-intersection-observer';
 

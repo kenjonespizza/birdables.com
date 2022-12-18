@@ -9,9 +9,7 @@
 	import { urlFor } from '$lib/sanity-image-url';
 
 	export let data;
-	console.log('data:', data);
 	let { author, currentPage, perPage, posts, count } = data;
-	console.log('author:', author);
 </script>
 
 <SEO

@@ -1,5 +1,3 @@
-console.log('HERERERE SERVER');
-
 import { error } from '@sveltejs/kit';
 import Airtable from 'airtable';
 
