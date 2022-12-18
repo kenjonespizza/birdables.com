@@ -1,7 +1,8 @@
+import { error } from '@sveltejs/kit';
 import client from '$lib/sanityClient';
-import { postPerPage } from '../utils';
+import { postPerPage } from '../../config';
 
-export async function GET({ params }) {
+export async function load({ params }) {
 	// Get the page params
 	let [author, currentPage] = params.author.split(',');
 
@@ -24,8 +25,9 @@ export async function GET({ params }) {
 	const authorData = await client.fetch(authorQuery, queryParams);
 	const { posts, count } = authorData;
 
-	return {
-		status: 200,
-		body: { authorData, posts, count, currentPage, perPage }
-	};
+	if (authorData) {
+		return { author: authorData, posts, count, currentPage, perPage };
+	}
+
+	throw error(404, 'Not Found');
 }

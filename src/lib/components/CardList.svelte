@@ -1,19 +1,8 @@
-<script context="module">
-	import { browser } from '$app/env';
-	import { assets } from '$app/paths';
-	import { loadImage } from '$lib/utils';
-
-	export async function load({ props }) {
-		if (browser) {
-			await loadImage(`${assets}/images/packs/5-card-pack.webp`);
-		}
-	}
-</script>
-
 <script>
 	import { onMount } from 'svelte';
 	import { slide, fade } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
+	import { assets } from '$app/paths';
 	import Card from '$lib/components/Card.svelte';
 
 	let ready = false;

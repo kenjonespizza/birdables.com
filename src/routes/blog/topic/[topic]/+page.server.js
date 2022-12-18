@@ -1,8 +1,9 @@
+import { error } from '@sveltejs/kit';
 import client from '$lib/sanityClient';
-import { postPerPage } from '../utils';
+import { postPerPage } from '../../config';
 import { slugify, massageTopics } from '$lib/utils';
 
-export async function GET({ params }) {
+export async function load({ params }) {
 	let allPostsWithTopic = []; // Initiate array of _id's for posts with topic
 	let [topic, currentPage] = params.topic.split(',');
 
@@ -56,12 +57,19 @@ export async function GET({ params }) {
 			const { posts, count, blogInfo, topics: allTopics } = results;
 			let topics = massageTopics(allTopics);
 			return {
-				status: 200,
-				body: { posts, currentPage, perPage, count, blogInfo, topics }
+				posts,
+				currentPage,
+				perPage,
+				count,
+				blogInfo,
+				topics,
+				topic
 			};
 		});
 
 	if (res) {
 		return res;
 	}
+
+	throw error(404, 'Not Found');
 }

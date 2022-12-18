@@ -1,28 +1,3 @@
-<script context="module">
-	import { base } from '$app/paths';
-
-	export async function load({ params, fetch }) {
-		let { topic } = params;
-		const res = await fetch(`${base}/data/blog/topic/${topic}`);
-		const { posts, currentPage, perPage, count, blogInfo, categories, topics } = await res.json();
-
-		if (!posts || posts.length === 0) {
-			return { status: 404 };
-		}
-
-		if (res) {
-			return {
-				props: { posts, currentPage, perPage, count, blogInfo, categories, topics, topic }
-			};
-		}
-
-		return {
-			status: res.status,
-			error: new Error().message
-		};
-	}
-</script>
-
 <script>
 	import SEO from 'svelte-seo';
 
@@ -31,12 +6,9 @@
 	import Posts from '$lib/components/blog/Posts.svelte';
 	import { unSlugify, capitalize } from '$lib/utils';
 
-	export let posts;
-	export let topic;
-	export let count;
-	export let currentPage;
-	export let perPage;
-	export let topics;
+	export let data;
+	console.log('data:', data);
+	let { posts, currentPage, perPage, count, blogInfo, categories, topics, topic } = data;
 
 	const formattedTopic = capitalize(unSlugify(topic, true));
 </script>

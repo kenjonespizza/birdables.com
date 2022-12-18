@@ -1,17 +1,3 @@
-<script context="module">
-	import { base } from '$app/paths';
-
-	export async function load({ fetch }) {
-		const results = await fetch(`${base}/data/blog/category/all`);
-		const categories = await results.json();
-		return {
-			props: {
-				categories
-			}
-		};
-	}
-</script>
-
 <script>
 	import SEO from 'svelte-seo';
 	import site from '$lib/info';
@@ -19,7 +5,8 @@
 	import { urlFor } from '$lib/sanity-image-url';
 	import { categoryNamesToString } from '$lib/utils';
 
-	export let categories;
+	export let data;
+	let { categories } = data;
 </script>
 
 <SEO

@@ -1,24 +1,3 @@
-<script context="module">
-  import { base } from '$app/paths';
-  export async function load({params, fetch}) {
-    const url = `${base}/data/blog/${params.post}`;
-    const res = await fetch(url)
-    const post = await res.json();
-
-    if (res) {
-			return {
-				props: {
-          post
-				}
-			};
-		}
-    return {
-			status: res.status,
-			error: new Error().message,
-		};
-  }
-</script>
-
 <script>
 import SEO from 'svelte-seo';
 
@@ -30,7 +9,8 @@ import PortableText from '$lib/components/PortableText.svelte';
 import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 import { categoryNamesToString, authorNamesToString } from "$lib/utils"
 
-export let post;
+export let data;
+const { post } = data;
 const { authors } = post;
 const layout = "A";
 let y;

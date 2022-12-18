@@ -1,31 +1,3 @@
-<script context="module">
-	import { base } from '$app/paths';
-
-	export async function load({ fetch }) {
-		const url = `${base}/data/blog/all`;
-		const res = await fetch(url);
-		const { posts, currentPage, perPage, count, blogInfo, categories, topics } = await res.json();
-
-		if (res) {
-			return {
-				props: {
-					posts,
-					currentPage,
-					perPage,
-					count,
-					blogInfo,
-					categories,
-					topics
-				}
-			};
-		}
-		return {
-			status: res.status,
-			error: new Error().message
-		};
-	}
-</script>
-
 <script>
 	import SEO from 'svelte-seo';
 
@@ -36,13 +8,8 @@
 	import { toPlainText } from '$lib/utils';
 	import { urlFor } from '$lib/sanity-image-url';
 
-	export let posts;
-	export let currentPage;
-	export let perPage;
-	export let count;
-	export let blogInfo;
-	export let categories;
-	export let topics;
+	export let data;
+	let { posts, currentPage, perPage, count, blogInfo, categories, topics } = data;
 </script>
 
 <svelte:head>

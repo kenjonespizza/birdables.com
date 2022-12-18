@@ -1,28 +1,3 @@
-<script context="module">
-	import { base } from '$app/paths';
-
-	export async function load({ params, fetch }) {
-		const res = await fetch(`${base}/data/blog/author/${params.author}`);
-		const { authorData, posts, count, currentPage, perPage } = await res.json();
-		const author = authorData;
-
-		if (!authorData.posts || (authorData.posts.length === 0 && page > 1)) {
-			return { status: 404 };
-		}
-
-		if (res) {
-			return {
-				props: { author, posts, count, currentPage, perPage }
-			};
-		}
-
-		return {
-			status: res.status,
-			error: new Error().message
-		};
-	}
-</script>
-
 <script>
 	import SEO from 'svelte-seo';
 
@@ -33,11 +8,10 @@
 	import { toPlainText, truncate } from '$lib/utils';
 	import { urlFor } from '$lib/sanity-image-url';
 
-	export let author;
-	export let currentPage;
-	export let perPage;
-	export let posts;
-	export let count;
+	export let data;
+	console.log('data:', data);
+	let { author, currentPage, perPage, posts, count } = data;
+	console.log('author:', author);
 </script>
 
 <SEO

@@ -1,6 +1,7 @@
+import { error } from '@sveltejs/kit';
 import client from '$lib/sanityClient';
 
-export async function GET() {
+export async function load() {
 	const filter = `*[_type == "category" && defined(pageInfo.slug.current)] | order(desc)`;
 	const projections = `{
       ...,
@@ -8,12 +9,11 @@ export async function GET() {
     }`;
 	const query = filter + projections;
 	const params = '';
-	const data = await client.fetch(query, params);
+	const categories = await client.fetch(query, params);
 
-	if (data) {
-		return {
-			status: 200,
-			body: data
-		};
+	if (categories) {
+		return { categories };
 	}
+
+	throw error(404, 'Not Found');
 }

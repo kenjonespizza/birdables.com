@@ -1,8 +1,9 @@
+import { error } from '@sveltejs/kit';
 import client from '$lib/sanityClient';
-import { postPerPage } from './utils';
+import { postPerPage } from './config';
 import { massageTopics } from '$lib/utils';
 
-export async function GET() {
+export async function load() {
 	let perPage = postPerPage; // ToDo, consider setting this in sanity, but then we'll need to do an additional API call first to get that value
 	let currentPage = 1;
 
@@ -27,8 +28,9 @@ export async function GET() {
 	const { posts, count, blogInfo, categories, topics: allTopics } = results;
 	let topics = massageTopics(allTopics);
 
-	return {
-		status: 200,
-		body: { posts, currentPage, perPage, count, blogInfo, categories, topics }
-	};
+	if (results) {
+		return { posts, currentPage, perPage, count, blogInfo, categories, topics };
+	}
+
+	throw error(404, 'Not Found');
 }

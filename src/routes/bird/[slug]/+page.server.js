@@ -1,24 +1,18 @@
+import { error } from '@sveltejs/kit';
 import Airtable from 'airtable';
 import { variables } from '$lib/variables';
 import { returnBirdFromParam, returnFormattedBirds } from '$lib/utils';
 
-export async function GET({ params }) {
+export async function load({ params }) {
 	const { slug } = params;
 	const base = new Airtable({ apiKey: variables.AIRTABLE_API_KEY }).base(variables.AIRTABLE_BASE);
 	const records = await base('Birds').select().firstPage();
-	const data = returnBirdFromParam(slug, 'slug', returnFormattedBirds(records));
+	const bird = returnBirdFromParam(slug, 'slug', returnFormattedBirds(records));
+	// console.log('bird:', bird);
 
-	if (data) {
-		if (records) {
-			return {
-				status: 200,
-				body: data
-			};
-		}
+	if (bird && records) {
+		return { bird };
+	} else {
+		throw error(400, 'not found');
 	}
-
-	return {
-		status: 302,
-		headers: { Location: `/404` }
-	};
 }

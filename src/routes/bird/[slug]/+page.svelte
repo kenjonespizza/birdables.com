@@ -1,29 +1,3 @@
-<script context="module">
-	import { loadImage } from '$lib/utils';
-	import { browser } from '$app/env';
-
-	export async function load({ params, fetch, props }) {
-		const res = await fetch(`../data/bird/${params.slug}`);
-
-		if (res) {
-			return {
-				props: {
-					bird: await res.json()
-				}
-			};
-		}
-
-		if (browser) {
-			await loadImage(`${assets}/images/cards/${props.bird.friendlyId}.webp`);
-		}
-
-		return {
-			status: res.status,
-			error: new Error().message
-		};
-	}
-</script>
-
 <script>
 	import SEO from 'svelte-seo';
 
@@ -41,7 +15,8 @@
 	import Audubon from '$lib/svgs/Audubon.svelte';
 	import BOW from '$lib/svgs/BOW.svelte';
 
-	export let bird;
+	export let data;
+	let { bird } = data;
 	export let isModalOpen;
 
 	let pageUrl = `${site.address}${$page.url.pathname}`;

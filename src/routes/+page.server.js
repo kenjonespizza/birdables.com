@@ -1,10 +1,13 @@
+console.log('HERERERE SERVER');
+
+import { error } from '@sveltejs/kit';
 import Airtable from 'airtable';
 
 import { variables } from '$lib/variables';
 
 import { returnFormattedBirds } from '$lib/utils';
 
-export async function GET() {
+export async function load() {
 	const base = new Airtable({ apiKey: variables.AIRTABLE_API_KEY }).base(variables.AIRTABLE_BASE);
 	const table = base('Birds');
 	const records = await table
@@ -14,17 +17,11 @@ export async function GET() {
 		})
 		.firstPage();
 
-	const data = returnFormattedBirds(records);
+	const cards = returnFormattedBirds(records);
 
-	// data.forEach(async (element, i) => {
-	// 	if (element && element.etsyId) {
-	// 	  const listing = await returnEtsyListingFromEtsyListingId(element.etsyId);
-	// 	  data[i] = {listing};
-	// 	}
-	// });
+	if (cards) {
+		return { cards };
+	}
 
-	return {
-		status: 200,
-		body: data
-	};
+	throw error(404, 'Not found');
 }

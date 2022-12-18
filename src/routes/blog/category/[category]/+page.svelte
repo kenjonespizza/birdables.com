@@ -1,32 +1,3 @@
-<script context="module">
-	import { base } from '$app/paths';
-
-	export async function load({ params, fetch }) {
-		const res = await fetch(`${base}/data/blog/category/${params.category}`);
-		const { posts, categoryInfo, currentPage, perPage, count, blogInfo, categories } =
-			await res.json();
-
-		if (res) {
-			return {
-				props: {
-					posts,
-					categoryInfo,
-					currentPage,
-					perPage,
-					count,
-					blogInfo,
-					categories
-				}
-			};
-		}
-
-		return {
-			status: res.status,
-			error: new Error().message
-		};
-	}
-</script>
-
 <script>
 	import SEO from 'svelte-seo';
 
@@ -37,12 +8,8 @@
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import { toPlainText, truncate } from '$lib/utils';
 
-	export let posts;
-	export let currentPage;
-	export let perPage;
-	export let count;
-	export let categoryInfo;
-	export let categories;
+	export let data;
+	let { posts, categoryInfo, currentPage, perPage, count, blogInfo, categories } = data;
 </script>
 
 <svelte:head>

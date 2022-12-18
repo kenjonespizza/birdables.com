@@ -1,40 +1,21 @@
-<script context="module">
-  export async function load({params, fetch}) {
-    const res = await fetch( `../data/card/${params.id}`)
-		
-    if (res) {
-			return {
-				props: {
-					bird: await res.json()
-				}
-			};
-		}
-
-    return {
-			status: res.status,
-			error: new Error().message,
-		};
-  }
-
-</script>
 <script>
 	import { goto } from '$app/navigation';
-	import { browser } from '$app/env'
-	
-	export let bird;
+	import { browser } from '$app/environment';
 
-	if(browser) {
+	export let data;
+	let { bird } = data;
+
+	if (browser) {
 		const navigateToBirdPage = async () => {
 			if (bird?.slug) {
 				await goto(`/bird/${bird.slug}`);
 			} else {
 				await goto(`/`);
 			}
-		}
+		};
 
 		navigateToBirdPage();
 	}
-	
 </script>
 
 <!-- ToDo: Add a QR Code scanned simple template with not header or footer -->

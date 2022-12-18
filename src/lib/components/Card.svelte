@@ -1,18 +1,7 @@
-<script context="module">
-	import { browser } from '$app/env';
-	import { assets } from '$app/paths';
-	import { loadImage } from '$lib/utils';
-
-	export async function load({ props }) {
-		if (browser) {
-			await loadImage(`${assets}/images/cards/${props.card.friendlyId}.webp`);
-		}
-	}
-</script>
-
 <script>
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import { assets } from '$app/paths';
 
 	let ready = false;
 	export let i;

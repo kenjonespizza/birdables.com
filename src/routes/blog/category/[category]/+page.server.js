@@ -1,7 +1,8 @@
+import { error } from '@sveltejs/kit';
 import client from '$lib/sanityClient';
-import { postPerPage } from '../utils';
+import { postPerPage } from '../../config';
 
-export async function GET({ params }) {
+export async function load({ params }) {
 	// Get the page params
 	let [category, currentPage] = params.category.split(',');
 
@@ -33,9 +34,8 @@ export async function GET({ params }) {
 	const { posts, count, categories, blogInfo } = categoryInfo;
 
 	if (categoryInfo) {
-		return {
-			status: 200,
-			body: { posts, categoryInfo, currentPage, perPage, count, blogInfo, categories }
-		};
+		return { posts, categoryInfo, currentPage, perPage, count, blogInfo, categories };
 	}
+
+	throw error(404, 'Not Found');
 }

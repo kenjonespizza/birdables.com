@@ -1,6 +1,7 @@
+import { error } from '@sveltejs/kit';
 import client from '$lib/sanityClient';
 
-export async function GET({ params }) {
+export async function load({ params }) {
 	const postFilter = `*[_type == "post" && pageInfo.slug.current == "${params.post}"][0]`;
 	const postProjection = `{
       ...,
@@ -9,17 +10,13 @@ export async function GET({ params }) {
     }`;
 
 	const postQuery = postFilter + postProjection;
-	const data = await client.fetch(postQuery);
+	const post = await client.fetch(postQuery);
 
-	if (data) {
+	if (post) {
 		return {
-			status: 200,
-			body: data
+			post
 		};
 	}
 
-	return {
-		status: 302,
-		headers: { Location: `/404` }
-	};
+	throw error(404, 'Not Found');
 }

@@ -1,50 +1,20 @@
-<script context="module">
-	import { base } from '$app/paths';
-	export async function load({ fetch }) {
-		const url = `${base}/data/cards`;
-		const res = await fetch(url);
-		if (res) {
-			return {
-				props: {
-					cards: await res.json()
-				}
-			};
-		}
-		return {
-			status: res.status,
-			error: new Error().message
-		};
-	}
-</script>
-
 <script>
+	console.log('HERERERE');
 	import SEO from 'svelte-seo';
 	import IntersectionObserver from 'svelte-intersection-observer';
 
-	import { browser } from '$app/env';
 	import { assets } from '$app/paths';
 	import site from '$lib/info';
 	import GetNotified from '$lib/components/GetNotified.svelte';
 
-	export let cards;
+	export let data;
+	let { cards } = data;
 
 	import { onMount } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 
 	let ready = false;
 	onMount(() => (ready = true));
-
-	// const checkIfShownAnimationsCookieIsTrue = () => {
-	//   if (document.cookie.split(';').some((item) => item.includes('shown_animations=true'))) {
-	//     return true
-	//   }
-	//   return false
-	// }
-
-	// if (browser && !checkIfShownAnimationsCookieIsTrue()) {
-	//     document.body.classList.add("show-animation")
-	//     document.cookie = `shown_animations=true; SameSite=None; Secure;`;
-	// }
 
 	let element;
 	let intersecting;

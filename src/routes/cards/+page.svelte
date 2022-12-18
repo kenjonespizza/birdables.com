@@ -1,35 +1,16 @@
-<script context="module">
-	import { base } from '$app/paths';
-	export async function load({ fetch }) {
-		const url = `${base}/data/cards`;
-		const res = await fetch(url);
-		if (res) {
-			return {
-				props: {
-					cardsOrig: await res.json()
-				}
-			};
-		}
-		return {
-			status: res.status,
-			error: new Error().message
-		};
-	}
-</script>
-
 <script>
 	import SEO from 'svelte-seo';
 
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 	import site from '$lib/info';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import CardList from '$lib/components/CardList.svelte';
 	import GetNotified from '$lib/components/GetNotified.svelte';
 	import Stars from '$lib/components/Stars.svelte';
 
-	export let cardsOrig;
-
-	var cards = cardsOrig;
+	export let data;
+	let { cards } = data;
+	let cardsOrig = cards; // This is so that we have an original copy for sorting
 
 	let raritys = [1, 2, 3, 4, 5];
 	let selectedFilers = [];
