@@ -1,7 +1,7 @@
 <script>
 	import SEO from 'svelte-seo';
 
-	import { getStores, navigating, page, session } from '$app/stores';
+	import { page } from '$app/stores';
 	import { assets } from '$app/paths';
 	import site from '$lib/info';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
@@ -118,8 +118,7 @@
 							<a
 								href="https://www.etsy.com/listing/1107948145/birdables-5-card-pack"
 								target="_blank"
-								rel="noopener"
-								noreferrer
+								rel="noopener noreferrer"
 								class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-gray-500"
 							>
 								<span>Available on</span>

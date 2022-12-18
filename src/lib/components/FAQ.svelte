@@ -16,7 +16,6 @@
 	}
 </script>
 
-<!-- This example requires Tailwind CSS v2.0+ -->
 <div class="bg-gray-blue" {id}>
 	<div class="max-w-7xl mx-auto py-12 px-4 divide-y divide-gray-200 sm:px-6 lg:py-24 lg:px-8">
 		<h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
@@ -39,7 +38,6 @@
 							running this operation. All donation amounts & recipients will be available on this
 							website in the future.
 						</p>
-						<!-- ToDo: link page -->
 
 						<p>
 							To make sure Birdables is not contributing to the destruction of bird habitats, <strong
@@ -132,8 +130,7 @@
 							Totes! Ken would love to upgrade his birding gear & travel to provide a better end
 							product. You can <a
 								target="_blank"
-								rel="noopener"
-								noreferrer
+								rel="noopener noreferrer"
 								href="https://ko-fi.com/ken_jones">donate to Birdables (Ken) here</a
 							>.
 						</p>

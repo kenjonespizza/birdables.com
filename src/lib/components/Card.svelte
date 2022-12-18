@@ -61,4 +61,3 @@
 		</div>
 	</div>
 </a>
-<!-- <a href={`/card/${card.id}`} class="hidden">{card.birdName}</a> -->

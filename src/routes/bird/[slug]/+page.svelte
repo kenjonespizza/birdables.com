@@ -146,8 +146,7 @@
 						<a
 							href={bird.etsyUrl}
 							target="_blank"
-							rel="noopener"
-							noreferrer
+							rel="noopener noreferrer"
 							class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 						>
 							<span>Buy <span class="font-black">Physical Card</span> on</span>
@@ -158,8 +157,7 @@
 						<a
 							href="https://www.etsy.com/listing/1107948145/birdables-5-card-pack"
 							target="_blank"
-							rel="noopener"
-							noreferrer
+							rel="noopener noreferrer"
 							class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 						>
 							<span><span class="font-black">Physical Card</span> possible in a Card Pack</span>
@@ -181,8 +179,7 @@
 						<a
 							href={bird.openseaUrl}
 							target="_blank"
-							rel="noopener"
-							noreferrer
+							rel="noopener noreferrer"
 							class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 						>
 							<span>Buy <span class="font-black">Digital Card</span> on</span>
@@ -206,16 +203,13 @@
 							Learn about the <strong class="font-black">{bird.birdName}</strong> from:
 						</h2>
 
-						<!-- LINK! -->
-
 						<div class="flex space-x-6 justify-around mt-8">
 							{#if bird.eBird}
 								<a
 									class="flex justify-center items-center py-2 transition border-b-2 border-transparent hover:border-gray-900 focus:border-gray-900"
 									href={`https://ebird.org/species/${bird.eBird}`}
 									target="_blank"
-									rel="noopener"
-									noreferrer
+									rel="noopener noreferrer"
 								>
 									<EBird class="w-full max-h-6" />
 									<span class="sr-only">eBird</span>
@@ -226,8 +220,7 @@
 									class="flex justify-center items-center py-2 transition border-b-2 border-transparent hover:border-gray-900 focus:border-gray-900"
 									href={`https://www.audubon.org/field-guide/bird/${bird.audubon}`}
 									target="_blank"
-									rel="noopener"
-									noreferrer
+									rel="noopener noreferrer"
 								>
 									<Audubon class="h-10 translate-y-[-0.55rem] text-black w-full" />
 									<span class="sr-only">Audubon</span>
@@ -238,8 +231,7 @@
 									class="flex justify-center items-center py-2 transition border-b-2 border-transparent hover:border-gray-900 focus:border-gray-900"
 									href={`https://birdsoftheworld.org/bow/species/${bird.eBird}`}
 									target="_blank"
-									rel="noopener"
-									noreferrer
+									rel="noopener noreferrer"
 								>
 									<BOW class="h-10 translate-y-[-0.5rem] text-black w-full" />
 									<span class="sr-only">Audubon</span>

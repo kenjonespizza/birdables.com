@@ -1,20 +1,25 @@
 <script>
-  export let href = "https://birdables.com"
-  export let icon = true
-  export let title = ''
+	export let href = 'https://birdables.com';
+	export let icon = true;
+	export let title = '';
 
-  let className = "inline-flex space-x-1 items-center";
+	let className = 'inline-flex space-x-1 items-center';
 
 	export { className as class };
 </script>
 
-<a {href} target="_blank" rel="noopener" title={title} noreferrer class={className}>
-  {#if icon}
-    <span>
-      <slot></slot>
-    </span>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"/></svg>
-  {:else}
-    <slot></slot>
-  {/if}
+<a {href} target="_blank" rel="noopener noreferrer" {title} class={className}>
+	{#if icon}
+		<span>
+			<slot />
+		</span>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
+			><path fill="none" d="M0 0h24v24H0z" /><path
+				fill="currentColor"
+				d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"
+			/></svg
+		>
+	{:else}
+		<slot />
+	{/if}
 </a>

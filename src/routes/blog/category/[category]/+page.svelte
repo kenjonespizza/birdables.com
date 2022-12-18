@@ -73,12 +73,6 @@
 	</div>
 </section>
 
-<!-- <BlogHero>
-  <h1 slot="heading"><a class="underline" href="/blog" rel=prefetch>Blog</a> / Category: {categoryInfo.pageInfo.name}</h1>
-  <div slot="content">
-    <PortableText content={categoryInfo.description} class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl" />
-  </div>
-</BlogHero> -->
 
 <div class="bg-white">
 	<div class="mx-auto py-6 px-4 max-w-screen-xl sm:px-6 lg:px-8 lg:py-10">

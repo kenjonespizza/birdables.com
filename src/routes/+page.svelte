@@ -287,11 +287,11 @@
 										>Birdables plans to donate a portion of profits</span
 									>
 									to bird conservation organizations like the
-									<a href="https://www.birds.cornell.edu/" target="_blank" rel="noopener" noreferrer
+									<a href="https://www.birds.cornell.edu/" target="_blank" rel="noopener noreferrer"
 										>Cornell Lab of Ornithology</a
 									>,
-									<a href="https://ebird.org/" target="_blank" rel="noopener" noreferrer>eBird</a>,
-									<a href="https://www.audubon.org/" target="_blank" rel="noopener" noreferrer
+									<a href="https://ebird.org/" target="_blank" rel="noopener noreferrer">eBird</a>,
+									<a href="https://www.audubon.org/" target="_blank" rel="noopener noreferrer"
 										>Audubon</a
 									>, and others. As the business gets off the ground (pun intended), we'll share
 									more details on our site, including donation amounts and recipients.
@@ -355,7 +355,7 @@
 				<a
 					href="https://www.instagram.com/birdables_cards/"
 					target="_blank"
-					rel="noopener"
+					rel="noopener noreferrer"
 					class="hidden md:block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto"
 				>
 					Instagram
@@ -439,7 +439,7 @@
 					<a
 						href="https://www.instagram.com/birdables_cards/"
 						target="_blank"
-						rel="noopener"
+						rel="noopener noreferrer"
 						class="block mt-6 w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto"
 					>
 						Instagram

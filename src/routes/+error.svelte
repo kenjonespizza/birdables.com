@@ -10,7 +10,6 @@
 	});
 </script>
 
-<!-- This example requires Tailwind CSS v2.0+ -->
 <div class="bg-white h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
 	<div class="mx-auto">
 		<main class="sm:flex">
@@ -43,9 +42,6 @@
 					>
 						Go back home
 					</a>
-					<!-- <a href="/" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-beak-700 bg-beak-100 hover:bg-beak-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-beak-500">
-            Contact support
-          </a> -->
 				</div>
 			</div>
 		</main>

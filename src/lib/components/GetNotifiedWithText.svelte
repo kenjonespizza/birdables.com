@@ -69,7 +69,6 @@
 				</p>
 			</div>
 			<div class="mt-4 md:mt-12 sm:w-full lg:mt-0 lg:ml-8 lg:flex-1">
-				<!-- This example requires Tailwind CSS v2.0+ -->
 				<div class="flex items-center mb-4">
 					<span class="mr-3" id="email-notifications">
 						<button
@@ -80,7 +79,6 @@
 							>Get Email Notifications</button
 						>
 					</span>
-					<!-- Enabled: "bg-gray-600", Not Enabled: "bg-gray-200" -->
 					<button
 						on:click={toggle}
 						type="button"
@@ -90,14 +88,12 @@
 						aria-labelledby="email-or-phone-notifications"
 					>
 						<span class="sr-only">Change notification type</span>
-						<!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
 						<span
 							aria-hidden="true"
 							class={`${
 								useEmailAddress ? 'translate-x-0' : 'translate-x-5'
 							} pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow ring-0 transition ease-in-out duration-200`}
 						>
-							<!-- Enabled: "opacity-0 ease-out duration-100", Not Enabled: "opacity-100 ease-in duration-200" -->
 							<span
 								class={`${
 									useEmailAddress
@@ -112,7 +108,6 @@
 									/></svg
 								>
 							</span>
-							<!-- Enabled: "opacity-100 ease-in duration-200", Not Enabled: "opacity-0 ease-out duration-100" -->
 							<span
 								class={`${
 									!useEmailAddress
@@ -234,7 +229,6 @@
               peer-focus:px-4
               ">Phone Number</label
 								>
-								<!-- <span class="absolute left-5 -bottom-7 text-gray-100 text-sm">Format: 123-456-7890</span> -->
 							</div>
 							<button
 								type="submit"
@@ -259,13 +253,6 @@
 						</div>
 					{/if}
 				</div>
-
-				<!-- <p class="mt-3 text-sm text-gray-100">
-          We care about the protection of your data. Read our
-          <a href="#" class="text-white font-medium underline">
-            Privacy Policy.
-          </a>
-        </p> -->
 			</div>
 		</div>
 	</div>

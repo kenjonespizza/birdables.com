@@ -1,10 +1,10 @@
 <script>
-  import Link from "$lib/components/Link.svelte"
+	import Link from '$lib/components/Link.svelte';
 
-  export let portableText
+	export let portableText;
 
-  $: url = portableText.mark.link.link.url
-  $: text = portableText.span.text
+	$: url = portableText.value.link.link.url;
+	$: text = portableText.value.link.title;
 </script>
 
 <Link class="" href={url}>{text}</Link>

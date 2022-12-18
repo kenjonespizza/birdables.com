@@ -74,10 +74,6 @@
 	</div>
 </section>
 
-<!-- <BlogHero>
-  <h1 slot="heading"><a class="underline" href="blog" rel=prefetch>Blog</a> / Authors</h1>
-</BlogHero> -->
-
 <div class="bg-white">
 	<div class="mx-auto py-12 px-4 max-w-screen-xl sm:px-6 lg:px-8 lg:py-24">
 		<div class="space-y-12">

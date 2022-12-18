@@ -332,10 +332,6 @@
 							href="https://www.etsy.com/shop/Birdables">Birdables' Etsy Storefront</ExternalLink
 						>
 					</p>
-					<!-- <ol role="list">
-            <li>Integer varius imperdiet sed interdum felis cras in nec nunc.</li>
-            <li>Quam malesuada odio ut sit egestas. Elementum at porta vitae.</li>
-          </ol> -->
 				</div>
 			</div>
 			<div>
