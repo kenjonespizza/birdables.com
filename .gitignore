@@ -15,3 +15,4 @@ etsy_shop_json.txt
 
 /.vercel_build_output
 .vercel
+.env*.local
