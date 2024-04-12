@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 @layer base {
-  /* ::-moz-selection {
+	/* ::-moz-selection {
     background: var(--lt-color-gray-900);
     color: var(--lt-color-white);
   }
@@ -13,33 +13,41 @@
     color: var(--lt-color-white);
   } */
 
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  @font-face {
-    font-family: "GreycliffCF";
-    font-weight: 500;
-    src: url("/fonts/GreycliffCF-Medium.woff2") format("woff2"), url("/fonts/GreycliffCF-Medium.woff") format("woff");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "GreycliffCF";
-    font-weight: 600;
-    src: url("/fonts/GreycliffCF-DemiBold.woff2") format("woff2"), url("/fonts/GreycliffCF-DemiBold.woff") format("woff");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "GreycliffCF";
-    font-weight: 600;
-    font-style: italic;
-    src: url("/fonts/GreycliffCF-DemiBoldOblique.woff2") format("woff2"), url("/fonts/GreycliffCF-DemiBoldOblique.woff") format("woff");
-    font-display: swap;
-  }
-   @font-face {
-    font-family: "GreycliffCF";
-    font-weight: 900;
-    src: url("/fonts/GreycliffCF-Heavy.woff2") format("woff2"), url("/fonts/GreycliffCF-Heavy.woff") format("woff");
-    font-display: swap;
-  }
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	@font-face {
+		font-family: 'GreycliffCF';
+		font-weight: 500;
+		src:
+			url('../fonts/GreycliffCF-Medium.woff2') format('woff2'),
+			url('../fonts/GreycliffCF-Medium.woff') format('woff');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GreycliffCF';
+		font-weight: 600;
+		src:
+			url('../fonts/GreycliffCF-DemiBold.woff2') format('woff2'),
+			url('../fonts/GreycliffCF-DemiBold.woff') format('woff');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GreycliffCF';
+		font-weight: 600;
+		font-style: italic;
+		src:
+			url('../fonts/GreycliffCF-DemiBoldOblique.woff2') format('woff2'),
+			url('../fonts/GreycliffCF-DemiBoldOblique.woff') format('woff');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GreycliffCF';
+		font-weight: 900;
+		src:
+			url('../fonts/GreycliffCF-Heavy.woff2') format('woff2'),
+			url('../fonts/GreycliffCF-Heavy.woff') format('woff');
+		font-display: swap;
+	}
 }
