@@ -1,0 +1,11 @@
+/** @type {import('@sveltejs/kit').Handle} */
+export async function handle({ event, resolve }) {
+	const response = await resolve(event, {
+		preload: ({ type, path }) => type === 'woff' || type === 'woff2' || path.includes('/fonts/')
+	});
+	console.log('TESTING');
+
+	return response;
+}
+
+// https://localhost:4173/fonts/GreycliffCFDemiBold.woff
