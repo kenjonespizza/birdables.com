@@ -5,6 +5,7 @@
 	import { assets } from '$app/paths';
 	import site from '$lib/info';
 	import GetNotified from '$lib/components/GetNotified.svelte';
+	import GetNotifiedWithText from '$lib/components/GetNotifiedWithText.svelte';
 
 	export let data;
 	let { cards } = data;
@@ -116,7 +117,7 @@
 			{/if}
 		</div>
 
-		<div class="absolute top-[-100px] left-0 bg-white h-[calc(100%+100px)] sm:w-6 lg:w-8 " />
+		<div class="absolute top-[-100px] left-0 bg-white h-[calc(100%+100px)] sm:w-6 lg:w-8" />
 	</div>
 
 	<!-- Cards -->
@@ -271,7 +272,8 @@
 		</div>
 	</div>
 
-	<GetNotified />
+	<!-- <GetNotified /> -->
+	<GetNotifiedWithText />
 
 	<div class="px-4 sm:px-6 lg:px-8 bg-white pt-12">
 		<div class="lg:max-w-7xl mx-auto">
@@ -485,7 +487,7 @@
 					<div
 						class="relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 md:max-w-none md:p-0 md:col-start-4 md:col-span-6"
 					>
-						<h2 class="text-3xl font-extrabold ">Suggest a bird!</h2>
+						<h2 class="text-3xl font-extrabold">Suggest a bird!</h2>
 						<p class="text-lg text-gray-500">
 							Which Birdables are you looking for? Our goal is to build collections that spark joy,
 							so let us know what you'd like us to add next!

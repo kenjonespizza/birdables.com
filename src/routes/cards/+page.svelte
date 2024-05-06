@@ -10,7 +10,7 @@
 
 	export let data;
 	let { cards } = data;
-	let cardsOrig = cards; // This is so that we have an original copy for sorting
+	let cardsOrig = cards; // This is so that we have an original copy for sorting, since the cards var getting updated later as a $:reactive variable
 
 	let raritys = [1, 2, 3, 4, 5];
 	let selectedFilers = [];
@@ -169,7 +169,7 @@
 						<div class="flex flex-wrap items-center h-full">
 							<label
 								for={`filter-rarity-${rarity}`}
-								class="h-full cursor-pointer flex items-center space-x-2 text-sm rounded-full border border-gray-blue px-3 py-2  text-gray-600 transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+								class="h-full cursor-pointer flex items-center space-x-2 text-sm rounded-full border border-gray-blue px-3 py-2 text-gray-600 transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
 							>
 								<input
 									id={`filter-rarity-${rarity}`}
@@ -189,7 +189,7 @@
 					<div class="flex flex-wrap items-center h-full">
 						<label
 							for="filter-specialty"
-							class="h-full cursor-pointer flex items-center space-x-2  rounded-full border border-gray-blue px-3 py-2 text-gray-600 transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+							class="h-full cursor-pointer flex items-center space-x-2 rounded-full border border-gray-blue px-3 py-2 text-gray-600 transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
 						>
 							<input
 								id="filter-specialty"
