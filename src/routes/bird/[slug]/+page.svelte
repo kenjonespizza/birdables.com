@@ -101,7 +101,7 @@
 											>{bird.smallName}</span
 										>{/if}
 									<span
-										class="text-5xl md:text-5xl lg:text-7xl font-black tracking-tighter leading-none "
+										class="text-5xl md:text-5xl lg:text-7xl font-black tracking-tighter leading-none"
 										>{bird.bigName}</span
 									>
 								</h1>

@@ -5,7 +5,7 @@
 	import { assets } from '$app/paths';
 	import site from '$lib/info';
 	import GetNotified from '$lib/components/GetNotified.svelte';
-	import GetNotifiedWithText from '$lib/components/GetNotifiedWithText.svelte';
+	// import GetNotifiedWithText from '$lib/components/GetNotifiedWithText.svelte';
 
 	export let data;
 	let { cards } = data;
@@ -20,8 +20,6 @@
 	let intersecting;
 	let element2;
 	let intersecting2;
-	// let element3;
-	// let intersecting3;
 	let element4;
 	let intersecting4;
 </script>
@@ -272,8 +270,8 @@
 		</div>
 	</div>
 
-	<!-- <GetNotified /> -->
-	<GetNotifiedWithText />
+	<GetNotified />
+	<!-- <GetNotifiedWithText /> -->
 
 	<div class="px-4 sm:px-6 lg:px-8 bg-white pt-12">
 		<div class="lg:max-w-7xl mx-auto">
