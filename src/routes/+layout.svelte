@@ -12,9 +12,10 @@
 
 	export const load = async () => {
 		if (browser) {
+			console.log('PUBLIC_POSTHOG_KEY:', PUBLIC_POSTHOG_KEY);
 			posthog.init(env.PUBLIC_POSTHOG_KEY, {
 				api_host: 'https://us.i.posthog.com',
-				person_profiles: 'always' // or 'always' to create profiles for anonymous users as well
+				person_profiles: 'always'
 			});
 		}
 		return;
