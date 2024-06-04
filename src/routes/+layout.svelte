@@ -4,7 +4,21 @@
 	import Footer from '$lib/components/Footer.svelte';
 
 	import { ShowHeaderFooter } from '../stores/store';
+	import posthog from 'posthog-js';
+	import { browser } from '$app/environment';
+	import { env } from '$env/dynamic/public';
+
 	ShowHeaderFooter.set(true);
+
+	export const load = async () => {
+		if (browser) {
+			posthog.init(PUBLIC_POSTHOG_KEY, {
+				api_host: 'https://us.i.posthog.com',
+				person_profiles: 'always'
+			});
+		}
+		return;
+	};
 </script>
 
 <svelte:head>
@@ -15,63 +29,6 @@
 	<meta name="msapplication-TileColor" content="#ffffff" />
 	<meta name="theme-color" content="#ffffff" />
 	<meta content="width=device-width, initial-scale=1, minimum-scale=1" name="viewport" />
-
-	<!-- <link
-		rel="preload"
-		as="font"
-		href="/fonts/GreycliffCF-Medium.woff2"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		as="font"
-		href="/fonts/GreycliffCF-Medium.woff"
-		type="font/woff"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		as="font"
-		href="/fonts/GreycliffCF-DemiBold.woff2"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		as="font"
-		href="/fonts/GreycliffCF-DemiBold.woff"
-		type="font/woff"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		as="font"
-		href="/fonts/GreycliffCF-DemiBoldOblique.woff2"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		as="font"
-		href="/fonts/GreycliffCF-DemiBoldOblique.woff"
-		type="font/woff"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		as="font"
-		href="/fonts/GreycliffCF-Heavy.woff2"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		as="font"
-		href="/fonts/GreycliffCF-Heavy.woff"
-		type="font/woff"
-		crossorigin="anonymous"
-	/> -->
 </svelte:head>
 
 <div class="text-gray-900 relative w-screen selection:bg-gray-900 selection:text-white">

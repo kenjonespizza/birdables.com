@@ -47,6 +47,7 @@
 		"node": "18.x"
 	},
 	"dependencies": {
-		"@sveltejs/vite-plugin-svelte": "^3.1.0"
+		"@sveltejs/vite-plugin-svelte": "^3.1.0",
+		"posthog-js": "^1.136.5"
 	}
 }
