@@ -4,22 +4,8 @@
 	import Footer from '$lib/components/Footer.svelte';
 
 	import { ShowHeaderFooter } from '../stores/store';
-	import posthog from 'posthog-js';
-	import { browser } from '$app/environment';
-	import { env } from '$env/dynamic/public';
 
 	ShowHeaderFooter.set(true);
-
-	export const load = async () => {
-		if (browser) {
-			console.log('PUBLIC_POSTHOG_KEY:', PUBLIC_POSTHOG_KEY);
-			posthog.init(env.PUBLIC_POSTHOG_KEY, {
-				api_host: 'https://us.i.posthog.com',
-				person_profiles: 'always'
-			});
-		}
-		return;
-	};
 </script>
 
 <svelte:head>
