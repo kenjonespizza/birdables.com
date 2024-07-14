@@ -300,7 +300,7 @@
 </div>
 
 <div
-	class="bg-gray-blue py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24"
+	class="bg-gray-blue py-16 px-4 sm:px-6 lg:px-16 pt-8 border-t border-t-gray-100 sm:py-24"
 	id={sections[2].link}
 >
 	<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
@@ -363,7 +363,7 @@
 </div>
 
 <div
-	class="bg-white py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24"
+	class="bg-white py-16 px-4 sm:px-6 lg:px-16 pt-8 border-t border-t-gray-100 sm:py-24"
 	id={sections[3].link}
 >
 	<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
@@ -385,7 +385,7 @@
 		</div>
 		<a
 			href="/pack/5-card-pack"
-			sveltekit:prefetch
+			data-sveltekit-preload-data="hover"
 			class="mt-6 block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500 sm:inline-block sm:w-auto"
 		>
 			View a card pack

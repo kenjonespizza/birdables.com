@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import client from '$lib/sanityClient';
+import client from '$lib/sanity/blogClient';
 import { massageTopics } from '$lib/utils';
 
 export async function load() {

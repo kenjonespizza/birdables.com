@@ -39,7 +39,7 @@
 			class="flex justify-between items-center px-6 py-6 lg:px-16 lg:justify-start lg:space-x-10"
 		>
 			<div class="flex space-x-12 items-center">
-				<a sveltekit:prefetch href="/" class="flex">
+				<a data-sveltekit-preload-data="hover" href="/" class="flex">
 					<span class="sr-only">Birdables</span>
 					<img
 						class="h-6 w-auto sm:h-8"
@@ -79,7 +79,7 @@
 			<div class="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
 				<nav class="flex space-x-8">
 					<a
-						sveltekit:prefetch
+						data-sveltekit-preload-data="hover"
 						href="/cards"
 						on:focus={() => toggleShopNav(false)}
 						class={`${
@@ -91,7 +91,7 @@
 
 					<a
 						on:focus={() => toggleShopNav(false)}
-						sveltekit:prefetch
+						data-sveltekit-preload-data="hover"
 						href="/about"
 						class={`${
 							$page.url.pathname === '/about' ? 'border-gray-900' : 'border-transparent'
@@ -101,7 +101,7 @@
 					</a>
 					<a
 						on:focus={() => toggleShopNav(false)}
-						sveltekit:prefetch
+						data-sveltekit-preload-data="hover"
 						href="/blog"
 						class={`${
 							$page.url.pathname === '/blog' ? 'border-gray-900' : 'border-transparent'
@@ -164,7 +164,7 @@
 		>
 			<div class="pt-5 pb-6 px-5">
 				<div class="flex items-center justify-between">
-					<a on:click={toggle} sveltekit:prefetch href="/">
+					<a on:click={toggle} data-sveltekit-preload-data="hover" href="/">
 						<img class="h-6 w-auto" src="/images/logo.svg" alt="Birdables Logo" />
 					</a>
 					<div class="-mr-2">
@@ -198,7 +198,7 @@
 							<div class="grid grid-cols-1 gap-4 text-center">
 								<a
 									on:click={toggle}
-									sveltekit:prefetch
+									data-sveltekit-preload-data="hover"
 									href="/cards"
 									class={`${
 										$page.url.pathname === '/cards' ? 'border-gray-900' : 'border-transparent'
@@ -209,7 +209,7 @@
 
 								<a
 									on:click={toggle}
-									sveltekit:prefetch
+									data-sveltekit-preload-data="hover"
 									href="/about"
 									class={`${
 										$page.url.pathname === '/about' ? 'border-gray-900' : 'border-transparent'
@@ -219,7 +219,7 @@
 								</a>
 								<a
 									on:click={toggle}
-									sveltekit:prefetch
+									data-sveltekit-preload-data="hover"
 									href="/blog"
 									class={`${
 										$page.url.pathname === '/blog' ? 'border-gray-900' : 'border-transparent'

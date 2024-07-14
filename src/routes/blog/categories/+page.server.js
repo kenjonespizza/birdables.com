@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import client from '$lib/sanityClient';
+import client from '$lib/sanity/blogClient';
 
 export async function load() {
 	const filter = `*[_type == "category" && defined(pageInfo.slug.current)] | order(desc)`;

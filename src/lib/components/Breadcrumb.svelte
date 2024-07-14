@@ -7,7 +7,7 @@
 	<ol class="flex items-center space-x-4">
 		<li>
 			<div>
-				<a href="/" sveltekit:prefetch class="text-gray-800 hover:text-gray-900">
+				<a href="/" data-sveltekit-preload-data="hover" class="text-gray-800 hover:text-gray-900">
 					<svg
 						class="flex-shrink-0 h-5 w-5"
 						xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@
 					</svg>
 					<a
 						href={step.link}
-						sveltekit:prefetch
+						data-sveltekit-preload-data="hover"
 						class="ml-4 text-sm font-medium text-gray-800 hover:text-gray-900 underline"
 						>{step.title}</a
 					>

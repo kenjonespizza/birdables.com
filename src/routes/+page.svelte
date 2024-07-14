@@ -87,7 +87,7 @@
 					</p>
 					<div class="mt-10 flex justify-center sm:justify-start lg:justify-center">
 						<a
-							sveltekit:prefetch
+							data-sveltekit-preload-data="hover"
 							href="/cards"
 							class="flex items-center justify-center px-12 py-4 border border-transparent text-xl font-black rounded-full bg-gray-900 text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:px-8"
 						>
@@ -144,7 +144,7 @@
 				{#if ready}
 					<a
 						href="/bird/osprey"
-						sveltekit:prefetch
+						data-sveltekit-preload-data="hover"
 						class="home-card card card-2 card-md block transition"
 						in:fly={{ x: 100, duration: 500, delay: 2000 }}
 					>
@@ -162,7 +162,7 @@
 				{#if ready}
 					<a
 						href="/bird/brown-pelican"
-						sveltekit:prefetch
+						data-sveltekit-preload-data="hover"
 						class="home-card card card-3 card-lg block transition"
 						in:fade={{ duration: 500, delay: 1500 }}
 					>
@@ -180,7 +180,7 @@
 				{#if ready}
 					<a
 						href="/bird/yellow-warbler"
-						sveltekit:prefetch
+						data-sveltekit-preload-data="hover"
 						class="home-card card card-4 card-md block transition"
 						in:fly={{ x: -100, duration: 500, delay: 2000 }}
 					>
@@ -198,7 +198,7 @@
 				{#if ready}
 					<a
 						href="/bird/roseate-spoonbill"
-						sveltekit:prefetch
+						data-sveltekit-preload-data="hover"
 						class="home-card card card-5 card-sm hidden sm:block transition"
 						in:fly={{ x: -100, duration: 500, delay: 2500 }}
 					>
@@ -244,7 +244,7 @@
 							<div class="flex space-x-4 mt-8">
 								<a
 									href="/cards"
-									sveltekit:prefetch
+									data-sveltekit-preload-data="hover"
 									class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition sm:inline-block sm:w-auto hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500"
 								>
 									See the cards
@@ -309,7 +309,7 @@
 							<div class="flex space-x-4 mt-8">
 								<a
 									href="/about"
-									sveltekit:prefetch
+									data-sveltekit-preload-data="hover"
 									class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500 sm:inline-block sm:w-auto"
 								>
 									Learn more: About Birdables
@@ -505,10 +505,13 @@
 </main>
 
 {#each cards as card}
-	<a sveltekit:prefetch class="hidden" href={`/bird/${card.slug}`}>{card.birdName}</a>
+	<a data-sveltekit-preload-data="hover" class="hidden" href={`/bird/${card.slug}`}
+		>{card.birdName}</a
+	>
 {/each}
 {#each cards as card}
-	<a sveltekit:prefetch class="hidden" href={`/card/${card.id}`}>{card.birdName}</a>
+	<a data-sveltekit-preload-data="hover" class="hidden" href={`/card/${card.id}`}>{card.birdName}</a
+	>
 {/each}
 
 <style lang="postcss">

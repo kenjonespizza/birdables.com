@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import client from '$lib/sanityClient';
+import client from '$lib/sanity/blogClient';
 import { postPerPage } from '../../config';
 import { slugify, massageTopics } from '$lib/utils';
 

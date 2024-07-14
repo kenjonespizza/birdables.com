@@ -101,7 +101,7 @@
 											>{bird.smallName}</span
 										>{/if}
 									<span
-										class="text-5xl md:text-5xl lg:text-7xl font-black tracking-tighter leading-none "
+										class="text-5xl md:text-5xl lg:text-7xl font-black tracking-tighter leading-none"
 										>{bird.bigName}</span
 									>
 								</h1>
@@ -119,7 +119,7 @@
 								<div class="flex space-x-2 mt-4">
 									<span class=" text-gray-600 text-xs font-semibold">Only available in pack</span>
 									<a
-										sveltekit:prefetch
+										data-sveltekit-preload-data="hover"
 										href="/about#card-packs"
 										class="text-xs ml-4 underline text-gray-600">(What's this?)</a
 									>
@@ -314,7 +314,7 @@
 
 				<a
 					href="/about"
-					sveltekit:prefetch
+					data-sveltekit-preload-data="hover"
 					class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 					>Learn more about Birdables</a
 				>

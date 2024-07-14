@@ -89,7 +89,7 @@
 				<div class="rounded-3xl bg-white p-6 mt-8 drop-shadow-card">
 					<div class="flex flex-col-reverse">
 						<h1 class="flex flex-col mt-6 md:mt-0">
-							<span class="text-3xl lg:text-5xl font-black tracking-tighter leading-none "
+							<span class="text-3xl lg:text-5xl font-black tracking-tighter leading-none"
 								>5 Card Pack</span
 							>
 						</h1>
@@ -213,7 +213,7 @@
 
 				<a
 					href="/about"
-					sveltekit:prefetch
+					data-sveltekit-preload-data="hover"
 					class="mt-8 w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 					>Learn more about Birdables</a
 				>

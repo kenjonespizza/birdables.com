@@ -17,7 +17,7 @@
 
 <a
 	href={`/bird/${card.slug}`}
-	sveltekit:prefetch
+	data-sveltekit-preload-data="hover"
 	class={`${
 		ready ? 'opacity-100' : 'opacity-0'
 	} group flex flex-col space-y-4 tranform transition duration-300`}

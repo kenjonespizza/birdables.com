@@ -73,17 +73,17 @@
 								md:left-0
 								-translate-x-1/2
 								md:translate-x-0
-								text-sm 
-								text-gray-300 
+								text-sm
+								text-gray-300
 								-top-3
-								rounded-full 
-								bg-gray-900 
+								rounded-full
+								bg-gray-900
 								px-
 								transition-all
-								peer-placeholder-shown:text-white 
-								peer-placeholder-shown:top-3.5 
-								peer-placeholder-shown:text-base 
-								peer-placeholder-shown:px-0 
+								peer-placeholder-shown:text-white
+								peer-placeholder-shown:top-3.5
+								peer-placeholder-shown:text-base
+								peer-placeholder-shown:px-0
 								peer-placeholder-shown:left-1/2
 								md:peer-placeholder-shown:left-5
 								peer-focus:left-1/2
@@ -110,7 +110,7 @@
 								name="phone"
 								bind:value={phoneTyped}
 								type="tel"
-								autocomplete="phone"
+								autocomplete="tel"
 								required
 								class="peer w-full bg-gray-900 text-white border-gray-400 border-2 px-5 py-3 placeholder-gray-500 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900 rounded-md placeholder-transparent"
 								placeholder="Phone Number"
@@ -123,17 +123,17 @@
 								md:left-0
 								-translate-x-1/2
 								md:translate-x-0
-								text-sm 
-								text-gray-300 
+								text-sm
+								text-gray-300
 								-top-3
-								rounded-full 
-								bg-gray-900 
+								rounded-full
+								bg-gray-900
 								px-
 								transition-all
-								peer-placeholder-shown:text-white 
-								peer-placeholder-shown:top-3.5 
-								peer-placeholder-shown:text-base 
-								peer-placeholder-shown:px-0 
+								peer-placeholder-shown:text-white
+								peer-placeholder-shown:top-3.5
+								peer-placeholder-shown:text-base
+								peer-placeholder-shown:px-0
 								peer-placeholder-shown:left-1/2
 								md:peer-placeholder-shown:left-5
 								peer-focus:left-1/2

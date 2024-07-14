@@ -14,12 +14,12 @@
 </script>
 
 <ul
-	class="gap-4 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-12 sm:space-y-0  lg:gap-x-8 2xl:grid-cols-3"
+	class="gap-4 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-12 sm:space-y-0 lg:gap-x-8 2xl:grid-cols-3"
 >
 	<li in:slide class="space-y-4">
 		<a
 			href={`/pack/5-card-pack`}
-			sveltekit:prefetch
+			data-sveltekit-preload-data="hover"
 			class={`${ready ? 'opacity-100' : 'opacity-0'} group flex flex-col space-y-4`}
 		>
 			<img

@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import client from '$lib/sanityClient';
+import client from '$lib/sanity/blogClient';
 
 export async function load() {
 	const constraints = `*[][0]`;
