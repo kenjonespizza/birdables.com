@@ -118,7 +118,7 @@
 						class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900"
 					>
 						<Instagram class="h-[21px] text-gray-900" />
-						<span class="sr-only">Instagram</span>
+						<span class="sr-only">Link to Instagram</span>
 					</a>
 					<a
 						href="https://twitter.com/BirdablesCards"
@@ -127,7 +127,7 @@
 						class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900"
 					>
 						<Twtter class="h-[21px] text-gray-900" />
-						<span class="sr-only">Twitter</span>
+						<span class="sr-only">Link to Twitter</span>
 					</a>
 					<a
 						href="https://opensea.io/collection/birdables"
@@ -136,7 +136,7 @@
 						class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900"
 					>
 						<OpenSeaIcon class="h-[21px] text-gray-900" />
-						<span class="sr-only">OpenSea</span>
+						<span class="sr-only">Link to OpenSea</span>
 					</a>
 					<a
 						href="https://www.etsy.com/shop/Birdables"
@@ -145,7 +145,7 @@
 						class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900"
 					>
 						<EtsyIcon class="h-[21px] text-gray-900" />
-						<span class="sr-only">Etsy</span>
+						<span class="sr-only">Link to Etsy</span>
 					</a>
 				</div>
 			</div>
@@ -236,6 +236,7 @@
 									class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900"
 								>
 									<Instagram class="h-[21px] text-gray-900" />
+									<span class="sr-only">Link to Instagram</span>
 								</a>
 								<a
 									href="https://twitter.com/BirdablesCards"
@@ -244,6 +245,7 @@
 									class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900"
 								>
 									<Twtter class="h-[21px] text-gray-900" />
+									<span class="sr-only">Link to Twitter</span>
 								</a>
 								<a
 									href="https://opensea.io/collection/birdables"
@@ -252,6 +254,7 @@
 									class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900"
 								>
 									<OpenSeaIcon class="h-[21px] text-gray-900" />
+									<span class="sr-only">Link to OpenSea</span>
 								</a>
 								<a
 									href="https://www.etsy.com/shop/Birdables"
@@ -260,6 +263,7 @@
 									class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900"
 								>
 									<EtsyIcon class="h-[21px] text-gray-900" />
+									<span class="sr-only">Link to Etsy</span>
 								</a>
 							</div>
 						</div>

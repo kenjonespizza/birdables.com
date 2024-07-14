@@ -359,7 +359,7 @@
 					rel="noopener noreferrer"
 					class="hidden md:block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:inline-block sm:w-auto"
 				>
-					Instagram
+					View on Instagram
 				</a>
 			</div>
 
