@@ -19,7 +19,7 @@
 	<li in:slide class="space-y-4">
 		<a
 			href={`/pack/5-card-pack`}
-			sveltekit:prefetch
+			data-sveltekit-prefetch
 			class={`${ready ? 'opacity-100' : 'opacity-0'} group flex flex-col space-y-4`}
 		>
 			<img

@@ -17,7 +17,7 @@
 </script>
 
 {#if isInternal}
-  <a class={className} href={`${returnEntireSlug(href)}`} title={title || ""} sveltekit:prefetch sveltekit:noscroll={noscroll}>
+  <a class={className} href={`${returnEntireSlug(href)}`} title={title || ""} data-sveltekit-prefetch data-sveltekit-noscroll={noscroll}>
     <slot>{text !== '' ? text : href}</slot>
   </a>
 {:else}

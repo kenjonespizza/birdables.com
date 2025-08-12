@@ -385,7 +385,7 @@
 		</div>
 		<a
 			href="/pack/5-card-pack"
-			sveltekit:prefetch
+			data-sveltekit-prefetch
 			class="mt-6 block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500 sm:inline-block sm:w-auto"
 		>
 			View a card pack

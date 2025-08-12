@@ -156,7 +156,7 @@
 				<span class="sr-only">, active</span>
 			</h3>
 
-			<div aria-hidden="true" class="hidden w-px h-5 bg-gray-blue lg:block sm:ml-4 sm:mr-2" />
+			<div aria-hidden="true" class="hidden w-px h-5 bg-gray-blue lg:block sm:ml-4 sm:mr-2"></div>
 			<form
 				name="card-filter"
 				on:change={() => {
@@ -178,9 +178,9 @@
 									type="checkbox"
 									class="h-4 w-4 border-gray-300 rounded text-gray-600 focus:ring-gray-500"
 								/>
-								<span class="flex space-x-1">
-									<Stars stars={rarity} size="xs" hideEmpty={true} /><span />
-								</span>
+							<span class="flex space-x-1">
+								<Stars stars={rarity} size="xs" hideEmpty={true} /><span></span>
+							</span>
 							</label>
 						</div>
 					</div>

@@ -213,7 +213,7 @@
 
 				<a
 					href="/about"
-					sveltekit:prefetch
+					data-sveltekit-prefetch
 					class="mt-8 w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 					>Learn more about Birdables</a
 				>
@@ -242,14 +242,14 @@
 	role="dialog"
 	aria-modal="true"
 >
-	<div class={`flex items-center justify-center min-h-screen text-center sm:block sm:p-0`}>
+		<div class={`flex items-center justify-center min-h-screen text-center sm:block sm:p-0`}>
 		<div
 			on:click={toggleModal}
-			class={`${
+				class={`${
 				isModalOpen ? 'opacity-100' : 'opacity-0'
-			} fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity duration-300 ease-in-out`}
-			aria-hidden="true"
-		/>
+				} fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity duration-300 ease-in-out`}
+				aria-hidden="true"
+			></div>
 		<!-- This element is to trick the browser into centering the modal contents. -->
 
 		<div

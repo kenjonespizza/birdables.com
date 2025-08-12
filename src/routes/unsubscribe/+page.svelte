@@ -1,5 +1,5 @@
 <script>
-  import { getStores, navigating, page, session } from '$app/stores';
+  import { page } from '$app/stores';
   import { onMount } from 'svelte';
 
   let id

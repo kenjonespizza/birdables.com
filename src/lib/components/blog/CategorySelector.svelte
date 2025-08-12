@@ -80,8 +80,8 @@
 							role="option"
 							class="text-gray-900 cursor-default select-none relative hover:bg-gray-100"
 						>
-							<a
-								noscroll
+						<a
+							data-sveltekit-noscroll
 								href={`/blog/category/${category.pageInfo.slug.current}`}
 								class=" py-2 px-4 flex items-center space-x-3"
 							>
@@ -120,5 +120,5 @@
 		class={`${
 			isOpen ? 'opacity-75 z-20 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
 		} !ml-0 fixed top-0 left-0 w-screen h-screen bg-black cursor-default transition duration-300`}
-	/>
+></button>
 {/if}
