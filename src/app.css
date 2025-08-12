@@ -1,7 +1,44 @@
-@tailwind base;
-/* Write your global styles here, in PostCSS syntax */
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+/* Custom utilities migrated from old Tailwind config */
+@layer utilities {
+  /* Border width 3px */
+  .border-3 { border-width: 3px; }
+  .border-b-3 { border-bottom-width: 3px; }
+
+  /* Ring width and offset 3px */
+  .ring-3 {
+    --tw-ring-width: 3px;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow, 0 0 #0000);
+  }
+  .ring-offset-3 { --tw-ring-offset-width: 3px; }
+
+  /* Extra large radii */
+  .rounded-4xl { border-radius: 2rem; }
+  .rounded-5xl { border-radius: 2.5rem; }
+
+  /* Custom gray-blue color token usages */
+  .bg-gray-blue { background-color: #D3E1E4; }
+  .text-gray-blue { color: #D3E1E4; }
+  .border-gray-blue { border-color: #D3E1E4; }
+  .ring-offset-gray-blue { --tw-ring-offset-color: #D3E1E4; }
+
+  /* Card drop shadows */
+  .drop-shadow-card {
+    filter: drop-shadow(0 0 1px rgba(17, 25, 30, 0.1))
+            drop-shadow(0 1px 1px rgba(17, 25, 30, 0.06))
+            drop-shadow(0 8px 5px rgba(17, 25, 30, 0.05))
+            drop-shadow(0 5px 25px rgba(17, 25, 30, 0.10));
+  }
+  .drop-shadow-card-hover {
+    filter: drop-shadow(0 0 1px rgba(17, 25, 30, 0.1))
+            drop-shadow(0 1px 1px rgba(17, 25, 30, 0.06))
+            drop-shadow(0 8px 15px rgba(17, 25, 30, 0.05))
+            drop-shadow(0 5px 35px rgba(17, 25, 30, 0.10));
+  }
+}
 
 @layer base {
 	/* ::-moz-selection {
