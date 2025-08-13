@@ -1,11 +1,10 @@
-import { error } from '@sveltejs/kit';
 import Airtable from 'airtable';
 
 import site from '$lib/info';
 import { variables } from '$lib/variables';
 import { returnFormattedBirds } from '$lib/utils';
 
-export async function load() {
+export async function GET() {
 	const base = new Airtable({ apiKey: variables.AIRTABLE_API_KEY }).base(variables.AIRTABLE_BASE);
 	const table = base('Birds');
 	const records = await table
@@ -46,7 +45,7 @@ export async function load() {
 		'Content-Type': 'application/xml'
 	};
 
-	return body;
+	return new Response(body, { headers });
 }
 
 const render = (birds, pages) => `<?xml version="1.0" encoding="UTF-8" ?>

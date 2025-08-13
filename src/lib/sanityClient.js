@@ -1,6 +1,6 @@
-import sanityClient from '@sanity/client';
+import { createClient } from '@sanity/client';
 
-const client = sanityClient({
+const client = createClient({
   projectId: 'pdzqg4pl',
   dataset: 'production',
   apiVersion: '2021-10-14', // use current UTC date - see "specifying API version"!

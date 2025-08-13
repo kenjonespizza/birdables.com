@@ -105,12 +105,12 @@
 						</button>
 					{:else}
 						<div class="relative">
-							<input
+						<input
 								id="phone"
 								name="phone"
 								bind:value={phoneTyped}
 								type="tel"
-								autocomplete="phone"
+							autocomplete="tel"
 								required
 								class="peer w-full bg-gray-900 text-white border-gray-400 border-2 px-5 py-3 placeholder-gray-500 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900 rounded-md placeholder-transparent"
 								placeholder="Phone Number"

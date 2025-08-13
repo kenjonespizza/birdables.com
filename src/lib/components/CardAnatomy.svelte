@@ -40,7 +40,7 @@
 				isModalOpen ? 'opacity-100' : 'opacity-0'
 			} fixed h-screen w-screen inset-0 bg-gray-900 bg-opacity-75 transition-opacity duration-300 ease-in-out`}
 			aria-hidden="true"
-		/>
+		></div>
 		<!-- This element is to trick the browser into centering the modal contents. -->
 
 		<div
