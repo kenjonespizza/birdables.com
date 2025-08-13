@@ -137,12 +137,10 @@
 						{/if}
 					</div>
 
-					<dl
-						class="border-t border-gray-300 mt-6 pt-4 text-sm text-gray-500"
-						aria-labelledby="tab-faq"
-						role="tabpanel"
-						tabindex="0"
-					>
+          <section
+            class="border-t border-gray-300 mt-6 pt-4 text-sm text-gray-500"
+            aria-labelledby="tab-faq"
+          >
 						<dt><h2 class="text-xl font-semibold text-gray-900">Description:</h2></dt>
 						<dd class="pt-1 prose max-w-none text-gray-500">
 							<p>
@@ -150,16 +148,14 @@
 								to replicate the real birding experience. Five Birdables cards (no duplicates) chosen
 								at random. Packs are a great way to start or add to your Birdables collection!
 							</p>
-						</dd>
-					</dl>
+            </dd>
+          </section>
 				</div>
 
-				<div
-					class="pt-6 text-sm text-gray-500"
-					aria-labelledby="tab-faq"
-					role="tabpanel"
-					tabindex="0"
-				>
+        <section
+          class="pt-6 text-sm text-gray-500"
+          aria-labelledby="tab-faq"
+        >
 					<h2 class="text-xl font-semibold text-gray-900">Additional Information:</h2>
 
 					<dl>
@@ -208,8 +204,8 @@
 								load by every user.
 							</p>
 						</dd>
-					</dl>
-				</div>
+          </dl>
+        </section>
 
 				<a
 					href="/about"

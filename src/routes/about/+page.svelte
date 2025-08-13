@@ -70,7 +70,8 @@
 <nav
 	class="hidden lg:block z-10 fixed right-0 bottom-4 rounded-tl-2xl rounded-bl-2xl bg-white drop-shadow-card overflow-hidden"
 >
-	<span class="text-base font-black text-gray-600 flex items-center space-x-2 border-b py-3 px-6"
+	<span
+		class="text-base font-black text-gray-600 flex items-center space-x-2 border-b border-gray-900/10 py-3 px-6"
 		>Navigate to:</span
 	>
 	{#each sections as section}
@@ -79,7 +80,7 @@
 				scrollToSection(section.link, e);
 			}}
 			href={`#${section.link}`}
-			class="text-xs font-semibold text-gray-600 flex items-center space-x-2 border-b py-3 px-6 transition hover:bg-gray-blue"
+			class="text-xs font-semibold text-gray-600 flex items-center space-x-2 border-b border-gray-900/10 py-3 px-6 transition hover:bg-gray-blue"
 			><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 24 24" width="20" height="20"
 				><path fill="none" d="M0 0h24v24H0z" /><path
 					fill="currentColor"
@@ -114,7 +115,7 @@
 								scrollToSection(section.link, e);
 							}}
 							href={`#${section.link}`}
-							class="text-xl font-semibold text-gray-600 border-b-2 pb-2 transition hover:border-gray-900"
+							class="text-xl font-semibold text-gray-600 border-b-2 border-gray-900/10 pb-2 transition hover:border-gray-900"
 							>{section['title']} <span aria-hidden="true">&rarr;</span>
 						</a>
 					</div>
@@ -300,7 +301,7 @@
 </div>
 
 <div
-	class="bg-gray-blue py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24"
+	class="bg-gray-blue py-16 px-4 sm:px-6 lg:px-16 pt-8 border-t border-t-gray-100 sm:py-24"
 	id={sections[2].link}
 >
 	<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
@@ -363,7 +364,7 @@
 </div>
 
 <div
-	class="bg-white py-16 px-4 sm:px-6 lg:px-16  pt-8 border-t border-t-gray-100 sm:py-24"
+	class="bg-white py-16 px-4 sm:px-6 lg:px-16 pt-8 border-t border-t-gray-100 sm:py-24"
 	id={sections[3].link}
 >
 	<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">

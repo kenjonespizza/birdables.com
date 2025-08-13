@@ -75,15 +75,17 @@
 					class="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5"
 				>
 					{#each categories as category}
-						<li
-							on:click={toggle}
-							role="option"
-							class="text-gray-900 cursor-default select-none relative hover:bg-gray-100"
-						>
+            <li
+              role="option"
+              aria-selected={category._id === currentCategory}
+              class="text-gray-900 cursor-default select-none relative hover:bg-gray-100"
+            >
 						<a
 							data-sveltekit-noscroll
 								href={`/blog/category/${category.pageInfo.slug.current}`}
 								class=" py-2 px-4 flex items-center space-x-3"
+              on:click={() => { toggle(); }}
+              on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggle(); }}
 							>
 								<span
 									aria-label={'Posts in category: category.pageInfo.name'}
@@ -115,9 +117,11 @@
 			</div>
 		</div>
 	</div>
-	<button
-		on:click={toggle}
-		class={`${
+  <button
+    type="button"
+    aria-label="Close categories overlay"
+    on:click={toggle}
+    class={`${
 			isOpen ? 'opacity-75 z-20 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
 		} !ml-0 fixed top-0 left-0 w-screen h-screen bg-black cursor-default transition duration-300`}
 ></button>

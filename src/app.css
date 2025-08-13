@@ -1,43 +1,87 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
+@source "./**/*.{svelte,js,ts,html}";
 
+@theme {
+	/* Font defaults */
+	--font-sans: 'GreycliffCF', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-weight-normal: 500;
+
+	/* Project gray palette (overrides default gray) */
+	--color-gray-50: #f7fafc;
+	--color-gray-100: #eff4f6;
+	--color-gray-200: #dbe1e5;
+	--color-gray-300: #acb9c1;
+	--color-gray-400: #7b8890;
+	--color-gray-500: #505a60;
+	--color-gray-600: #3d454a;
+	--color-gray-700: #2b343a;
+	--color-gray-800: #1b242b;
+	--color-gray-900: #11191e;
+	--color-gray-blue: #d3e1e4;
+
+	/* Brand beak palette (from legacy config) */
+	--color-beak-50: #fff4e3;
+	--color-beak-100: #ffeed1;
+	--color-beak-200: #ffdfab;
+	--color-beak-300: #ffd186;
+	--color-beak-400: #ffc25e;
+	--color-beak-500: #fbab2a;
+	--color-beak-600: #f29600;
+	--color-beak-700: #d78500;
+	--color-beak-800: #b16e00;
+	--color-beak-900: #794b00;
+
+	/* Project-specific tokens */
+	--color-gray-blue: #d3e1e4; /* enables bg-gray-blue, text-gray-blue, border-gray-blue */
+	--color-text: rgba(17, 25, 20, 0.7); /* enables text-text */
+
+	/* Extra radii used in components */
+	--radius-4xl: 2rem;
+	--radius-5xl: 2.5rem;
+}
 /* Custom utilities migrated from old Tailwind config */
 @layer utilities {
-  /* Border width 3px */
-  .border-3 { border-width: 3px; }
-  .border-b-3 { border-bottom-width: 3px; }
+	/* Border width 3px */
+	.border-3 {
+		border-width: 3px;
+	}
+	.border-b-3 {
+		border-bottom-width: 3px;
+	}
 
-  /* Ring width and offset 3px */
-  .ring-3 {
-    --tw-ring-width: 3px;
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow, 0 0 #0000);
-  }
-  .ring-offset-3 { --tw-ring-offset-width: 3px; }
+	/* Ring width and offset 3px */
+	.ring-3 {
+		--tw-ring-width: 3px;
+		box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+			var(--tw-shadow, 0 0 #0000);
+	}
+	.ring-offset-3 {
+		--tw-ring-offset-width: 3px;
+	}
 
-  /* Extra large radii */
-  .rounded-4xl { border-radius: 2rem; }
-  .rounded-5xl { border-radius: 2.5rem; }
+	/* Extra large radii */
+	.rounded-4xl {
+		border-radius: 2rem;
+	}
+	.rounded-5xl {
+		border-radius: 2.5rem;
+	}
 
-  /* Custom gray-blue color token usages */
-  .bg-gray-blue { background-color: #D3E1E4; }
-  .text-gray-blue { color: #D3E1E4; }
-  .border-gray-blue { border-color: #D3E1E4; }
-  .ring-offset-gray-blue { --tw-ring-offset-color: #D3E1E4; }
+	/* Gray-blue helpers now provided via @theme tokens above
+       (bg-gray-blue, text-gray-blue, border-gray-blue, ring-offset-gray-blue) */
 
-  /* Card drop shadows */
-  .drop-shadow-card {
-    filter: drop-shadow(0 0 1px rgba(17, 25, 30, 0.1))
-            drop-shadow(0 1px 1px rgba(17, 25, 30, 0.06))
-            drop-shadow(0 8px 5px rgba(17, 25, 30, 0.05))
-            drop-shadow(0 5px 25px rgba(17, 25, 30, 0.10));
-  }
-  .drop-shadow-card-hover {
-    filter: drop-shadow(0 0 1px rgba(17, 25, 30, 0.1))
-            drop-shadow(0 1px 1px rgba(17, 25, 30, 0.06))
-            drop-shadow(0 8px 15px rgba(17, 25, 30, 0.05))
-            drop-shadow(0 5px 35px rgba(17, 25, 30, 0.10));
-  }
+	/* Card drop shadows */
+	.drop-shadow-card {
+		filter: drop-shadow(0 0 1px rgba(17, 25, 30, 0.1)) drop-shadow(0 1px 1px rgba(17, 25, 30, 0.06))
+			drop-shadow(0 8px 5px rgba(17, 25, 30, 0.05)) drop-shadow(0 5px 25px rgba(17, 25, 30, 0.1));
+	}
+	.drop-shadow-card-hover {
+		filter: drop-shadow(0 0 1px rgba(17, 25, 30, 0.1)) drop-shadow(0 1px 1px rgba(17, 25, 30, 0.06))
+			drop-shadow(0 8px 15px rgba(17, 25, 30, 0.05)) drop-shadow(0 5px 35px rgba(17, 25, 30, 0.1));
+	}
 }
 
 @layer base {
@@ -58,16 +102,16 @@
 		font-family: 'GreycliffCF';
 		font-weight: 500;
 		src:
-			url('../../../../fonts/GreycliffCFMedium.woff2') format('woff2'),
-			url('../../../../fonts/GreycliffCFMedium.woff') format('woff');
+			url('/fonts/GreycliffCFMedium.woff2') format('woff2'),
+			url('/fonts/GreycliffCFMedium.woff') format('woff');
 		font-display: swap;
 	}
 	@font-face {
 		font-family: 'GreycliffCF';
 		font-weight: 600;
 		src:
-			url('../../../../fonts/GreycliffCFDemiBold.woff2') format('woff2'),
-			url('../../../../fonts/GreycliffCFDemiBold.woff') format('woff');
+			url('/fonts/GreycliffCFDemiBold.woff2') format('woff2'),
+			url('/fonts/GreycliffCFDemiBold.woff') format('woff');
 		font-display: swap;
 	}
 	@font-face {
@@ -75,16 +119,16 @@
 		font-weight: 600;
 		font-style: italic;
 		src:
-			url('../../../../fonts/GreycliffCFDemiBoldOblique.woff2') format('woff2'),
-			url('../../../../fonts/GreycliffCFDemiBoldOblique.woff') format('woff');
+			url('/fonts/GreycliffCFDemiBoldOblique.woff2') format('woff2'),
+			url('/fonts/GreycliffCFDemiBoldOblique.woff') format('woff');
 		font-display: swap;
 	}
 	@font-face {
 		font-family: 'GreycliffCF';
 		font-weight: 900;
 		src:
-			url('../../../../fonts/GreycliffCFHeavy.woff2') format('woff2'),
-			url('../../../../fonts/GreycliffCFHeavy.woff') format('woff');
+			url('/fonts/GreycliffCFHeavy.woff2') format('woff2'),
+			url('/fonts/GreycliffCFHeavy.woff') format('woff');
 		font-display: swap;
 	}
 }

@@ -123,12 +123,12 @@
 		</div>
 	</section>
 	<!-- Filters -->
-	<div class="bg-white border-b border-gray-900 border-opacity-10 sticky top-0 z-10">
+	<div class="bg-white border-b border-gray-900/10 sticky top-0 z-10">
 		<button
 			on:click={toggleFilter}
 			class={`${
 				filterOpen && 'border-b'
-			} border-gray-900 border-opacity-10 py-4 flex justify-center w-full md:hidden transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500`}
+			} border-gray-900/10 py-4 flex justify-center w-full md:hidden transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500`}
 		>
 			{#if filterOpen}
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
@@ -178,9 +178,9 @@
 									type="checkbox"
 									class="h-4 w-4 border-gray-300 rounded text-gray-600 focus:ring-gray-500"
 								/>
-							<span class="flex space-x-1">
-								<Stars stars={rarity} size="xs" hideEmpty={true} /><span></span>
-							</span>
+								<span class="flex space-x-1">
+									<Stars stars={rarity} size="xs" hideEmpty={true} /><span></span>
+								</span>
 							</label>
 						</div>
 					</div>

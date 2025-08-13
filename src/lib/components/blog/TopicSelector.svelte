@@ -66,17 +66,19 @@
 					aria-activedescendant="listbox-item-3"
 					class="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5"
 				>
-					{#each topics as topic}
-						<li
-							on:click={toggle}
-							role="option"
-							class="text-gray-900 cursor-default select-none relative hover:bg-gray-100"
-						>
-						<a
-								href={`/blog/topic/${topic}`}
-							data-sveltekit-noscroll
-								class=" py-2 px-4 flex items-center space-x-3"
-							>
+          {#each topics as topic}
+            <li
+              role="option"
+              aria-selected={topic === currentTopic}
+              class="text-gray-900 cursor-default select-none relative hover:bg-gray-100"
+            >
+            <a
+                href={`/blog/topic/${topic}`}
+              data-sveltekit-noscroll
+                class=" py-2 px-4 flex items-center space-x-3"
+                on:click={() => { toggle(); }}
+                on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggle(); }}
+              >
 								<span
 									class={`${
 										topic === currentTopic ? 'font-bold' : 'font-normal'
@@ -84,7 +86,7 @@
 								>
 									{unSlugify(topic)}
 								</span>
-							</a>
+            </a>
 							{#if topic === currentTopic}
 								<span class="text-beak-600 absolute inset-y-0 right-0 flex items-center pr-4">
 									<svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -102,9 +104,11 @@
 			</div>
 		</div>
 	</div>
-	<button
-		on:click={toggle}
-		class={`${
+  <button
+    type="button"
+    aria-label="Close topics overlay"
+    on:click={toggle}
+    class={`${
 			isOpen ? 'opacity-75 z-20 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
 		} !ml-0 fixed top-0 left-0 w-screen h-screen bg-black cursor-default transition duration-300`}
 ></button>
