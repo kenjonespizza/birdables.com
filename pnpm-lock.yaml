@@ -14,9 +14,6 @@ importers:
       posthog-js:
         specifier: ^1.136.5
         version: 1.136.5
-      rolldown-vite:
-        specifier: ^7.1.2
-        version: 7.1.2(esbuild@0.25.8)(jiti@2.5.1)(yaml@2.8.1)
     devDependencies:
       '@portabletext/svelte':
         specifier: ^3.0.0
