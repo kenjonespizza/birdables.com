@@ -1,17 +1,11 @@
 <script>
-	export let href = 'https://birdables.com';
-	export let icon = true;
-	export let title = '';
-
-	let className = 'inline-flex space-x-1 items-center';
-
-	export { className as class };
+	let { href = 'https://birdables.com', icon = true, title = '', class: className = 'inline-flex space-x-1 items-center', children } = $props();
 </script>
 
 <a {href} target="_blank" rel="noopener noreferrer" {title} class={className}>
 	{#if icon}
 		<span>
-			<slot />
+			{@render children?.()}
 		</span>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"
 			><path fill="none" d="M0 0h24v24H0z" /><path
@@ -20,6 +14,6 @@
 			/></svg
 		>
 	{:else}
-		<slot />
+		{@render children?.()}
 	{/if}
 </a>

@@ -8,7 +8,7 @@
 	import { toPlainText, truncate } from '$lib/utils';
 	import { urlFor } from '$lib/sanity-image-url';
 
-	export let data;
+	let { data } = $props();
 	let { author, currentPage, perPage, posts, count } = data;
 </script>
 
@@ -80,13 +80,13 @@
 
 <div class="bg-white">
 	<div class="mx-auto py-6 px-4 max-w-screen-xl sm:px-6 lg:px-8 lg:py-10">
-		<Posts {posts} {count} {currentPage} {perPage}>
+		{#snippet topText()}
 			<h2
-				slot="topText"
 				class="pb-6 text-lg leading-9 tracking-tight font-medium text-gray-900 sm:text-xl sm:leading-10"
 			>
 				Posts by: <span class="text-gray-500 italic">{author.pageInfo.name} ({count})</span>
 			</h2>
-		</Posts>
+		{/snippet}
+		<Posts {posts} {count} {currentPage} {perPage} {topText} />
 	</div>
 </div>

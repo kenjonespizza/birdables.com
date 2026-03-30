@@ -1,7 +1,5 @@
 <script>
-  let className
-
-  export { className as class };
+  let { class: className } = $props();
 </script>
 
 <svg class={className} viewBox="0 0 437 100" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,11 +1,9 @@
 <script>
 import Stars from "./Stars.svelte";
 
-  export let stars;
-  export let hideExplainer = false;
-  export let size = null;
+  let { stars, hideExplainer = false, size = null } = $props();
 
-  let isModalOpen = false;
+  let isModalOpen = $state(false);
 
   function toggleModal() {
     isModalOpen = !isModalOpen;
@@ -18,7 +16,7 @@ import Stars from "./Stars.svelte";
   }
 </script>
 
-<svelte:window on:keydown={handleKeydown}/>
+<svelte:window onkeydown={handleKeydown}/>
 
 <div class="">
   <span class="sr-only">Rarity: {stars?.toString()} out of 5 stars</span>
@@ -26,7 +24,7 @@ import Stars from "./Stars.svelte";
     <Stars {stars} size={size} />
 
     {#if !hideExplainer}
-      <button on:click={toggleModal} class="text-xs ml-4 underline text-gray-600">(What's this?)</button>
+      <button onclick={toggleModal} class="text-xs ml-4 underline text-gray-600">(What's this?)</button>
     {/if}
   </div>
 </div>
@@ -34,7 +32,7 @@ import Stars from "./Stars.svelte";
 <!-- Modal -->
 <div class={`${isModalOpen ? "opacity-100 pointer-events-auto" : "opacity-0 delay-300 pointer-events-none"} fixed z-20 inset-0 overflow-y-auto transition`} aria-labelledby="modal-rarity-description" role="dialog" aria-modal="true">
   <div class={`flex justify-center items-center min-h-screen pt-4 px-4 text-center sm:block sm:p-0`}>
-    <div on:click={toggleModal} class={`${isModalOpen ? "opacity-100" : "opacity-0"} fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity duration-300 ease-in-out`} aria-hidden="true"></div>
+    <div onclick={toggleModal} class={`${isModalOpen ? "opacity-100" : "opacity-0"} fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity duration-300 ease-in-out`} aria-hidden="true"></div>
     
     <!-- This element is to trick the browser into centering the modal contents. -->
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
@@ -58,12 +56,12 @@ import Stars from "./Stars.svelte";
         </div>
       </div>
       <div class="mt-5 sm:mt-6">
-        <button on:click={toggleModal} type="button" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-900 text-base font-medium text-white transition hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:text-sm">
+        <button onclick={toggleModal} type="button" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-900 text-base font-medium text-white transition hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:text-sm">
           Got It!
         </button>
       </div>
     </div>
-    <button on:click={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">
+    <button onclick={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" class=""><path fill="none" d="M0 0h24v24H0z"/><path fill="currentColor" d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
       <span class="sr-only">Close Modal</span>
     </button>

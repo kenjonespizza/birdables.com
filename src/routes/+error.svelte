@@ -1,12 +1,12 @@
 <script>
 import { page } from '$app/stores';
-	import { ShowHeaderFooter } from '../stores/store';
+	import { headerFooterState } from '../stores/store.svelte';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		ShowHeaderFooter.set(false);
+		headerFooterState.visible = false;
 
-		return () => ShowHeaderFooter.set(true);
+		return () => { headerFooterState.visible = true; };
 	});
 </script>
 

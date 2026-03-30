@@ -1,20 +1,10 @@
-import Airtable from 'airtable';
-
 import site from '$lib/info';
-import { variables } from '$lib/variables';
-import { returnFormattedBirds } from '$lib/utils';
+import { fetchLiveBirds } from '$lib/airtable';
+
+export const prerender = true;
 
 export async function GET() {
-	const base = new Airtable({ apiKey: variables.AIRTABLE_API_KEY }).base(variables.AIRTABLE_BASE);
-	const table = base('Birds');
-	const records = await table
-		.select({
-			view: 'Grid view',
-			filterByFormula: '{Live On Site} = 1'
-		})
-		.firstPage();
-
-	const birds = returnFormattedBirds(records);
+	const birds = await fetchLiveBirds();
 
 	const pages = [
 		{

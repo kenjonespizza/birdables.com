@@ -9,14 +9,14 @@ import PortableText from '$lib/components/PortableText.svelte';
 import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 import { categoryNamesToString, authorNamesToString } from "$lib/utils"
 
-export let data;
+let { data } = $props();
 const { post } = data;
 const { authors } = post;
 const layout = "A";
-let y;
-let outerHeight;
-let outerWidth;
-let scrollGeneratedClasses;
+let y = $state();
+let outerHeight = $state();
+let outerWidth = $state();
+let scrollGeneratedClasses = $state();
 
 function scrolling(e) {
 	const percentScrolled = y / outerHeight * 100;
@@ -63,7 +63,7 @@ function scrolling(e) {
   }}
 />
 
-<svelte:window bind:scrollY={y} bind:outerHeight={outerHeight} bind:outerWidth={outerWidth}  on:scroll={scrolling}/>
+<svelte:window bind:scrollY={y} bind:outerHeight={outerHeight} bind:outerWidth={outerWidth}  onscroll={scrolling}/>
 
 {#if layout === "A"}
 <section class="bg-gray-blue">
@@ -125,7 +125,7 @@ function scrolling(e) {
           {#if post.topics}
             <div class="flex items-start justify-start flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4">
 				{#each post.topics as topic }
-					<a href={`/blog/topic/${slugify(topic)}`} data-sveltekit-prefetch class="capitalize inline-flex items-center px-2.5 py-2 rounded-md text-sm md:text-md lg:text-lg xl:text-xl font-medium leading-5 bg-gray-600 text-white">
+					<a href={`/blog/topic/${slugify(topic)}`} data-sveltekit-preload-data class="capitalize inline-flex items-center px-2.5 py-2 rounded-md text-sm md:text-md lg:text-lg xl:text-xl font-medium leading-5 bg-gray-600 text-white">
                   <svg class="-ml-0.5 mr-1.5 h-3 w-3 text-gray-100" fill="currentColor" viewBox="0 0 20 20">
                     <path fill="none" d="M0 0h24v24H0z"/><path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
                   </svg>

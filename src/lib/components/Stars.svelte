@@ -1,8 +1,5 @@
 <script>
-  export let stars;
-  export let space = 1;
-  export let size;
-  export let hideEmpty = false;
+  let { stars, space = 1, size, hideEmpty = false } = $props();
 
   let fullStars = [];
   let hollowlStars = [];
@@ -11,15 +8,7 @@
     i < stars ? fullStars.push('★') : hollowlStars.push('☆');
   }
 
-  let starSize
-
-  if (size === 'xs') {
-    starSize = "h-3 w-3";
-  } else if (size === 'sm') {
-    starSize = "h-4 w-4";
-  } else {
-    starSize = "h-5 w-5";
-  }
+  let starSize = $derived(size === 'xs' ? "h-3 w-3" : size === 'sm' ? "h-4 w-4" : "h-5 w-5");
 </script>
 
 <div class={`flex items-center space-x-${space}`}>

@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	export let refresh = ``;
+	let { refresh = ``, children } = $props();
 
 	let animations = false;
 
@@ -16,9 +16,9 @@
 {#key refresh}
 	{#if !!animations}
 		<div in:fly={{ delay: 100, duration: 200, y: -10 }} out:fly={{ duration: 100, y: 10 }}>
-			<slot />
+			{@render children?.()}
 		</div>
 	{:else}
-		<slot />
+		{@render children?.()}
 	{/if}
 {/key}

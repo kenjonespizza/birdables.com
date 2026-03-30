@@ -14,7 +14,7 @@
 	}
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} />
 
 <div class="block overflow-hidden rounded-2xl md:rounded-2xl lg:rounded-5xl group mt-10 relative">
 	<img
@@ -35,7 +35,7 @@
 	<div class={`flex items-center justify-center min-h-screen text-center  sm:block sm:p-0`}>
 		<!-- Overlay -->
 		<div
-			on:click={toggleModal}
+			onclick={toggleModal}
 			class={`${
 				isModalOpen ? 'opacity-100' : 'opacity-0'
 			} fixed h-screen w-screen inset-0 bg-gray-900 bg-opacity-75 transition-opacity duration-300 ease-in-out`}
@@ -58,7 +58,7 @@
 				} rounded-xl object-center object-cover drop-shadow-card`}
 			/>
 		</div>
-		<button on:click={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">
+		<button onclick={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">
 			<span class="sr-only">Close Modal</span>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" class=""
 				><path fill="none" d="M0 0h24v24H0z" /><path

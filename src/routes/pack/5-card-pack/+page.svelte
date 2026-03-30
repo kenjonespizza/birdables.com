@@ -60,7 +60,7 @@
 	}}
 />
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} />
 
 <div class="bg-gray-blue">
 	<div class="mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -75,7 +75,7 @@
 					class="object-center object-cover drop-shadow-card hidden md:block"
 				/>
 				<button
-					on:click={toggleModal}
+					onclick={toggleModal}
 					class="md:row-end-1 md:col-span-4 rounded-3xl transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-900"
 				>
 					<img
@@ -100,7 +100,7 @@
 								class="object-center object-cover drop-shadow-card md:hidden mt-2"
 							/>
 							<button
-								on:click={toggleModal}
+								onclick={toggleModal}
 								class="md:row-end-1 md:col-span-4 rounded-3xl transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-900 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-gray-900"
 							>
 								<img
@@ -209,7 +209,7 @@
 
 				<a
 					href="/about"
-					data-sveltekit-prefetch
+					data-sveltekit-preload-data
 					class="mt-8 w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 					>Learn more about Birdables</a
 				>
@@ -240,7 +240,7 @@
 >
 		<div class={`flex items-center justify-center min-h-screen text-center sm:block sm:p-0`}>
 		<div
-			on:click={toggleModal}
+			onclick={toggleModal}
 				class={`${
 				isModalOpen ? 'opacity-100' : 'opacity-0'
 				} fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity duration-300 ease-in-out`}
@@ -263,7 +263,7 @@
 				} object-center object-cover drop-shadow-card max-h-[calc(100vh-6rem)]`}
 			/>
 		</div>
-		<button on:click={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">
+		<button onclick={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" class=""
 				><path fill="none" d="M0 0h24v24H0z" /><path
 					fill="currentColor"

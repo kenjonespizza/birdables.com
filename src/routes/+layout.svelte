@@ -3,9 +3,11 @@
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
-	import { ShowHeaderFooter } from '../stores/store';
+	import { headerFooterState } from '../stores/store.svelte';
 
-	ShowHeaderFooter.set(true);
+	headerFooterState.visible = true;
+
+	let { children } = $props();
 </script>
 
 <svelte:head>
@@ -19,11 +21,11 @@
 </svelte:head>
 
 <div class="text-gray-900 relative w-screen selection:bg-gray-900 selection:text-white">
-	{#if $ShowHeaderFooter}
+	{#if headerFooterState.visible}
 		<Nav />
 	{/if}
-	<slot />
-	{#if $ShowHeaderFooter}
+	{@render children()}
+	{#if headerFooterState.visible}
 		<Footer />
 	{/if}
 </div>

@@ -3,21 +3,20 @@
 	import { onMount } from 'svelte';
 	import { assets } from '$app/paths';
 
-	let ready = false;
-	export let i;
+	let { i, card } = $props();
+
+	let ready = $state(false);
 
 	onMount(() => {
 		setTimeout(() => {
 			ready = true;
 		}, i * 100);
 	});
-
-	export let card;
 </script>
 
 <a
 	href={`/bird/${card.slug}`}
-	data-sveltekit-prefetch
+	data-sveltekit-preload-data
 	class={`${
 		ready ? 'opacity-100' : 'opacity-0'
 	} group flex flex-col space-y-4 tranform transition duration-300`}

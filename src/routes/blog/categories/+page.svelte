@@ -5,7 +5,7 @@
 	import { urlFor } from '$lib/sanity-image-url';
 	import { categoryNamesToString } from '$lib/utils';
 
-	export let data;
+	let { data } = $props();
 	let { categories } = data;
 </script>
 

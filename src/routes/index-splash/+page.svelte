@@ -6,7 +6,7 @@
 	import { assets } from '$app/paths';
 	import site from '$lib/info';
 	import GetNotified from '$lib/components/GetNotified.svelte';
-	import { ShowHeaderFooter } from '../../stores/store';
+	import { headerFooterState } from '../../stores/store.svelte';
 
 	const checkIfShownAnimationsCookieIsTrue = () => {
 		if (document.cookie.split(';').some((item) => item.includes('shown_animations=true'))) {
@@ -29,7 +29,7 @@
 	let element4;
 	let intersecting4;
 
-	ShowHeaderFooter.set(false);
+	headerFooterState.visible = false;
 </script>
 
 <SEO

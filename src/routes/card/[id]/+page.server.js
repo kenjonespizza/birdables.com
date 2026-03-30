@@ -9,25 +9,21 @@ export async function load({ params }) {
 	const records = await base('Birds').select().firstPage();
 	const data = returnBirdFromParam(id, 'id', returnFormattedBirds(records));
 
-	base('Birds').update(
-		[
+	try {
+		await base('Birds').update([
 			{
 				id: data._id,
 				fields: {
 					'QR Scans': data.scans + 1
 				}
 			}
-		],
-		function (err) {
-			if (err) {
-				console.error(err);
-				return;
-			}
-		}
-	);
+		]);
+	} catch (err) {
+		console.error(err);
+	}
 
-	if (bird && record) {
-		return bird;
+	if (data) {
+		return { bird: data };
 	} else {
 		throw error(400, 'not found');
 	}

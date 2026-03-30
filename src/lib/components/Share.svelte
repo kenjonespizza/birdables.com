@@ -1,13 +1,8 @@
 <script>
-	export let text;
-	export let image;
-	export let url;
-	export let hashtags;
-	export let via;
-	export let related;
+	let { text, image, url, hashtags, via, related } = $props();
 
-	let query;
-	let href;
+	let query = $state();
+	let href = $state();
 
 	function open(e, site) {
 		e.preventDefault();
@@ -57,7 +52,7 @@
 		<button
 			data-share="twitter"
 			class="flex items-center justify-center w-6 h-6 text-gray-400 hover:text-gray-500"
-			on:click={(e) => {
+			onclick={(e) => {
 				open(e, 'twitter');
 			}}
 		>
@@ -91,7 +86,7 @@
 			href="#"
 			data-share="facebook"
 			class="flex items-center justify-center w-6 h-6 text-gray-400 hover:text-gray-500"
-			on:click={(e) => {
+			onclick={(e) => {
 				open(e, 'facebook');
 			}}
 		>
@@ -108,7 +103,7 @@
 		<button
 			data-share="email"
 			class="flex items-center justify-center w-6 h-6 text-gray-400 hover:text-gray-500"
-			on:click={(e) => {
+			onclick={(e) => {
 				open(e, 'email');
 			}}
 		>

@@ -30,7 +30,7 @@
 	}
 </script>
 
-<svelte:window on:keydown={handleKeyDown} />
+<svelte:window onkeydown={handleKeyDown} />
 
 <div class="relative bg-white z-10">
 	<div class="absolute inset-0 z-30 pointer-events-none" aria-hidden="true"></div>
@@ -39,7 +39,7 @@
 			class="flex justify-between items-center px-6 py-6 lg:px-16 lg:justify-start lg:space-x-10"
 		>
 			<div class="flex space-x-12 items-center">
-				<a data-sveltekit-prefetch href="/" class="flex">
+				<a data-sveltekit-preload-data href="/" class="flex">
 					<span class="sr-only">Birdables</span>
 					<img
 						class="h-6 w-auto sm:h-8"
@@ -54,7 +54,7 @@
 			<div class="-mr-2 -my-2 lg:hidden">
 				<button
 					type="button"
-					on:click={toggle}
+					onclick={toggle}
 					class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-90 border0 border-gray-100 hover:border-gray-blue focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
 					aria-expanded={isOpen}
 				>
@@ -79,9 +79,9 @@
 			<div class="hidden lg:flex-1 lg:flex lg:items-center lg:justify-between">
 				<nav class="flex space-x-8">
 					<a
-						data-sveltekit-prefetch
+						data-sveltekit-preload-data
 						href="/cards"
-						on:focus={() => toggleShopNav(false)}
+						onfocus={() => toggleShopNav(false)}
 						class={`${
 							$page.url.pathname === '/cards' ? 'border-gray-900' : 'border-transparent'
 						} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
@@ -90,8 +90,8 @@
 					</a>
 
 					<a
-						on:focus={() => toggleShopNav(false)}
-						data-sveltekit-prefetch
+						onfocus={() => toggleShopNav(false)}
+						data-sveltekit-preload-data
 						href="/about"
 						class={`${
 							$page.url.pathname === '/about' ? 'border-gray-900' : 'border-transparent'
@@ -100,8 +100,8 @@
 						About Birdables
 					</a>
 					<a
-						on:focus={() => toggleShopNav(false)}
-						data-sveltekit-prefetch
+						onfocus={() => toggleShopNav(false)}
+						data-sveltekit-preload-data
 						href="/blog"
 						class={`${
 							$page.url.pathname === '/blog' ? 'border-gray-900' : 'border-transparent'
@@ -164,13 +164,13 @@
 		>
 			<div class="pt-5 pb-6 px-5">
 				<div class="flex items-center justify-between">
-						<a on:click={toggle} data-sveltekit-prefetch href="/">
+						<a onclick={toggle} data-sveltekit-preload-data href="/">
 						<img class="h-6 w-auto" src="/images/logo.svg" alt="Birdables Logo" />
 					</a>
 					<div class="-mr-2">
 						<button
 							type="button"
-							on:click={toggle}
+							onclick={toggle}
 							class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-90 border0 border-gray-100 hover:border-gray-blue focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
 						>
 							<span class="sr-only">Close menu</span>
@@ -197,8 +197,8 @@
 						<div class="py-6 px-5">
 							<div class="grid grid-cols-1 gap-4 text-center">
 								<a
-									on:click={toggle}
-									data-sveltekit-prefetch
+									onclick={toggle}
+									data-sveltekit-preload-data
 									href="/cards"
 									class={`${
 										$page.url.pathname === '/cards' ? 'border-gray-900' : 'border-transparent'
@@ -208,8 +208,8 @@
 								</a>
 
 								<a
-									on:click={toggle}
-									data-sveltekit-prefetch
+									onclick={toggle}
+									data-sveltekit-preload-data
 									href="/about"
 									class={`${
 										$page.url.pathname === '/about' ? 'border-gray-900' : 'border-transparent'
@@ -218,8 +218,8 @@
 									About Birdables
 								</a>
 								<a
-									on:click={toggle}
-									data-sveltekit-prefetch
+									onclick={toggle}
+									data-sveltekit-preload-data
 									href="/blog"
 									class={`${
 										$page.url.pathname === '/blog' ? 'border-gray-900' : 'border-transparent'

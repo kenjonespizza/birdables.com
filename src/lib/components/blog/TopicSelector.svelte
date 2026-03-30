@@ -1,10 +1,9 @@
 <script>
 	import { unSlugify } from '$lib/utils';
 
-	export let topics;
-	export let currentTopic;
+	let { topics, currentTopic } = $props();
 
-	let isOpen = false;
+	let isOpen = $state(false);
 
 	function toggle() {
 		isOpen = !isOpen;
@@ -21,7 +20,7 @@
 		<div class="relative">
 			<span class="inline-block w-full rounded-md shadow-sm">
 				<button
-					on:click={toggle}
+					onclick={toggle}
 					data-selector="category"
 					type="button"
 					aria-haspopup="listbox"
@@ -76,8 +75,8 @@
                 href={`/blog/topic/${topic}`}
               data-sveltekit-noscroll
                 class=" py-2 px-4 flex items-center space-x-3"
-                on:click={() => { toggle(); }}
-                on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggle(); }}
+                onclick={() => { toggle(); }}
+                onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggle(); }}
               >
 								<span
 									class={`${
@@ -107,7 +106,7 @@
   <button
     type="button"
     aria-label="Close topics overlay"
-    on:click={toggle}
+    onclick={toggle}
     class={`${
 			isOpen ? 'opacity-75 z-20 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
 		} !ml-0 fixed top-0 left-0 w-screen h-screen bg-black cursor-default transition duration-300`}

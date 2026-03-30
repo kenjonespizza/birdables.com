@@ -53,7 +53,7 @@
 				<span class="block mt-4">Be the first to know when new Birdables hatch.</span>
 			</h2>
 			<div class="relative mx-auto mt-8 max-w-md">
-				<form class="grid grid-cols-1 gap-4" on:submit={submitForm}>
+				<form class="grid grid-cols-1 gap-4" onsubmit={submitForm}>
 					{#if useEmailAddress}
 						<div class="relative">
 							<input

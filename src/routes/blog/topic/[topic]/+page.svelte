@@ -6,7 +6,7 @@
 	import Posts from '$lib/components/blog/Posts.svelte';
 	import { unSlugify, capitalize } from '$lib/utils';
 
-	export let data;
+	let { data } = $props();
 	let { posts, currentPage, perPage, count, blogInfo, categories, topics, topic } = data;
 
 	const formattedTopic = capitalize(unSlugify(topic, true));

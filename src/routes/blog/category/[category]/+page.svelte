@@ -8,7 +8,7 @@
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import { toPlainText, truncate } from '$lib/utils';
 
-	export let data;
+	let { data } = $props();
 	let { posts, categoryInfo, currentPage, perPage, count, blogInfo, categories } = data;
 </script>
 

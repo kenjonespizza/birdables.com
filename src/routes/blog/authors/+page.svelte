@@ -8,7 +8,7 @@
 	import { urlFor } from '$lib/sanity-image-url';
 	import { authorNamesToString } from '$lib/utils';
 
-	export let data;
+	let { data } = $props();
 	let { authors } = data;
 </script>
 

@@ -4,7 +4,7 @@
   import { truncate, toPlainText } from "$lib/utils";
   import { urlFor } from '$lib/sanity-image-url'
 
-  export let post;
+  let { post } = $props();
 </script>
 
 <div>

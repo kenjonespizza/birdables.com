@@ -3,21 +3,13 @@
 	import Post from '$lib/components/blog/Post.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
 
-	export let posts = [];
-	export let categories = [];
-	export let topics = [];
-	export let count;
-	export let currentPage;
-	export let perPage;
-	export let currentCategory;
-	export let currentTopic;
-	export let paginationSlug = 'blog/page';
+	let { posts = [], categories = [], topics = [], count, currentPage, perPage, currentCategory, currentTopic, paginationSlug = 'blog/page', topText } = $props();
 </script>
 
 {#if posts.length > 0}
 	<div class="">
 		<BlogFilters {categories} {topics} {currentCategory} {currentTopic} />
-		<slot name="topText" />
+		{#if topText}{@render topText()}{/if}
 		<div class="mb-6 grid gap-16 lg:grid-cols-2 lg:col-gap-5 lg:row-gap-12">
 			{#each posts as post}
 				<Post {post} />

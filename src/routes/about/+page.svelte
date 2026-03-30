@@ -76,7 +76,7 @@
 	>
 	{#each sections as section}
 		<a
-			on:click={(e) => {
+			onclick={(e) => {
 				scrollToSection(section.link, e);
 			}}
 			href={`#${section.link}`}
@@ -111,7 +111,7 @@
 				{#each sections as section}
 					<div class="mt-6">
 						<a
-							on:click={(e) => {
+							onclick={(e) => {
 								scrollToSection(section.link, e);
 							}}
 							href={`#${section.link}`}
@@ -386,7 +386,7 @@
 		</div>
 		<a
 			href="/pack/5-card-pack"
-			data-sveltekit-prefetch
+			data-sveltekit-preload-data
 			class="mt-6 block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500 sm:inline-block sm:w-auto"
 		>
 			View a card pack

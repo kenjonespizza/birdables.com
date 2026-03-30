@@ -2,8 +2,7 @@
 	import ExternalLink from './ExternalLink.svelte';
 	import { browser } from '$app/environment';
 
-	export let title = 'Frequently Asked Questionssss';
-	export let id = 'faq';
+	let { title = 'Frequently Asked Questionssss', id = 'faq' } = $props();
 
 	function scrollToSection(id, e) {
 		if (browser) {
@@ -89,7 +88,7 @@
 							> blockchain. Purchases of the NFT will come with access to the hi-res artwork, not available
 							anywhere else. NFT's of Birdables cards are also more scarce than physical cards.
 							<a
-								on:click={(e) => {
+								onclick={(e) => {
 									scrollToSection('rarity', e);
 								}}
 								href={`#rarity`}>Learn more about the rarity.</a

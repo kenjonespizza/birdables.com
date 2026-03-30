@@ -2,26 +2,17 @@
   import {checkIfInternalURL, returnEntireSlug} from '$lib/utils';
   import ExternalLink from '$lib/components/ExternalLink.svelte';
 
-  let className
-
-  export { className as class };
-
-  export let href = null;
-  export let title = '';
-  export let text = '';
-  export let noscroll = undefined;
+  let { class: className, href = null, title = '', text = '', noscroll = undefined, children } = $props();
 
   const isInternal = checkIfInternalURL(href)
-
-  
 </script>
 
 {#if isInternal}
-  <a class={className} href={`${returnEntireSlug(href)}`} title={title || ""} data-sveltekit-prefetch data-sveltekit-noscroll={noscroll}>
-    <slot>{text !== '' ? text : href}</slot>
+  <a class={className} href={`${returnEntireSlug(href)}`} title={title || ""} data-sveltekit-preload-data data-sveltekit-noscroll={noscroll}>
+    {#if children}{@render children()}{:else}{text !== '' ? text : href}{/if}
   </a>
 {:else}
   <ExternalLink class={className ? className : undefined} href={href} title={title}>
-    <slot>{text !== '' ? text : href}</slot>
+    {#if children}{@render children()}{:else}{text !== '' ? text : href}{/if}
   </ExternalLink>
 {/if}

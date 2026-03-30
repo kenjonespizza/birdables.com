@@ -2,10 +2,7 @@
 	import CategorySelector from '$lib/components/blog/CategorySelector.svelte';
 	import TopicSelector from '$lib/components/blog/TopicSelector.svelte';
 
-	export let categories;
-	export let topics;
-	export let currentCategory;
-	export let currentTopic;
+	let { categories, topics, currentCategory, currentTopic } = $props();
 </script>
 
 {#if (categories && categories.length > 0) || (topics && topics.length > 0)}

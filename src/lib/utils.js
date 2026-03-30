@@ -1,4 +1,3 @@
-import { variables } from '$lib/variables';
 import { browser } from '$app/environment';
 import info from './info';
 

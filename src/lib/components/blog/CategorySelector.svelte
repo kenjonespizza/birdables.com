@@ -1,16 +1,15 @@
 <script>
 	import Link from '$lib/components/Link.svelte';
 
-	export let categories;
-	export let currentCategory;
+	let { categories, currentCategory } = $props();
 
-	$: selectedCategory = categories.filter((category) => {
+	let selectedCategory = $derived(categories.filter((category) => {
 		if (category._id === currentCategory) {
 			return true;
 		}
-	});
+	}));
 
-	let isOpen = false;
+	let isOpen = $state(false);
 
 	function toggle() {
 		isOpen = !isOpen;
@@ -27,7 +26,7 @@
 		<div class="relative">
 			<span class="inline-block w-full rounded-md shadow-sm">
 				<button
-					on:click={() => {
+					onclick={() => {
 						toggle();
 					}}
 					data-selector="category"
@@ -84,8 +83,8 @@
 							data-sveltekit-noscroll
 								href={`/blog/category/${category.pageInfo.slug.current}`}
 								class=" py-2 px-4 flex items-center space-x-3"
-              on:click={() => { toggle(); }}
-              on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggle(); }}
+              onclick={() => { toggle(); }}
+              onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggle(); }}
 							>
 								<span
 									aria-label={'Posts in category: category.pageInfo.name'}
@@ -120,7 +119,7 @@
   <button
     type="button"
     aria-label="Close categories overlay"
-    on:click={toggle}
+    onclick={toggle}
     class={`${
 			isOpen ? 'opacity-75 z-20 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
 		} !ml-0 fixed top-0 left-0 w-screen h-screen bg-black cursor-default transition duration-300`}

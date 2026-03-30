@@ -8,13 +8,13 @@
 	import GetNotified from '$lib/components/GetNotified.svelte';
 	import Stars from '$lib/components/Stars.svelte';
 
-	export let data;
-	let { cards } = data;
-	let cardsOrig = cards; // This is so that we have an original copy for sorting, since the cards var getting updated later as a $:reactive variable
+	let { data } = $props();
+	let cards = $state(data.cards);
+	let cardsOrig = data.cards; // This is so that we have an original copy for sorting, since the cards var getting updated later as a $:reactive variable
 
 	let raritys = [1, 2, 3, 4, 5];
-	let selectedFilers = [];
-	let filterOpen = false;
+	let selectedFilers = $state([]);
+	let filterOpen = $state(false);
 
 	function toggleFilter() {
 		filterOpen = !filterOpen;
@@ -63,9 +63,6 @@
 		return results;
 	}
 
-	$: {
-		cards = cards;
-	}
 </script>
 
 <SEO
@@ -125,7 +122,7 @@
 	<!-- Filters -->
 	<div class="bg-white border-b border-gray-900/10 sticky top-0 z-10">
 		<button
-			on:click={toggleFilter}
+			onclick={toggleFilter}
 			class={`${
 				filterOpen && 'border-b'
 			} border-gray-900/10 py-4 flex justify-center w-full md:hidden transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500`}
@@ -159,7 +156,7 @@
 			<div aria-hidden="true" class="hidden w-px h-5 bg-gray-blue lg:block sm:ml-4 sm:mr-2"></div>
 			<form
 				name="card-filter"
-				on:change={() => {
+				onchange={() => {
 					cards = filterCards(cardsOrig);
 				}}
 				class="flex flex-wrap gap-2 items-center p-0 m-0"

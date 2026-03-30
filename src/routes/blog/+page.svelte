@@ -8,7 +8,7 @@
 	import { toPlainText } from '$lib/utils';
 	import { urlFor } from '$lib/sanity-image-url';
 
-	export let data;
+	let { data } = $props();
 	let { posts, currentPage, perPage, count, blogInfo, categories, topics } = data;
 </script>
 

@@ -54,14 +54,14 @@
 				</h2>
 				<p class="mt-4 max-w-3xl md:text-lg text-gray-100">
 					Sign up to receive an <button
-						on:click={() => {
+						onclick={() => {
 							useEmailAddress = true;
 						}}
 						class={`${!useEmailAddress && 'underline'}`}>email</button
 					>
 					or
 					<button
-						on:click={() => {
+						onclick={() => {
 							useEmailAddress = false;
 						}}
 						class={`${useEmailAddress && 'underline'}`}>text</button
@@ -72,7 +72,7 @@
 				<div class="flex items-center mb-4">
 					<span class="mr-3" id="email-notifications">
 						<button
-							on:click={() => {
+							onclick={() => {
 								useEmailAddress = true;
 							}}
 							class={`${useEmailAddress ? 'text-white' : 'text-gray-400'} text-base font-medium`}
@@ -80,7 +80,7 @@
 						>
 					</span>
 					<button
-						on:click={toggle}
+						onclick={toggle}
 						type="button"
 						class={`bg-gray-900 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-gray-400 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900`}
 						role="switch"
@@ -126,7 +126,7 @@
 					</button>
 					<span class="ml-3" id="phone-notifications">
 						<button
-							on:click={() => {
+							onclick={() => {
 								useEmailAddress = false;
 							}}
 							class={`${!useEmailAddress ? 'text-white' : 'text-gray-400'} text-base font-medium`}
@@ -136,7 +136,7 @@
 				</div>
 
 				<div class="relative">
-					<form class="grid grid-cols-1 sm:grid-cols-2 gap-4" on:submit={submitForm}>
+					<form class="grid grid-cols-1 sm:grid-cols-2 gap-4" onsubmit={submitForm}>
 						{#if useEmailAddress}
 							<div class="relative">
 								<input

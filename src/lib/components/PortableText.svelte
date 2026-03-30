@@ -2,10 +2,7 @@
 	import { PortableText } from '@portabletext/svelte';
 	import PortableTextLink from '$lib/components/PortableTextLink.svelte';
 
-	let className;
-	export let content = [];
-
-	export { className as class };
+	let { class: className, content = [] } = $props();
 </script>
 
 <div class={className}>

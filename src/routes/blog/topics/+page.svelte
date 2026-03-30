@@ -5,7 +5,7 @@
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import { unSlugify } from '$lib/utils';
 
-	export let data;
+	let { data } = $props();
 	let { topics } = data;
 </script>
 
