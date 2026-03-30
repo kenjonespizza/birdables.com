@@ -5,7 +5,7 @@
 	import site from '$lib/info';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import CardList from '$lib/components/CardList.svelte';
-	import GetNotified from '$lib/components/GetNotified.svelte';
+	import CallToAction from '$lib/components/CallToAction.svelte';
 	import Stars from '$lib/components/Stars.svelte';
 
 	let { data } = $props();
@@ -224,4 +224,4 @@
 	</div>
 </div>
 
-<GetNotified />
+<CallToAction variant="compact" />

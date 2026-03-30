@@ -4,8 +4,7 @@
 
 	import { assets } from '$app/paths';
 	import site from '$lib/info';
-	import GetNotified from '$lib/components/GetNotified.svelte';
-	import GetNotifiedWithText from '$lib/components/GetNotifiedWithText.svelte';
+	import CallToAction from '$lib/components/CallToAction.svelte';
 
 	let { data } = $props();
 	let { cards } = data;
@@ -272,8 +271,7 @@
 		</div>
 	</div>
 
-	<!-- <GetNotified /> -->
-	<GetNotifiedWithText />
+	<CallToAction />
 
 	<div class="px-4 sm:px-6 lg:px-8 bg-white pt-12">
 		<div class="lg:max-w-7xl mx-auto">
