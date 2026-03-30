@@ -1,10 +1,10 @@
 import { error } from '@sveltejs/kit';
-import { fetchLiveBirds } from '$lib/airtable';
+import { fetchLiveBirds } from '$lib/birds';
 
 export const prerender = true;
 
 export async function load() {
-	const cards = await fetchLiveBirds();
+	const cards = fetchLiveBirds();
 
 	if (cards) {
 		return { cards };

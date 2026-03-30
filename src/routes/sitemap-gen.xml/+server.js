@@ -1,10 +1,10 @@
 import site from '$lib/info';
-import { fetchLiveBirds } from '$lib/airtable';
+import { fetchLiveBirds } from '$lib/birds';
 
 export const prerender = true;
 
 export async function GET() {
-	const birds = await fetchLiveBirds();
+	const birds = fetchLiveBirds();
 
 	const pages = [
 		{
