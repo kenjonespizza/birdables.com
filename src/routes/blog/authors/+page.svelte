@@ -58,7 +58,7 @@
 
 <section class="bg-gray-blue">
 	<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
-		<Breadcrumb current={'Authors'} steps={[{ title: 'Blog', link: '/blog' }]} />
+		<Breadcrumb current="Authors" steps={[{ title: 'Blog', link: '/blog' }]} />
 		<div class="md:flex md:justify-between items-end">
 			<div class="max-w-3xl pt-8">
 				<h2
@@ -80,7 +80,7 @@
 			<ul
 				class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
 			>
-				{#each authors as author}
+				{#each authors as author (author.pageInfo.slug.current)}
 					<li>
 						<Link href={`/blog/author/${author.pageInfo.slug.current}`} class="space-y-4">
 							<img

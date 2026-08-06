@@ -2,6 +2,7 @@
 	let { href = 'https://birdables.com', icon = true, title = '', class: className = 'inline-flex space-x-1 items-center', children } = $props();
 </script>
 
+<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- href is always an external URL, opened in a new tab -->
 <a {href} target="_blank" rel="noopener noreferrer" {title} class={className}>
 	{#if icon}
 		<span>

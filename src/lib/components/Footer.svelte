@@ -2,31 +2,32 @@
 	import Instagram from '$lib/svgs/Instagram.svelte';
 	import OpenSeaIcon from '$lib/svgs/OpenSeaIcon.svelte';
 	import Twtter from '$lib/svgs/Twtter.svelte';
+	import { resolve } from '$app/paths';
 </script>
 
 <footer class="bg-white">
 	<div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
 		<nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
 			<div class="px-5 py-2">
-				<a data-sveltekit-preload-data href="/" class="text-base text-gray-500 hover:text-gray-900">
+				<a data-sveltekit-preload-data href={resolve('/')} class="text-base text-gray-500 hover:text-gray-900">
 					Home
 				</a>
 			</div>
 
 			<div class="px-5 py-2">
-				<a data-sveltekit-preload-data href="/cards" class="text-base text-gray-500 hover:text-gray-900">
+				<a data-sveltekit-preload-data href={resolve('/cards')} class="text-base text-gray-500 hover:text-gray-900">
 					Cards
 				</a>
 			</div>
 
 			<div class="px-5 py-2">
-				<a data-sveltekit-preload-data href="/about" class="text-base text-gray-500 hover:text-gray-900">
+				<a data-sveltekit-preload-data href={resolve('/about')} class="text-base text-gray-500 hover:text-gray-900">
 					About Birdables
 				</a>
 			</div>
 
 			<div class="px-5 py-2">
-				<a data-sveltekit-preload-data href="/blog" class="text-base text-gray-500 hover:text-gray-900">
+				<a data-sveltekit-preload-data href={resolve('/blog')} class="text-base text-gray-500 hover:text-gray-900">
 					Blog
 				</a>
 			</div>

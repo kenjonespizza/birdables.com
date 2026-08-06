@@ -32,7 +32,7 @@
 	role="dialog"
 	aria-modal="true"
 >
-	<div class={`flex items-center justify-center min-h-screen text-center  sm:block sm:p-0`}>
+	<div class="flex items-center justify-center min-h-screen text-center  sm:block sm:p-0">
 		<!-- Overlay -->
 		<div
 			onclick={toggleModal}
@@ -52,7 +52,7 @@
 		>
 			<img
 				src={`${assets}/images/Birdable-Card-Anatomy.jpg`}
-				alt={`Birdables card anatomy diagram`}
+				alt="Birdables card anatomy diagram"
 				class={`${
 					isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
 				} rounded-xl object-center object-cover drop-shadow-card`}

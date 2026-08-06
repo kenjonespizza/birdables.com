@@ -1,5 +1,6 @@
 <script>
 import { page } from '$app/stores';
+	import { resolve } from '$app/paths';
 	import { headerFooterState } from '../stores/store.svelte';
 	import { onMount } from 'svelte';
 
@@ -26,18 +27,18 @@ import { page } from '$app/stores';
 					{:else if $page.status === 500}
 						<p class="mt-2 text-base text-gray-500">
 							There was an error generating this page. You can try to refresh, but your best bet is
-							to <a href="/">migrate back down south</a>
+							to <a href={resolve('/')}>migrate back down south</a>
 						</p>
 					{:else}
 						<p class="mt-2 text-base text-gray-500">
 							There was an error generating this page. You can try to refresh, but your best bet is
-							to <a href="/">migrate back down south</a>
+							to <a href={resolve('/')}>migrate back down south</a>
 						</p>
 					{/if}
 				</div>
 				<div class="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
 					<a
-						href="/"
+						href={resolve('/')}
 						class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-900 hover:bg-beak-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-beak-500"
 					>
 						Go back home

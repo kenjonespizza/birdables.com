@@ -1,5 +1,6 @@
 <script>
 	import { unSlugify } from '$lib/utils';
+	import { resolve } from '$app/paths';
 
 	let { topics, currentTopic } = $props();
 
@@ -65,14 +66,14 @@
 					aria-activedescendant="listbox-item-3"
 					class="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5"
 				>
-          {#each topics as topic}
+          {#each topics as topic (topic)}
             <li
               role="option"
               aria-selected={topic === currentTopic}
               class="text-gray-900 cursor-default select-none relative hover:bg-gray-100"
             >
             <a
-                href={`/blog/topic/${topic}`}
+                href={resolve('/blog/topic/[topic]', { topic })}
               data-sveltekit-noscroll
                 class=" py-2 px-4 flex items-center space-x-3"
                 onclick={() => { toggle(); }}

@@ -1,5 +1,6 @@
 <script>
 import Stars from "./Stars.svelte";
+import { resolve } from '$app/paths';
 
   let { stars, hideExplainer = false, size = null } = $props();
 
@@ -31,7 +32,7 @@ import Stars from "./Stars.svelte";
 
 <!-- Modal -->
 <div class={`${isModalOpen ? "opacity-100 pointer-events-auto" : "opacity-0 delay-300 pointer-events-none"} fixed z-20 inset-0 overflow-y-auto transition`} aria-labelledby="modal-rarity-description" role="dialog" aria-modal="true">
-  <div class={`flex justify-center items-center min-h-screen pt-4 px-4 text-center sm:block sm:p-0`}>
+  <div class="flex justify-center items-center min-h-screen pt-4 px-4 text-center sm:block sm:p-0">
     <div onclick={toggleModal} class={`${isModalOpen ? "opacity-100" : "opacity-0"} fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity duration-300 ease-in-out`} aria-hidden="true"></div>
     
     <!-- This element is to trick the browser into centering the modal contents. -->
@@ -48,9 +49,11 @@ import Stars from "./Stars.svelte";
           </span>
           <div class="mt-2">
             <p class="text-sm text-gray-500 prose">
-              Each Birdables card has a rarity rating ranging from 
+              Each Birdables card has a rarity rating ranging from
             <span class="inline-flex px-1 space-x-2 items-baseline translate-y-0.5">
-            <Stars stars=1 space=1 size="sm" /><span class="leading-none -translate-y-0.5"> to </span><Stars stars=5 space=1 size="sm" /></span> to depict the scarcity of the card.  <a href="/about#rarity">Learn more about the rarity</a>.
+            <Stars stars=1 space=1 size="sm" /><span class="leading-none -translate-y-0.5"> to </span><Stars stars=5 space=1 size="sm" /></span> to depict the scarcity of the card.
+            <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- resolve() output concatenated with a hash fragment isn't recognized by the rule's static check -->
+            <a href={resolve('/about') + '#rarity'}>Learn more about the rarity</a>.
             </p>
           </div>
         </div>

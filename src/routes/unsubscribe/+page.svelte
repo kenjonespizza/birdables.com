@@ -1,6 +1,7 @@
 <script>
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
+  import { resolve } from '$app/paths';
 
   let id
   let successful = null;
@@ -42,7 +43,7 @@
         <h1 class="mt-2 text-5xl font-extrabold text-gray-900 tracking-tight sm:text-7xl">Bye, Birdlicia.</h1>
         <p class="mt-4 text-base text-gray-500">We hate to see ya go, but we love to watch you fly away.</p>
         <div class="mt-6">
-          <a href="/" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-900 hover:bg-beak-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-beak-500">Go back home<span aria-hidden="true"> &rarr;</span></a>
+          <a href={resolve('/')} class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-900 hover:bg-beak-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-beak-500">Go back home<span aria-hidden="true"> &rarr;</span></a>
         </div>
       </div>
     </div>

@@ -95,7 +95,7 @@
 <div class="bg-white">
 	<section class="bg-gray-blue">
 		<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
-			<Breadcrumb current={'All Cards'} />
+			<Breadcrumb current="All Cards" />
 			<div class="md:flex md:justify-between items-end">
 				<div class="max-w-3xl pt-8">
 					<h1
@@ -154,7 +154,7 @@
 				}}
 				class="flex flex-wrap gap-2 items-center p-0 m-0"
 			>
-				{#each raritys as rarity}
+				{#each raritys as rarity (rarity)}
 					<div class="">
 						<div class="flex flex-wrap items-center h-full">
 							<label

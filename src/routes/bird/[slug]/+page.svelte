@@ -2,7 +2,7 @@
 	import SEO from 'svelte-seo';
 
 	import { page } from '$app/stores';
-	import { assets } from '$app/paths';
+	import { assets, resolve } from '$app/paths';
 	import site from '$lib/info';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import Rarity from '$lib/components/Rarity.svelte';
@@ -19,7 +19,6 @@
 	let isModalOpen = $state(false);
 
 	let pageUrl = `${site.address}${$page.url.pathname}`;
-	let comingSoonOveride = $state(false);
 	let comingSoonOverideDigital = $state(false);
 
 	function toggleModal() {
@@ -144,12 +143,14 @@
 					</p>
 
 					{#if bird.openseaUrl && !comingSoonOverideDigital}
+						<!-- eslint-disable svelte/no-navigation-without-resolve -- bird.openseaUrl is always an absolute https://opensea.io URL from bird data -->
 						<a
 							href={bird.openseaUrl}
 							target="_blank"
 							rel="noopener noreferrer"
 							class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 						>
+							<!-- eslint-enable svelte/no-navigation-without-resolve -->
 							<span>Buy <span class="font-black">Digital Card</span> on</span>
 							<OpenSea class="h-6 translate-y-0. ml-2 text-white" />
 						</a>
@@ -242,7 +243,8 @@
 									href="https://polygon.technology/">Polygon</ExternalLink
 								> blockchain. Purchases of the NFT will come with access to the hi-res artwork, not available
 								anywhere else. NFT's of Birdables cards are also more scarce than physical cards.
-								<a href={`/about#rarity`}>Learn more about the rarity.</a>
+								<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- resolve() output concatenated with a hash fragment isn't recognized by the rule's static check -->
+								<a href={resolve('/about') + '#rarity'}>Learn more about the rarity.</a>
 							</p>
 						</dd>
 
@@ -282,7 +284,7 @@
 				</div>
 
 				<a
-					href="/about"
+					href={resolve('/about')}
 					data-sveltekit-preload-data
 					class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 							>Learn more about Birdables</a
@@ -312,7 +314,7 @@
 	role="dialog"
 	aria-modal="true"
 >
-		<div class={`flex items-center justify-center min-h-screen text-center sm:block sm:p-0`}>
+		<div class="flex items-center justify-center min-h-screen text-center sm:block sm:p-0">
 		<div
 			onclick={toggleModal}
 				class={`${

@@ -4,6 +4,7 @@
 	import site from '$lib/info';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import { unSlugify } from '$lib/utils';
+	import { resolve } from '$app/paths';
 
 	let { data } = $props();
 	let { topics } = data;
@@ -44,7 +45,7 @@
 
 <section class="bg-gray-blue">
 	<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
-		<Breadcrumb current={'Topics'} steps={[{ title: 'Blog', link: '/blog' }]} />
+		<Breadcrumb current="Topics" steps={[{ title: 'Blog', link: '/blog' }]} />
 		<div class="md:flex md:justify-between items-end">
 			<div class="max-w-3xl pt-8">
 				<h2
@@ -65,9 +66,9 @@
 <div class="bg-white">
 	<div class="mx-auto py-12 px-4 max-w-screen-xl sm:px-6 lg:px-8 lg:py-24">
 		<div class="flex flex-wrap">
-			{#each topics as topic}
+			{#each topics as topic (topic)}
 				<a
-					href={`/blog/topic/${topic}`}
+					href={resolve('/blog/topic/[topic]', { topic })}
 					rel="prefetch"
 					class="text-4xl font-bold mr-8 mb-4 inline-flex items-center hover:text-beak-600 hover:underline"
 				>

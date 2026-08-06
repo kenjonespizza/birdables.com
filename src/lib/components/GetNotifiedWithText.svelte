@@ -82,7 +82,7 @@
 					<button
 						onclick={toggle}
 						type="button"
-						class={`bg-gray-900 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-gray-400 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900`}
+						class="bg-gray-900 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-gray-400 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-white focus:ring-offset-gray-900"
 						role="switch"
 						aria-checked="false"
 						aria-labelledby="email-or-phone-notifications"

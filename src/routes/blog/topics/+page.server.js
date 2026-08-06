@@ -1,4 +1,3 @@
-import { json } from '@sveltejs/kit';
 import client from '$lib/sanityClient';
 import { massageTopics } from '$lib/utils';
 

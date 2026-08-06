@@ -2,7 +2,7 @@
 	import SEO from 'svelte-seo';
 	import IntersectionObserver from 'svelte-intersection-observer';
 
-	import { assets } from '$app/paths';
+	import { assets, resolve } from '$app/paths';
 	import site from '$lib/info';
 	import CallToAction from '$lib/components/CallToAction.svelte';
 
@@ -16,13 +16,13 @@
 	onMount(() => (ready = true));
 
 	let element = $state();
-	let intersecting = $state();
+	let intersecting = $state(false);
 	let element2 = $state();
-	let intersecting2 = $state();
+	let intersecting2 = $state(false);
 	// let element3;
 	// let intersecting3;
 	let element4 = $state();
-	let intersecting4 = $state();
+	let intersecting4 = $state(false);
 </script>
 
 <SEO
@@ -87,7 +87,7 @@
 					<div class="mt-10 flex justify-center sm:justify-start lg:justify-center">
 					<a
 						data-sveltekit-preload-data
-							href="/cards"
+							href={resolve('/cards')}
 							class="flex items-center justify-center px-12 py-4 border border-transparent text-xl font-black rounded-full bg-gray-900 text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:px-8"
 						>
 							Browse All Cards
@@ -121,11 +121,11 @@
 
 	<!-- Cards -->
 	<div class="px-4 sm:px-6 lg:px-16 2xl:px-32 relative z-20">
-		<div class={`-translate-y-1/2`}>
+		<div class="-translate-y-1/2">
 			<div class="cards relative h-full">
 				{#if ready}
 					<a
-						href="/bird/northern-cardinal"
+						href={resolve('/bird/[slug]', { slug: 'northern-cardinal' })}
 						class="home-card card card-1 card-sm hidden sm:block transition"
 						in:fly={{ x: 100, duration: 500, delay: 2500 }}
 					>
@@ -142,7 +142,7 @@
 				{/if}
 				{#if ready}
 					<a
-						href="/bird/osprey"
+						href={resolve('/bird/[slug]', { slug: 'osprey' })}
 						data-sveltekit-preload-data
 						class="home-card card card-2 card-md block transition"
 						in:fly={{ x: 100, duration: 500, delay: 2000 }}
@@ -160,7 +160,7 @@
 				{/if}
 				{#if ready}
 					<a
-						href="/bird/brown-pelican"
+						href={resolve('/bird/[slug]', { slug: 'brown-pelican' })}
 						data-sveltekit-preload-data
 						class="home-card card card-3 card-lg block transition"
 						in:fade={{ duration: 500, delay: 1500 }}
@@ -178,7 +178,7 @@
 				{/if}
 				{#if ready}
 					<a
-						href="/bird/yellow-warbler"
+						href={resolve('/bird/[slug]', { slug: 'yellow-warbler' })}
 						data-sveltekit-preload-data
 						class="home-card card card-4 card-md block transition"
 						in:fly={{ x: -100, duration: 500, delay: 2000 }}
@@ -196,7 +196,7 @@
 				{/if}
 				{#if ready}
 					<a
-						href="/bird/roseate-spoonbill"
+						href={resolve('/bird/[slug]', { slug: 'roseate-spoonbill' })}
 						data-sveltekit-preload-data
 						class="home-card card card-5 card-sm hidden sm:block transition"
 						in:fly={{ x: -100, duration: 500, delay: 2500 }}
@@ -242,7 +242,7 @@
 							</div>
 							<div class="flex space-x-4 mt-8">
 						<a
-									href="/cards"
+									href={resolve('/cards')}
 							data-sveltekit-preload-data
 									class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition sm:inline-block sm:w-auto hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500"
 								>
@@ -306,7 +306,7 @@
 							</div>
 							<div class="flex space-x-4 mt-8">
 						<a
-									href="/about"
+									href={resolve('/about')}
 							data-sveltekit-preload-data
 									class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500 sm:inline-block sm:w-auto"
 								>
@@ -502,11 +502,11 @@
 	</div>
 </main>
 
-{#each cards as card}
-	<a data-sveltekit-preload-data class="hidden" href={`/bird/${card.slug}`}>{card.birdName}</a>
+{#each cards as card (card.slug)}
+	<a data-sveltekit-preload-data class="hidden" href={resolve('/bird/[slug]', { slug: card.slug })}>{card.birdName}</a>
 {/each}
-{#each cards as card}
-	<a data-sveltekit-preload-data class="hidden" href={`/card/${card.id}`}>{card.birdName}</a>
+{#each cards as card (card.id)}
+	<a data-sveltekit-preload-data class="hidden" href={resolve('/card/[id]', { id: card.id })}>{card.birdName}</a>
 {/each}
 
 <style lang="postcss">

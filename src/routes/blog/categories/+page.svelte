@@ -4,6 +4,7 @@
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import { urlFor } from '$lib/sanity-image-url';
 	import { categoryNamesToString } from '$lib/utils';
+	import { resolve } from '$app/paths';
 
 	let { data } = $props();
 	let { categories } = data;
@@ -48,7 +49,7 @@
 
 <section class="bg-gray-blue">
 	<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
-		<Breadcrumb current={'Categories'} steps={[{ title: 'Blog', link: '/blog' }]} />
+		<Breadcrumb current="Categories" steps={[{ title: 'Blog', link: '/blog' }]} />
 		<div class="md:flex md:justify-between items-end">
 			<div class="max-w-3xl pt-8">
 				<h2
@@ -69,8 +70,8 @@
 <div class="bg-white">
 	<div class="mx-auto py-6 px-4 max-w-screen-xl sm:px-6 lg:px-8 lg:py-10">
 		<div class="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
-			{#each categories as category}
-				<a href={`/blog/category/${category.pageInfo.slug.current}`} class="bg-white ">
+			{#each categories as category (category.pageInfo.slug.current)}
+				<a href={resolve('/blog/category/[category]', { category: category.pageInfo.slug.current })} class="bg-white ">
 					<img
 						loading="lazy"
 						class="object-cover aspect-video h-full w-full shadow-lg rounded-lg overflow-hidden"

@@ -6,11 +6,6 @@
 	let validation;
 	let successful = false;
 
-	function toggle() {
-		useEmailAddress = !useEmailAddress;
-		validation = null;
-	}
-
 	async function submitForm(e) {
 		e.preventDefault();
 

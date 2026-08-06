@@ -6,7 +6,6 @@
 	import PortableText from '$lib/components/PortableText.svelte';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import { toPlainText } from '$lib/utils';
-	import { urlFor } from '$lib/sanity-image-url';
 
 	let { data } = $props();
 	let { posts, currentPage, perPage, count, blogInfo, categories, topics } = data;
@@ -52,7 +51,7 @@
 
 <section class="bg-gray-blue">
 	<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
-		<Breadcrumb current={'Blog'} />
+		<Breadcrumb current="Blog" />
 		<div class="md:flex md:justify-between items-end">
 			<div class="max-w-3xl pt-8">
 				<h2

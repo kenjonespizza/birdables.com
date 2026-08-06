@@ -8,6 +8,7 @@
 </script>
 
 {#if isInternal}
+  <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- href is an arbitrary CMS-authored internal path, not a static route id -->
   <a class={className} href={`${returnEntireSlug(href)}`} title={title || ""} data-sveltekit-preload-data data-sveltekit-noscroll={noscroll}>
     {#if children}{@render children()}{:else}{text !== '' ? text : href}{/if}
   </a>

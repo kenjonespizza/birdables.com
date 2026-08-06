@@ -39,7 +39,7 @@
 					.filter(Boolean)
 					.join('&');
 				href = `https://www.facebook.com/dialog/feed?${query}`;
-			} else if ((site = 'email')) {
+			} else if (site === 'email') {
 				href = `mailto:?subject=${text}&body=${url}`;
 			}
 			window.open(href, '_blank', features);

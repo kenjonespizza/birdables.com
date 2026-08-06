@@ -1,4 +1,6 @@
 <script>
+	import { resolve } from '$app/paths';
+
 	let { steps = [], current = '' } = $props();
 </script>
 
@@ -6,7 +8,7 @@
 	<ol class="flex items-center space-x-4">
 		<li>
 			<div>
-				<a href="/" data-sveltekit-preload-data class="text-gray-800 hover:text-gray-900">
+				<a href={resolve('/')} data-sveltekit-preload-data class="text-gray-800 hover:text-gray-900">
 					<svg
 						class="flex-shrink-0 h-5 w-5"
 						xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +25,7 @@
 			</div>
 		</li>
 
-		{#each steps as step}
+		{#each steps as step (step.link)}
 			<li>
 				<div class="flex items-center">
 					<svg
@@ -36,7 +38,7 @@
 						<path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
 					</svg>
 					<a
-						href={step.link}
+						href={resolve(step.link)}
 						data-sveltekit-preload-data
 						class="ml-4 text-sm font-medium text-gray-800 hover:text-gray-900 underline"
 						>{step.title}</a

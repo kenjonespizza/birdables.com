@@ -7,7 +7,7 @@
 	import { unSlugify, capitalize } from '$lib/utils';
 
 	let { data } = $props();
-	let { posts, currentPage, perPage, count, blogInfo, categories, topics, topic } = data;
+	let { posts, currentPage, perPage, count, topics, topic } = data;
 
 	const formattedTopic = capitalize(unSlugify(topic, true));
 </script>

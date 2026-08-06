@@ -8,6 +8,7 @@ import { urlFor } from "$lib/sanity-image-url"
 import PortableText from '$lib/components/PortableText.svelte';
 import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 import { categoryNamesToString, authorNamesToString } from "$lib/utils"
+import { resolve } from '$app/paths';
 
 let { data } = $props();
 const { post } = data;
@@ -18,7 +19,7 @@ let outerHeight = $state();
 let outerWidth = $state();
 let scrollGeneratedClasses = $state();
 
-function scrolling(e) {
+function scrolling() {
 	const percentScrolled = y / outerHeight * 100;
 
 	if (percentScrolled > 70) {
@@ -81,24 +82,24 @@ function scrolling(e) {
               <div class="flex flex-shrink-0 -space-x-1">
 
 
-                {#each authors as author, i }
+                {#each authors as author, i (author.pageInfo.slug.current)}
                   {#if author.image}
-                  <a class={`overflow-hidden max-w-none h-12 w-12 rounded-full text-white border-3 border-gray-blue ${i > 0 && "-translate-x-2"}`} href={`/blog/author/${author.pageInfo.slug.current}`} title={author.pageInfo.name} >
-                    <img class={``} src={author.image ? urlFor(author.image).quality(80).size(80, 80) : "/images/userImageNotFound.png"} alt={author.pageInfo.name}>
+                  <a class={`overflow-hidden max-w-none h-12 w-12 rounded-full text-white border-3 border-gray-blue ${i > 0 && "-translate-x-2"}`} href={resolve('/blog/author/[author]', { author: author.pageInfo.slug.current })} title={author.pageInfo.name} >
+                    <img class="" src={author.image ? urlFor(author.image).quality(80).size(80, 80) : "/images/userImageNotFound.png"} alt={author.pageInfo.name}>
                   </a>
                   {/if}
                 {/each}
               </div>
               <div class="w-auto">
                 <p class="text-sm leading-5 font-medium text-gray-700">
-                  By: 
-                  {#each authors as author, i }
-                    <a href={`/blog/author/${author.pageInfo.slug.current}`} class="text-gray-900 underline">{author.pageInfo.name}</a>{ i + 2 === authors.length && authors.length > 1 ? " and " : i + 1 !== authors.length && authors.length > 1 ? ", " : ""}
+                  By:
+                  {#each authors as author, i (author.pageInfo.slug.current)}
+                    <a href={resolve('/blog/author/[author]', { author: author.pageInfo.slug.current })} class="text-gray-900 underline">{author.pageInfo.name}</a>{ i + 2 === authors.length && authors.length > 1 ? " and " : i + 1 !== authors.length && authors.length > 1 ? ", " : ""}
                   {/each}
                   {#if post.categories && post.categories.length > 0}
-                    In: 
-                    {#each post.categories as category, i }
-                      <a href={`/blog/category/${category.pageInfo.slug.current}`} class="text-gray-900 underline">{category.pageInfo.name}</a>{ i + 2 === post.categories.length && post.categories.length > 1 ? " and " : i + 1 !== post.categories.length && post.categories.length > 1 ? ", " : ""}
+                    In:
+                    {#each post.categories as category, i (category.pageInfo.slug.current)}
+                      <a href={resolve('/blog/category/[category]', { category: category.pageInfo.slug.current })} class="text-gray-900 underline">{category.pageInfo.name}</a>{ i + 2 === post.categories.length && post.categories.length > 1 ? " and " : i + 1 !== post.categories.length && post.categories.length > 1 ? ", " : ""}
                     {/each}
                   {/if}
                   {#if post.readTime}
@@ -124,8 +125,8 @@ function scrolling(e) {
 
           {#if post.topics}
             <div class="flex items-start justify-start flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4">
-				{#each post.topics as topic }
-					<a href={`/blog/topic/${slugify(topic)}`} data-sveltekit-preload-data class="capitalize inline-flex items-center px-2.5 py-2 rounded-md text-sm md:text-md lg:text-lg xl:text-xl font-medium leading-5 bg-gray-600 text-white">
+				{#each post.topics as topic (topic)}
+					<a href={resolve('/blog/topic/[topic]', { topic: slugify(topic) })} data-sveltekit-preload-data class="capitalize inline-flex items-center px-2.5 py-2 rounded-md text-sm md:text-md lg:text-lg xl:text-xl font-medium leading-5 bg-gray-600 text-white">
                   <svg class="-ml-0.5 mr-1.5 h-3 w-3 text-gray-100" fill="currentColor" viewBox="0 0 20 20">
                     <path fill="none" d="M0 0h24v24H0z"/><path d="M7.784 14l.42-4H4V8h4.415l.525-5h2.011l-.525 5h3.989l.525-5h2.011l-.525 5H20v2h-3.784l-.42 4H20v2h-4.415l-.525 5h-2.011l.525-5H9.585l-.525 5H7.049l.525-5H4v-2h3.784zm2.011 0h3.99l.42-4h-3.99l-.42 4z"/>
                   </svg>
@@ -155,7 +156,7 @@ function scrolling(e) {
           <div class="my-8">
             <p class="text-sm leading-5 font-medium text-white">
               By: 
-              {#each authors as author, i }
+              {#each authors as author, i (author._id)}
                 <Link ref={author._id} classes="text-white underline">{author.pageInfo.name}</Link>{ i + 2 === authors.length && authors.length > 1 ? " and " : i + 1 !== authors.length && authors.length > 1 ? ", " : ""}
               {/each}
             </p>
@@ -164,9 +165,9 @@ function scrolling(e) {
           <div class="flex-shrink-0 group block focus:outline-none">
             <div class="flex items-center flex-wrap">
               <div class="flex relative z-0 overflow-hidden">
-                {#each authors as author, i }
+                {#each authors as author, i (author._id)}
                   <Link classes={`${i > 0 ? "-ml-3" : ""} inline-block`} ref={author._id} title={author.pageInfo.name} >
-                    <img class={"relative h-12 w-12 rounded-full text-white border-3 border-white object-cover object-center"} src={author.image ? urlFor(author.image).quality(80).size(80, 80) : "/images/userImageNotFound.png"} alt={author.pageInfo.name}>
+                    <img class="relative h-12 w-12 rounded-full text-white border-3 border-white object-cover object-center" src={author.image ? urlFor(author.image).quality(80).size(80, 80) : "/images/userImageNotFound.png"} alt={author.pageInfo.name}>
                   </Link>
                 {/each}
               </div>

@@ -1,5 +1,5 @@
 <script>
-	import Link from '$lib/components/Link.svelte';
+	import { resolve } from '$app/paths';
 
 	let { categories, currentCategory } = $props();
 
@@ -73,7 +73,7 @@
 					aria-activedescendant="listbox-item-3"
 					class="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5"
 				>
-					{#each categories as category}
+					{#each categories as category (category._id)}
             <li
               role="option"
               aria-selected={category._id === currentCategory}
@@ -81,13 +81,13 @@
             >
 						<a
 							data-sveltekit-noscroll
-								href={`/blog/category/${category.pageInfo.slug.current}`}
+								href={resolve('/blog/category/[category]', { category: category.pageInfo.slug.current })}
 								class=" py-2 px-4 flex items-center space-x-3"
               onclick={() => { toggle(); }}
               onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggle(); }}
 							>
 								<span
-									aria-label={'Posts in category: category.pageInfo.name'}
+									aria-label="Posts in category: category.pageInfo.name"
 									class="bg-gray-200 justify-center items-center flex h-5 w-5 rounded-full text-xs"
 									>{category.count}</span
 								>

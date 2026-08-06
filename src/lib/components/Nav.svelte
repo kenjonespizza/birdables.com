@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { resolve } from '$app/paths';
 	import Instagram from '$lib/svgs/Instagram.svelte';
 	import OpenSeaIcon from '$lib/svgs/OpenSeaIcon.svelte';
 	import Twtter from '$lib/svgs/Twtter.svelte';
@@ -38,7 +39,7 @@
 			class="flex justify-between items-center px-6 py-6 lg:px-16 lg:justify-start lg:space-x-10"
 		>
 			<div class="flex space-x-12 items-center">
-				<a data-sveltekit-preload-data href="/" class="flex">
+				<a data-sveltekit-preload-data href={resolve('/')} class="flex">
 					<span class="sr-only">Birdables</span>
 					<img
 						class="h-6 w-auto sm:h-8"
@@ -79,7 +80,7 @@
 				<nav class="flex space-x-8">
 					<a
 						data-sveltekit-preload-data
-						href="/cards"
+						href={resolve('/cards')}
 						onfocus={() => toggleShopNav(false)}
 						class={`${
 							$page.url.pathname === '/cards' ? 'border-gray-900' : 'border-transparent'
@@ -91,7 +92,7 @@
 					<a
 						onfocus={() => toggleShopNav(false)}
 						data-sveltekit-preload-data
-						href="/about"
+						href={resolve('/about')}
 						class={`${
 							$page.url.pathname === '/about' ? 'border-gray-900' : 'border-transparent'
 						} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
@@ -101,7 +102,7 @@
 					<a
 						onfocus={() => toggleShopNav(false)}
 						data-sveltekit-preload-data
-						href="/blog"
+						href={resolve('/blog')}
 						class={`${
 							$page.url.pathname === '/blog' ? 'border-gray-900' : 'border-transparent'
 						} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
@@ -154,7 +155,7 @@
 		>
 			<div class="pt-5 pb-6 px-5">
 				<div class="flex items-center justify-between">
-						<a onclick={toggle} data-sveltekit-preload-data href="/">
+						<a onclick={toggle} data-sveltekit-preload-data href={resolve('/')}>
 						<img class="h-6 w-auto" src="/images/logo.svg" alt="Birdables Logo" />
 					</a>
 					<div class="-mr-2">
@@ -189,7 +190,7 @@
 								<a
 									onclick={toggle}
 									data-sveltekit-preload-data
-									href="/cards"
+									href={resolve('/cards')}
 									class={`${
 										$page.url.pathname === '/cards' ? 'border-gray-900' : 'border-transparent'
 									} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
@@ -200,7 +201,7 @@
 								<a
 									onclick={toggle}
 									data-sveltekit-preload-data
-									href="/about"
+									href={resolve('/about')}
 									class={`${
 										$page.url.pathname === '/about' ? 'border-gray-900' : 'border-transparent'
 									} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
@@ -210,7 +211,7 @@
 								<a
 									onclick={toggle}
 									data-sveltekit-preload-data
-									href="/blog"
+									href={resolve('/blog')}
 									class={`${
 										$page.url.pathname === '/blog' ? 'border-gray-900' : 'border-transparent'
 									} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}

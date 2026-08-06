@@ -1,6 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
+	import { resolve } from '$app/paths';
 
 	let { data } = $props();
 	let { bird } = data;
@@ -8,9 +9,9 @@
 	if (browser) {
 		const navigateToBirdPage = async () => {
 			if (bird?.slug) {
-				await goto(`/bird/${bird.slug}`);
+				await goto(resolve('/bird/[slug]', { slug: bird.slug }));
 			} else {
-				await goto(`/`);
+				await goto(resolve('/'));
 			}
 		};
 

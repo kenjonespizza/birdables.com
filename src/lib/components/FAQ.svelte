@@ -91,7 +91,7 @@
 								onclick={(e) => {
 									scrollToSection('rarity', e);
 								}}
-								href={`#rarity`}>Learn more about the rarity.</a
+								href="#rarity">Learn more about the rarity.</a
 							>
 						</p>
 					</dd>

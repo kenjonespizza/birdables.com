@@ -9,7 +9,7 @@
 	import { toPlainText, truncate } from '$lib/utils';
 
 	let { data } = $props();
-	let { posts, categoryInfo, currentPage, perPage, count, blogInfo, categories } = data;
+	let { posts, categoryInfo, currentPage, perPage, count, categories } = data;
 </script>
 
 <svelte:head>

@@ -1,11 +1,9 @@
 <script>
 	import SEO from 'svelte-seo';
 
-	import IntersectionObserver from 'svelte-intersection-observer';
 	import { browser } from '$app/environment';
-	import { assets } from '$app/paths';
+	import { assets, resolve } from '$app/paths';
 	import site from '$lib/info';
-	import GetNotified from '$lib/components/GetNotified.svelte';
 	import { headerFooterState } from '../../stores/store.svelte';
 
 	const checkIfShownAnimationsCookieIsTrue = () => {
@@ -19,15 +17,6 @@
 		document.body.classList.add('show-animation');
 		document.cookie = `shown_animations=true; SameSite=None; Secure;`;
 	}
-
-	let element;
-	let intersecting;
-	let element2;
-	let intersecting2;
-	let element3;
-	let intersecting3;
-	let element4;
-	let intersecting4;
 
 	headerFooterState.visible = false;
 </script>
@@ -69,7 +58,7 @@
 <div class="min-h-screen pt-16 pb-12 flex flex-col bg-white">
 	<main class="grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex-shrink-0 flex justify-center">
-			<a href="/" class="inline-flex">
+			<a href={resolve('/')} class="inline-flex">
 				<span class="sr-only">{site.name}</span>
 				<img class="h-12 md:h-16 w-auto" src={`${assets}/images/logo.svg`} alt="{site.name} logo" />
 			</a>

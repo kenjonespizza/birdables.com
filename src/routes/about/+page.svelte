@@ -70,7 +70,7 @@
 		class="text-base font-black text-gray-600 flex items-center space-x-2 border-b border-gray-900/10 py-3 px-6"
 		>Navigate to:</span
 	>
-	{#each sections as section}
+	{#each sections as section (section.link)}
 		<a
 			onclick={(e) => {
 				scrollToSection(section.link, e);
@@ -89,7 +89,7 @@
 
 <div class="relative bg-white border-t border-t-gray-100 md:pb-24">
 	<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
-		<Breadcrumb current={'About Birdables'} />
+		<Breadcrumb current="About Birdables" />
 		<h1
 			class="pt-8 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tighter lg:text-6xl"
 		>
@@ -104,7 +104,7 @@
 				make a difference by donating to conservation efforts in the process.
 			</p>
 			<div>
-				{#each sections as section}
+				{#each sections as section (section.link)}
 					<div class="mt-6">
 						<a
 							onclick={(e) => {

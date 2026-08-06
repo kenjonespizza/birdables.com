@@ -1,7 +1,6 @@
 <script>
-	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import { assets } from '$app/paths';
+	import { assets, resolve } from '$app/paths';
 
 	let { i, card } = $props();
 
@@ -15,14 +14,14 @@
 </script>
 
 <a
-	href={`/bird/${card.slug}`}
+	href={resolve('/bird/[slug]', { slug: card.slug })}
 	data-sveltekit-preload-data
 	class={`${
 		ready ? 'opacity-100' : 'opacity-0'
 	} group flex flex-col space-y-4 tranform transition duration-300`}
 >
 	<img
-		class={`card-img object-cover drop-shadow-card card-img`}
+		class="card-img object-cover drop-shadow-card card-img"
 		src={`${assets}/images/cards/${card.friendlyId}.webp`}
 		alt={card.cardName}
 	/>
