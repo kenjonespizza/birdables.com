@@ -151,7 +151,7 @@
 					<dt class="text-lg font-semibold text-gray-900 md:col-span-5">How do I get in touch?</dt>
 					<dd class="mt-2 md:mt-0 md:col-span-7 text-gray-500 prose">
 						<p>
-							<ExternalLink href="mailto:chirp@birdables.com">chirp@birdables.com</ExternalLink>.
+							<ExternalLink href="mailto:birdables@gmail.com">birdables@gmail.com</ExternalLink>.
 						</p>
 					</dd>
 				</div>

@@ -37,7 +37,7 @@
 				validation = null;
 			} else {
 				validation =
-					'Something weird happened 🧐. Please refresh and try again, or contact chirp@birdables.com';
+					'Something weird happened 🧐. Please refresh and try again, or contact birdables@gmail.com';
 			}
 		}
 	}

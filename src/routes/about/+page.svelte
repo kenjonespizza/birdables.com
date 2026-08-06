@@ -23,10 +23,6 @@
 			title: 'Physical -vs- Digital cards'
 		},
 		{
-			link: 'card-packs',
-			title: 'Card Packs'
-		},
-		{
 			link: 'faq',
 			title: 'Frequently Asked Questions'
 		}
@@ -328,11 +324,7 @@
 						designed and shipped from in Charleston, SC. We keep everything as local as possible to
 						reduce the emissions emitted.
 					</p>
-					<p>
-						Physical cards can be purchased securely from <ExternalLink
-							href="https://www.etsy.com/shop/Birdables">Birdables' Etsy Storefront</ExternalLink
-						>
-					</p>
+					<p>Physical cards are no longer available for purchase.</p>
 				</div>
 			</div>
 			<div>
@@ -363,35 +355,4 @@
 	</div>
 </div>
 
-<div
-	class="bg-white py-16 px-4 sm:px-6 lg:px-16 pt-8 border-t border-t-gray-100 sm:py-24"
-	id={sections[3].link}
->
-	<div class="max-w-7xl mx-auto pt-10 pb-12 px-4 sm:px-6 md:px-8">
-		<h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
-			{sections[3].title}
-		</h2>
-		<div class="mt-6 text-gray-500 space-y-6">
-			<p class="prose prose-xl text-gray-500">
-				Replicate the real birding experience - and get your hands on rare "Specialty" cards!
-			</p>
-		</div>
-		<div class="mt-2 prose text-gray-500 lg:max-w-none">
-			<p>
-				Birders know - even if you want to see a Yellow-Bellied Sapsucker every time you step out of
-				the house with your binoculars in hand, it's really up to chance! The same is (mostly) true
-				for Birdables. Most rare cards won't be sold separately and will only come as part of a
-				random pack.
-			</p>
-		</div>
-		<a
-			href="/pack/5-card-pack"
-			data-sveltekit-preload-data
-			class="mt-6 block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500 sm:inline-block sm:w-auto"
-		>
-			View a card pack
-		</a>
-	</div>
-</div>
-
-<FAQ title={sections[4].title} id={sections[4].link} />
+<FAQ title={sections[3].title} id={sections[3].link} />

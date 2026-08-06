@@ -1,5 +1,4 @@
 <script>
-	import EtsyIcon from '$lib/svgs/EtsyIcon.svelte';
 	import Instagram from '$lib/svgs/Instagram.svelte';
 	import OpenSeaIcon from '$lib/svgs/OpenSeaIcon.svelte';
 	import Twtter from '$lib/svgs/Twtter.svelte';
@@ -59,15 +58,6 @@
 			>
 				<OpenSeaIcon class="h-[21px]" />
 				<span class="sr-only">Link to OpenSea</span>
-			</a>
-			<a
-				href="https://www.etsy.com/shop/Birdables"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="text-gray-400 hover:text-gray-500"
-			>
-				<EtsyIcon class="h-[21px]" />
-				<span class="sr-only">Link to Etsy</span>
 			</a>
 		</div>
 		<p class="mt-8 text-center text-base text-gray-600">

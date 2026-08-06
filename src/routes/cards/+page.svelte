@@ -50,13 +50,6 @@
 				}
 			});
 
-			if (selectedFilers.includes('specialty')) {
-				if (results.length > 0) {
-					results = results.filter((result) => result.specialty);
-				} else {
-					results = cards.filter((result) => result.specialty);
-				}
-			}
 		} else {
 			results = cards;
 		}
@@ -182,26 +175,6 @@
 						</div>
 					</div>
 				{/each}
-				<div class="">
-					<div class="flex flex-wrap items-center h-full">
-						<label
-							for="filter-specialty"
-							class="h-full cursor-pointer flex items-center space-x-2 rounded-full border border-gray-blue px-3 py-2 text-gray-600 transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-						>
-							<input
-								id="filter-specialty"
-								name="cards[]"
-								value="specialty"
-								type="checkbox"
-								class="h-4 w-4 border-gray-300 rounded text-gray-600 focus:ring-gray-500"
-							/>
-							<span class="text-xs">
-								Only available in pack
-								<!-- ({cardsOrig.filter(card => card.specialty).length}) -->
-							</span>
-						</label>
-					</div>
-				</div>
 
 				<!-- <div class="mt-2 sm:mt-0">
           <div class="flex flex-wrap items-center">

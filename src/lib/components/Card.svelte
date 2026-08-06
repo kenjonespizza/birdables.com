@@ -52,11 +52,6 @@
 					>New!</span
 				>
 			{/if}
-			{#if card.specialty}
-				<span class="px-3 py-1.5 bg-gray-100 text-gray-400 rounded-full text-xs font-semibold"
-					>Only available in pack</span
-				>
-			{/if}
 		</div>
 	</div>
 </a>

@@ -9,7 +9,6 @@
 	import Share from '$lib/components/Share.svelte';
 	import ExternalLink from '$lib/components/ExternalLink.svelte';
 
-	import Etsy from '$lib/svgs/Etsy.svelte';
 	import OpenSea from '$lib/svgs/OpenSea.svelte';
 	import EBird from '$lib/svgs/EBird.svelte';
 	import Audubon from '$lib/svgs/Audubon.svelte';
@@ -36,9 +35,7 @@
 
 <SEO
 	title={`${bird.birdName} card | ${site.name}`}
-	description={`${bird.birdName} card available ${
-		bird.specialty ? 'randomly in a card pack' : 'as physical card'
-	} and digitally as an NFT.`}
+	description={`${bird.birdName} card available digitally as an NFT.`}
 	keywords={`${bird.birdName}, ${bird.birdName} card, Bird Collectable Cards, Bird Trading Cards, ${site.name}, Bird NFTs`}
 	openGraph={{
 		title: `${bird.birdName} card | ${site.name}`,
@@ -115,16 +112,6 @@
 								<span class="text-gray-600 font-semibold">Rarity: </span>
 								<Rarity stars={bird.rarity} />
 							</div>
-						{#if bird.specialty}
-								<div class="flex space-x-2 mt-4">
-									<span class=" text-gray-600 text-xs font-semibold">Only available in pack</span>
-								<a
-									data-sveltekit-preload-data
-										href="/about#card-packs"
-										class="text-xs ml-4 underline text-gray-600">(What's this?)</a
-									>
-								</div>
-							{/if}
 						</div>
 					</div>
 
@@ -142,38 +129,19 @@
 				</div>
 
 				<div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4">
-					{#if bird?.etsyUrl && !bird.specialty && !comingSoonOveride}
-						<a
-							href={bird.etsyUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
-						>
-							<span>Buy <span class="font-black">Physical Card</span> on</span>
-							<Etsy class="h-6 translate-y-0.5 ml-1 text-white" />
-						</a>
-					{/if}
-					{#if bird.specialty && !comingSoonOveride}
-						<a
-							href="https://www.etsy.com/listing/1107948145/birdables-5-card-pack"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
-						>
-							<span><span class="font-black">Physical Card</span> possible in a Card Pack</span>
-							<Etsy class="h-6 translate-y-0.5 ml-1 text-white" />
-						</a>
-					{/if}
-					{#if (!bird?.etsyUrl && !bird.specialty) || comingSoonOveride}
-						<button
-							type="button"
-							disabled
-							class="w-full bg-gray-900 cursor-not-allowed opacity-70 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
-						>
-							<span><span class="font-black">Physical Card </span>Coming Soon to</span>
-							<Etsy class="h-6 translate-y-0.5 ml-1 text-white" />
-						</button>
-					{/if}
+					<button
+						type="button"
+						disabled
+						class="w-full bg-gray-900 cursor-not-allowed opacity-70 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
+					>
+						<span><span class="font-black">Physical Card</span> No Longer Available</span>
+					</button>
+					<p class="text-xs text-gray-500 text-center -mt-2">
+						A few physical cards are still hanging out in my personal stash. <ExternalLink
+							href={`mailto:birdables@gmail.com?subject=Physical Card Request: ${bird.birdName}`}
+							>Email me</ExternalLink
+						> and I'll see what I can do.
+					</p>
 
 					{#if bird.openseaUrl && !comingSoonOverideDigital}
 						<a
@@ -259,7 +227,8 @@
 								Sure thing! The physical cards are 6.4cm (2.5 in) x 8.9cm (3.5 in), printed on high
 								quality 100% recycled paper. These cards are just the right thickness to feel
 								satisfyingly sturdy, yet have a slight bend. They also have a cross-hatch texture,
-								giving it a crisp look and hand feel.
+								giving it a crisp look and hand feel. Physical cards are no longer available for
+								purchase.
 							</p>
 						</dd>
 

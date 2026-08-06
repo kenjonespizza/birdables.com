@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/stores';
-	import EtsyIcon from '$lib/svgs/EtsyIcon.svelte';
 	import Instagram from '$lib/svgs/Instagram.svelte';
 	import OpenSeaIcon from '$lib/svgs/OpenSeaIcon.svelte';
 	import Twtter from '$lib/svgs/Twtter.svelte';
@@ -138,15 +137,6 @@
 						<OpenSeaIcon class="h-[21px] text-gray-900" />
 						<span class="sr-only">Link to OpenSea</span>
 					</a>
-					<a
-						href="https://www.etsy.com/shop/Birdables"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900"
-					>
-						<EtsyIcon class="h-[21px] text-gray-900" />
-						<span class="sr-only">Link to Etsy</span>
-					</a>
 				</div>
 			</div>
 		</div>
@@ -255,15 +245,6 @@
 								>
 									<OpenSeaIcon class="h-[21px] text-gray-900" />
 									<span class="sr-only">Link to OpenSea</span>
-								</a>
-								<a
-									href="https://www.etsy.com/shop/Birdables"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="text-base font-medium text-gray-900 border-b-3 border-transparent translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900"
-								>
-									<EtsyIcon class="h-[21px] text-gray-900" />
-									<span class="sr-only">Link to Etsy</span>
 								</a>
 							</div>
 						</div>

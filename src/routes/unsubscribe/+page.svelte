@@ -32,7 +32,7 @@
       </div>
     {:else if successful === false}
       <div class="bg-red-200 text-red-700 p-4 border-red-700 rounded-lg text-center">
-        There was an Error.  Please try again or contact <a class="underline" href="mailto:chirp@birdables.com">chirp@birdables.com</a> if the error persists
+        There was an Error.  Please try again or contact <a class="underline" href="mailto:birdables@gmail.com">birdables@gmail.com</a> if the error persists
       </div>
     {:else}
       <div></div>

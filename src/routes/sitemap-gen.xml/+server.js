@@ -21,11 +21,6 @@ export async function GET() {
 			loc: `${site.address}/cards`,
 			changefreq: `daily`,
 			priority: `0.7`
-		},
-		{
-			loc: `${site.address}/pack/5-card-pack`,
-			changefreq: `daily`,
-			priority: `0.6`
 		}
 	];
 	const body = render(birds, pages);
