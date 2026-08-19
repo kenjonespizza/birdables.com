@@ -1,9 +1,9 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
-	import Instagram from '$lib/svgs/Instagram.svelte';
-	import OpenSeaIcon from '$lib/svgs/OpenSeaIcon.svelte';
-	import Twtter from '$lib/svgs/Twtter.svelte';
+	import Instagram from '#lib/svgs/Instagram.svelte';
+	import OpenSeaIcon from '#lib/svgs/OpenSeaIcon.svelte';
+	import Twtter from '#lib/svgs/Twtter.svelte';
 
 	let isOpen = false;
 	let shopNavOpen = false;
@@ -30,7 +30,7 @@
 	}
 </script>
 
-<svelte:window onkeydown={handleKeyDown} />
+<svelte:window onkeydown={handleKeyDown}></svelte:window>
 
 <div class="relative bg-white z-10">
 	<div class="absolute inset-0 z-30 pointer-events-none" aria-hidden="true"></div>
@@ -72,7 +72,7 @@
 							stroke-linejoin="round"
 							stroke-width="2"
 							d="M4 6h16M4 12h16M4 18h16"
-						/>
+						></path>
 					</svg>
 				</button>
 			</div>
@@ -80,35 +80,24 @@
 				<nav class="flex space-x-8">
 					<a
 						data-sveltekit-preload-data
-						href={resolve('/cards')}
+						href={resolve('cards')}
 						onfocus={() => toggleShopNav(false)}
-						class={`${
-							$page.url.pathname === '/cards' ? 'border-gray-900' : 'border-transparent'
-						} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
-					>
-						Cards
-					</a>
+						class={`${page.url.pathname === '/cards' ? 'border-gray-900' : 'border-transparent'} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
+					>Cards</a>
 
 					<a
 						onfocus={() => toggleShopNav(false)}
 						data-sveltekit-preload-data
-						href={resolve('/about')}
-						class={`${
-							$page.url.pathname === '/about' ? 'border-gray-900' : 'border-transparent'
-						} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
-					>
-						About Birdables
-					</a>
+						href={resolve('about')}
+						class={`${page.url.pathname === '/about' ? 'border-gray-900' : 'border-transparent'} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
+					>About Birdables</a>
+
 					<a
 						onfocus={() => toggleShopNav(false)}
 						data-sveltekit-preload-data
-						href={resolve('/blog')}
-						class={`${
-							$page.url.pathname === '/blog' ? 'border-gray-900' : 'border-transparent'
-						} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
-					>
-						Blog
-					</a>
+						href={resolve('blog')}
+						class={`${page.url.pathname === '/blog' ? 'border-gray-900' : 'border-transparent'} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
+					>Blog</a>
 				</nav>
 				<div class="flex items-center lg:ml-12 space-x-6">
 					<a
@@ -178,7 +167,7 @@
 									stroke-linejoin="round"
 									stroke-width="2"
 									d="M6 18L18 6M6 6l12 12"
-								/>
+								></path>
 							</svg>
 						</button>
 					</div>
@@ -190,34 +179,23 @@
 								<a
 									onclick={toggle}
 									data-sveltekit-preload-data
-									href={resolve('/cards')}
-									class={`${
-										$page.url.pathname === '/cards' ? 'border-gray-900' : 'border-transparent'
-									} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
-								>
-									Cards
-								</a>
+									href={resolve('cards')}
+									class={`${page.url.pathname === '/cards' ? 'border-gray-900' : 'border-transparent'} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
+								>Cards</a>
 
 								<a
 									onclick={toggle}
 									data-sveltekit-preload-data
-									href={resolve('/about')}
-									class={`${
-										$page.url.pathname === '/about' ? 'border-gray-900' : 'border-transparent'
-									} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
-								>
-									About Birdables
-								</a>
+									href={resolve('about')}
+									class={`${page.url.pathname === '/about' ? 'border-gray-900' : 'border-transparent'} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
+								>About Birdables</a>
+
 								<a
 									onclick={toggle}
 									data-sveltekit-preload-data
-									href={resolve('/blog')}
-									class={`${
-										$page.url.pathname === '/blog' ? 'border-gray-900' : 'border-transparent'
-									} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
-								>
-									Blog
-								</a>
+									href={resolve('blog')}
+									class={`${page.url.pathname === '/blog' ? 'border-gray-900' : 'border-transparent'} text-lg font-medium text-gray-900 border-b-3 translate-y-1.5 pb-1 transition hover:border-gray-900 focus:border-gray-900`}
+								>Blog</a>
 							</div>
 							<div class="flex items-center justify-center space-x-6 mt-6 w-full">
 								<a

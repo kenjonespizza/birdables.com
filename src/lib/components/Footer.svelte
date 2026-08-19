@@ -1,7 +1,7 @@
 <script>
-	import Instagram from '$lib/svgs/Instagram.svelte';
-	import OpenSeaIcon from '$lib/svgs/OpenSeaIcon.svelte';
-	import Twtter from '$lib/svgs/Twtter.svelte';
+	import Instagram from '#lib/svgs/Instagram.svelte';
+	import OpenSeaIcon from '#lib/svgs/OpenSeaIcon.svelte';
+	import Twtter from '#lib/svgs/Twtter.svelte';
 	import { resolve } from '$app/paths';
 </script>
 
@@ -15,21 +15,27 @@
 			</div>
 
 			<div class="px-5 py-2">
-				<a data-sveltekit-preload-data href={resolve('/cards')} class="text-base text-gray-500 hover:text-gray-900">
-					Cards
-				</a>
+				<a
+					data-sveltekit-preload-data
+					href={resolve('cards')}
+					class="text-base text-gray-500 hover:text-gray-900"
+				>Cards</a>
 			</div>
 
 			<div class="px-5 py-2">
-				<a data-sveltekit-preload-data href={resolve('/about')} class="text-base text-gray-500 hover:text-gray-900">
-					About Birdables
-				</a>
+				<a
+					data-sveltekit-preload-data
+					href={resolve('about')}
+					class="text-base text-gray-500 hover:text-gray-900"
+				>About Birdables</a>
 			</div>
 
 			<div class="px-5 py-2">
-				<a data-sveltekit-preload-data href={resolve('/blog')} class="text-base text-gray-500 hover:text-gray-900">
-					Blog
-				</a>
+				<a
+					data-sveltekit-preload-data
+					href={resolve('blog')}
+					class="text-base text-gray-500 hover:text-gray-900"
+				>Blog</a>
 			</div>
 		</nav>
 		<div class="mt-8 flex justify-center space-x-6">
@@ -62,10 +68,12 @@
 			</a>
 		</div>
 		<p class="mt-8 text-center text-base text-gray-600">
-			&copy; {new Date().getFullYear()} Birdables. All rights reserved. |
-			<a class="underline" href="https://github.com/kenjonespizza/birdables.com"
-				>View open sourced code</a
-			>
+			© {new Date().getFullYear()} Birdables. All rights reserved. | 
+
+			<a
+				class="underline"
+				href="https://github.com/kenjonespizza/birdables.com"
+			>View open sourced code</a>
 		</p>
 	</div>
 </footer>

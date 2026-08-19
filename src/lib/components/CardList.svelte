@@ -1,7 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
-	import Card from '$lib/components/Card.svelte';
+	import Card from '#lib/components/Card.svelte';
 
 	let { cards } = $props();
 </script>

@@ -1,12 +1,12 @@
 <script>
+	import { asset } from '$app/paths';
 	import SEO from 'svelte-seo';
 
-	import site from '$lib/info';
-	import { assets } from '$app/paths';
-	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-	import Link from '$lib/components/Link.svelte';
-	import { urlFor } from '$lib/sanity-image-url';
-	import { authorNamesToString } from '$lib/utils';
+	import site from '#lib/info.js';
+	import Breadcrumb from '#lib/components/Breadcrumb.svelte';
+	import Link from '#lib/components/Link.svelte';
+	import { urlFor } from '#lib/sanity-image-url.js';
+	import { authorNamesToString } from '#lib/utils.js';
 
 	let { data } = $props();
 	let { authors } = data;
@@ -88,7 +88,7 @@
 								class="object-cover aspect-[4/5] shadow-lg rounded-lg"
 								src={author?.image?.asset
 									? urlFor(author.image.asset).width(600).quality(80)
-									: `${assets}/images/userImageNotFound.png`}
+									: asset(`images/userImageNotFound.png`)}
 								alt={author.pageInfo.name}
 							/>
 

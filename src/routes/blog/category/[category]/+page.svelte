@@ -1,12 +1,12 @@
 <script>
 	import SEO from 'svelte-seo';
 
-	import site from '$lib/info';
-	import { urlFor } from '$lib/sanity-image-url';
-	import Posts from '$lib/components/blog/Posts.svelte';
-	import PortableText from '$lib/components/PortableText.svelte';
-	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-	import { toPlainText, truncate } from '$lib/utils';
+	import site from '#lib/info.js';
+	import { urlFor } from '#lib/sanity-image-url.js';
+	import Posts from '#lib/components/blog/Posts.svelte';
+	import PortableText from '#lib/components/PortableText.svelte';
+	import Breadcrumb from '#lib/components/Breadcrumb.svelte';
+	import { toPlainText, truncate } from '#lib/utils.js';
 
 	let { data } = $props();
 	let { posts, categoryInfo, currentPage, perPage, count, categories } = data;

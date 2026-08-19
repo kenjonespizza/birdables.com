@@ -1,9 +1,10 @@
 import { error } from '@sveltejs/kit';
-import { base } from '$app/paths';
+import { resolve } from '$app/paths';
 
 export async function load({ params, fetch }) {
 	let { topic } = params;
-	const res = await fetch(`${base}/data/blog/topic/${topic}`);
+	const res = await fetch(resolve(`data/blog/topic/${topic}`));
+
 	const { posts, currentPage, perPage, count, blogInfo, categories, topics } = await res.json();
 
 	if (!posts || posts.length === 0) {

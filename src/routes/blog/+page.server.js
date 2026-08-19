@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import client from '$lib/sanityClient';
+import client from '#lib/sanityClient.js';
 import { postPerPage } from './config';
-import { massageTopics } from '$lib/utils';
+import { massageTopics } from '#lib/utils.js';
 
 export async function load() {
 	let perPage = postPerPage; // ToDo, consider setting this in sanity, but then we'll need to do an additional API call first to get that value

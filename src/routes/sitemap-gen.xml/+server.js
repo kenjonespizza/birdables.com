@@ -1,5 +1,5 @@
-import site from '$lib/info';
-import { fetchLiveBirds } from '$lib/birds';
+import site from '#lib/info.js';
+import { fetchLiveBirds } from '#lib/birds.js';
 
 export const prerender = true;
 

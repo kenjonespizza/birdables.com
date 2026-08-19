@@ -80,7 +80,7 @@
               class="text-gray-900 cursor-default select-none relative hover:bg-gray-100"
             >
 						<a
-							data-sveltekit-noscroll
+							data-sveltekit-reset="false"
 								href={resolve('/blog/category/[category]', { category: category.pageInfo.slug.current })}
 								class=" py-2 px-4 flex items-center space-x-3"
               onclick={() => { toggle(); }}

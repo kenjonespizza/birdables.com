@@ -1,13 +1,13 @@
 <script>
 import SEO from 'svelte-seo';
 
-import site from '$lib/info';
-import Link from "$lib/components/Link.svelte";
-import { slugify, toPlainText } from "$lib/utils";
-import { urlFor } from "$lib/sanity-image-url"
-import PortableText from '$lib/components/PortableText.svelte';
-import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-import { categoryNamesToString, authorNamesToString } from "$lib/utils"
+import site from '#lib/info.js';
+import Link from "#lib/components/Link.svelte";
+import { slugify, toPlainText } from "#lib/utils.js";
+import { urlFor } from "#lib/sanity-image-url.js"
+import PortableText from '#lib/components/PortableText.svelte';
+import Breadcrumb from '#lib/components/Breadcrumb.svelte';
+import { categoryNamesToString, authorNamesToString } from "#lib/utils.js"
 import { resolve } from '$app/paths';
 
 let { data } = $props();

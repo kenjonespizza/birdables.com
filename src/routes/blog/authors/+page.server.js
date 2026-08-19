@@ -1,4 +1,4 @@
-import client from '$lib/sanityClient';
+import client from '#lib/sanityClient.js';
 
 export async function load() {
 	const constraints = `*[][0]`;

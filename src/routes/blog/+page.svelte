@@ -1,11 +1,11 @@
 <script>
 	import SEO from 'svelte-seo';
 
-	import site from '$lib/info';
-	import Posts from '$lib/components/blog/Posts.svelte';
-	import PortableText from '$lib/components/PortableText.svelte';
-	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-	import { toPlainText } from '$lib/utils';
+	import site from '#lib/info.js';
+	import Posts from '#lib/components/blog/Posts.svelte';
+	import PortableText from '#lib/components/PortableText.svelte';
+	import Breadcrumb from '#lib/components/Breadcrumb.svelte';
+	import { toPlainText } from '#lib/utils.js';
 
 	let { data } = $props();
 	let { posts, currentPage, perPage, count, blogInfo, categories, topics } = data;

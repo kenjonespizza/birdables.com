@@ -1,4 +1,4 @@
-import birds from '$lib/data/birds.json';
+import birds from '#lib/data/birds.json';
 
 export function fetchLiveBirds() {
 	return birds.filter((bird) => bird.liveOnSite);

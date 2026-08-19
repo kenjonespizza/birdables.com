@@ -1,7 +1,7 @@
 <script>
-	import BlogFilters from '$lib/components/blog/BlogFilters.svelte';
-	import Post from '$lib/components/blog/Post.svelte';
-	import Pagination from '$lib/components/Pagination.svelte';
+	import BlogFilters from '#lib/components/blog/BlogFilters.svelte';
+	import Post from '#lib/components/blog/Post.svelte';
+	import Pagination from '#lib/components/Pagination.svelte';
 	import { resolve } from '$app/paths';
 
 	let { posts = [], categories = [], topics = [], count, currentPage, perPage, currentCategory, currentTopic, paginationSlug = 'blog/page', topText } = $props();

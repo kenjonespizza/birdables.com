@@ -1,5 +1,5 @@
 <script>
-	import { unSlugify } from '$lib/utils';
+	import { unSlugify } from '#lib/utils.js';
 	import { resolve } from '$app/paths';
 
 	let { topics, currentTopic } = $props();
@@ -74,7 +74,7 @@
             >
             <a
                 href={resolve('/blog/topic/[topic]', { topic })}
-              data-sveltekit-noscroll
+              data-sveltekit-reset="false"
                 class=" py-2 px-4 flex items-center space-x-3"
                 onclick={() => { toggle(); }}
                 onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggle(); }}

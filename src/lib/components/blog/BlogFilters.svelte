@@ -1,6 +1,6 @@
 <script>
-	import CategorySelector from '$lib/components/blog/CategorySelector.svelte';
-	import TopicSelector from '$lib/components/blog/TopicSelector.svelte';
+	import CategorySelector from '#lib/components/blog/CategorySelector.svelte';
+	import TopicSelector from '#lib/components/blog/TopicSelector.svelte';
 
 	let { categories, topics, currentCategory, currentTopic } = $props();
 </script>

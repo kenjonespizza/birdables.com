@@ -5,8 +5,9 @@
 
 @theme {
 	/* Font defaults */
-	--font-sans: 'GreycliffCF', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-sans:
+		'GreycliffCF', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
 	--font-weight-normal: 500;
 
 	/* Project gray palette (overrides default gray) */
@@ -55,7 +56,8 @@
 	/* Ring width and offset 3px */
 	.ring-3 {
 		--tw-ring-width: 3px;
-		box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+		box-shadow:
+			var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
 			var(--tw-shadow, 0 0 #0000);
 	}
 	.ring-offset-3 {

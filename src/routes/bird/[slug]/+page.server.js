@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { fetchAllBirds } from '$lib/birds';
-import { returnBirdFromParam } from '$lib/utils';
+import { fetchAllBirds } from '#lib/birds.js';
+import { returnBirdFromParam } from '#lib/utils.js';
 
 export const prerender = true;
 

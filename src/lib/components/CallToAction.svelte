@@ -17,7 +17,7 @@
 				</h2>
 				<div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
 					<a
-						href={resolve('/about')}
+						href={resolve('about')}
 						data-sveltekit-preload-data
 						class="py-3 px-8 text-center bg-white border border-transparent rounded-full shadow-lg font-semibold text-gray-900 transition hover:ring-2 hover:ring-offset-4 hover:ring-offset-gray-900 hover:ring-white focus:ring-2 focus:ring-offset-4 focus:ring-offset-gray-900 focus:ring-white"
 					>
@@ -44,14 +44,14 @@
 				</div>
 				<div class="mt-8 lg:mt-0 flex flex-col sm:flex-row sm:items-center lg:flex-col gap-4 shrink-0">
 					<a
-						href={resolve('/cards')}
+						href={resolve('cards')}
 						data-sveltekit-preload-data
 						class="py-4 px-8 text-center bg-white border border-transparent rounded-full shadow-lg font-semibold text-gray-900 transition hover:ring-2 hover:ring-offset-4 hover:ring-offset-gray-900 hover:ring-white focus:ring-2 focus:ring-offset-4 focus:ring-offset-gray-900 focus:ring-white"
 					>
 						Browse the cards
 					</a>
 					<a
-						href={resolve('/about')}
+						href={resolve('about')}
 						data-sveltekit-preload-data
 						class="text-center text-white underline underline-offset-2 hover:text-white transition"
 					>

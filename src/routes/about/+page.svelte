@@ -1,23 +1,17 @@
 <script>
+	import { asset } from '$app/paths';
 	import SEO from 'svelte-seo';
-	import { assets } from '$app/paths';
-	import site from '$lib/info';
-	import { scrollToSection } from '$lib/utils';
-	import FAQ from '$lib/components/FAQ.svelte';
-	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-	import CardAnatomy from '$lib/components/CardAnatomy.svelte';
-	import Rarity from '$lib/components/Rarity.svelte';
-	import ExternalLink from '$lib/components/ExternalLink.svelte';
+	import site from '#lib/info.js';
+	import { scrollToSection } from '#lib/utils.js';
+	import FAQ from '#lib/components/FAQ.svelte';
+	import Breadcrumb from '#lib/components/Breadcrumb.svelte';
+	import CardAnatomy from '#lib/components/CardAnatomy.svelte';
+	import Rarity from '#lib/components/Rarity.svelte';
+	import ExternalLink from '#lib/components/ExternalLink.svelte';
 
 	let sections = [
-		{
-			link: 'anatomy-of-card',
-			title: 'The Anatomy of a Card'
-		},
-		{
-			link: 'rarity',
-			title: 'The Card Rarity Scale'
-		},
+		{ link: 'anatomy-of-card', title: 'The Anatomy of a Card' },
+		{ link: 'rarity', title: 'The Card Rarity Scale' },
 		{
 			link: 'physical-vs-digital-cards',
 			title: 'Physical -vs- Digital cards'
@@ -77,13 +71,24 @@
 			}}
 			href={`#${section.link}`}
 			class="text-xs font-semibold text-gray-600 flex items-center space-x-2 border-b border-gray-900/10 py-3 px-6 transition hover:bg-gray-blue"
-			><svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 24 24" width="20" height="20"
-				><path fill="none" d="M0 0h24v24H0z" /><path
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class=""
+				viewBox="0 0 24 24"
+				width="20"
+				height="20"
+			>
+				<path fill="none" d="M0 0h24v24H0z"></path>
+
+				<path
 					fill="currentColor"
 					d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z"
-				/></svg
-			><span>{section['title']}</span></a
-		>
+				></path>
+			</svg>
+
+			<span>{section['title']}</span>
+		</a>
 	{/each}
 </nav>
 
@@ -112,7 +117,9 @@
 							}}
 							href={`#${section.link}`}
 							class="text-xl font-semibold text-gray-600 border-b-2 border-gray-900/10 pb-2 transition hover:border-gray-900"
-							>{section['title']} <span aria-hidden="true">&rarr;</span>
+						>
+							{section['title']} 
+							<span aria-hidden="true">→</span>
 						</a>
 					</div>
 				{/each}
@@ -121,7 +128,7 @@
 	</div>
 	<img
 		class="block pt-10 md:pt:0 md:absolute md:bottom-0 md:left-[calc(50vw+100px)] md:max-h-full md:w-[calc(100vw-415px)] md:max-w-[725px] md:object-contain"
-		src={`${assets}/images/Yellow-Warbler-About.webp`}
+		src={asset(`images/Yellow-Warbler-About.webp`)}
 		alt="Yellow Warbler Bird Illustration"
 	/>
 </div>
@@ -287,7 +294,7 @@
 			</div>
 			<div class="lg:col-span-2">
 				<img
-					src={`${assets}/images/rarity.webp`}
+					src={asset(`images/rarity.webp`)}
 					alt="Roseate Spoonbill"
 					class="w-full h-full object-center object-contain group-hover:opacity-75"
 				/>

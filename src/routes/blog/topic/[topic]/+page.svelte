@@ -1,10 +1,10 @@
 <script>
 	import SEO from 'svelte-seo';
 
-	import site from '$lib/info';
-	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-	import Posts from '$lib/components/blog/Posts.svelte';
-	import { unSlugify, capitalize } from '$lib/utils';
+	import site from '#lib/info.js';
+	import Breadcrumb from '#lib/components/Breadcrumb.svelte';
+	import Posts from '#lib/components/blog/Posts.svelte';
+	import { unSlugify, capitalize } from '#lib/utils.js';
 
 	let { data } = $props();
 	let { posts, currentPage, perPage, count, topics, topic } = data;
