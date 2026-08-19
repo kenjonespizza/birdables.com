@@ -1,5 +1,5 @@
 <script>
-	import { formatPhoneNumber, emailIsValid } from '$lib/utils';
+	import { formatPhoneNumber, emailIsValid } from '#lib/utils.js';
 	let useEmailAddress = true;
 	let emailTyped;
 	let phoneTyped;

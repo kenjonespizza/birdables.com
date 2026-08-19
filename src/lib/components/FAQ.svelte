@@ -1,6 +1,6 @@
 <script>
 	import ExternalLink from './ExternalLink.svelte';
-	import { browser } from '$app/environment';
+	import { browser } from '$app/env';
 
 	let { title = 'Frequently Asked Questionssss', id = 'faq' } = $props();
 
@@ -15,11 +15,14 @@
 	}
 </script>
 
-<div class="bg-gray-blue" {id}>
-	<div class="max-w-7xl mx-auto py-12 px-4 divide-y divide-gray-200 sm:px-6 lg:py-24 lg:px-8">
-		<h2 class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl">
-			{title}
-		</h2>
+<div class="bg-gray-blue" id={id}>
+	<div
+		class="max-w-7xl mx-auto py-12 px-4 divide-y divide-gray-200 sm:px-6 lg:py-24 lg:px-8"
+	>
+		<h2
+			class="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-5xl"
+		>{title}</h2>
+
 		<div class="mt-8">
 			<dl class="divide-y divide-gray-300">
 				<div class="pt-6 pb-8 md:grid md:grid-cols-12 md:gap-8">

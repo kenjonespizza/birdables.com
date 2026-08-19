@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import client from '$lib/sanityClient';
+import client from '#lib/sanityClient.js';
 import { postPerPage } from '../../config';
-import { slugify, massageTopics } from '$lib/utils';
+import { slugify, massageTopics } from '#lib/utils.js';
 
 export async function load({ params }) {
 	let allPostsWithTopic = []; // Initiate array of _id's for posts with topic

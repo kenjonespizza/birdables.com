@@ -1,5 +1,5 @@
-import client from '$lib/sanityClient';
-import { massageTopics } from '$lib/utils';
+import client from '#lib/sanityClient.js';
+import { massageTopics } from '#lib/utils.js';
 
 export async function load() {
 	const constraints = `*[_type == "post" && defined(topics)]`;

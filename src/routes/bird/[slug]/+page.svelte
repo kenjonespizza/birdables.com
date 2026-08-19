@@ -1,24 +1,25 @@
 <script>
+	import { asset } from '$app/paths';
 	import SEO from 'svelte-seo';
 
-	import { page } from '$app/stores';
-	import { assets, resolve } from '$app/paths';
-	import site from '$lib/info';
-	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-	import Rarity from '$lib/components/Rarity.svelte';
-	import Share from '$lib/components/Share.svelte';
-	import ExternalLink from '$lib/components/ExternalLink.svelte';
+	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
+	import site from '#lib/info.js';
+	import Breadcrumb from '#lib/components/Breadcrumb.svelte';
+	import Rarity from '#lib/components/Rarity.svelte';
+	import Share from '#lib/components/Share.svelte';
+	import ExternalLink from '#lib/components/ExternalLink.svelte';
 
-	import OpenSea from '$lib/svgs/OpenSea.svelte';
-	import EBird from '$lib/svgs/EBird.svelte';
-	import Audubon from '$lib/svgs/Audubon.svelte';
-	import BOW from '$lib/svgs/BOW.svelte';
+	import OpenSea from '#lib/svgs/OpenSea.svelte';
+	import EBird from '#lib/svgs/EBird.svelte';
+	import Audubon from '#lib/svgs/Audubon.svelte';
+	import BOW from '#lib/svgs/BOW.svelte';
 
 	let { data } = $props();
 	let { bird } = data;
 	let isModalOpen = $state(false);
 
-	let pageUrl = `${site.address}${$page.url.pathname}`;
+	let pageUrl = `${site.address}${page.url.pathname}`;
 	let comingSoonOverideDigital = $state(false);
 
 	function toggleModal() {
@@ -67,7 +68,7 @@
 	}}
 />
 
-<svelte:window onkeydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown}></svelte:window>
 
 <div class="bg-gray-blue">
 	<div class="mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -80,7 +81,7 @@
 				class="md:row-end-1 md:col-span-4 rounded-3xl transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-900"
 			>
 				<img
-					src={`${assets}/images/cards/${bird.friendlyId}.webp`}
+					src={asset(`images/cards/${bird.friendlyId}.webp`)}
 					alt={`${bird.birdName} card`}
 					class="object-center object-cover drop-shadow-card hidden md:block"
 				/>
@@ -119,7 +120,7 @@
 						class="focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 					>
 						<img
-							src={`${assets}/images/cards/${bird.friendlyId}.webp`}
+							src={asset(`images/cards/${bird.friendlyId}.webp`)}
 							alt={`${bird.birdName} card`}
 							class="object-center object-cover drop-shadow-card md:hidden mt-2"
 						/>
@@ -244,7 +245,7 @@
 								> blockchain. Purchases of the NFT will come with access to the hi-res artwork, not available
 								anywhere else. NFT's of Birdables cards are also more scarce than physical cards.
 								<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- resolve() output concatenated with a hash fragment isn't recognized by the rule's static check -->
-								<a href={resolve('/about') + '#rarity'}>Learn more about the rarity.</a>
+								<a href={resolve('about') + '#rarity'}>Learn more about the rarity.</a>
 							</p>
 						</dd>
 
@@ -284,7 +285,7 @@
 				</div>
 
 				<a
-					href={resolve('/about')}
+					href={resolve('about')}
 					data-sveltekit-preload-data
 					class="w-full bg-gray-900 border border-transparent rounded-full py-4 px-8 flex flex-wrap items-center justify-center text-sm lg:text-base font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:outline-none focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
 							>Learn more about Birdables</a
@@ -294,9 +295,9 @@
 					<h3 class="text-lg font-semibold text-gray-900">Share:</h3>
 					<Share
 						text={`Check out this ${bird.birdName} Birdables card!`}
-						image={`https://birdables.com${assets}/images/cards/${bird.friendlyId}.webp`}
+						image={`https://birdables.com${asset(`images/cards/${bird.friendlyId}.webp`)}`}
 						alt={`${bird.birdName} card`}
-						url={`https://birdables.com${$page.url.pathname}`}
+						url={`https://birdables.com${page.url.pathname}`}
 						via={site.twitterHandle}
 					/>
 				</div>
@@ -332,20 +333,32 @@
 			} h-screen w-screen pointer-events-none flex justify-center items-center transition-all duration-300 ease-in-out px-2 py-12`}
 		>
 			<img
-				src={`${assets}/images/cards/${bird.friendlyId}.webp`}
+				src={asset(`images/cards/${bird.friendlyId}.webp`)}
 				alt={`${bird.birdName} card`}
 				class={`${
 					isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
 				} object-center object-cover drop-shadow-card max-h-[calc(100vh-6rem)]`}
 			/>
 		</div>
-		<button onclick={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" class=""
-				><path fill="none" d="M0 0h24v24H0z" /><path
+
+		<button
+			onclick={toggleModal}
+			class="fixed top-4 right-4 text-white cursor-pointer z-10"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				width="36"
+				height="36"
+				class=""
+			>
+				<path fill="none" d="M0 0h24v24H0z"></path>
+
+				<path
 					fill="currentColor"
 					d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
-				/></svg
-			>
+				></path>
+			</svg>
 			<span class="sr-only">Close Modal</span>
 		</button>
 	</div>

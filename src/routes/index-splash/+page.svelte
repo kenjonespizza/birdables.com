@@ -1,9 +1,10 @@
 <script>
+	import { asset } from '$app/paths';
 	import SEO from 'svelte-seo';
 
-	import { browser } from '$app/environment';
-	import { assets, resolve } from '$app/paths';
-	import site from '$lib/info';
+	import { browser } from '$app/env';
+	import { resolve } from '$app/paths';
+	import site from '#lib/info.js';
 	import { headerFooterState } from '../../stores/store.svelte';
 
 	const checkIfShownAnimationsCookieIsTrue = () => {
@@ -60,7 +61,12 @@
 		<div class="flex-shrink-0 flex justify-center">
 			<a href={resolve('/')} class="inline-flex">
 				<span class="sr-only">{site.name}</span>
-				<img class="h-12 md:h-16 w-auto" src={`${assets}/images/logo.svg`} alt="{site.name} logo" />
+
+				<img
+					class="h-12 md:h-16 w-auto"
+					src={asset(`images/logo.svg`)}
+					alt="{site.name} logo"
+				/>
 			</a>
 		</div>
 		<div class="py-16">

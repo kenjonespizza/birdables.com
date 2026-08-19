@@ -1,10 +1,11 @@
 <script>
+	import { asset } from '$app/paths';
 	import SEO from 'svelte-seo';
 	import IntersectionObserver from 'svelte-intersection-observer';
 
-	import { assets, resolve } from '$app/paths';
-	import site from '$lib/info';
-	import CallToAction from '$lib/components/CallToAction.svelte';
+	import { resolve } from '$app/paths';
+	import site from '#lib/info.js';
+	import CallToAction from '#lib/components/CallToAction.svelte';
 
 	let { data } = $props();
 	let { cards } = data;
@@ -13,7 +14,7 @@
 	import { fly, fade } from 'svelte/transition';
 
 	let ready = $state(false);
-	onMount(() => (ready = true));
+	onMount(() => ready = true);
 
 	let element = $state();
 	let intersecting = $state(false);
@@ -81,13 +82,14 @@
 					</span>
 					<p
 						class="mt-6 lg:mx-auto text-center sm:text-left lg:text-center font-light text-2xl italic text-gray-900 text-opacity-50"
+					>Because birds are fly.</p>
+
+					<div
+						class="mt-10 flex justify-center sm:justify-start lg:justify-center"
 					>
-						Because birds are fly.
-					</p>
-					<div class="mt-10 flex justify-center sm:justify-start lg:justify-center">
-					<a
-						data-sveltekit-preload-data
-							href={resolve('/cards')}
+						<a
+							data-sveltekit-preload-data
+							href={resolve('cards')}
 							class="flex items-center justify-center px-12 py-4 border border-transparent text-xl font-black rounded-full bg-gray-900 text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500 sm:px-8"
 						>
 							Browse All Cards
@@ -241,9 +243,9 @@
 								</p>
 							</div>
 							<div class="flex space-x-4 mt-8">
-						<a
-									href={resolve('/cards')}
-							data-sveltekit-preload-data
+								<a
+									href={resolve('cards')}
+									data-sveltekit-preload-data
 									class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition sm:inline-block sm:w-auto hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500"
 								>
 									See the cards
@@ -251,10 +253,16 @@
 							</div>
 						</div>
 						<div>
-							<IntersectionObserver {element} bind:intersecting threshold={0.5} once />
+							<IntersectionObserver
+								element={element}
+								bind:intersecting
+								threshold={0.5}
+								once
+							/>
+
 							<img
 								bind:this={element}
-								src={`${assets}/images/roseate-spoonbill-cutout.webp`}
+								src={asset(`images/roseate-spoonbill-cutout.webp`)}
 								alt="Roseate Spoonbill"
 								class={`${
 									intersecting
@@ -305,9 +313,9 @@
 								</p>
 							</div>
 							<div class="flex space-x-4 mt-8">
-						<a
-									href={resolve('/about')}
-							data-sveltekit-preload-data
+								<a
+									href={resolve('about')}
+									data-sveltekit-preload-data
 									class="block w-full py-4 px-6 text-center bg-gray-900 border border-transparent rounded-full shadow-lg text-lg font-semibold text-white transition hover:ring-3 hover:ring-offset-3 hover:ring-gray-500 focus:ring-3 focus:ring-offset-3 focus:ring-gray-500 sm:inline-block sm:w-auto"
 								>
 									Learn more: About Birdables
@@ -323,7 +331,7 @@
 							/>
 							<img
 								bind:this={element2}
-								src={`${assets}/images/osprey-cutout.webp`}
+								src={asset(`images/osprey-cutout.webp`)}
 								alt="Osprey"
 								class={`${
 									intersecting2
@@ -365,9 +373,10 @@
 				<a
 					rel="external"
 					class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
-					href={`${assets}/images/cards-on-grass.webp`}
-					><img
-						src={`${assets}/images/cards-on-grass.webp`}
+					href={asset(`images/cards-on-grass.webp`)}
+				>
+					<img
+						src={asset(`images/cards-on-grass.webp`)}
 						alt="Person using a pen to cross a task off a productivity paper card."
 						class="w-full h-full object-center object-cover group-hover:opacity-75"
 						width="1400"
@@ -377,9 +386,10 @@
 				<a
 					rel="external"
 					class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
-					href={`${assets}/images/cards-in-bush.webp`}
-					><img
-						src={`${assets}/images/cards-in-bush.webp`}
+					href={asset(`images/cards-in-bush.webp`)}
+				>
+					<img
+						src={asset(`images/cards-in-bush.webp`)}
 						alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop."
 						class="w-full h-full object-center object-cover group-hover:opacity-75"
 						width="1400"
@@ -389,9 +399,10 @@
 				<a
 					rel="external"
 					class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
-					href={`${assets}/images/cards-on-feeder.webp`}
-					><img
-						src={`${assets}/images/cards-on-feeder.webp`}
+					href={asset(`images/cards-on-feeder.webp`)}
+				>
+					<img
+						src={asset(`images/cards-on-feeder.webp`)}
 						alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop."
 						class="w-full h-full object-center object-cover group-hover:opacity-75"
 						width="1200"
@@ -401,9 +412,10 @@
 				<a
 					rel="external"
 					class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
-					href={`${assets}/images/pileated-woodpecker-on-tree.webp`}
-					><img
-						src={`${assets}/images/pileated-woodpecker-on-tree.webp`}
+					href={asset(`images/pileated-woodpecker-on-tree.webp`)}
+				>
+					<img
+						src={asset(`images/pileated-woodpecker-on-tree.webp`)}
 						alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop."
 						class="w-full h-full object-center object-cover group-hover:opacity-75"
 						width="1400"
@@ -413,9 +425,10 @@
 				<a
 					rel="external"
 					class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
-					href={`${assets}/images/cedar-waxwing-in-bush.webp`}
-					><img
-						src={`${assets}/images/cedar-waxwing-in-bush.webp`}
+					href={asset(`images/cedar-waxwing-in-bush.webp`)}
+				>
+					<img
+						src={asset(`images/cedar-waxwing-in-bush.webp`)}
 						alt="Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop."
 						class="w-full h-full object-center object-cover group-hover:opacity-75"
 						width="1400"
@@ -425,9 +438,10 @@
 				<a
 					rel="external"
 					class="w-full aspect-square rounded-lg overflow-hidden transition hover:ring-3 hover:ring-offset-3 hover:ring-offset-gray-blue hover:ring-gray-900 focus:ring-3 focus:ring-offset-3 focus:ring-offset-gray-blue focus:ring-gray-500"
-					href={`${assets}/images/cards-on-shirt.webp`}
-					><img
-						src={`${assets}/images/cards-on-shirt.webp`}
+					href={asset(`images/cards-on-shirt.webp`)}
+				>
+					<img
+						src={asset(`images/cards-on-shirt.webp`)}
 						alt="Paper card sitting upright in walnut card holder on desk."
 						class="w-full h-full object-center object-cover group-hover:opacity-75"
 						width="1400"
@@ -466,10 +480,9 @@
 								bind:this={element4}
 								class={`${
 									intersecting4
-										? 'motion-safe:opacity-100 motion-safe:cale-100'
-										: 'motion-safe:opacity-0 motion-safe:scale-90'
-								} transition duration-1000 object-cover object-center drop-shadow-card`}
-								src={`${assets}/images/pool-flamingo_01.webp`}
+									? 'motion-safe:opacity-100 motion-safe:cale-100'
+									: 'motion-safe:opacity-0 motion-safe:scale-90'} transition duration-1000 object-cover object-center drop-shadow-card`}
+								src={asset(`images/pool-flamingo_01.webp`)}
 								alt="Pool Flamingo Card"
 								width="1426"
 								height="1996"
@@ -480,7 +493,7 @@
 
 				<div
 					class="relative row-start-1 bg-gray-blue md:col-start-3 bg-cover md:row-start-1 md:col-span-10 md:rounded-3xl md:grid md:grid-cols-10 md:items-center"
-					style={`background-image: url(${assets}/images/pool-flamingo-bg.jpg);`}
+					style={`background-image: url(${asset('images/pool-flamingo-bg.jpg')});`}
 				>
 					<div
 						class="relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 md:max-w-none md:p-0 md:col-start-4 md:col-span-6"

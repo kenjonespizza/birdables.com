@@ -1,8 +1,8 @@
 <script>
-  import Link from "$lib/components/Link.svelte";
-  import PortableText from "$lib/components/PortableText.svelte";
-  import { truncate, toPlainText } from "$lib/utils";
-  import { urlFor } from '$lib/sanity-image-url'
+  import Link from "#lib/components/Link.svelte";
+  import PortableText from "#lib/components/PortableText.svelte";
+  import { truncate, toPlainText } from "#lib/utils.js";
+  import { urlFor } from '#lib/sanity-image-url.js'
 
   let { post } = $props();
 </script>

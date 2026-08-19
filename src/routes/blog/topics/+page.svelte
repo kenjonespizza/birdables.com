@@ -1,9 +1,9 @@
 <script>
 	import SEO from 'svelte-seo';
 
-	import site from '$lib/info';
-	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-	import { unSlugify } from '$lib/utils';
+	import site from '#lib/info.js';
+	import Breadcrumb from '#lib/components/Breadcrumb.svelte';
+	import { unSlugify } from '#lib/utils.js';
 	import { resolve } from '$app/paths';
 
 	let { data } = $props();

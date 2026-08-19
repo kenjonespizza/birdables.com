@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { fetchLiveBirds } from '$lib/birds';
+import { fetchLiveBirds } from '#lib/birds.js';
 
 export const prerender = true;
 

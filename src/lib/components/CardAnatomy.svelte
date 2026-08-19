@@ -1,5 +1,5 @@
 <script>
-	import { assets } from '$app/paths';
+	import { asset } from '$app/paths';
 
 	let isModalOpen = false;
 
@@ -14,11 +14,11 @@
 	}
 </script>
 
-<svelte:window onkeydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown}></svelte:window>
 
 <div class="block overflow-hidden rounded-2xl md:rounded-2xl lg:rounded-5xl group mt-10 relative">
 	<img
-		src={`${assets}/images/Birdable-Card-Anatomy-Light.webp`}
+		src={asset(`images/Birdable-Card-Anatomy-Light.webp`)}
 		alt="Birdables card anatomy diagram"
 	/>
 </div>
@@ -51,7 +51,7 @@
 			} fixed overflow-auto inset-0 flex items-center justify-center h-screen w-screen  pointer-events-none transition-all duration-300 ease-in-out px-0 py-0 md:px-6 md:py-12`}
 		>
 			<img
-				src={`${assets}/images/Birdable-Card-Anatomy.jpg`}
+				src={asset(`images/Birdable-Card-Anatomy.jpg`)}
 				alt="Birdables card anatomy diagram"
 				class={`${
 					isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
@@ -60,12 +60,21 @@
 		</div>
 		<button onclick={toggleModal} class="fixed top-4 right-4 text-white cursor-pointer z-10">
 			<span class="sr-only">Close Modal</span>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" class=""
-				><path fill="none" d="M0 0h24v24H0z" /><path
+
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				width="36"
+				height="36"
+				class=""
+			>
+				<path fill="none" d="M0 0h24v24H0z"></path>
+
+				<path
 					fill="currentColor"
 					d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
-				/></svg
-			>
+				></path>
+			</svg>
 		</button>
 	</div>
 </div>

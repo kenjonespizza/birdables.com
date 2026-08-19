@@ -1,6 +1,7 @@
 <script>
+	import { asset } from '$app/paths';
 	import { onMount } from 'svelte';
-	import { assets, resolve } from '$app/paths';
+	import { resolve } from '$app/paths';
 
 	let { i, card } = $props();
 
@@ -22,7 +23,7 @@
 >
 	<img
 		class="card-img object-cover drop-shadow-card card-img"
-		src={`${assets}/images/cards/${card.friendlyId}.webp`}
+		src={asset(`images/cards/${card.friendlyId}.webp`)}
 		alt={card.cardName}
 	/>
 	<div class="text-lg leading-6 font-medium space-y-2">

@@ -1,12 +1,12 @@
 <script>
 	import SEO from 'svelte-seo';
 
-	import { browser } from '$app/environment';
-	import site from '$lib/info';
-	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-	import CardList from '$lib/components/CardList.svelte';
-	import CallToAction from '$lib/components/CallToAction.svelte';
-	import Stars from '$lib/components/Stars.svelte';
+	import { browser } from '$app/env';
+	import site from '#lib/info.js';
+	import Breadcrumb from '#lib/components/Breadcrumb.svelte';
+	import CardList from '#lib/components/CardList.svelte';
+	import CallToAction from '#lib/components/CallToAction.svelte';
+	import Stars from '#lib/components/Stars.svelte';
 
 	let { data } = $props();
 	let cards = $state(data.cards);
@@ -121,19 +121,32 @@
 			} border-gray-900/10 py-4 flex justify-center w-full md:hidden transition hover:border-white hover:ring-2 hover:ring-offset-2 hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500`}
 		>
 			{#if filterOpen}
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-					><path fill="none" d="M0 0h24v24H0z" /><path
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					width="24"
+					height="24"
+				>
+					<path fill="none" d="M0 0h24v24H0z"></path>
+
+					<path
 						fill="currentColor"
 						d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
-					/></svg
-				>
+					></path>
+				</svg>
 			{:else}
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6"
-					><path fill="none" d="M0 0h24v24H0z" /><path
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					class="w-6 h-6"
+				>
+					<path fill="none" d="M0 0h24v24H0z"></path>
+
+					<path
 						fill="currentColor"
 						d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"
-					/></svg
-				>
+					></path>
+				</svg>
 			{/if}
 		</button>
 		<div
@@ -190,11 +203,9 @@
 		</div>
 	</div>
 
-	<div class="mx-auto max-w-7xl pt-6 pb-6 px-4 sm:px-6 md:px-8 lg:pb-12">
-		<div class="space-y-6">
-			<CardList {cards} />
-		</div>
-	</div>
+	<div
+		class="mx-auto max-w-7xl pt-6 pb-6 px-4 sm:px-6 md:px-8 lg:pb-12"
+	><div class="space-y-6"><CardList cards={cards} /></div></div>
 </div>
 
 <CallToAction variant="compact" />
