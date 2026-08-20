@@ -1,6 +1,7 @@
 <script>
 	import { asset } from '$app/paths';
 	import SEO from 'svelte-seo';
+	import { goto } from '$app/navigation';
 
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
@@ -16,10 +17,10 @@
 	import BOW from '#lib/svgs/BOW.svelte';
 
 	let { data } = $props();
-	let { bird } = data;
+	let { bird, prevSlug, prevBirdName, nextSlug, nextBirdName } = $derived(data);
 	let isModalOpen = $state(false);
 
-	let pageUrl = `${site.address}${page.url.pathname}`;
+	let pageUrl = $derived(`${site.address}${page.url.pathname}`);
 	let comingSoonOverideDigital = $state(false);
 
 	function toggleModal() {
@@ -27,8 +28,14 @@
 	}
 
 	function handleKeydown(e) {
-		if (isModalOpen && e.key === 'Escape') {
+		if (e.key === 'Escape' && isModalOpen) {
 			toggleModal();
+			return;
+		}
+		if (e.key === 'ArrowLeft' && prevSlug) {
+			goto(resolve('/bird/[slug]', { slug: prevSlug }));
+		} else if (e.key === 'ArrowRight' && nextSlug) {
+			goto(resolve('/bird/[slug]', { slug: nextSlug }));
 		}
 	}
 </script>
@@ -305,6 +312,39 @@
 		</div>
 	</div>
 </div>
+
+{#if prevSlug || nextSlug}
+	<nav
+		class="hidden lg:block z-10 fixed right-0 bottom-4 rounded-tl-2xl rounded-bl-2xl bg-white drop-shadow-card overflow-hidden"
+	>
+		{#if nextSlug}
+			<a
+				href={resolve('/bird/[slug]', { slug: nextSlug })}
+				data-sveltekit-preload-data
+				class="text-xs font-semibold text-gray-600 flex items-center space-x-3 border-b border-gray-900/10 py-3 px-6 transition hover:bg-gray-blue/50"
+			>
+				<kbd
+					class="inline-flex items-center justify-center h-6 w-6 rounded border border-gray-300 bg-gray-50 text-sm font-semibold shadow-[0_1px_0_rgba(0,0,0,0.15)]"
+					>→</kbd
+				>
+				<span>Next: {nextBirdName}</span>
+			</a>
+		{/if}
+		{#if prevSlug}
+			<a
+				href={resolve('/bird/[slug]', { slug: prevSlug })}
+				data-sveltekit-preload-data
+				class="text-xs font-semibold text-gray-600 flex items-center space-x-3 py-3 px-6 transition hover:bg-gray-blue/50"
+			>
+				<kbd
+					class="inline-flex items-center justify-center h-6 w-6 rounded border border-gray-300 bg-gray-50 text-sm font-semibold shadow-[0_1px_0_rgba(0,0,0,0.15)]"
+					>←</kbd
+				>
+				<span>Previous: {prevBirdName}</span>
+			</a>
+		{/if}
+	</nav>
+{/if}
 
 <!-- Modal -->
 <div
