@@ -71,8 +71,8 @@ import { resolve } from '$app/paths';
             Rarity Scale
           </span>
           <div class="mt-2">
-            <p class="text-sm text-gray-500 prose">
-              Each Birdables card has a rarity rating ranging from 
+            <div class="text-sm text-gray-500 prose">
+              Each Birdables card has a rarity rating ranging from
 
               <span
                 class="inline-flex px-1 space-x-2 items-baseline translate-y-0.5"
@@ -82,11 +82,11 @@ import { resolve } from '$app/paths';
                 <Stars stars="5" space="1" size="sm" />
               </span>
 
-              to depict the scarcity of the card. 
+              to depict the scarcity of the card.
               <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- resolve() output concatenated with a hash fragment isn't recognized by the rule's static check -->
               <a href={resolve('about') + '#rarity'}>Learn more about the rarity</a>
               .
-            </p>
+            </div>
           </div>
         </div>
       </div>

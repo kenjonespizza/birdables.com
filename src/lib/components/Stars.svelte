@@ -1,12 +1,16 @@
 <script>
   let { stars, space = 1, size, hideEmpty = false } = $props();
 
-  let fullStars = [];
-  let hollowlStars = [];
-  
-  for (let i = 0; i < 5; i++) {
-    i < stars ? fullStars.push('★') : hollowlStars.push('☆');
-  }
+  let { fullStars, hollowlStars } = $derived.by(() => {
+    const fullStars = [];
+    const hollowlStars = [];
+
+    for (let i = 0; i < 5; i++) {
+      i < stars ? fullStars.push('★') : hollowlStars.push('☆');
+    }
+
+    return { fullStars, hollowlStars };
+  });
 
   let starSize = $derived(size === 'xs' ? "h-3 w-3" : size === 'sm' ? "h-4 w-4" : "h-5 w-5");
 </script>
